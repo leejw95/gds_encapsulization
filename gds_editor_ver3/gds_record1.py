@@ -1,0 +1,903 @@
+
+import warnings
+from gds_editor_ver3 import gds_tags
+import struct
+import math
+from datetime import datetime, MINYEAR
+from gds_editor_ver3 import user_define_exceptions
+
+class GDS_HEADER():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['HEADER'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.gds_version = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.gds_version)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_09de42865caee8e316eca4f7908b3c84341b611fa242105250c074121cde64d6,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.gds_version = _09de42865caee8e316eca4f7908b3c84341b611fa242105250c074121cde64d6
+
+class GDS_BGNLIB():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BGNLIB'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3c6a33669ade54b7916f2933f2d10649dbede38e7db238d5e030927b7d8203e5, 1, 1, 0, 0, 0)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3c6a33669ade54b7916f2933f2d10649dbede38e7db238d5e030927b7d8203e5, 1, 1, 0, 0, 0)
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHhhhhhhhhhhhh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.year, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.month, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.day, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.hour, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.minute, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.second, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.year, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.month, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.day, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.hour, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.minute, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access.second)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_3a8d13efc24ea00138e9a8e17c8a69710c84f0ad1182349395cd2c2c3264b6ef, e42201c2bf3f47caa31f0e704b01b4f3e1defe3818ba511193cca70c0bbca8c0, aef7d79cdd09b9be26c03d3bde6dc26cbdfc66d9b7645abad2e5895c0fa4b4d4, c506571930b8e5f6ab3ac29dfb3f61e62ff429f535212aa3967803741b67a7b2, _1d662cda8f1c55141950f829cd452c766eaa92305f0c0e41c5908c101e5b61dc, _775c2c0c0a8e5f56ed18ec2961f4b7b9703210944afaed9a7dd89f8e9b7a41b7, e297a4811f0d09f53720bb58cec2486c9d4dd40f28a61c942bf37407c31cd100, _46589ce6d7b3a58151b74457be184aa96e085c65d001af904265482b498822dd, _06b13bd48b856c7457d6291980ca7ad51fa52e9ae77cfd4c3ad4a0bd28ddb57d, d918aafcfd7e8dbb0acdd2d72aab4b63b68ad59b5d77d3f49afd362bd724a4dc, _11c1cbec3d2cf931c77cff6a7c1e8e5e81b91703bb2682fe6f37425e7d723b58, fec222ef4cf07d3e40e15a4c473eef81007f03f8a551dd363f79863b385712fb) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>hhhhhhhhhhhh', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        "\n        gdstxt_stream.write(record_tag_dictionary.REV_DICT[record_tag]+':'+'\n'+'last modification time:'+str(last_modi_year)+':'+str(last_modi_month)+':'+str(last_modi_day)+':'        + str(last_modi_hour)+':'+str(last_modi_minute)+':'+str(last_modi_second)+'\n'+'last access time:'+str(last_access_year)+':'+ str(last_access_month)+        ':'+str(last_access_day)+':'+ str(last_access_hour)+':'+str(last_access_minute)+':'+str(last_access_second)+'\n' )\n        "
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3a8d13efc24ea00138e9a8e17c8a69710c84f0ad1182349395cd2c2c3264b6ef, e42201c2bf3f47caa31f0e704b01b4f3e1defe3818ba511193cca70c0bbca8c0, aef7d79cdd09b9be26c03d3bde6dc26cbdfc66d9b7645abad2e5895c0fa4b4d4, c506571930b8e5f6ab3ac29dfb3f61e62ff429f535212aa3967803741b67a7b2, _1d662cda8f1c55141950f829cd452c766eaa92305f0c0e41c5908c101e5b61dc, _775c2c0c0a8e5f56ed18ec2961f4b7b9703210944afaed9a7dd89f8e9b7a41b7)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_access = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(e297a4811f0d09f53720bb58cec2486c9d4dd40f28a61c942bf37407c31cd100, _46589ce6d7b3a58151b74457be184aa96e085c65d001af904265482b498822dd, _06b13bd48b856c7457d6291980ca7ad51fa52e9ae77cfd4c3ad4a0bd28ddb57d, d918aafcfd7e8dbb0acdd2d72aab4b63b68ad59b5d77d3f49afd362bd724a4dc, _11c1cbec3d2cf931c77cff6a7c1e8e5e81b91703bb2682fe6f37425e7d723b58, fec222ef4cf07d3e40e15a4c473eef81007f03f8a551dd363f79863b385712fb)
+
+class GDS_LIBDIRSIZE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['LIBDIRSIZE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libdirsize = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libdirsize)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (e8b53565244a1a887f204fb2d0d43eeeec87225aa6cde2c7328d4b25d38b12dd,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libdirsize = e8b53565244a1a887f204fb2d0d43eeeec87225aa6cde2c7328d4b25d38b12dd
+    "    libdirsize_data,=struct.unpack('>h',record_data)\n    gdstxt_stream.write(record_tag_dictionary.REV_DICT[record_tag]+':'+str(libdirsize)+'\n')"
+
+class GDS_SRFNAME():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['SRFNAME'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_0ec77e7285e8603ae29c75564ee5ca9dddf98544264d042242753a9fc92b3e4f,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.srfname = _0ec77e7285e8603ae29c75564ee5ca9dddf98544264d042242753a9fc92b3e4f
+
+class GDS_LIBSECUR():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['LIBSECUR'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libsecur = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libsecur)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (d2c34b7b5871c724e3fad172ffa9d9af838674684afaad87ba6243114fc2a8f2,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libsecur = d2c34b7b5871c724e3fad172ffa9d9af838674684afaad87ba6243114fc2a8f2
+
+class GDS_LIBNAME():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['LIBNAME'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_3bae36e75af820e23dfb3936b33bcf12c6ab9a6881828cc1f22cfa68c01f3ce6,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.libname = _3bae36e75af820e23dfb3936b33bcf12c6ab9a6881828cc1f22cfa68c01f3ce6
+
+class GDS_REFLIBS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['REFLIBS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (d11725a2a5e5e14ee6e3579c57763c8adc5bcf18fc31d73a8c79e25fac9aae34,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflibs = d11725a2a5e5e14ee6e3579c57763c8adc5bcf18fc31d73a8c79e25fac9aae34
+
+class GDS_FONTS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['FONTS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_421e70e5a7b91e88acc32deddd11b01eeead596febd2476930870aa73b3fb619,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.fonts = _421e70e5a7b91e88acc32deddd11b01eeead596febd2476930870aa73b3fb619
+
+class GDS_ATTRTABLE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ATTRTABLE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ATTRTABLE'], gds_data=None):
+        (_2ac20e873e0da86e7a485e9a3f83cbacbe2ce121f9b7c247ef4ab06c85cb911e,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.attrtable = _2ac20e873e0da86e7a485e9a3f83cbacbe2ce121f9b7c247ef4ab06c85cb911e
+
+class GDS_GENERATIONS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['GENERATIONS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.generations = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH{0}h'.format(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c))
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, *[_3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7 for _3a6eb0790f39ac87c94f3856b2dd2c5d110e6811602261a9a923d3bb23adc8b7 in _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.generations])
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['GENERATIONS'], gds_data=None):
+        (a87b0fc2ed9eff4639f4d2ee59e5fdc4f7bb8b623c4ca730d859f0225606e4cf,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.generations = a87b0fc2ed9eff4639f4d2ee59e5fdc4f7bb8b623c4ca730d859f0225606e4cf
+
+class GDS_UNITS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['UNITS'], gds_data=[0.001, 1e-09]):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_user = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089[0]
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_meter = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089[1]
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHQQ'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, f361f29db481664131d28aa40b14b49521a05e3a00d66465437870d8e4499aed(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_user), f361f29db481664131d28aa40b14b49521a05e3a00d66465437870d8e4499aed(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_meter))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_6c718f5068082de61fdba75ab9000da0bc22a6c02f55787277da676e9e5bb53e, _8546269f3b476e930249e291d5bc9fb68fa95d5d82165c1ae62e79032fcd0f31) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>QQ', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_user = _735903056c1b21b6e5885faef7ebd8e742e1fe208d1dd254da04cb2b3bc0cfff(_6c718f5068082de61fdba75ab9000da0bc22a6c02f55787277da676e9e5bb53e)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.unit_meter = _735903056c1b21b6e5885faef7ebd8e742e1fe208d1dd254da04cb2b3bc0cfff(_8546269f3b476e930249e291d5bc9fb68fa95d5d82165c1ae62e79032fcd0f31)
+
+class GDS_ENDLIB():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDLIB'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_FORMATTYPE():
+
+    def __init__(self, gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._FORMAT = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._MASK = []
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._ENDMASK = None
+    '\n    def write_binary_gds_stream(self,binary_gds_stream):\n        \n        self._FORMAT.write_binary_gds_stream()\n    '
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._FORMAT.write_binary_gds_stream(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)
+        if (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._MASK != []):
+            for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in _2269c0be009b610cfdbb8cfe9253ad37cf95062fb3f5a7560268ff259ea9f087(0, _71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._MASK)):
+                _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._MASK[de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7].write_binary_gds_stream(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)
+        if (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._ENDMASK != None):
+            _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._ENDMASK.write_binary_gds_stream(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)
+
+    def read_binary_gds_stream(self, gds_data):
+        while True:
+            a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5 = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089.pop(0)
+            if (a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[0] == _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['FORMAT']):
+                _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._FORMAT = _3b2fa4b13291b6cb3a80044d74dade3b07054b5d2b2bbba70cc8450d023286e1()
+                _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._FORMAT.read_binary_gds_stream(a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[0], a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[1])
+                if (_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089 == []):
+                    break
+            elif (a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[0] == _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['MASK']):
+                f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558 = None
+                f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558 = ee2f0e35c8633fa0a27c10d3606f63b4453071fc5a884a94f014a2570836186c()
+                f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558.read_binary_gds_stream(a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[0], a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[1])
+                _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._MASK.append(f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558)
+                f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558 = None
+                del f3a6815d88ea7be24825eb308521efd583605ad5c3b63c25cb6a1864b5092558
+            elif (a6864eb339b0e1f6e00d75293a8840abf069a2c0fe82e6e53af6ac099793c1d5[0] == _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDMASK']):
+                _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4._ENDMASK = _2ac68f568d47fdd6ea0b1804e69ec6574df8c230192ae3c1f7e64b6121da2bdb()
+                break
+            '\n            elif \n            \n        for i in range(0,len(gds_data)):\n            if i==0:\n                self._FORMAT=GDS_FORMAT()\n                self._FORMAT.read_binary_gds_stream(gds_data[0][0], gds_data[0][1])\n        if len(gds_data)>1:\n            for i in range(2,len(gds_data)+1):\n                if i>1 and i<len(gds_data):\n                    self._MASK.append(GDS_MASK())\n                    self._MASK[i-2].read_binary_gds_stream(gds_data[i-1][0],gds_data[i-1][1])\n                elif i==len(gds_data):\n                    self._ENDMASK=GDS_ENDMASKS()\n            '
+
+class GDS_FORMAT():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['FORMAT'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.format_data = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.format_data)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_7ecf49d86da07409a12a7b7cbdc824761323a91ed630ba2c0a60b0845e09c1ca,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.format_data = _7ecf49d86da07409a12a7b7cbdc824761323a91ed630ba2c0a60b0845e09c1ca
+
+class GDS_MASK():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['MASK'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_522089426d2cadd0f8f015cd8a0bdaf51791f05fd801acadb9db8cdff28b4fc3,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mask = _522089426d2cadd0f8f015cd8a0bdaf51791f05fd801acadb9db8cdff28b4fc3
+
+class GDS_ENDMASKS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDMASKS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+'\nrecords in structure \n'
+
+class GDS_BGNSTR():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BGNSTR'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3c6a33669ade54b7916f2933f2d10649dbede38e7db238d5e030927b7d8203e5, 1, 1, 0, 0, 0)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3c6a33669ade54b7916f2933f2d10649dbede38e7db238d5e030927b7d8203e5, 1, 1, 0, 0, 0)
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHhhhhhhhhhhhh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.year, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.month, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.day, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.hour, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.minute, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation.second, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.year, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.month, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.day, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.hour, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.minute, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi.second)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (f8c68cf2fdeb154688fe6d18a403c48776b8e2d57f7854a602e827f18091e2ec, _70ccfda046ead217be827f274764bdfc74ad525d693858fc258f733fae5a6f48, _560cdea22f2355f9b2e6ac69df19aa6326bdfc0de1ab63836c6f10d4bef6e383, _1bab464ee68abb42ba82032f12f51aa11c9bd22b63e848f8c8e474dd7fb827da, _8798d55dd14c4e755f0bfca4e2f4f2aa188c273c690f96d424c4919daee73d82, _87d34fca41d1df77b2ed7312cab5df7ff6a67f711b12b7e74bd1740b4a4b8957, _3a8d13efc24ea00138e9a8e17c8a69710c84f0ad1182349395cd2c2c3264b6ef, e42201c2bf3f47caa31f0e704b01b4f3e1defe3818ba511193cca70c0bbca8c0, aef7d79cdd09b9be26c03d3bde6dc26cbdfc66d9b7645abad2e5895c0fa4b4d4, c506571930b8e5f6ab3ac29dfb3f61e62ff429f535212aa3967803741b67a7b2, _1d662cda8f1c55141950f829cd452c766eaa92305f0c0e41c5908c101e5b61dc, _775c2c0c0a8e5f56ed18ec2961f4b7b9703210944afaed9a7dd89f8e9b7a41b7) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>hhhhhhhhhhhh', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        "\n        gdstxt_stream.write(record_tag_dictionary.REV_DICT[record_tag]+':'+'\n'+'last modification time:'+str(last_modi_year)+':'+str(last_modi_month)+':'+str(last_modi_day)+':'        + str(last_modi_hour)+':'+str(last_modi_minute)+':'+str(last_modi_second)+'\n'+'last access time:'+str(last_access_year)+':'+ str(last_access_month)+        ':'+str(last_access_day)+':'+ str(last_access_hour)+':'+str(last_access_minute)+':'+str(last_access_second)+'\n' )\n        "
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_creation = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(f8c68cf2fdeb154688fe6d18a403c48776b8e2d57f7854a602e827f18091e2ec, _70ccfda046ead217be827f274764bdfc74ad525d693858fc258f733fae5a6f48, _560cdea22f2355f9b2e6ac69df19aa6326bdfc0de1ab63836c6f10d4bef6e383, _1bab464ee68abb42ba82032f12f51aa11c9bd22b63e848f8c8e474dd7fb827da, _8798d55dd14c4e755f0bfca4e2f4f2aa188c273c690f96d424c4919daee73d82, _87d34fca41d1df77b2ed7312cab5df7ff6a67f711b12b7e74bd1740b4a4b8957)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.time_modi = _2763d133c5e59ca4ad13b9314864224f3fe33b759a4c3e72fcc03b85ce71384d(_3a8d13efc24ea00138e9a8e17c8a69710c84f0ad1182349395cd2c2c3264b6ef, e42201c2bf3f47caa31f0e704b01b4f3e1defe3818ba511193cca70c0bbca8c0, aef7d79cdd09b9be26c03d3bde6dc26cbdfc66d9b7645abad2e5895c0fa4b4d4, c506571930b8e5f6ab3ac29dfb3f61e62ff429f535212aa3967803741b67a7b2, _1d662cda8f1c55141950f829cd452c766eaa92305f0c0e41c5908c101e5b61dc, _775c2c0c0a8e5f56ed18ec2961f4b7b9703210944afaed9a7dd89f8e9b7a41b7)
+
+class GDS_STRNAME():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['STRNAME'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (aa98dbffe39e2d24e29ede6bf5baf85b8252dba86c8954c0e9dce36faacf0287,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strname = aa98dbffe39e2d24e29ede6bf5baf85b8252dba86c8954c0e9dce36faacf0287
+
+class GDS_STRCLASS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['STRCLASS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strclass = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strclass)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (d9bf2e89808885876bf6604a2452b052683bfa94346ba6061e7dcea629d2bb07,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>H', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.strclass = d9bf2e89808885876bf6604a2452b052683bfa94346ba6061e7dcea629d2bb07
+
+class GDS_ENDSTR():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDSTR'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+'\nrecord in GDS_ELEMENT\n'
+
+class GDS_ENDEL():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDEL'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_BOUNDARY():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BOUNDARY'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_ELFLAGS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ELFLAGS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.template_15bit = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.external_14bit = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, ((_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.external_14bit << 1) + _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.template_15bit))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (eb483be8776c105c78bf91867023f405a80c28c84ea121ed5432e854baeddee1,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>H', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.template_15bit = (eb483be8776c105c78bf91867023f405a80c28c84ea121ed5432e854baeddee1 & 1)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.external_14bit = ((eb483be8776c105c78bf91867023f405a80c28c84ea121ed5432e854baeddee1 & 2) >> 1)
+
+class GDS_PLEX():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PLEX'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.plex = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHi'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.plex)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (aede19787df1d09f6b9d32146323cff6c24510b1510ed20efe54901dc6a4d1d0,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>i', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.plex = aede19787df1d09f6b9d32146323cff6c24510b1510ed20efe54901dc6a4d1d0
+
+class GDS_LAYER():
+    from designs import DesignParameters
+    _33073271dbbb142448aefa7a857c5ab2fc6e0fc4fbe033596618a873fca6ee14 = b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81._LayerMapping['METAL1'][0]
+    _83760caaf24b6c99719f183e61cbc9c608cf1b90559b9ba288bbb7755e54cb2b = 999
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['LAYER'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.layer = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.layer >= _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.__BLOCKLAYER):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.layer)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            _227690d7c3030c812d93d4e09295831f6e820ab866e0d851852f1b5e4c50c5d2.warn('Demo version does not support lower layer')
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.__REPLACELAYER)
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_1372ea7f38d9960278ceed97065a8d2e13d05e49b4850d2b31c5f540e1bcb19d,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.layer = _1372ea7f38d9960278ceed97065a8d2e13d05e49b4850d2b31c5f540e1bcb19d
+
+class GDS_DATATYPE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['DATATYPE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.datatype = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.datatype)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_654db26802d6bd2247d005995c51922421c97e52bc63e319957994d5a0bf1f51,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.datatype = _654db26802d6bd2247d005995c51922421c97e52bc63e319957994d5a0bf1f51
+
+class GDS_XY():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['XY'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.xy = []
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b = []
+        for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in _2269c0be009b610cfdbb8cfe9253ad37cf95062fb3f5a7560268ff259ea9f087(0, _71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.xy)):
+            d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b.append(_6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.xy[de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7][0]))
+            d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b.append(_6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.xy[de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7][1]))
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH{0}i'.format(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b))
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, *d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        del d69954748849ed25f53cd0e75f87cebb8329aedc9e4077455f4188a5f3f5463b
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        _002f8d7ec82ea14e24ae5222ccadfeb45886a912ce88a1d933015629d46a8a26 = '>'
+        b8c966cd11759b4ac325a1e6d203065e4e2440eca279cfe141a612df6af7d516 = _71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        if ((not b8c966cd11759b4ac325a1e6d203065e4e2440eca279cfe141a612df6af7d516) or ((b8c966cd11759b4ac325a1e6d203065e4e2440eca279cfe141a612df6af7d516 % 8) != 0)):
+            raise _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f.IncorrectDataSize('incorrect data size')
+        for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in _2269c0be009b610cfdbb8cfe9253ad37cf95062fb3f5a7560268ff259ea9f087(_6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8((b8c966cd11759b4ac325a1e6d203065e4e2440eca279cfe141a612df6af7d516 / 4))):
+            _002f8d7ec82ea14e24ae5222ccadfeb45886a912ce88a1d933015629d46a8a26 += 'i'
+        _6b0dea0b0b200957812b8085f61a9a9b5496b2eab79186c94bf69579db42cbf1 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack(_002f8d7ec82ea14e24ae5222ccadfeb45886a912ce88a1d933015629d46a8a26, _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in _2269c0be009b610cfdbb8cfe9253ad37cf95062fb3f5a7560268ff259ea9f087(_6da88c34ba124c41f977db66a4fc5c1a951708d285c81bb0d47c3206f4c27ca8((b8c966cd11759b4ac325a1e6d203065e4e2440eca279cfe141a612df6af7d516 / 8))):
+            _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.xy.append([_6b0dea0b0b200957812b8085f61a9a9b5496b2eab79186c94bf69579db42cbf1[(2 * de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)], _6b0dea0b0b200957812b8085f61a9a9b5496b2eab79186c94bf69579db42cbf1[((2 * de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7) + 1)]])
+'\n'
+
+class GDS_PATH():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PATH'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_PATHTYPE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PATHTYPE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.pathtype = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.pathtype)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_0ac54915bc776ce552c9a5ac28178949b0b22b9e91501e072748e40c7bb83353,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.pathtype = _0ac54915bc776ce552c9a5ac28178949b0b22b9e91501e072748e40c7bb83353
+
+class GDS_WIDTH():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['WIDTH'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.width = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHi'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.width)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (cbd1ccfb306f156c40d9d1664d030c339fbf8a66abdcbab9ab8f000f391ec32d,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>i', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.width = cbd1ccfb306f156c40d9d1664d030c339fbf8a66abdcbab9ab8f000f391ec32d
+
+class GDS_BGNEXTN():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BGNEXTN'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.bgnextn = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHi'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.bgnextn)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_9dabee9e37c866839bbf5dd4c9c4bac56695a08c79a9a4b5d5c5a1ba8ff5df61,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>i', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.bgnextn = _9dabee9e37c866839bbf5dd4c9c4bac56695a08c79a9a4b5d5c5a1ba8ff5df61
+
+class GDS_ENDEXTN():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ENDEXTN'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.endextn = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHi'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.endextn)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_949ed3830ad2f5b6af7ed7f86bb95413b815430fc8a7cc8c65e8d6d586eb12a0,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>i', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.endextn = _949ed3830ad2f5b6af7ed7f86bb95413b815430fc8a7cc8c65e8d6d586eb12a0
+'\n'
+
+class GDS_SREF():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['SREF'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_SNAME():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['SNAME'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (aa98dbffe39e2d24e29ede6bf5baf85b8252dba86c8954c0e9dce36faacf0287,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.sname = aa98dbffe39e2d24e29ede6bf5baf85b8252dba86c8954c0e9dce36faacf0287
+'\n'
+
+class GDS_AREF():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['AREF'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_COLROW():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['COLROW'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.col = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.row = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHhh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.col, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.row)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_2a5d75145ff535b044b9ef7528a2281b53c24c18d917c43fbb1fad5e02cd821c, _4e2a16679b3713ba00081c0b9770d921d9a9294267d35950016720be8ec6d5a2) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>hh', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.col = _2a5d75145ff535b044b9ef7528a2281b53c24c18d917c43fbb1fad5e02cd821c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.row = _4e2a16679b3713ba00081c0b9770d921d9a9294267d35950016720be8ec6d5a2
+'\n'
+
+class GDS_TEXT():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['TEXT'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_NODE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['NODE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_NODETYPE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['NODETYPE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.nodetype = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.nodetype)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (c491bddd63129a24ae575c49e9063eb6013506358d77bf9db3462c37eec94a01,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.nodetype = c491bddd63129a24ae575c49e9063eb6013506358d77bf9db3462c37eec94a01
+
+class GDS_BOX():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BOX'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+class GDS_BOXTYPE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['BOXTYPE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.boxtype = _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.boxtype)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_0e54dce7bba8fa00c09f4f90d06331f1c2bc896a4b73b1f350d59e27af0cf2e7,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.boxtype = _0e54dce7bba8fa00c09f4f90d06331f1c2bc896a4b73b1f350d59e27af0cf2e7
+
+class GDS_TEXTTYPE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['TEXTTYPE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.texttype = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.texttype)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_501de332168cbb3c9fa2fc9becd344910e2c5db2e22bc64ae9d7bc067a508d79,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.texttype = _501de332168cbb3c9fa2fc9becd344910e2c5db2e22bc64ae9d7bc067a508d79
+
+class GDS_PRESENTATION():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PRESENTATION'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.font = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.vertical_presentation = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.horizontal_presentation = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (((_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.font << 4) + (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.vertical_presentation << 2)) + _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.horizontal_presentation))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_753880dda221d8ede624440d556030390ade632a566ac718d2beebea8e21ba19,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>H', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.font = ((_753880dda221d8ede624440d556030390ade632a566ac718d2beebea8e21ba19 & 48) >> 4)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.vertical_presentation = ((_753880dda221d8ede624440d556030390ade632a566ac718d2beebea8e21ba19 & 12) >> 2)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.horizontal_presentation = (_753880dda221d8ede624440d556030390ade632a566ac718d2beebea8e21ba19 & 3)
+
+class GDS_STRING():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['STRING'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_1dc7da8bc6e1bf919b1bfa2aa2102faf48399d0c020baaf38c27419afcdc7ed7,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.string_data = _1dc7da8bc6e1bf919b1bfa2aa2102faf48399d0c020baaf38c27419afcdc7ed7
+
+class GDS_STRANS():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['STRANS'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflection = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_mag = None
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_angle = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHH'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (((_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflection << 15) + (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_mag << 2)) + (_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_angle << 1)))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (cff4508f5c31c62e45824b55250a79a9fd38674c1f3aba526c21499d17fc3445,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>H', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.reflection = ((cff4508f5c31c62e45824b55250a79a9fd38674c1f3aba526c21499d17fc3445 & 32768) >> 15)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_mag = ((cff4508f5c31c62e45824b55250a79a9fd38674c1f3aba526c21499d17fc3445 & 4) >> 2)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.abs_angle = ((cff4508f5c31c62e45824b55250a79a9fd38674c1f3aba526c21499d17fc3445 & 2) >> 1)
+
+class GDS_MAG():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['MAG'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mag = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHQ'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, f361f29db481664131d28aa40b14b49521a05e3a00d66465437870d8e4499aed(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mag))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (a88330a0d658ecc26203e4a29118f7d157a0a84859927aa2b5256194002ba700,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>Q', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.mag = _735903056c1b21b6e5885faef7ebd8e742e1fe208d1dd254da04cb2b3bc0cfff(a88330a0d658ecc26203e4a29118f7d157a0a84859927aa2b5256194002ba700)
+
+class GDS_ANGLE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['ANGLE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.angle = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHQ'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, f361f29db481664131d28aa40b14b49521a05e3a00d66465437870d8e4499aed(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.angle))
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_2281936dfa53931ca08e62bab27a75975e5a150edcf7d3af697195731ad55cbe,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>Q', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.angle = _735903056c1b21b6e5885faef7ebd8e742e1fe208d1dd254da04cb2b3bc0cfff(_2281936dfa53931ca08e62bab27a75975e5a150edcf7d3af697195731ad55cbe)
+
+class GDS_PROPATTR():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PROPATTR'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propattr = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
+        _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propattr)
+        b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_20c48aba952de48ead2fd8db6f1041466e5a1818566dfa4161ba9fee83d10088,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>h', _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propattr = _20c48aba952de48ead2fd8db6f1041466e5a1818566dfa4161ba9fee83d10088
+
+class GDS_PROPVALUE():
+
+    def __init__(self, tag=_43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f.DICT['PROPVALUE'], gds_data=None):
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue = None
+
+    def write_binary_gds_stream(self, binary_gds_stream):
+        if (_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue) % 2):
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a((_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue) + 1))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+        else:
+            c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = (('>HH' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue))) + 's')
+            _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag, (_8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a.encode(_06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue) + b'\x00'))
+            b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
+
+    def read_binary_gds_stream(self, tag, gds_data):
+        (_3f9ce6d969064a57ccf22a9c165c12586dfb1626b42f2119b4f90a9f87ff26ec,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack((('>' + _8c25cb3686462e9a86d2883c5688a22fe738b0bbc85f458d2d2b5f3f667c6d5a(_71fa9faaa6f884aa11f4cea21477b2204a48a4fa7f05cecad00a1250eeeffb4c(_54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089))) + 's'), _54d8ed55630b9293d7edf4a8934ac7c509efbb9abc936084cf748a086b1e7089)
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.tag = _2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c
+        _06c604b332b386b6cce8355ccf27fffd3a98b7a7a5b9b3a550c039c6ebae38e4.propvalue = _3f9ce6d969064a57ccf22a9c165c12586dfb1626b42f2119b4f90a9f87ff26ec
+'\nself._BOUNDARY=None\n        self._ELFLAGS=None\n        self._PLEX=None\n        self._LAYER=None\n        self._DATATYPE=None\n        self._XY=None\n'
+
+def excess64_8byte_encode(real_num):
+    (_30a401f766eec702daf1acc03da0301e72db7fa7d32f3d28c36f0b26309c7b7b,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>Q', _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack('>d', c9dfd403e867f85663f6b27239ef0dc6c52b6cd3ebcd718f714ac6cfbaede95f))
+    _6ea3d0b6288e48baf9ed370370c692059e17b3590c8914c149d28bce7b09ab09 = (_30a401f766eec702daf1acc03da0301e72db7fa7d32f3d28c36f0b26309c7b7b & 9223372036854775808)
+    _8a2e9830329e68184b874abdd4c9feb25a911da90bd1448be3c3128a86d9757f = ((_30a401f766eec702daf1acc03da0301e72db7fa7d32f3d28c36f0b26309c7b7b >> 52) & 2047)
+    a163462fc1aeaa1b2035da49e6c4ec193f9b864e7136f7816f4022ab7888966b = (_30a401f766eec702daf1acc03da0301e72db7fa7d32f3d28c36f0b26309c7b7b & 4503599627370495)
+    '                                            \n    print ieee64bit_float_exponent\n    print ieee64bit_float_fraction\n    print ieee64bit_float_sign\n    '
+    if (_8a2e9830329e68184b874abdd4c9feb25a911da90bd1448be3c3128a86d9757f == 0):
+        return 0
+    _781095be083c971ebe6bd737ac8a978d5f8210978acb770714396de9911bcf0b = (_8a2e9830329e68184b874abdd4c9feb25a911da90bd1448be3c3128a86d9757f - 1023)
+    _730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c = ((a163462fc1aeaa1b2035da49e6c4ec193f9b864e7136f7816f4022ab7888966b + 4503599627370496) << 3)
+    (cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff, _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027) = _234e8eb7543175b3ba9b9fe762417b08d082e45118f5b0f1a7bbc179a7fb2383((_781095be083c971ebe6bd737ac8a978d5f8210978acb770714396de9911bcf0b + 1), 4)
+    if _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027:
+        _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027 = (4 - _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027)
+        cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff += 1
+    _730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c = (_730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c >> _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027)
+    cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff = (cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff + 64)
+    " still 9bit --> real8's exponent uses 7bit "
+    if (cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff < 0):
+        _730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c = (_730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c >> (4 * (- cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff)))
+        cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff = 0
+    if (cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff > 127):
+        raise _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f.IncorrectDataSize('the number is too large number for real8 format')
+    '\n    print excess64_8byte_exponent\n    print excess64_8byte_mantissa\n    '
+    return ((_6ea3d0b6288e48baf9ed370370c692059e17b3590c8914c149d28bce7b09ab09 | (cc7ddd9a6585678e98f2ced73457e915c6d97ab43c7bb959218248a81fdbe4ff << 56)) | _730b208d6451ee814bd3d256d090e43d3e7e06e48ac4dc3acefa7cac2ba9d44c)
+
+def excess64_4byte_encode(real_num):
+    (_10b25778d5d6743a65d8f25fcc13f09ab837f2fcec8fa6e476c4b888862b22c4,) = _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.unpack('>L', _04b84ba1d4f1d361b3c997cde2a41d0b6bc74b60bcda9e7651f4c9b4dd6e1e70.pack('>f', c9dfd403e867f85663f6b27239ef0dc6c52b6cd3ebcd718f714ac6cfbaede95f))
+    ac64177113783e19bce30202b9c0e86e6e2eef3928c0fdcdb721e59e8e26323f = (_10b25778d5d6743a65d8f25fcc13f09ab837f2fcec8fa6e476c4b888862b22c4 & 2147483648)
+    cfbaddaf675141c6c97fb1c10d58d426b3ded4cc3c7c38b85ff893a1b61fb65c = ((_10b25778d5d6743a65d8f25fcc13f09ab837f2fcec8fa6e476c4b888862b22c4 >> 23) & 255)
+    c4525367e5f2e811b5be0ee8f4d3699043ea8ffbc77d163483104c7d5191ee58 = (_10b25778d5d6743a65d8f25fcc13f09ab837f2fcec8fa6e476c4b888862b22c4 & 8388607)
+    if (cfbaddaf675141c6c97fb1c10d58d426b3ded4cc3c7c38b85ff893a1b61fb65c == 0):
+        return 0
+    _1edaaa8a643064fc3146ea82549f15980b25a1a578456438b250031af70e2b30 = (cfbaddaf675141c6c97fb1c10d58d426b3ded4cc3c7c38b85ff893a1b61fb65c - 127)
+    b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b = (c4525367e5f2e811b5be0ee8f4d3699043ea8ffbc77d163483104c7d5191ee58 + 8388608)
+    (_4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1, _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027) = _234e8eb7543175b3ba9b9fe762417b08d082e45118f5b0f1a7bbc179a7fb2383((_1edaaa8a643064fc3146ea82549f15980b25a1a578456438b250031af70e2b30 + 1), 4)
+    if _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027:
+        _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027 = (4 - _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027)
+        _4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 += 1
+    b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b = (b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b >> _2e09d5210db8417757b0f875c276d0cb877b22514e9a3583d2d8d7445368a027)
+    _4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 = (_4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 + 64)
+    "6bit --> real4's exponent uses 7bit "
+    if (_4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 < 0):
+        b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b = (b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b >> (4 * (- _4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1)))
+        _4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 = 0
+    if (_4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 > 127):
+        raise _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f.IncorrectDataSize('the number is too large number for real8 format')
+    return ((ac64177113783e19bce30202b9c0e86e6e2eef3928c0fdcdb721e59e8e26323f | (_4293adad260ffd6a0d0e8b4e5515cb7e63c258968c1b94c73fc078e14132ded1 << 24)) | b678828999835a6436c88e0e1192001704a0413ef4fb7ce4b8ec6ed4ec212e4b)
+
+def excess64_8byte_decode(excess64_8byte_num):
+    _7dad2e2538f7fb9e427a8c102f5ae95b4f36ca1b0048dbf890cb7b714254dd9e = ((- 1) if (_36a1064e3a7be11561a7d9facd3ca6b439bf136654bc100d194b1737b0f52709 & 9223372036854775808) else 1)
+    e8333535fed57f91e53a9af35ea3421aa1c21009ae3f613a7117609db3d2b4fc = ((_36a1064e3a7be11561a7d9facd3ca6b439bf136654bc100d194b1737b0f52709 & 9151314442816847872) >> 56)
+    d2753435f7262acb99d12a96c4f7086a7b80c94f56cbfcb2677502d5cbcf992a = (_36a1064e3a7be11561a7d9facd3ca6b439bf136654bc100d194b1737b0f52709 & 72057594037927935)
+    return _58a6d6801ae771e632351013ffe8e53628287bf5310e469c8c48573669011ef0.ldexp((_7dad2e2538f7fb9e427a8c102f5ae95b4f36ca1b0048dbf890cb7b714254dd9e * d2753435f7262acb99d12a96c4f7086a7b80c94f56cbfcb2677502d5cbcf992a), ((4 * (e8333535fed57f91e53a9af35ea3421aa1c21009ae3f613a7117609db3d2b4fc - 64)) - 56))
+
+def excess64_4byte_decode(excess64_4byte_num):
+    _7dad2e2538f7fb9e427a8c102f5ae95b4f36ca1b0048dbf890cb7b714254dd9e = ((- 1) if (_2223f7fb803df6936a23893c035470cb0eb48bcb8a2c3ca3210f2b116e973c21 & 2147483648) else 1)
+    e8333535fed57f91e53a9af35ea3421aa1c21009ae3f613a7117609db3d2b4fc = ((_2223f7fb803df6936a23893c035470cb0eb48bcb8a2c3ca3210f2b116e973c21 & 2130706432) >> 24)
+    d2753435f7262acb99d12a96c4f7086a7b80c94f56cbfcb2677502d5cbcf992a = (_2223f7fb803df6936a23893c035470cb0eb48bcb8a2c3ca3210f2b116e973c21 & 16777215)
+    return _58a6d6801ae771e632351013ffe8e53628287bf5310e469c8c48573669011ef0.ldexp((_7dad2e2538f7fb9e427a8c102f5ae95b4f36ca1b0048dbf890cb7b714254dd9e * d2753435f7262acb99d12a96c4f7086a7b80c94f56cbfcb2677502d5cbcf992a), ((4 * (e8333535fed57f91e53a9af35ea3421aa1c21009ae3f613a7117609db3d2b4fc - 64)) - 24))
