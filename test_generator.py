@@ -2,13 +2,14 @@ import block_layer
 
 class NMOS(block_layer.GDS_API):
     def __init__(self):
+        super(NMOS, self).__init__()
         self._DesignParameter = dict()
 
-    def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =30, _NMOSDummy=True)):
+    def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =3, _NMOSDummy=True)):
 
         _XYCoordinateOfNMOS = [[0, 0]]
 
-        self._DesignParameter['_POLayer'] = self.boundary_declaration('POLY')
+        self._DesignParameter['_POLayer'] = self.boundary_declaration('METAL1')
         self._DesignParameter['_POLayer']['_XWidth'] = user_variable['_NMOSChannellength']
         self._DesignParameter['_POLayer']['_YWidth'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=

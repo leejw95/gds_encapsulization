@@ -1,10 +1,12 @@
 import inspect
 import warnings
+import hashlib
 
 from designs import StickDiagram, DesignParameters, DRC
 
 class GDS_API:
     def __init__(self):
+        self.sha = hashlib.new('sha256')
         # self.__drc_obj = DRC.DRC()
         pass
 
@@ -28,7 +30,7 @@ class GDS_API:
         del __gds_structure, __gds_stream, output_file
 
     def get_drc(self, rule_name, rule_arg=dict()):
-        rule_name = self.__var_name_tf(rule_name)
+        # rule_name = self.__var_name_tf(rule_name)
         if rule_name in DRC.DRC().__dict__:
             return DRC.DRC().__dict__[rule_name]
         elif rule_name in [obj_info[0] for obj_info in inspect.getmembers(DRC.DRC, inspect.isfunction)]:
@@ -55,9 +57,11 @@ class GDS_API:
                     _Angle=None, _Ignore=None, _ElementName=None)
 
     def __var_name_tf(self, name):
-
-
-        return name
+        self.sha.update(name.encode())
+        hash_str = self.sha.hexdigest()
+        if hash_str[0].isdigit():
+            hash_str = '_' + hash_str
+        return hash_str
 
 
 
