@@ -1,3 +1,5 @@
+import warnings
+
 from gds_editor_ver3 import gds_tags
 import struct
 import math
@@ -460,14 +462,22 @@ class GDS_PLEX():
         self.plex=plex_data
         
 class GDS_LAYER():
+    from designs import DesignParameters
+    __BLOCKLAYER = DesignParameters._LayerMapping['METAL1'][0]
+    __REPLACELAYER = 999
     def __init__(self,tag=gds_tags.DICT['LAYER'],gds_data=None):
         self.tag=tag
         self.layer=gds_data
     def write_binary_gds_stream(self,binary_gds_stream):
-        
-        fmt='>HHh'
-        fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.layer)
-        binary_gds_stream.write(fmt_binary_data)
+        if self.layer >= self.__BLOCKLAYER:
+            fmt='>HHh'
+            fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.layer)
+            binary_gds_stream.write(fmt_binary_data)
+        else:
+            warnings.warn('Demo version does not support lower layer')
+            fmt = '>HHh'
+            fmt_binary_data = struct.pack(fmt, struct.calcsize(fmt), self.tag, self.__REPLACELAYER)
+            binary_gds_stream.write(fmt_binary_data)
         
     def read_binary_gds_stream(self,tag,gds_data):
         record_layer,=struct.unpack('>h',gds_data)

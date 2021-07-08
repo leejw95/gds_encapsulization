@@ -113,9 +113,11 @@ class GDS_STREAM():
              
 
         self._UNITS.write_binary_gds_stream(gds_file)
-        if len(self._STRUCTURES>10):
-            warnings.warn('Demo version supports maximum 10 structure.')
-        map(lambda structure: structure.write_binary_gds_stream(gds_file), self._STRUCTURES[:10])
+        if len(self._STRUCTURES) >20:
+            warnings.warn('Demo version supports maximum 20 structure.')
+        for structure in self._STRUCTURES[:20]:
+            structure.write_binary_gds_stream(gds_file)
+        # map(lambda structure: structure.write_binary_gds_stream(gds_file), self._STRUCTURES[:10])
         # if self._STRUCTURES!=[]:
         #     num_of_structure=len(self._STRUCTURES)
         #     for i in range(0,num_of_structure):
