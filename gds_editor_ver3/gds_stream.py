@@ -1,3 +1,5 @@
+import warnings
+
 from gds_editor_ver3 import user_define_exceptions
 import struct
 from gds_editor_ver3 import gds_tags
@@ -111,12 +113,13 @@ class GDS_STREAM():
              
 
         self._UNITS.write_binary_gds_stream(gds_file)
-        
-        if self._STRUCTURES!=[]:
-            num_of_structure=len(self._STRUCTURES)
-            for i in range(0,num_of_structure):
-                
-                self._STRUCTURES[i].write_binary_gds_stream(gds_file)
+        if len(self._STRUCTURES>10):
+            warnings.warn('Demo version supports maximum 10 structure.')
+        map(lambda structure: structure.write_binary_gds_stream(gds_file), self._STRUCTURES[:10])
+        # if self._STRUCTURES!=[]:
+        #     num_of_structure=len(self._STRUCTURES)
+        #     for i in range(0,num_of_structure):
+        #         self._STRUCTURES[i].write_binary_gds_stream(gds_file)
                 
                 
          

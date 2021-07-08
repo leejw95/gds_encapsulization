@@ -532,6 +532,7 @@ class _StickDiagram:
         print('#########################################################################################################')
         print('                                    {}  Update2GDS End                                    '.format(_DesignParameterInDictionary['_Name']['_Name']))
         print('#########################################################################################################')
+        return _DesignParameterInDictionary['_GDSFile']['_GDSFile']
 
 
 
