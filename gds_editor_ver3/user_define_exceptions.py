@@ -11,7 +11,7 @@ class EndofFileError(FormatError):
 class IncorrectRecordSize(FormatError):
     """raised if record size is not correct"""
     
-    
+
 class IncorrectDataSize(FormatError):
     """raised if data size is not correct"""
 class IncorrectDataValue(FormatError):
@@ -20,4 +20,4 @@ class IncorrecElementName(FormatError):
     """element name is incorrect"""
 
 class IncorrectInputError(FormatError):
-    """Input is incorrect"""
+    """Input is incorrect""" 
