@@ -9,17 +9,17 @@ class NMOS(block_layer.GDS_API):
         super(NMOS, self).__init__()
         self._DesignParameter = dict()
 
-    def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =3, _NMOSDummy=True)):
+    def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =30, _NMOSDummy=True)):
 
         _XYCoordinateOfNMOS = [[0, 0]]
 
         self._DesignParameter['_POLayer'] = self.boundary_declaration('METAL3')
-        self._DesignParameter['_POLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = user_variable['_NMOSChannellength']
-        self._DesignParameter['_POLayer']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
+        self._DesignParameter['_POLayer']['_XWidth'] = user_variable['_NMOSChannellength']
+        self._DesignParameter['_POLayer']['_YWidth'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=
                                                                    self.get_drc('_CoMinWidth') +
                                                                    2 * self.get_drc('_PolygateMinSpace2Co')
-                                                                   + self._DesignParameter['_POLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647']))
+                                                                   + self._DesignParameter['_POLayer']['_XWidth']))
         tmp = []
         for i in range(0, user_variable['_NMOSNumberofGate']):
             if (user_variable['_NMOSNumberofGate'] % 2) == 0:
@@ -29,28 +29,28 @@ class NMOS(block_layer.GDS_API):
                 _xycoordinatetmp = [_XYCoordinateOfNMOS[0][0] - (user_variable['_NMOSNumberofGate'] - 1) / 2 \
                                     * _LengthNMOSBtwPO + i * _LengthNMOSBtwPO, _XYCoordinateOfNMOS[0][1]]
             tmp.append(_xycoordinatetmp)
-        self._DesignParameter['_POLayer']['_77e27fdc078c5b69aec8f4a15d1a68039f481fd1fa7466f19b5cc2324d794fb8'] = tmp
+        self._DesignParameter['_POLayer']['_XYCoordinates'] = tmp
         print(
             '#############################     DIFF Layer Calculation    ##############################################')
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=
                                                                    self.get_drc('_CoMinWidth') +
                                                                    2 * self.get_drc('_PolygateMinSpace2Co')
-                                                                   + self._DesignParameter['_POLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647']))
+                                                                   + self._DesignParameter['_POLayer']['_XWidth']))
 
 
         self._DesignParameter['_ODLayer'] = self.boundary_declaration('DIFF')
-        self._DesignParameter['_ODLayer']['_77e27fdc078c5b69aec8f4a15d1a68039f481fd1fa7466f19b5cc2324d794fb8'] = _XYCoordinateOfNMOS
-        self._DesignParameter['_ODLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _LengthNMOSBtwPO * user_variable['_NMOSNumberofGate'] +\
+        self._DesignParameter['_ODLayer']['_XYCoordinates'] = _XYCoordinateOfNMOS
+        self._DesignParameter['_ODLayer']['_XWidth'] = _LengthNMOSBtwPO * user_variable['_NMOSNumberofGate'] +\
                                                        self.get_drc('_CoMinWidth') + 2 * self.get_drc('_CoMinEnclosureByOD')
-        self._DesignParameter['_ODLayer']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = user_variable['_NMOSChannelWidth']
+        self._DesignParameter['_ODLayer']['_YWidth'] = user_variable['_NMOSChannelWidth']
         if user_variable['_NMOSDummy'] == True:
-            self._DesignParameter['_PODummyLayer'] = self.boundary_declaration('POLY')
-            self._DesignParameter['_PODummyLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = user_variable['_NMOSChannellength']
-            self._DesignParameter['_PODummyLayer']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
+            self._DesignParameter['_PODummyLayer'] = self.boundary_declaration('METAL5')
+            self._DesignParameter['_PODummyLayer']['_XWidth'] = user_variable['_NMOSChannellength']
+            self._DesignParameter['_PODummyLayer']['_YWidth'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
             _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace', dict(_TmpLengthBtwPolyEdge=
                                                                         self.get_drc('_CoMinWidth') +
                                                                         2 * self.get_drc('_PolygateMinSpace2Co')
-                                                                        + self._DesignParameter['_POLayer']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647']))
+                                                                        + self._DesignParameter['_POLayer']['_XWidth']))
 
             # if (user_variable['_NMOSNumberofGate'] % 2) == 0:
             #     _xycoordinatetmp = [

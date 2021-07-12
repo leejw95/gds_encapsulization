@@ -23,6 +23,7 @@ class GDS_API:
         __MAX_STRUCTURE_LEN = 20
         dp['_7563a16a547855ae85f461c6ade6e8a9d7d7a2aca7f877614e0d0459fb25d1e6'] =  _9d836f0eb91c3bf41dab33e6971f76eae91446199aa6508651e6d8ab502df2c4.c668a73a36c4334132f1a4bf1956febacd22ea8e8a1b4b25ccf19f6b1f522f52._4cc7762d387f12c54f12d265f78fdc495bdfb3e0909acdf27ea1234d755e7ba0(None,name)
         dp['_13864ddbaab63577bb07db6dcc11d8a2f724a0784933aedad515ce4a6fd2e256'] =  _9d836f0eb91c3bf41dab33e6971f76eae91446199aa6508651e6d8ab502df2c4.c668a73a36c4334132f1a4bf1956febacd22ea8e8a1b4b25ccf19f6b1f522f52._680b2521950f6cd6aa109e161a71b2f62707b13172b69c9736ea85d4b5068631(None)
+        self.transform_design_parm_name()
         __gds_structure =  _9d836f0eb91c3bf41dab33e6971f76eae91446199aa6508651e6d8ab502df2c4.c668a73a36c4334132f1a4bf1956febacd22ea8e8a1b4b25ccf19f6b1f522f52()._4690f053371816ceb54e58b693a58de7ef1a84383309889b3d0cb7a5ebb2436a(dp)
         if len(__gds_structure) > 20:
             warnings.warn('Demo version supports maximum 20 elements per structure.')
@@ -67,6 +68,14 @@ class GDS_API:
         return dict(d60147ba44dc08572d2187aedc77df7f7ea74256f1cfdd93a35b3185e766cabf=3, _0e50a8d405c4a9f0a50295b7dafbf67ca3b9c3edfe787d90dbe71dd37433df6e=designobj, _77e27fdc078c5b69aec8f4a15d1a68039f481fd1fa7466f19b5cc2324d794fb8=[],
                     _4a13cef9863384a78b3289eb281f164b99d8062fd4de18b2d95c095f3d43abf0=None,
                     _5f5278fd16a2bb911853ce64c7d0e5441ea1f5a067dc5c269310cc2e3a42607c=None, _6a54638af456958e028f9ab99dfa3bb3d220b4930ee0c9bcab240939f7c85340=None, _93e3e02b26da11e7f623d5c2fa8b976254b1dc1e336e9a23026386b4ecaa2d16=None)
+
+    def transform_design_parm_name(self):
+        for _, dp in self._DesignParameter.items():
+            for key in list(dp.keys()):
+                if key in ['_XWidth', '_YWidth', '_Width', '_XYCoordinates']:
+                    hashed_name = self.__var_name_tf(key)
+                    dp[hashed_name] = dp.pop(key)
+
 
     def __var_name_tf(self, name):
         sha = hashlib.new('sha256')
