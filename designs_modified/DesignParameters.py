@@ -1,8 +1,9 @@
 import re
-from gds_editor_ver3 import user_define_exceptions
+import user_define_exceptions
 import sys
 import os
 import hashlib
+# import hashlib
 _Technology='065nm'
 _HomeDirectory = os.getcwd()
 _DebugMode=1
@@ -54,6 +55,19 @@ def _ReadLayerMapFile(_LayerMapFile, CadenceVersion ):
                 #print 'The line is blink. skip the current step:', tmp
             else:
                 tmp2=tmp.split()
+                hash = hashlib.new('sha256')
+                hash.update(tmp2[0].encode())
+                hashed_layer = hash.hexdigest()
+                if hashed_layer[0].isdigit():
+                    hashed_layer = '_' + hashed_layer
+                
+                hash = hashlib.new('sha256')
+                hash.update(tmp2[1].encode())
+                hashed_layer2 = hash.hexdigest()
+                if hashed_layer2[0].isdigit():
+                    hashed_layer2 = '_' + hashed_layer2
+                
+                _newLayerMapDictionary[(hashed_layer,hashed_layer2)]=(int(tmp2[2]), int(tmp2[3]))
                 _newLayerMapDictionary[(tmp2[0],tmp2[1])]=(int(tmp2[2]), int(tmp2[3]))
         return _newLayerMapDictionary
     else :
@@ -70,7 +84,7 @@ if _Technology == '180nm':
     _LayerMapFile = open(_HomeDirectory + '/TSMCTechfile/TSMC180nm/tsmc18rf.layermap')
     _LayerMappingTmp = _ReadLayerMapFile(_LayerMapFile, 'VIRTUOSO')
 elif _Technology=='065nm':
-    _LayerMapFile = open(_HomeDirectory + '/TSMCTechfile/TSMC65nm/tsmcN65.layermap')
+    _LayerMapFile = open(_HomeDirectory + '/tsmcN65.layermap')
     _LayerMappingTmp = _ReadLayerMapFile(_LayerMapFile, 'VIRTUOSO')
 elif _Technology=='045nm':
     _LayerMapFile = open(_HomeDirectory + '/TSMCTechfile/TSMC45nm/tsmcN45.layermap')
@@ -863,19 +877,6 @@ _LayerMapFile.close()
 ########################################################################################
 
 
-
-
-
-for key in list(_LayerMapping.keys()):
-    sha = hashlib.new('sha256')
-    sha.update(key.encode())
-    hash_str = sha.hexdigest()
-    if hash_str[0].isdigit():
-        hash_str = '_' + hash_str
-    _LayerMapping[hash_str] = _LayerMapping.pop(key)
-    if key == 'METAL1':
-        print(hash_str)
-del _LayerMappingTmp, _LayerMapFile, sha
 
 #############################################
 #design parameter == (datatype, layer, value)

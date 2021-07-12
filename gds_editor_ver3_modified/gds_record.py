@@ -1,10 +1,10 @@
 import warnings
 
-from gds_editor_ver3 import gds_tags
+import gds_tags
 import struct
 import math
 from datetime import datetime, MINYEAR
-from gds_editor_ver3 import user_define_exceptions
+import user_define_exceptions
 class GDS_HEADER():
     def __init__(self, tag=gds_tags.DICT['HEADER'], gds_data=None):
         self.tag=tag
@@ -462,8 +462,8 @@ class GDS_PLEX():
         self.plex=plex_data
         
 class GDS_LAYER():
-    from designs import DesignParameters
-    __BLOCKLAYER = DesignParameters._LayerMapping['ddf941219e743e20011d3fad8c682b84cf149dab98cabd704f779c40e6604d31'][0]
+    import DesignParameters
+    __BLOCKLAYER = DesignParameters._LayerMapping['METAL1'][0]
     __REPLACELAYER = 999
     def __init__(self,tag=gds_tags.DICT['LAYER'],gds_data=None):
         self.tag=tag

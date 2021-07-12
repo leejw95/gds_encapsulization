@@ -1,12 +1,11 @@
 import inspect
 import warnings
 import hashlib
-
+import ast
 from designs import StickDiagram, DesignParameters, DRC
 
 class GDS_API:
     def __init__(self):
-        self.sha = hashlib.new('sha256')
         # self.__drc_obj = DRC.DRC()
         pass
 
@@ -39,31 +38,34 @@ class GDS_API:
         else:
             raise Exception("Not valid design rule name.")
 
-
     def boundary_declaration(self, layer_name):
+        layer_name = self.__var_name_tf(layer_name)
+
         return dict(_DesignParametertype=1,
                     _Layer=DesignParameters._LayerMapping[layer_name][0],
                     _Datatype=DesignParameters._LayerMapping[layer_name][1],
                     _XYCoordinates=[],_XWidth=None, _YWidth=None, _Ignore=None, _ElementName=None)
 
     def path_declaration(self, layer_name):
+        layer_name = self.__var_name_tf(layer_name)
+
         return dict(_DesignParametertype=2,
                     _Layer=DesignParameters._LayerMapping[layer_name][0],
                     _Datatype=DesignParameters._LayerMapping[layer_name][1],
                     _XYCoordinates=[],_Width=None,  _Ignore=None, _ElementName=None)
 
     def sref_declaration(self, designobj=None):
+
         return dict(_DesignParametertype=3, _DesignObj=designobj, _XYCoordinates=[], _Reflect=None,
                     _Angle=None, _Ignore=None, _ElementName=None)
 
     def __var_name_tf(self, name):
-        self.sha.update(name.encode())
-        hash_str = self.sha.hexdigest()
+        sha = hashlib.new('sha256')
+        sha.update(name.encode())
+        hash_str = sha.hexdigest()
         if hash_str[0].isdigit():
             hash_str = '_' + hash_str
         return hash_str
-
-
 
 if __name__ == '__main__':
     a = GDS_API()

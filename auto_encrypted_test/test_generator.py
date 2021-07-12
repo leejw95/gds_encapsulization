@@ -1,3 +1,7 @@
+import os, sys
+dir_check = os.getcwd()
+if 'auto_encrypted_test' not in dir_check:
+    os.chdir('./auto_encrypted_test')
 import block_layer
 
 class NMOS(block_layer.GDS_API):
@@ -9,7 +13,7 @@ class NMOS(block_layer.GDS_API):
 
         _XYCoordinateOfNMOS = [[0, 0]]
 
-        self._DesignParameter['_POLayer'] = self.boundary_declaration('METAL1')
+        self._DesignParameter['_POLayer'] = self.boundary_declaration('METAL3')
         self._DesignParameter['_POLayer']['_XWidth'] = user_variable['_NMOSChannellength']
         self._DesignParameter['_POLayer']['_YWidth'] = user_variable['_NMOSChannelWidth'] + 2 * self.get_drc('_PolygateMinExtensionOnOD')
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=
