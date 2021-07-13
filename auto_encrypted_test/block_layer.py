@@ -1,7 +1,7 @@
 import os, sys
 dir_check = os.getcwd()
-if 'auto_encrypted_test' not in dir_check:
-    os.chdir('./auto_encrypted_test')
+# if 'auto_encrypted_test' not in dir_check:
+#     os.chdir('./auto_encrypted_test')
 
 import inspect
 import warnings
