@@ -4,3 +4,5 @@ OBJECTS = _16035d3d071211e36e5cba65d66ee6dca37d7ebbfcf0fe20d909964402653bf1.py _
 cyt : 
 	$(CC) $(OBJECTS)
 
+comp :
+	LDSHARED="icc -shared" CC=icc python setup.py install
