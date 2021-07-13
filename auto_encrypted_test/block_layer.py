@@ -35,15 +35,34 @@ class GDS_API:
 
     def get_drc(self, rule_name, rule_arg=dict()):
         rule_name = self.__var_name_tf(rule_name)
+
         for key in list(rule_arg.keys()):
             hash_key = self.__var_name_tf(key)
             rule_arg[hash_key] = rule_arg.pop(key)
         if rule_name in ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092().__dict__:
-            return ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092().__dict__[rule_name]
-        elif rule_name in [obj_info[0] for obj_info in inspect.getmembers(ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092, inspect.isfunction)]:
-            method = getattr(ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092(), rule_name)
+            return \
+            ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092().__dict__[
+                rule_name]
+
+        elif rule_name in [obj_info[0] for obj_info in inspect.getmembers(
+                ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092,
+                inspect.isfunction)]:
+            method = getattr(
+                ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092(),
+                rule_name)
             return method(**rule_arg)
         else:
+            check_list = [obj_info for obj_info in inspect.getmembers(
+                ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092)]
+            for name, obj in check_list:
+                print(f'{str(type(obj))}')
+                if 'cython_function' in str(type(obj)) and rule_name == name:
+                    method = getattr(
+                        ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092(),
+                        rule_name)
+                    return method(**rule_arg)
+
+            print(f'debug!!{rule_name}')
             raise Exception("Not valid design rule name.")
 
     def boundary_declaration(self, layer_name):
