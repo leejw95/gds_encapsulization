@@ -5,4 +5,4 @@ cyt :
 	$(CC) $(OBJECTS)
 
 comp :
-	LDSHARED="icc -shared" CC=icc python setup.py install
+	LDSHARED="icc -shared" CC="icc -fp-model strict" python setup.py install
