@@ -34,6 +34,7 @@ class GDS_API:
         del __gds_structure, __gds_stream, output_file
 
     def get_drc(self, rule_name, rule_arg=dict()):
+        org_rule_name = rule_name
         rule_name = self.__var_name_tf(rule_name)
 
         for key in list(rule_arg.keys()):
@@ -55,15 +56,12 @@ class GDS_API:
             check_list = [obj_info for obj_info in inspect.getmembers(
                 ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092)]
             for name, obj in check_list:
-                print(f'{str(type(obj))}')
                 if 'cython_function' in str(type(obj)) and rule_name == name:
                     method = getattr(
                         ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092.ef9d0d0c16b2fcf734c4dbeba6625f1f343b6c49a102dd7d4c165a375226a092(),
                         rule_name)
                     return method(**rule_arg)
-
-            print(f'debug!!{rule_name}')
-            raise Exception("Not valid design rule name.")
+            raise Exception(f"Not valid design rule name: {org_rule_name}.")
 
     def boundary_declaration(self, layer_name):
         layer_name = self.__var_name_tf(layer_name)
@@ -91,7 +89,7 @@ class GDS_API:
     def transform_design_parm_name(self):
         for _, dp in self._DesignParameter.items():
             for key in list(dp.keys()):
-                if key in ['_XWidth', '_YWidth', '_Width', '_XYCoordinates']:
+                if key in ['_XWidth', '_YWidth', '_Width', '_XYCoordinates', '_DesignObj']:
                     hashed_name = self.__var_name_tf(key)
                     dp[hashed_name] = dp.pop(key)
 
