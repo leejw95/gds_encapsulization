@@ -30,7 +30,6 @@ class NMOS(block_layer.GDS_API):
                                     * _LengthNMOSBtwPO + i * _LengthNMOSBtwPO, _XYCoordinateOfNMOS[0][1]]
             tmp.append(_xycoordinatetmp)
         self._DesignParameter['_POLayer']['_XYCoordinates'] = tmp
-        print(
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=
                                                                    self.get_drc('_CoMinWidth') +
                                                                    2 * self.get_drc('_PolygateMinSpace2Co')
