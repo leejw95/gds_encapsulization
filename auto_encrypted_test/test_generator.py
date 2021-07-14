@@ -5,8 +5,8 @@ dir_check = os.getcwd()
 import block_layer
 
 class NMOS(block_layer.GDS_API):
-    def __init__(self):
-        super(NMOS, self).__init__()
+    def __init__(self, cell_name = 'NMOS'):
+        super(NMOS, self).__init__(cell_name)
         self._DesignParameter = dict()
 
     def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =30, _NMOSDummy=True)):
@@ -31,14 +31,13 @@ class NMOS(block_layer.GDS_API):
             tmp.append(_xycoordinatetmp)
         self._DesignParameter['_POLayer']['_XYCoordinates'] = tmp
         print(
-            '#############################     DIFF Layer Calculation    ##############################################')
         _LengthNMOSBtwPO = self.get_drc('DRCPolygateMinSpace',dict(_TmpLengthBtwPolyEdge=
                                                                    self.get_drc('_CoMinWidth') +
                                                                    2 * self.get_drc('_PolygateMinSpace2Co')
                                                                    + self._DesignParameter['_POLayer']['_XWidth']))
 
 
-        self._DesignParameter['_ODLayer'] = self.boundary_declaration('DIFF')
+        self._DesignParameter['_ODLayer'] = self.boundary_declaration('METAL2')
         self._DesignParameter['_ODLayer']['_XYCoordinates'] = _XYCoordinateOfNMOS
         self._DesignParameter['_ODLayer']['_XWidth'] = _LengthNMOSBtwPO * user_variable['_NMOSNumberofGate'] +\
                                                        self.get_drc('_CoMinWidth') + 2 * self.get_drc('_CoMinEnclosureByOD')
@@ -52,6 +51,7 @@ class NMOS(block_layer.GDS_API):
                                                                         2 * self.get_drc('_PolygateMinSpace2Co')
                                                                         + self._DesignParameter['_POLayer']['_XWidth']))
 
+        self.calculate_done()
             # if (user_variable['_NMOSNumberofGate'] % 2) == 0:
             #     _xycoordinatetmp = [
             #         [_XYCoordinateOfNMOS[0][0] - (

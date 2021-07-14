@@ -5,10 +5,9 @@ import ast
 from designs import StickDiagram, DesignParameters, DRC
 
 class GDS_API:
-    def __init__(self):
-        # self.__drc_obj = DRC.DRC()
-        pass
-
+    def __init__(self, cell_name=None):
+        self._name = StickDiagram._StickDiagram._NameDeclaration(None,cell_name)
+        self._DesignParameter = dict()
     def create_gds(self, name=None):
         if '_DesignParameter' in self.__dict__:
             self.feed_design(dp=self._DesignParameter, name=name)
@@ -17,7 +16,7 @@ class GDS_API:
 
     def feed_design(self, dp, name=None):
         __MAX_STRUCTURE_LEN = 20
-        dp['_Name'] = StickDiagram._StickDiagram._NameDeclaration(None,name)
+        dp['_Name'] = self._name
         dp['_GDSFile'] = StickDiagram._StickDiagram._GDSObjDeclaration(None)
         __gds_structure = StickDiagram._StickDiagram()._UpdateDesignParameter2GDSStructure(dp)
         if len(__gds_structure) > 20:
@@ -55,7 +54,8 @@ class GDS_API:
                     _XYCoordinates=[],_Width=None,  _Ignore=None, _ElementName=None)
 
     def sref_declaration(self, designobj=None):
-
+        designobj._DesignParameter['_GDSFile'] = StickDiagram._StickDiagram._GDSObjDeclaration(None)
+        designobj._DesignParameter['_Name'] = designobj._name
         return dict(_DesignParametertype=3, _DesignObj=designobj, _XYCoordinates=[], _Reflect=None,
                     _Angle=None, _Ignore=None, _ElementName=None)
 

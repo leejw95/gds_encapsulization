@@ -1,8 +1,8 @@
 import block_layer
 
 class NMOS(block_layer.GDS_API):
-    def __init__(self):
-        super(NMOS, self).__init__()
+    def __init__(self,cell_name=None):
+        super(NMOS, self).__init__(cell_name)
         self._DesignParameter = dict()
 
     def calculate_design(self, user_variable=dict(_NMOSChannellength=60, _NMOSChannelWidth=700, _NMOSNumberofGate =3, _NMOSDummy=True)):
