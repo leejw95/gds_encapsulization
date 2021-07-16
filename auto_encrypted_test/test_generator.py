@@ -1,5 +1,5 @@
-import ntplib
-from time import ctime
+# import ntplib
+# from time import ctime
 #
 # if datetime (server) >day and datetime <day (1month):
 #     asf= open(ss.lic,'w')

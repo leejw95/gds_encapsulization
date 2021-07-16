@@ -1,3 +1,13 @@
+##licensing
+import urllib.request
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+
+
+if date[8:16] == 'Jul 2021' and 'Aug 2021' :
+    print ("License Expired")
+    raise NotImplementedError
+
 import os, sys
 dir_check = os.getcwd()
 # if 'auto_encrypted_test' not in dir_check:
