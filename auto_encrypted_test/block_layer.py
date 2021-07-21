@@ -1,12 +1,21 @@
 ##licensing
 import urllib.request
+import urllib.error
+import sys
 
+sys.tracebacklimit = 0
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+    
 date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 
 
 if date[8:16] == 'Jul 2021' and 'Aug 2021' :
-    print ("License Expired")
-    raise NotImplementedError
+    raise Exception("License Expired")
+
 
 import os, sys
 dir_check = os.getcwd()
