@@ -2,6 +2,7 @@
 import urllib.request
 import urllib.error
 import sys
+import hashlib
 
 sys.tracebacklimit = 0
 
@@ -9,12 +10,20 @@ try :
     urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 except Exception:
     raise Exception("Connect to Internet")
-    
+
 date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 
 
-if date[8:16] == 'Jul 2021' and 'Aug 2021' :
+if date[8:16] != 'Jul 2021' and 'Aug 2021' :
     raise Exception("License Expired")
+
+print ("Enter License Key")
+a = str(input())
+sha = hashlib.new('sha256')
+sha.update(a.encode())
+hash_key = sha.hexdigest()
+if hash_key != '296bc558ce209ace7b7f74b1ca898ef33869dca267abd8b091e1674b3a492df0' :
+    raise Exception("License key error")
 
 
 import os, sys
