@@ -7,14 +7,6 @@ import urllib
 import urllib.request
 import urllib.error
 import sys
-sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
-try:
-    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-except Exception:
-    raise Exception('Connect to Internet')
-_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
-    raise Exception('License Expired')
 
 class _34b4137f86e33c6f214d8d4940b7b6410d76979c8e5602c3ee2fed54d9e91017():
 
