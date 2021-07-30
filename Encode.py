@@ -39,7 +39,10 @@ class name_change(ast.NodeTransformer) :
                                      '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_',
                                      'append','deepcopy','globals','doctest','testmod','warnings','warn','pop','getenv','platform','win32','linux2','match', 'encode',
                                      '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
-                                     'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap']:
+                                     'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
+                                       'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
+                                       "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021',
+                                       'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
                     hash_str = sha.hexdigest()

@@ -48,78 +48,78 @@ class NMOS(block_layer.GDS_API):
                                                                         2 * self.get_drc('_PolygateMinSpace2Co')
                                                                         + self._DesignParameter['_POLayer']['_XWidth']))
 
-            # if (user_variable['_NMOSNumberofGate'] % 2) == 0:
-            #     _xycoordinatetmp = [
-            #         [_XYCoordinateOfNMOS[0][0] - (
-            #                     user_variable['_NMOSNumberofGate'] / 2 - 0.5) * _LengthNMOSBtwPO + 0 * _LengthNMOSBtwPO - _DRCObj.DRCPolygateMinSpace(
-            #             _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) - (
-            #                      float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
-            #                  self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
-            #         [_XYCoordinateOfNMOS[0][0] - (user_variable['_NMOSNumberofGate'] / 2 - 0.5) * _LengthNMOSBtwPO + (
-            #                     user_variable['_NMOSNumberofGate'] - 1) * _LengthNMOSBtwPO + _DRCObj.DRCPolygateMinSpace(
-            #             _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) + float(
-            #             self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
-            #             self._DesignParameter['_POLayer']['_XWidth']) / 2, _XYCoordinateOfNMOS[0][1]],
-            #     ]
-        #     elif (user_variable['_NMOSNumberofGate'] % 2) == 1:
-        #         _xycoordinatetmp = [
-        #             [_XYCoordinateOfNMOS[0][0] - (
-        #                         user_variable['_NMOSNumberofGate'] - 1) / 2 * _LengthNMOSBtwPO + 0 * _LengthNMOSBtwPO - _DRCObj.DRCPolygateMinSpace(
-        #                 _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) - (
-        #                          float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
-        #                      self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
-        #             [_XYCoordinateOfNMOS[0][0] - (user_variable['_NMOSNumberofGate'] - 1) / 2 * _LengthNMOSBtwPO + (
-        #                         user_variable['_NMOSNumberofGate'] - 1) * _LengthNMOSBtwPO + _DRCObj.DRCPolygateMinSpace(
-        #                 _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) + (
-        #                          float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
-        #                      self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
-        #         ]
-        #
-        #     # _xycoordinatetmp = [
-        #     #                     [self._DesignParameter['_ODLayer']['_XYCoordinates'][0][0] - float(self._DesignParameter['_ODLayer']['_XWidth'])/2 - _DRCObj._PolygateMinSpace2OD - float(self._DesignParameter['_PODummyLayer']['_XWidth'])/2,  _XYCoordinateOfNMOS[0][1]],
-        #     #                     [self._DesignParameter['_ODLayer']['_XYCoordinates'][0][0] + float(self._DesignParameter['_ODLayer']['_XWidth'])/2 + _DRCObj._PolygateMinSpace2OD + float(self._DesignParameter['_PODummyLayer']['_XWidth'])/2,  _XYCoordinateOfNMOS[0][1]],
-        #     #                     # [_XYCoordinateOfNMOS[0][0] - ( user_variable['_NMOSNumberofGate'] / 2 - 0.5) *  _LengthNMOSBtwPO + 0 *  _LengthNMOSBtwPO,  _XYCoordinateOfNMOS[0][1]],
-        #     #                     # [_XYCoordinateOfNMOS[0][0] - ( user_variable['_NMOSNumberofGate'] / 2 - 0.5) *  _LengthNMOSBtwPO + (user_variable['_NMOSNumberofGate'] -1) *  _LengthNMOSBtwPO,  _XYCoordinateOfNMOS[0][1]],
-        #     #                     ]
-        #
-        #     self._DesignParameter['_PODummyLayer']['_XYCoordinates'] = _xycoordinatetmp
-        # else:
-        #     self._DesignParameter['_PODummyLayer']['_XYCoordinates'] = []
-        #
-        # print(
-        #     '#############################     METAL1 Layer Calcuation    ##############################################')
-        # self._DesignParameter['_Met1Layer']['_XWidth'] = _DRCObj._CoMinWidth + 2 * _DRCObj._Metal1MinEnclosureCO
-        # self._DesignParameter['_Met1Layer']['_YWidth'] = self._DesignParameter['_ODLayer']['_YWidth']
-        # _LengthNMOSBtwMet1 = _DRCObj.DRCPolygateMinSpace(_DRCObj._CoMinWidth + 2 * _DRCObj._PolygateMinSpace2Co) + \
-        #                      self._DesignParameter['_POLayer']['_XWidth']
-        #
-        # tmp = []
-        #
-        # for i in range(0, user_variable['_NMOSNumberofGate'] + 1):
-        #     if (user_variable['_NMOSNumberofGate'] % 2) == 0:
-        #         _xycoordinatetmp = [_XYCoordinateOfNMOS[0][0] - user_variable['_NMOSNumberofGate'] / 2 * \
-        #                             _LengthNMOSBtwMet1 + i * _LengthNMOSBtwMet1, _XYCoordinateOfNMOS[0][1]]
-        #     elif (user_variable['_NMOSNumberofGate'] % 2) == 1:
-        #         _xycoordinatetmp = [_XYCoordinateOfNMOS[0][0] - ((user_variable['_NMOSNumberofGate'] + 1) / 2 - 0.5) \
-        #                             * _LengthNMOSBtwMet1 + i * _LengthNMOSBtwMet1, _XYCoordinateOfNMOS[0][1]]
-        #
-        #     tmp.append(_xycoordinatetmp)
-        #
-        # self._DesignParameter['_Met1Layer']['_XYCoordinates'] = tmp
-        #
-        # print(
-        #     '#############################     CONT Layer Calculation    ##############################################')
-        # _XNumberOfCOInNMOS = user_variable['_NMOSNumberofGate'] + 1
-        # _YNumberOfCOInNMOS = int(float(self._DesignParameter['_ODLayer']['_YWidth'] - 2 * max(
-        #     [_DRCObj._CoMinEnclosureByODAtLeastTwoSide, _DRCObj._Metal1MinEnclosureCO2]) + _DRCObj._CoMinSpace) / (
-        #                                      _DRCObj._CoMinSpace + _DRCObj._CoMinWidth))
-        # self._DesignParameter['_COLayer']['_YWidth'] = _DRCObj._CoMinWidth
-        # self._DesignParameter['_COLayer']['_XWidth'] = _DRCObj._CoMinWidth
-        #
-        # _LengthNMOSBtwCO = _DRCObj._CoMinSpace + self._DesignParameter['_COLayer']['_YWidth']
-        # _LengthNMOSBtwMet1 = _DRCObj.DRCPolygateMinSpace(_DRCObj._CoMinWidth + 2 * _DRCObj._PolygateMinSpace2Co) + \
-        #                      self._DesignParameter['_POLayer']['_XWidth']
-        #
+            if (user_variable['_NMOSNumberofGate'] % 2) == 0:
+                _xycoordinatetmp = [
+                    [_XYCoordinateOfNMOS[0][0] - (
+                                user_variable['_NMOSNumberofGate'] / 2 - 0.5) * _LengthNMOSBtwPO + 0 * _LengthNMOSBtwPO - _DRCObj.DRCPolygateMinSpace(
+                        _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) - (
+                                 float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
+                             self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
+                    [_XYCoordinateOfNMOS[0][0] - (user_variable['_NMOSNumberofGate'] / 2 - 0.5) * _LengthNMOSBtwPO + (
+                                user_variable['_NMOSNumberofGate'] - 1) * _LengthNMOSBtwPO + _DRCObj.DRCPolygateMinSpace(
+                        _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) + float(
+                        self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
+                        self._DesignParameter['_POLayer']['_XWidth']) / 2, _XYCoordinateOfNMOS[0][1]],
+                ]
+            elif (user_variable['_NMOSNumberofGate'] % 2) == 1:
+                _xycoordinatetmp = [
+                    [_XYCoordinateOfNMOS[0][0] - (
+                                user_variable['_NMOSNumberofGate'] - 1) / 2 * _LengthNMOSBtwPO + 0 * _LengthNMOSBtwPO - _DRCObj.DRCPolygateMinSpace(
+                        _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) - (
+                                 float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
+                             self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
+                    [_XYCoordinateOfNMOS[0][0] - (user_variable['_NMOSNumberofGate'] - 1) / 2 * _LengthNMOSBtwPO + (
+                                user_variable['_NMOSNumberofGate'] - 1) * _LengthNMOSBtwPO + _DRCObj.DRCPolygateMinSpace(
+                        _DRCObj._CoMinWidth + _DRCObj._PolygateMinSpace2Co + _DRCObj._CoMinEnclosureByOD + _DRCObj._PolygateMinSpace2OD) + (
+                                 float(self._DesignParameter['_PODummyLayer']['_XWidth']) / 2 + float(
+                             self._DesignParameter['_POLayer']['_XWidth']) / 2), _XYCoordinateOfNMOS[0][1]],
+                ]
+
+            # _xycoordinatetmp = [
+            #                     [self._DesignParameter['_ODLayer']['_XYCoordinates'][0][0] - float(self._DesignParameter['_ODLayer']['_XWidth'])/2 - _DRCObj._PolygateMinSpace2OD - float(self._DesignParameter['_PODummyLayer']['_XWidth'])/2,  _XYCoordinateOfNMOS[0][1]],
+            #                     [self._DesignParameter['_ODLayer']['_XYCoordinates'][0][0] + float(self._DesignParameter['_ODLayer']['_XWidth'])/2 + _DRCObj._PolygateMinSpace2OD + float(self._DesignParameter['_PODummyLayer']['_XWidth'])/2,  _XYCoordinateOfNMOS[0][1]],
+            #                     # [_XYCoordinateOfNMOS[0][0] - ( user_variable['_NMOSNumberofGate'] / 2 - 0.5) *  _LengthNMOSBtwPO + 0 *  _LengthNMOSBtwPO,  _XYCoordinateOfNMOS[0][1]],
+            #                     # [_XYCoordinateOfNMOS[0][0] - ( user_variable['_NMOSNumberofGate'] / 2 - 0.5) *  _LengthNMOSBtwPO + (user_variable['_NMOSNumberofGate'] -1) *  _LengthNMOSBtwPO,  _XYCoordinateOfNMOS[0][1]],
+            #                     ]
+
+            self._DesignParameter['_PODummyLayer']['_XYCoordinates'] = _xycoordinatetmp
+        else:
+            self._DesignParameter['_PODummyLayer']['_XYCoordinates'] = []
+
+        print(
+            '#############################     METAL1 Layer Calcuation    ##############################################')
+        self._DesignParameter['_Met1Layer']['_XWidth'] = _DRCObj._CoMinWidth + 2 * _DRCObj._Metal1MinEnclosureCO
+        self._DesignParameter['_Met1Layer']['_YWidth'] = self._DesignParameter['_ODLayer']['_YWidth']
+        _LengthNMOSBtwMet1 = _DRCObj.DRCPolygateMinSpace(_DRCObj._CoMinWidth + 2 * _DRCObj._PolygateMinSpace2Co) + \
+                             self._DesignParameter['_POLayer']['_XWidth']
+
+        tmp = []
+
+        for i in range(0, user_variable['_NMOSNumberofGate'] + 1):
+            if (user_variable['_NMOSNumberofGate'] % 2) == 0:
+                _xycoordinatetmp = [_XYCoordinateOfNMOS[0][0] - user_variable['_NMOSNumberofGate'] / 2 * \
+                                    _LengthNMOSBtwMet1 + i * _LengthNMOSBtwMet1, _XYCoordinateOfNMOS[0][1]]
+            elif (user_variable['_NMOSNumberofGate'] % 2) == 1:
+                _xycoordinatetmp = [_XYCoordinateOfNMOS[0][0] - ((user_variable['_NMOSNumberofGate'] + 1) / 2 - 0.5) \
+                                    * _LengthNMOSBtwMet1 + i * _LengthNMOSBtwMet1, _XYCoordinateOfNMOS[0][1]]
+
+            tmp.append(_xycoordinatetmp)
+
+        self._DesignParameter['_Met1Layer']['_XYCoordinates'] = tmp
+
+        print(
+            '#############################     CONT Layer Calculation    ##############################################')
+        _XNumberOfCOInNMOS = user_variable['_NMOSNumberofGate'] + 1
+        _YNumberOfCOInNMOS = int(float(self._DesignParameter['_ODLayer']['_YWidth'] - 2 * max(
+            [_DRCObj._CoMinEnclosureByODAtLeastTwoSide, _DRCObj._Metal1MinEnclosureCO2]) + _DRCObj._CoMinSpace) / (
+                                             _DRCObj._CoMinSpace + _DRCObj._CoMinWidth))
+        self._DesignParameter['_COLayer']['_YWidth'] = _DRCObj._CoMinWidth
+        self._DesignParameter['_COLayer']['_XWidth'] = _DRCObj._CoMinWidth
+
+        _LengthNMOSBtwCO = _DRCObj._CoMinSpace + self._DesignParameter['_COLayer']['_YWidth']
+        _LengthNMOSBtwMet1 = _DRCObj.DRCPolygateMinSpace(_DRCObj._CoMinWidth + 2 * _DRCObj._PolygateMinSpace2Co) + \
+                             self._DesignParameter['_POLayer']['_XWidth']
+
         # tmp = []
         # ###############################################Check the number of CO On NMOS TR##############################################################################################
         # if _XNumberOfCOInNMOS == 0 or _YNumberOfCOInNMOS == 0:

@@ -8,6 +8,18 @@ from datetime import datetime, MINYEAR
 import _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f
 import b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81
 import copy
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+    raise Exception('License Expired')
 
 class c668a73a36c4334132f1a4bf1956febacd22ea8e8a1b4b25ccf19f6b1f522f52():
 

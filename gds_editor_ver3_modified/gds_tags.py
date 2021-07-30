@@ -1,3 +1,21 @@
+import urllib
+import urllib.request
+import urllib.error
+import sys
+
+sys.tracebacklimit = 0
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+
+
+if date[8:16] not in ['Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021']:
+    raise Exception("License Expired")
+
 DICT = {
     'HEADER': 0x0002,
     'BGNLIB': 0x0102,

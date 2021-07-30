@@ -5,6 +5,18 @@ import struct
 import _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f
 import ad2f856b5678f98d4316b4f3428fc9e0b32bf1917c40b8202e28e1aadee285d8
 import d35f141520a155cbc70cb48892971a1fd6e0470f7e6eecba9792cb9da15bf110
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+    raise Exception('License Expired')
 
 class _4ae93eb6332f0e1295bc8dc12eef5ad7be1a99a47430446a84dce7ccb3a2f5ee():
 
@@ -21,7 +33,7 @@ class _4ae93eb6332f0e1295bc8dc12eef5ad7be1a99a47430446a84dce7ccb3a2f5ee():
         if (self._64220d0bbb752927b655b4d16331a037bab9fab4d8bfd7d0d6bc53408a2951a6 != None):
             self._64220d0bbb752927b655b4d16331a037bab9fab4d8bfd7d0d6bc53408a2951a6._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)
         if (len(self.e430aedd2ed3542f04b91d4fb954ab5c93e5e905854fb89a77f3feece87ef57d) > 20):
-            warnings.warn('_70ae418cbb5cffd209fd026f0688dc6a381d63e06842faf7ef0cafdfc395ff3a')
+            warnings.warn('Demo version supports maximum 20 elements per structure.')
         for _445929267209c034d1e324834c17e0c8305df3dcb21d1710a639ac6ca08c648b in self.e430aedd2ed3542f04b91d4fb954ab5c93e5e905854fb89a77f3feece87ef57d[:20]:
             _445929267209c034d1e324834c17e0c8305df3dcb21d1710a639ac6ca08c648b._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)
         self.adbf4572b41d7d97e642bad24028010092116049a53ca1b40913a6bf0d1d0740._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c)

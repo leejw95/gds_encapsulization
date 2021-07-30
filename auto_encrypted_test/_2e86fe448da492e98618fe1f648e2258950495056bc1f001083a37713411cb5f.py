@@ -1,4 +1,16 @@
 
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+    raise Exception('License Expired')
 __all__ = ('_7339f82c35f4401af717cd0e456591abf19fbdbd079d47e8c16d0077145a242d', 'a1d4277d2e9f8a0247ed96ad0cf9b5dc0219b2dd0048d10af973c06f9fafc946', '_55e63e63043315a134000203195189abb29e8ebcb42fd9ea650aa86ccaf77ea6', 'c269b6edce2a54852d3024ad24193df93725854814e941c28662ef7559b6bec1')
 
 class _7339f82c35f4401af717cd0e456591abf19fbdbd079d47e8c16d0077145a242d(Exception):

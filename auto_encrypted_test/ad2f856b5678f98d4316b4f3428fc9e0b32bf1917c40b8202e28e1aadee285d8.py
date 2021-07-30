@@ -5,6 +5,18 @@ import struct
 import math
 from datetime import datetime, MINYEAR
 import _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+    raise Exception('License Expired')
 
 class _7e2c688c964598c5c6da61d18a7bb617665e2b4f26261d93f900ae6ad63128bf():
 
@@ -443,7 +455,7 @@ class _249e7638e8d43b474fc895683f052ef88252877e1b8bb3a7f248a8a101acec6a():
             _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = struct.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, struct.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), self._2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c, self.dac1d7cfa95021764849fd102524e141488c5e3a90f861dbb5a12d9ac8584f85)
             b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)
         else:
-            warnings.warn('_16ed920d5b10ef1277b835b7cb777dce71acd46e2c6b58efe877d1feab3af95b')
+            warnings.warn('Demo version does not support lower layer')
             c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2 = '>HHh'
             _596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7 = struct.pack(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2, struct.calcsize(c63e082dd70f83c72efe6d52dbc055cc68fe8fe597ca035ecc6c23a363a231b2), self._2a1073a6e67f0e5f09a5957c659503c690efe7272be8313df872556a9a684d8c, self._83760caaf24b6c99719f183e61cbc9c608cf1b90559b9ba288bbb7755e54cb2b)
             b0176a223292ebdf290c7fea9db298a8a87263365a6e650fa9a177dc0310fe3c.write(_596615858b89edc15f2c272f69297f563bc0ba3809757414b9ba928c8538eba7)

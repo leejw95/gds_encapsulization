@@ -5,6 +5,18 @@ import struct
 import _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f
 import ad2f856b5678f98d4316b4f3428fc9e0b32bf1917c40b8202e28e1aadee285d8
 import _6d423e1f15dd9480c4c0e66185d073ba511a802de60979d6a6d9c66f079ee2a7
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+    raise Exception('License Expired')
 '_4a0bcb6bf9daf4a96fc8e63f0ebd9cfa7ce96bf464c9e9d20c196152ab780c1c'
 
 class _6260d5abcc1879784e8235784c1c9196cda4b96c91f0fed1b40fbee5cf9486f7():
@@ -68,7 +80,7 @@ class _6260d5abcc1879784e8235784c1c9196cda4b96c91f0fed1b40fbee5cf9486f7():
             self._994e43f15738075b473e1353859f7bc74e9473ddf03674bf5e56d6ffcb23e82d._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(_8ba8e7ffca657c2f8ca7b7adbabcf539bc196634176c32e608f8dc1ce8ad45e3)
         self._40828697495067ca827dd12b97b7c06e058ae456e03c7c490a7c30a594bf6cfd._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(_8ba8e7ffca657c2f8ca7b7adbabcf539bc196634176c32e608f8dc1ce8ad45e3)
         if (len(self.b140b79dccf6fb516fbc3d1e407a50a607c87c1e661ca1631035a073dc1cc928) > 20):
-            warnings.warn('_30fdde34d23cec6cb7fff69824f970132a39c76ad53365d80ca7a38166d7a60a')
+            warnings.warn('Demo version supports maximum 20 structure.')
         for _520cdb563bf80b193aab6aad62781a9647c75dbf76748117299c7dac0ae63a87 in self.b140b79dccf6fb516fbc3d1e407a50a607c87c1e661ca1631035a073dc1cc928[:20]:
             _520cdb563bf80b193aab6aad62781a9647c75dbf76748117299c7dac0ae63a87._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(_8ba8e7ffca657c2f8ca7b7adbabcf539bc196634176c32e608f8dc1ce8ad45e3)
         self._50f1b5d8cf890dc787a6cf930158c0bcc23d1256e00c2559e625362bde9c95ce._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(_8ba8e7ffca657c2f8ca7b7adbabcf539bc196634176c32e608f8dc1ce8ad45e3)

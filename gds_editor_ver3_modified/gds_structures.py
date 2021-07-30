@@ -5,6 +5,23 @@ import struct
 import gds_tags
 import gds_record
 import gds_elements
+import urllib
+import urllib.request
+import urllib.error
+import sys
+
+sys.tracebacklimit = 0
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+
+
+if date[8:16] not in ['Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021']:
+    raise Exception("License Expired")
 
 class GDS_STRUCTURE():
     def __init__(self,gds_data=None):

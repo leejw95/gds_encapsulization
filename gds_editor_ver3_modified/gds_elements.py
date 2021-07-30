@@ -2,6 +2,23 @@ import user_define_exceptions
 import struct
 import gds_tags
 import gds_record
+import urllib
+import urllib.request
+import urllib.error
+import sys
+
+sys.tracebacklimit = 0
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+
+
+if date[8:16] not in ['Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021']:
+    raise Exception("License Expired")
 
 class GDS_ELEMENT():
     def __init__(self,gds_data=None, _GDS_ELEMENT_NAME=None):
@@ -180,7 +197,7 @@ class GDS_ELEMENT():
 
         #Code For Recovery element name from Property
         for property in self._PROPERTY:
-            if property._PROPATTR.propattr is 61:
+            if property._PROPATTR.propattr == 61:
                 self._GDS_ELEMENT_NAME = property._PROPVALUE.propvalue.decode()
                 break
 

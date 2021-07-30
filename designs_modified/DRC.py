@@ -2,77 +2,28 @@ import re #used to read drc_rule file
 import math
 import user_define_exceptions
 import DesignParameters
+import urllib
+import urllib.request
+import urllib.error
+import sys
 
-# #################################180nm technology#######################################################################
-# class DRCOD:
-#     def __init__(self):
-#         self._OdMinWidth=220
-#         self._OdMinSpace=280
-#
-# class DRCPP:
-#     def __init__(self):
-#         self._PpMinWidth=440
-#         self._PpMinSpace=440
-#         self._PpMinExtensiononPactive=180
-#         self._PpMinEnclosureOfPo=320
-#
-# class DRCNP:
-#     def __init__(self):
-#         self._NpMinWidth=440
-#         self._NpMinSpace=440
-#         self._NpMinExtensiononNactive=180
-#         self._NpMinEnclosureOfPo=320
-#
-# class DRCPOLYGATE:
-#     def __init__(self):
-#         self._PolygateMinWidth=180
-#         self._PolygateMinSpace=375
-#         self._PolygateMinSpace2Co=220
-#         self._PolygateMinEnclosureByNW=430
-#         self._PolygateMinExtensionOnOD=220
-#
-#
-# class DRCCO:
-#     def __init__(self):
-#         self._CoMinWidth=220
-#         self._CoMinSpace=250
-#         self._CoMinEnclosureByOD=120
-#         self._CoMinEnclosureByPO=100
-#
-# class DRCMETAL1:
-#     def __init__(self):
-#         self._Metal1MinWidth=230
-#         self._Metal1MinSpace=230
-#         self._Metal1MinEnclosureCO=5
-#         self._Metal1MinArea=202000
-# class DRCNW:
-#     def __init__(self):
-#         self._NwMinWidth=860
-#         self._NwMinSpace=1400
-#         self._NwMinEnclosurePactive=430
-#         self._NwMinSpacetoNactive=430
-# class DRCVIAx:
-#     def __init__(self):
-#         self._VIAxMinWidth=260
-#         self._VIAxMinSpace=260
-#         self._VIAxMinEnclosureByMetx=10
-#         self._VIAxMinEnclosureByMetxTwoOppositeSide=60
-#
-# class DRCMETALx:
-#     def __init__(self):
-#         self._MetalxMinWidth=280
-#         self._MetalxMinSpace1=280
-#         self._MetalxMinSpaceWhenRunWidth200Length380=120
-#         self._MetalxMinSpaceWhenRunWidth1500Length1500=500
-#         self._MetalxMinSpaceWhenRunWidth4500Length4500=1500
-#
-# class DRCMinSnapSpacing:
-#     def __init__(self):
-#         self._MinSnapSpacing = 5
-# #############################################################################################################
+sys.tracebacklimit = 0
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+
+
+if date[8:16] not in ['Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021']:
+    raise Exception("License Expired")
 #################################################################
-class DRCMultiplicantForMinEdgeWidth:
+class DRCMultiplicantForMinEdgeWidth: ####????????????????????????????????????????????????????????????????????????
     def __init__(self):
+        if DesignParameters._Technology=='028nm':
+            self._MultiplicantForMinEdgeWidth = 1
         if DesignParameters._Technology=='045nm':
             self._MultiplicantForMinEdgeWidth = 1
         if DesignParameters._Technology=='065nm':
@@ -85,8 +36,10 @@ class DRCMultiplicantForMinEdgeWidth:
             self._MultiplicantForMinEdgeWidth = 0
     def DRCMinEdgeWidth(self, _MinWidth = None):
         return self._MultiplicantForMinEdgeWidth * _MinWidth
-class DRCMinSnapSpacing:
+class DRCMinSnapSpacing:  ####????????????????????????????????????????????????????????????????????????
     def __init__(self):
+        if DesignParameters._Technology=='028nm':
+            self._MinSnapSpacing = 5
         if DesignParameters._Technology=='045nm':
             self._MinSnapSpacing = 5
         if DesignParameters._Technology=='065nm':
@@ -102,14 +55,14 @@ class DRCOD:
         if DesignParameters._Technology=='045nm':
             self._OdMinWidth=60
             self._OdMinSpace=80
-
             self._OdMinSpace3=100
-
-
+        if DesignParameters._Technology=='028nm':
+            self._OdMinWidth=140
+            self._OdMinSpace=70
+            self._OdMinSpace3=100
         if DesignParameters._Technology=='065nm':
             self._OdMinWidth=150
             self._OdMinSpace=110
-
             self._OdMinSpace3=130
         if DesignParameters._Technology=='090nm':
             self._OdMinWidth=110
@@ -132,6 +85,9 @@ class DRCOD:
             else :
                 return self._OdMinSpace
 
+        if DesignParameters._Technology=='028nm':
+            return self._OdMinSpace
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._OdMinSpace
@@ -151,7 +107,6 @@ class DRCOD:
         if DesignParameters._Technology=='130nm':
             return self._OdMinSpace
 
-
         if DesignParameters._Technology=='180nm':
             return self._OdMinSpace
 
@@ -164,13 +119,28 @@ class DRCPP:
             self._PpMinExtensiononPactive=80
             self._PpMinEnclosureOfPo=110
             self._PpMinEnclosureOfPtypePoRes=140
+        if DesignParameters._Technology == '028nm':
+            self._PpMinWidth = 170
+            self._PpMinSpace = 170
+            self._PpMinExtensiononPactive = 56
+            self._PpMinExtensiononPactive2 = 21
+            self._PpMinEnclosureOfPo = 0
+            self._PpMinEnclosureOfPo2= 0
+            self._PpMinEnclosureOfPtypePoRes = 240
+            self._PpMinExtensiononPactive3 = 20
+
+            self._PpMinSpacetoPRES = 170 ##ADDED BY Junung
+            self._RXMinSpacetoPRES = 230 ##Added By Junung
+            self._RXMinSpacetoOP = 160 ## Added By Junung
+            self._PpMinArea = 160000 ## Added By Junung
+
+
         if DesignParameters._Technology=='065nm':
             self._PpMinWidth=180
             self._PpMinSpace=180
             self._PpMinExtensiononPactive=130
             self._PpMinEnclosureOfPo=150
             self._PpMinEnclosureOfPtypePoRes=200
-
         if DesignParameters._Technology=='090nm':
             self._PpMinWidth=240
             self._PpMinSpace=240
@@ -197,6 +167,11 @@ class DRCNP:
             self._NpMinSpace=180
             self._NpMinExtensiononNactive=80
             self._NpMinEnclosureOfPo=110
+        if DesignParameters._Technology == '028nm': # There is no NP layer in 28nm, junung
+            self._NpMinWidth = 180
+            self._NpMinSpace = 180
+            self._NpMinExtensiononNactive = 130
+            self._NpMinEnclosureOfPo = 150
         if DesignParameters._Technology=='065nm':
             self._NpMinWidth=180
             self._NpMinSpace=180
@@ -234,16 +209,40 @@ class DRCPOLYGATE:
             self._PolygateOnODMinWidth3=200
             self._PolygateMinSpaceAtCorner=110
 
+        if DesignParameters._Technology=='028nm':
+            self._PolygateMinWidth=30
+            self._PolygateMinSpace=96
+            self._PolygateMinSpace2=96
+            self._PolygateMinSpace2Co=28
+            self._PolygateMinSpace2OD=20
+            self._PolygateMinSpace2PolygateInSameRPO=96
+            self._PolygateMinExtensionOnOD=56  # ##??
+            self._PolygateMinSpaceAtCorner=96
+            self._PMOS2GuardringMinSpace=90
+            self._NMOS2GuardringMinSpace=90
+            self._PolygateWithPCCRIT=71
+
+
+            self._OPlayeroverPoly = 200 ### Created by junung for OP layer rules
+            self._PolyoverOPlayer = 400 ### Created by junung for OP layer rules
+            self._PRESlayeroverPoly = 240 ### Created by junung for OP layer rules
+
+            self._PCCRITExtension = 5  ### ADDED(by JiCho)!
+            self._PCCRITMinLengthofPOLayer = 35  #### ADDED(by JiCho) !
+            self._PODummyMinArea = 11000  ### ADDED(by JiCho)!
+            self._PoDummyLengthToMove = 50  ### ADDED(by JiCho)!
+
+
         if DesignParameters._Technology=='065nm':
-            self._PolygateMinWidth=60
-            self._PolygateMinSpace=120
-            self._PolygateMinSpace2=180
-            self._PolygateMinSpace2Co=55
-            self._PolygateMinSpace2OD=50
-            self._PolygateMinSpace2PolygateInSameRPO=250
+            self._PolygateMinWidth=60 #A
+            self._PolygateMinSpace=120 #F
+            self._PolygateMinSpace2=180 #L
+            self._PolygateMinSpace2Co=55 #???????????????
+            self._PolygateMinSpace2OD=50 #???????????????
+            self._PolygateMinSpace2PolygateInSameRPO=250 #N
             #self._PolygateMinEnclosureByNW=1000
-            self._PolygateMinExtensionOnOD=140
-            self._PolygateMinSpaceAtCorner=140
+            self._PolygateMinExtensionOnOD=140 #O
+            self._PolygateMinSpaceAtCorner=140 #S1/S2
         if DesignParameters._Technology=='090nm':
             self._PolygateMinWidth=100
             self._PolygateMinSpace=140
@@ -254,7 +253,6 @@ class DRCPOLYGATE:
             #self._PolygateMinEnclosureByNW=430
             self._PolygateMinExtensionOnOD=160
             self._PolygateMinSpaceAtCorner=140
-
         if DesignParameters._Technology=='130nm':
             self._PolygateMinWidth=130
             self._PolygateMinSpace=180
@@ -264,7 +262,6 @@ class DRCPOLYGATE:
             #self._PolygateMinEnclosureByNW=430
             self._PolygateMinExtensionOnOD=180
             self._PolygateMinSpaceAtCorner=180
-
         if DesignParameters._Technology=='180nm':
             self._PolygateMinWidth=180
             self._PolygateMinSpace=375
@@ -283,6 +280,9 @@ class DRCPOLYGATE:
                 return self._PolygateOnODMinWidth2
             elif _TmpLengthBtwPolyEdge <= self._PolygateOnODMinWidth3:
                 return self._PolygateOnODMinWidth3
+
+        if DesignParameters._Technology=='028nm':
+            return _TmpLengthBtwPolyEdge
         if DesignParameters._Technology=='065nm':
             return _TmpLengthBtwPolyEdge
         if DesignParameters._Technology=='090nm':
@@ -301,6 +301,13 @@ class DRCPOLYGATE:
                 return self._PolygateMinSpace2
             else:
                 return self._PolygateMinSpace
+
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._PolygateMinSpace
+            else:
+                return self._PolygateMinSpace2
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._PolygateMinSpace
@@ -330,8 +337,6 @@ class DRCPOLYGATE:
                 return self._PolygateMinSpace
 
 
-
-
 class DRCCO:
     def __init__(self):
         if DesignParameters._Technology=='045nm':
@@ -344,6 +349,23 @@ class DRCCO:
             self._CoMinEnclosureByODAtLeastTwoSide=30
             self._CoMinEnclosureByPO=10
             self._CoMinEnclosureByPOAtLeastTwoSide=20
+
+        if DesignParameters._Technology == '028nm':
+            self._CoMinWidth = 40
+            self._CoMinSpace = 60
+            self._CoMinSpace2 = 60
+            self._CoMinSpaceDifferentNet = 92
+            self._CoMinSpaceFor3neighboring = 92
+            self._CoMinEnclosureByOD = 8
+            self._CoMinEnclosureByODAtLeastTwoSide = 30
+            self._CoMinEnclosureByPO = 30
+            self._CoMinEnclosureByPOAtLeastTwoSide = 10
+
+            ##Created By junung for OPLayer rules
+            self._CoMinSpace2OP = 200
+            self._CoMinEnclosureByPO2 = 12 ##only in poly for resistor? Created by junung
+
+
         if DesignParameters._Technology=='065nm':
             self._CoMinWidth=90
             self._CoMinSpace=110
@@ -366,7 +388,6 @@ class DRCCO:
             self._CoMinEnclosureByPO=20
             self._CoMinEnclosureByPOAtLeastTwoSide=50
 
-
         if DesignParameters._Technology=='130nm':
             self._CoMinWidth=160
             self._CoMinSpace=180
@@ -378,7 +399,6 @@ class DRCCO:
             self._CoMinEnclosureByPO=70
             self._CoMinEnclosureByPOAtLeastTwoSide=120
 
-
         if DesignParameters._Technology=='180nm':
             self._CoMinWidth=220
             self._CoMinSpace=250
@@ -389,6 +409,7 @@ class DRCCO:
             self._CoMinEnclosureByODAtLeastTwoSide=120
             self._CoMinEnclosureByPO=100
             self._CoMinEnclosureByPOAtLeastTwoSide=100
+
     def DRCCOMinSpace(self, NumOfCOX=None, NumOfCOY=None):
         if DesignParameters._Technology=='045nm':
             if NumOfCOX == None and NumOfCOY == None:
@@ -397,6 +418,15 @@ class DRCCO:
                 return self._CoMinSpace2
             else :
                 return self._CoMinSpace
+
+        if DesignParameters._Technology == '028nm':
+            if NumOfCOX == None and NumOfCOY == None:
+                return self._CoMinSpace
+            elif (2 < NumOfCOY and 2 <= NumOfCOX) or (2 <= NumOfCOY and 2 < NumOfCOX):
+                return self._CoMinSpace2
+            else:
+                return self._CoMinSpace
+
         if DesignParameters._Technology=='065nm':
             if NumOfCOX == None and NumOfCOY == None:
                 return self._CoMinSpace
@@ -430,8 +460,15 @@ class DRCCO:
             else :
                 return self._CoMinSpace
     def DRCCOFillAtOD2Met1(self,XWidth = None,  YWidth = None, NumOfCOX = None, NumOfCOY = None):
-
         if DesignParameters._Technology=='045nm':
+            _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth ) if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth ) if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth ) if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth ) if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
+        if DesignParameters._Technology=='028nm':
             _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth ) if NumOfCOX == None else NumOfCOX
             _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByODAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth ) if NumOfCOY == None else NumOfCOY
             if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
@@ -477,6 +514,14 @@ class DRCCO:
                 _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth )if NumOfCOY == None else NumOfCOY
             return (_NumberOfCOX, _NumberOfCOY)
 
+        if DesignParameters._Technology=='028nm':
+            _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth )if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth )if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth )if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth )if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
         if DesignParameters._Technology=='065nm':
             _NumberOfCOX =  int(XWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth )if NumOfCOX == None else NumOfCOX
             _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ))/ (self.DRCCOMinSpace(NumOfCOX=None,NumOfCOY=None ) + self._CoMinWidth )if NumOfCOY == None else NumOfCOY
@@ -506,41 +551,52 @@ class DRCCO:
                 _NumberOfCOY =  int(YWidth  - 2 * self._CoMinEnclosureByPOAtLeastTwoSide + self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ))/ (self.DRCCOMinSpace(NumOfCOX=XWidth,NumOfCOY=YWidth ) + self._CoMinWidth )if NumOfCOY == None else NumOfCOY
             return (_NumberOfCOX, _NumberOfCOY)
 
-
 class DRCMETAL1:
     def __init__(self):
         if DesignParameters._Technology=='045nm':
             self._Metal1MinWidth=70
             self._Metal1MinSpace=70
-
             self._Metal1MinSpace2=80
             self._Metal1MinSpace21=120
             self._Metal1MinSpace22=140
             self._Metal1MinSpace23=210
             self._Metal1MinSpace3=500
-
             self._Metal1MinSpaceAtCorner = 80
-
             #045nm DRC rule metal1minEnclosureCO & metal1minEnclosureCO2 are valid in both below cases.
             # self._Metal1MinEnclosureCO=0
             # self._Metal1MinEnclosureCO2=30
-
-
             self._Metal1MinEnclosureCO=5
             self._Metal1MinEnclosureCO2=30
             self._Metal1MinEnclosureVia1=0
             self._Metal1MinEnclosureVia12=30
             self._Metal1MinArea=21500
 
+        if DesignParameters._Technology=='028nm':
+            self._Metal1MinWidth=50 #A
+            self._Metal1MinSpace=50 #D
+            self._Metal1MinSpacetoGate=20
+            self._Metal1MinSpace2=66 #E (by JiCho)
+            self._Metal1MinSpace21=82 #E1k
+            self._Metal1MinSpace22=74  # G
+            self._Metal1MinSpace3=140 #F
+
+            self._Metal1MinSpaceAtCorner = 60 #S1/S2
+
+            self._Metal1MinEnclosureCO=5 #I
+            self._Metal1MinEnclosureCO2=21 #J
+            self._Metal1MinEnclosureCO3 = 12 ##FOR PRES, By junung
+            self._Metal1MinEnclosureVia1=0
+            self._Metal1MinEnclosureVia12=32
+            self._Metal1MinArea=10
+            self._Metal1MinEnclosureArea = 48000 # ADDED!(by JiCho)
+
         if DesignParameters._Technology=='065nm':
             self._Metal1MinWidth=90
             self._Metal1MinSpace=90
-
             self._Metal1MinSpace2=110
             self._Metal1MinSpace21=160
             self._Metal1MinSpace3=500
             self._Metal1MinSpace4=1500
-
 
             self._Metal1MinSpaceAtCorner = 110
 
@@ -594,8 +650,6 @@ class DRCMETAL1:
             self._Metal1MinArea=202000
 
     def DRCMETAL1MinSpace(self, _Width=None, _ParallelLength=None):
-
-
         if DesignParameters._Technology=='045nm':
             if _Width==None  and _ParallelLength==None:
                 return self._Metal1MinSpace
@@ -615,6 +669,25 @@ class DRCMETAL1:
                     return self._Metal1MinSpace2
             else :
                 return self._Metal1MinSpace
+
+        def DRCMETAL1MinSpace(self, _Width=None, _ParallelLength=None):
+            if DesignParameters._Technology == '028nm':
+                if _Width == None and _ParallelLength == None:
+                    return self._Metal1MinSpace
+                elif 72 < _Width and 104 < _ParallelLength: #a
+                    if 156 < _Width and 104 < _ParallelLength: #b
+                        if 208 < _Width and 104 < _ParallelLength: #c
+                            if 208 < _Width and 300 < _ParallelLength:
+                                return self._Metal1MinSpace3 #140
+                            else:
+                                return self._Metal1MinSpace22 #c 74
+                        else:
+                            return self._Metal1MinSpace21 #b 82
+                    else:
+                        return self._Metal1MinSpace2 #a 65
+                else:
+                    return self._Metal1MinSpace #50
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._Metal1MinSpace
@@ -666,6 +739,8 @@ class DRCMETAL1:
     def DRCMETAL1MinSpaceAtCorner(self, _Width=None, _ParallelLength=None):
         if DesignParameters._Technology=='045nm':
             return self._Metal1MinSpaceAtCorner
+        if DesignParameters._Technology=='028nm':
+            return self._Metal1MinSpaceAtCorner
         if DesignParameters._Technology=='065nm':
             return self._Metal1MinSpaceAtCorner
         if DesignParameters._Technology=='090nm':
@@ -675,7 +750,6 @@ class DRCMETAL1:
         if DesignParameters._Technology=='180nm':
             return self.DRCMETAL1MinSpace(_Width=_Width, _ParallelLength=_ParallelLength)
 
-
 class DRCNW:
     def __init__(self):
         if DesignParameters._Technology=='045nm':
@@ -683,6 +757,15 @@ class DRCNW:
             self._NwMinSpace=340
             self._NwMinEnclosurePactive=80
             self._NwMinSpacetoNactive=80
+
+        if DesignParameters._Technology == '028nm':
+            self._NwMinWidth=260 #A
+            self._NwMinSpace=260 #C
+            self._NwMinEnclosurePactive=56 #H
+            self._NwMinSpacetoNactive=56 #
+            self._NwMinSpacetoRX=60
+            self._NwMinSpacetoSLVT = 170  # ADDED! (by JiCho)
+
         if DesignParameters._Technology=='065nm':
             self._NwMinWidth=470
             self._NwMinSpace=470
@@ -715,6 +798,15 @@ class DRCVIAx:
             self._VIAxMinEnclosureByMetx=0
             self._VIAxMinEnclosureByMetxTwoOppositeSide=30
 
+        if DesignParameters._Technology=='028nm':
+            self._VIAxMinWidth=50 #A
+            self._VIAxMinSpace=80 #B
+            self._VIAxMinSpace2=92 #C
+            self._VIAxMinSpaceDifferentNet=80 #B1
+            self._VIAxMinSpaceFor3neighboring=92 #C
+            self._VIAxMinEnclosureByMetx=0 #D
+            self._VIAxMinEnclosureByMetxTwoOppositeSide=32 #E
+
         if DesignParameters._Technology=='065nm':
             self._VIAxMinWidth=100
             self._VIAxMinSpace=100
@@ -723,6 +815,7 @@ class DRCVIAx:
             self._VIAxMinSpaceFor3neighboring=140
             self._VIAxMinEnclosureByMetx=0
             self._VIAxMinEnclosureByMetxTwoOppositeSide=40
+
         if DesignParameters._Technology=='090nm':
             self._VIAxMinWidth=130
             self._VIAxMinSpace=150
@@ -755,6 +848,16 @@ class DRCVIAx:
                 return self._VIAxMinSpace2
             else :
                 return self._VIAxMinSpace
+
+        if DesignParameters._Technology=='028nm':
+
+            if NumOfVIAxX == None and NumOfVIAxY == None:
+                return self._VIAxMinSpace
+            elif (2 < NumOfVIAxY and 2 <=NumOfVIAxX) or (2 <=NumOfVIAxY and 2 <NumOfVIAxX):
+                return self._VIAxMinSpace2
+            else :
+                return self._VIAxMinSpace
+
         if DesignParameters._Technology=='065nm':
 
             if NumOfVIAxX == None and NumOfVIAxY == None:
@@ -790,6 +893,14 @@ class DRCVIAx:
             if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
                 _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12,_tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ) + self._VIAxMinWidth )if NumOfCOX == None else NumOfCOX
                 _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12,_tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ) + self._VIAxMinWidth )if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
+        if DesignParameters._Technology=='028nm':
+            _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=None,NumOfVIAxY=None ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=None,NumOfVIAxY=None ) + self._VIAxMinWidth )if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=None,NumOfVIAxY=None ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=None,NumOfVIAxY=None ) + self._VIAxMinWidth )if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ) + self._VIAxMinWidth )if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETAL1._Metal1MinEnclosureVia12, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ))/ (self.DRCVIAxMinSpace(NumOfVIAxX=XWidth,NumOfVIAxY=YWidth ) + self._VIAxMinWidth )if NumOfCOY == None else NumOfCOY
             return (_NumberOfCOX, _NumberOfCOY)
 
         if DesignParameters._Technology=='065nm':
@@ -831,6 +942,15 @@ class DRCVIAy:
             self._VIAyMinEnclosureByMetxOrMety=0
             self._VIAyMinEnclosureByMetxOrMetyTwoOppositeSide=45
 
+        if DesignParameters._Technology=='028nm':
+            self._VIAyMinWidth=50 #A
+            self._VIAyMinSpace=80 #B
+            self._VIAyMinSpace2=80 #C
+            self._VIAyMinSpaceDifferentNet=80 #C
+            self._VIAyMinSpaceFor3neighboring=92
+            self._VIAyMinEnclosureByMetxOrMety=0
+            self._VIAyMinEnclosureByMetxOrMetyTwoOppositeSide=32 #D
+
         if DesignParameters._Technology=='065nm':
             self._VIAyMinWidth=200
             self._VIAyMinSpace=200
@@ -839,6 +959,7 @@ class DRCVIAy:
             self._VIAyMinSpaceFor3neighboring=280
             self._VIAyMinEnclosureByMetxOrMety=0
             self._VIAyMinEnclosureByMetxOrMetyTwoOppositeSide=50
+
         if DesignParameters._Technology=='090nm':
             self._VIAyMinWidth=260
             self._VIAyMinSpace=300
@@ -871,6 +992,16 @@ class DRCVIAy:
                 return self._VIAyMinSpace2
             else :
                 return self._VIAyMinSpace
+
+        if DesignParameters._Technology == '028nm':
+
+            if NumOfVIAyX == None and NumOfVIAyY == None:
+                return self._VIAyMinSpace
+            elif (2 < NumOfVIAyY and 2 <= NumOfVIAyX) or (2 <= NumOfVIAyY and 2 < NumOfVIAyX):
+                return self._VIAyMinSpace2
+            else:
+                return self._VIAyMinSpace
+
         if DesignParameters._Technology=='065nm':
 
             if NumOfVIAyX == None and NumOfVIAyY == None:
@@ -903,6 +1034,14 @@ class DRCVIAy:
                 _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2,_tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ) + self._VIAyMinWidth )if NumOfCOY == None else NumOfCOY
             return (_NumberOfCOX, _NumberOfCOY)
 
+        if DesignParameters._Technology=='028nm':
+            _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ) + self._VIAyMinWidth )if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ) + self._VIAyMinWidth )if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ) + self._VIAyMinWidth )if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=XWidth,NumOfVIAyY=YWidth ) + self._VIAyMinWidth )if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
         if DesignParameters._Technology=='065nm':
             _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ) + self._VIAyMinWidth )if NumOfCOX == None else NumOfCOX
             _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ))/ (self.DRCVIAyMinSpace(NumOfVIAyX=None,NumOfVIAyY=None ) + self._VIAyMinWidth )if NumOfCOY == None else NumOfCOY
@@ -931,6 +1070,14 @@ class DRCVIAz:
             self._VIAzMinSpace=340
             self._VIAzMinSpace2=540
             self._VIAzMinSpaceFor3neighboring=560
+            self._VIAzMinEnclosureByMetxOrMety=20
+            self._VIAzMinEnclosureByMetxOrMetyTwoOppositeSide=80
+
+        if DesignParameters._Technology=='028nm':
+            self._VIAzMinWidth=360
+            self._VIAzMinSpace=440
+            self._VIAzMinSpace2=440
+            self._VIAzMinSpaceFor3neighboring=440
             self._VIAzMinEnclosureByMetxOrMety=20
             self._VIAzMinEnclosureByMetxOrMetyTwoOppositeSide=80
 
@@ -971,6 +1118,16 @@ class DRCVIAz:
                 return self._VIAzMinSpace2
             else :
                 return self._VIAzMinSpace
+
+        if DesignParameters._Technology == '028nm':
+
+            if NumOfVIAzX == None and NumOfVIAzY == None:
+                return self._VIAzMinSpace
+            elif (2 <= NumOfVIAzY and 2 <= NumOfVIAzX):
+                return self._VIAzMinSpace2
+            else:
+                return self._VIAzMinSpace
+
         if DesignParameters._Technology=='065nm':
 
             if NumOfVIAzX == None and NumOfVIAzY == None:
@@ -992,6 +1149,14 @@ class DRCVIAz:
         _tmpDRCMETALy = DRCMETALy()
         _tmpDRCMETALx = DRCMETALx()
         if DesignParameters._Technology=='045nm':
+            _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ) + self._VIAzMinWidth )if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ) + self._VIAzMinWidth )if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=XWidth,NumOfVIAzY=YWidth ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=XWidth,NumOfVIAzY=YWidth ) + self._VIAzMinWidth )if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=XWidth,NumOfVIAzY=YWidth ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=XWidth,NumOfVIAzY=YWidth ) + self._VIAzMinWidth )if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
+        if DesignParameters._Technology=='028m':
             _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ) + self._VIAzMinWidth )if NumOfCOX == None else NumOfCOX
             _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ))/ (self.DRCVIAzMinSpace(NumOfVIAzX=None,NumOfVIAzY=None ) + self._VIAzMinWidth )if NumOfCOY == None else NumOfCOY
             if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
@@ -1027,6 +1192,15 @@ class DRCVIAr:
             self._VIArMinEnclosureByMetxOrMety=20
             self._VIArMinEnclosureByMetxOrMetyTwoOppositeSide=80
 
+        if DesignParameters._Technology=='028nm':
+            self._VIArMinWidth=3000
+            self._VIArMinSpace=2000
+            self._VIArMinSpace20=2000
+            self._VIArMinSpace21=2000
+            self._VIArMinSpaceFor3neighboring=2000
+            self._VIArMinEnclosureByMetxOrMety=1000
+            self._VIArMinEnclosureByMetxOrMetyTwoOppositeSide=1000
+
         if DesignParameters._Technology=='065nm':
             self._VIArMinWidth=460
             self._VIArMinSpace=440
@@ -1061,6 +1235,16 @@ class DRCVIAr:
                 return max([ self._VIArMinSpace20, self._VIArMinSpace21])
             else :
                 return self._VIArMinSpace
+
+        if DesignParameters._Technology == '028nm':
+
+            if NumOfVIArX == None and NumOfVIArY == None:
+                return self._VIArMinSpace
+            elif (2 <= NumOfVIArY and 2 <= NumOfVIArX):
+                return max([self._VIArMinSpace20, self._VIArMinSpace21])
+            else:
+                return self._VIArMinSpace
+
         if DesignParameters._Technology=='065nm':
 
             if NumOfVIArX == None and NumOfVIArY == None:
@@ -1084,6 +1268,14 @@ class DRCVIAr:
         _tmpDRCMETALx = DRCMETALx()
         if DesignParameters._Technology=='045nm':
             _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2, _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ))/ (self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ) + self._VIArMinWidth )if NumOfCOX == None else NumOfCOX
+            _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ))/ (self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ) + self._VIArMinWidth )if NumOfCOY == None else NumOfCOY
+            if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
+                _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ))/ (self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ) + self._VIArMinWidth )if NumOfCOX == None else NumOfCOX
+                _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ))/ (self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ) + self._VIArMinWidth )if NumOfCOY == None else NumOfCOY
+            return (_NumberOfCOX, _NumberOfCOY)
+
+        if DesignParameters._Technology=='028nm':
+            _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ))/ (self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ) + self._VIArMinWidth )if NumOfCOX == None else NumOfCOX
             _NumberOfCOY =  int(YWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ))/ (self.DRCVIArMinSpace(NumOfVIArX=None,NumOfVIArY=None ) + self._VIArMinWidth )if NumOfCOY == None else NumOfCOY
             if (2 < _NumberOfCOX and 2 <=_NumberOfCOY) or (2 <=_NumberOfCOX and 2 <_NumberOfCOY):
                 _NumberOfCOX =  int(XWidth  - 2 * max([_tmpDRCMETALy._MetalyMinEnclosureCO2, _tmpDRCMETALz._MetalzMinEnclosureCO2,  _tmpDRCMETALr._MetalrMinEnclosureCO2, _tmpDRCMETALx._MetalxMinEnclosureCO2]) + self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ))/ (self.DRCVIArMinSpace(NumOfVIArX=XWidth,NumOfVIArY=YWidth ) + self._VIArMinWidth )if NumOfCOX == None else NumOfCOX
@@ -1125,6 +1317,30 @@ class DRCMETALx:
             self._MetalxMinEnclosureCO2=30
             self._MetalxMinArea=27000
 
+        if DesignParameters._Technology=='028nm':
+            self._MetalxMinWidth=50 #A
+            self._MetalxMinSpace=50 #D
+            self._MetalxMinSpace2=65 #E  (M1 with span > 0.072) minimum space for run length > 0.104, >= 0.065
+            self._MetalxMinSpace21 = 66  ## M3 minimum space to (M3 with width > 0.156) for run length >0 , > = 0.066, junung
+            self._MetalxMinSpace3=82 #E1
+            self._MetalxMinSpace4=74 #F
+            self._MetalxMinSpace41 = 95 ## Mx minimum space to (Mx with width > 0.208), for run length > 0.3, >= 0.095, junung
+            self._MetalxMinSpace5=140 #G
+
+            self._MetalxMinSpace6 = 165  # M4 minimum space to (M4 with width > 0.700), for run length > 0.700, >= 0.165  , junung
+            self._MetalxMinSpace7 = 173  # (M4 with width > 0.700) minimum space to (M4 with width > 0.072), for run length > 0.700, >= 0.173 , junung
+            self._MetalxMinSpace8 = 181  # (M4 with width > 0.700) minimum space to (M4 with width > 0.156), for run length > 0.700, >= 0.181 , junung
+            self._MetalxMinSpace9 = 210  # (M5 with width > 0.208) minimum space to (M5 with width > 0.700), for run length > 0.700, >= 0.21 , junung
+            self._MetalxMinSpace10 = 280 # (M6 with width > 0.700) minimum space to (M6 with width > 0.700), >= 0.28, junung
+            self._MetalxMinSpace11 = 500 # (M6 with width > 1.500) minimum space to (M6 with width > 0.700), >= 0.5, junung
+
+            self._MetalxMinSpaceAtCorner=60 #S1/S2
+
+            self._MetalxMinEnclosureCO=0 #I
+            self._MetalxMinEnclosureCO2=32 #J
+            self._MetalxMinArea=11000 #K
+
+            self._MetalxMaxWidth = 4500 # M7 not over MOB maximum width <= 4.5 , junung
 
         if DesignParameters._Technology=='065nm':
             self._MetalxMinWidth=100
@@ -1199,6 +1415,23 @@ class DRCMETALx:
             else :
                 return self._MetalxMinSpace
 
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._MetalxMinSpace
+            elif 72<_Width  and 104<_ParallelLength:
+                if 156<_Width and 104< _ParallelLength:
+                    if 208<_Width and 104< _ParallelLength:
+                        if 208<_Width and 300<_ParallelLength:
+                            return self._MetalxMinSpace5
+                        else:
+                            return  self._MetalxMinSpace4
+                    else:
+                        return self._MetalxMinSpace3
+                else:
+                    return self._MetalxMinSpace2
+            else :
+                return self._MetalxMinSpace
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._MetalxMinSpace
@@ -1247,6 +1480,8 @@ class DRCMETALx:
     def DRCMETALxMinSpaceAtCorner(self, _Width=None, _ParallelLength=None):
         if DesignParameters._Technology=='045nm':
             return self._MetalxMinSpaceAtCorner
+        if DesignParameters._Technology=='028nm':
+            return self._MetalxMinSpaceAtCorner
         if DesignParameters._Technology=='065nm':
             return self._MetalxMinSpaceAtCorner
         if DesignParameters._Technology=='090nm':
@@ -1271,6 +1506,18 @@ class DRCMETALy:
             self._MetalyMinEnclosureCO2=45
             self._MetalyMinArea=70000
 
+        if DesignParameters._Technology=='028nm':
+            self._MetalyMinWidth=50
+            self._MetalyMaxWidth=10000
+            self._MetalyMinSpace=50
+            self._MetalyMinSpace2=65
+            self._MetalyMinSpace3=82
+            self._MetalyMinSpace4=74
+            self._MetalyMinSpace5=140
+
+            self._MetalyMinEnclosureCO=0
+            self._MetalyMinEnclosureCO2=32
+            self._MetalyMinArea=11
 
         if DesignParameters._Technology=='065nm':
             self._MetalyMinWidth=200
@@ -1334,6 +1581,23 @@ class DRCMETALy:
             else :
                 return self._MetalyMinSpace
 
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._MetalyMinSpace
+            elif 72<_Width  and 104<_ParallelLength:
+                if 156<_Width and 104< _ParallelLength:
+                    if 208<_Width and 104< _ParallelLength:
+                        if 208 < _Width and 300 < _ParallelLength:
+                            return  self._MetalyMinSpace5
+                        else:
+                            return self._MetalyMinSpace4
+                    else:
+                        return self._MetalyMinSpace3
+                else:
+                    return self._MetalyMinSpace2
+            else :
+                return self._MetalyMinSpace
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._MetalyMinSpace
@@ -1377,6 +1641,16 @@ class DRCMETALz:
             self._MetalzMinEnclosureCO2=80
             self._MetalzMinArea=565000
 
+        if DesignParameters._Technology=='028nm':
+            self._MetalzMinWidth=400
+            self._MetalzMaxWidth=12000
+            self._MetalzMinSpace=400
+            self._MetalzMinSpace2=800
+            self._MetalzMinSpace3=1600
+
+            self._MetalzMinEnclosureCO=20
+            self._MetalzMinEnclosureCO2=80
+            self._MetalzMinArea=480
 
         if DesignParameters._Technology=='065nm':
             self._MetalzMinWidth=400
@@ -1436,6 +1710,17 @@ class DRCMETALz:
             else :
                 return self._MetalzMinSpace
 
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._MetalzMinSpace
+            elif 2000<_Width  and 2000<_ParallelLength:
+                if 4000<_Width and 4000< _ParallelLength:
+                    return self._MetalzMinSpace3
+                else:
+                    return self._MetalzMinSpace2
+            else :
+                return self._MetalzMinSpace
+
         if DesignParameters._Technology=='065nm':
             if _Width==None  and _ParallelLength==None:
                 return self._MetalzMinSpace
@@ -1468,6 +1753,14 @@ class DRCMETALr:
             self._MetalrMinEnclosureCO2=80
             self._MetalrMinArea=1000000
 
+        if DesignParameters._Technology=='028nm':
+            self._MetalrMinWidth=4000 #A
+            self._MetalrMaxWidth=12000 #B
+            self._MetalrMinSpace=2000 #C
+
+            self._MetalrMinEnclosureCO=1000 #F
+            self._MetalrMinEnclosureCO2=1000 #G
+            self._MetalrMinArea=16000 #H
 
         if DesignParameters._Technology=='065nm':
             self._MetalrMinWidth=500
@@ -1524,6 +1817,12 @@ class DRCMETALr:
                     return self._MetalrMinSpace3
                 else:
                     return self._MetalrMinSpace2
+            else :
+                return self._MetalrMinSpace
+
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._MetalrMinSpace
             else :
                 return self._MetalrMinSpace
 
@@ -1621,10 +1920,22 @@ class DRCRPO:
         if DesignParameters._Technology=='180nm':
             return self._RPOMinExtensionOnPO
 
+class DRCSLVT:
+    def __init__(self):
+        if DesignParameters._Technology=='028nm':
+            self._SlvtMinWidth=170
+            self._SlvtMinSpace=170
+            self._SlvtMinExtensionOnOD=56
+            self._SlvtMinArea=95 ##????
+            self._SlvtMinArea2 = 160000 ## SLVT (BH) Minimum Area 0.16um^2, junung
+    def DRCSLVTMinSpace(self, _Width=None, _ParallelLength=None):
+        if DesignParameters._Technology=='028nm':
+            if _Width==None  and _ParallelLength==None:
+                return self._SlvtMinSpace
+            else :
+                return self._SlvtMinSpace
 
-
-
-class DRC(DRCMultiplicantForMinEdgeWidth, DRCOD, DRCPOLYGATE, DRCPP, DRCNP, DRCCO, DRCMETAL1, DRCMETALy, DRCVIAy, DRCMETALz, DRCVIAz, DRCMETALr, DRCVIAr, DRCNW, DRCVIAx,DRCMETALx, DRCMinSnapSpacing, DRCRPO):
+class DRC(DRCMultiplicantForMinEdgeWidth, DRCOD, DRCPOLYGATE, DRCPP, DRCNP, DRCCO, DRCMETAL1, DRCMETALy, DRCVIAy, DRCMETALz, DRCVIAz, DRCMETALr, DRCVIAr, DRCNW, DRCVIAx,DRCMETALx, DRCMinSnapSpacing, DRCRPO, DRCSLVT):
     def __init__(self ):
         DRCNW.__init__(self)
         DRCOD.__init__(self)
@@ -1643,6 +1954,7 @@ class DRC(DRCMultiplicantForMinEdgeWidth, DRCOD, DRCPOLYGATE, DRCPP, DRCNP, DRCC
         DRCMETALr.__init__(self)
         DRCMinSnapSpacing.__init__(self)
         DRCRPO.__init__(self)
+        DRCSLVT.__init__(self)
     # def CalculateMinimumDistanceBtwElements(self, _Element1 = None, _Element2 = None):
     #     if _Element1 == None or _Element2 == None:
     #         raise user_define_exceptions.IncorrectInputError('_Element1 & Element2 should not be None')
