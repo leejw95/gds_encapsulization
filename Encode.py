@@ -41,7 +41,7 @@ class name_change(ast.NodeTransformer) :
                                      '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
                                      'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
                                        'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
-                                       "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021',
+                                       "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022',
                                        'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())

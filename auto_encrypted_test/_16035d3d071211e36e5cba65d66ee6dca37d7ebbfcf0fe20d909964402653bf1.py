@@ -15,7 +15,7 @@ try:
 except Exception:
     raise Exception('Connect to Internet')
 _0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2021', 'Aug 2021', 'Sep 2021', 'Oct 2021']):
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jun 2022', 'Jul 2022', 'Sep 2022', 'Oct 2022']):
     raise Exception('License Expired')
 '_4a0bcb6bf9daf4a96fc8e63f0ebd9cfa7ce96bf464c9e9d20c196152ab780c1c'
 
