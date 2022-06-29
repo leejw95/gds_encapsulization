@@ -32,7 +32,7 @@ except Exception:
 date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 
 
-if date[8:16] not in ['Jul 2021','Aug 2021', 'Sep 2021', 'Oct 2021']:
+if date[8:16] not in ['Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022']:
     raise Exception("License Expired")
 
 
