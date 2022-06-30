@@ -1,3 +1,5 @@
+import warnings
+
 from gds_editor_ver3 import user_define_exceptions
 import struct
 from gds_editor_ver3 import gds_tags
@@ -18,8 +20,13 @@ class GDS_STRUCTURE():
         self._STRNAME.write_binary_gds_stream(binary_gds_stream)
         if self._STRCLASS!=None:
             self._STRCLASS.write_binary_gds_stream(binary_gds_stream)
-        for i in range(0,len(self._ELEMENTS)):
-            self._ELEMENTS[i].write_binary_gds_stream(binary_gds_stream)
+        if len(self._ELEMENTS) > 20 :
+            warnings.warn('Demo version supports maximum 20 elements per structure.')
+        for element in self._ELEMENTS[:20]:
+            element.write_binary_gds_stream(binary_gds_stream)
+        # map(lambda element: element.write_binary_gds_stream(binary_gds_stream), self._ELEMENTS[:10])
+        # for i in range(0,len(self._ELEMENTS)):
+        #     self._ELEMENTS[i].write_binary_gds_stream(binary_gds_stream)
             
             
         self._ENDSTR.write_binary_gds_stream(binary_gds_stream)

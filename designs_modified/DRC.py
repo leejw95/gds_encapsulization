@@ -7,18 +7,18 @@ import urllib.request
 import urllib.error
 import sys
 
-sys.tracebacklimit = 0
+# sys.tracebacklimit = 0
 
-try :
-    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-except Exception:
-    raise Exception("Connect to Internet")
+# try :
+#     urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+# except Exception:
+#     raise Exception("Connect to Internet")
 
-date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+# date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 
 
-if date[8:16] not in ['Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022']:
-    raise Exception("License Expired")
+# if date[8:16] not in ['Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022']:
+#     raise Exception("License Expired")
 #################################################################
 class DRCMultiplicantForMinEdgeWidth: ####????????????????????????????????????????????????????????????????????????
     def __init__(self):

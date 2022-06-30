@@ -121,42 +121,42 @@ def main_1():
     Stick_w = open('./auto_encrypted_test/'+f_name,'w')
     Stick_w.write(astunparse.unparse(Stick_out))
 
-    GDS_EL = ast.parse(open('./gds_editor_ver3_modified/gds_elements.py').read())
+    GDS_EL = ast.parse(open('./gds_editor_ver3/gds_elements.py').read())
     GDS_EL_1 = name_change()
     GDS_EL_out = GDS_EL_1.visit(GDS_EL)
     f_name = hashing('gds_elements') + '.py'
     GDS_EL_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_EL_w.write(astunparse.unparse(GDS_EL_out))
 
-    GDS_R = ast.parse(open('./gds_editor_ver3_modified/gds_record.py').read())
+    GDS_R = ast.parse(open('./gds_editor_ver3/gds_record.py').read())
     GDS_R_1 = name_change()
     GDS_R_out = GDS_R_1.visit(GDS_R)
     f_name = hashing('gds_record') + '.py'
     GDS_R_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_R_w.write(astunparse.unparse(GDS_R_out))
 
-    GDS_STREAM = ast.parse(open('./gds_editor_ver3_modified/gds_stream.py').read())
+    GDS_STREAM = ast.parse(open('./gds_editor_ver3/gds_stream.py').read())
     GDS_STREAM_1 = name_change()
     GDS_STREAM_out = GDS_STREAM_1.visit(GDS_STREAM)
     f_name = hashing('gds_stream') + '.py'
     GDS_STREAM_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_STREAM_w.write(astunparse.unparse(GDS_STREAM_out))
 
-    GDS_structure = ast.parse(open('./gds_editor_ver3_modified/gds_structures.py').read())
+    GDS_structure = ast.parse(open('./gds_editor_ver3/gds_structures.py').read())
     GDS_structure_1 = name_change()
     GDS_structure_out = GDS_structure_1.visit(GDS_structure)
     f_name = hashing('gds_structures') + '.py'
     GDS_structure_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_structure_w.write(astunparse.unparse(GDS_structure_out))
 
-    gds_tags = ast.parse(open('./gds_editor_ver3_modified/gds_tags.py').read())
+    gds_tags = ast.parse(open('./gds_editor_ver3/gds_tags.py').read())
     gds_tags_1 = name_change()
     gds_tags_out = gds_tags_1.visit(gds_tags)
     f_name = hashing('gds_tags') + '.py'
     gds_tags_w = open('./auto_encrypted_test/'+f_name,'w')
     gds_tags_w.write(astunparse.unparse(gds_tags_out))
 
-    user_d = ast.parse(open('./gds_editor_ver3_modified/user_define_exceptions.py').read())
+    user_d = ast.parse(open('./gds_editor_ver3/user_define_exceptions.py').read())
     user_d_1 = name_change()
     user_d_out = user_d_1.visit(user_d)
     f_name = hashing('user_define_exceptions') + '.py'

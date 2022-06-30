@@ -1,9 +1,10 @@
+import warnings
+
 from gds_editor_ver3 import gds_tags
 import struct
 import math
 from datetime import datetime, MINYEAR
 from gds_editor_ver3 import user_define_exceptions
-import warnings
 class GDS_HEADER():
     def __init__(self, tag=gds_tags.DICT['HEADER'], gds_data=None):
         self.tag=tag
@@ -164,7 +165,7 @@ class GDS_FONTS():
             fmt='>HH'+str(len(self.fonts))+'s'
             fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.fonts)
             binary_gds_stream.write(fmt_binary_data)
-
+    
     def read_binary_gds_stream(self,tag,gds_data):
         fonts_data,=struct.unpack('>'+str(len(gds_data))+'s',gds_data)
         self.tag=tag
@@ -371,12 +372,6 @@ class GDS_STRNAME():
         self.strname=None
         
     def write_binary_gds_stream(self,binary_gds_stream):
-        if type(self.strname) == bytes:
-            decoded_str  = self.strname.decode()
-            if '\x00' in decoded_str:
-                self.strname = decoded_str.split('\x00', 1)[0]
-            else:
-                self.strname = decoded_str
         if len(self.strname)%2:
             fmt='>HH'+str(len(self.strname)+1)+'s'
             fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,str.encode(self.strname)+b'\0')
@@ -467,14 +462,22 @@ class GDS_PLEX():
         self.plex=plex_data
         
 class GDS_LAYER():
+    from designs import DesignParameters
+    __BLOCKLAYER = DesignParameters._LayerMapping['ddf941219e743e20011d3fad8c682b84cf149dab98cabd704f779c40e6604d31'][0]
+    __REPLACELAYER = 999
     def __init__(self,tag=gds_tags.DICT['LAYER'],gds_data=None):
         self.tag=tag
         self.layer=gds_data
     def write_binary_gds_stream(self,binary_gds_stream):
-        
-        fmt='>HHh'
-        fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.layer)
-        binary_gds_stream.write(fmt_binary_data)
+        if self.layer >= self.__BLOCKLAYER:
+            fmt='>HHh'
+            fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.layer)
+            binary_gds_stream.write(fmt_binary_data)
+        else:
+            warnings.warn('Demo version does not support lower layer')
+            fmt = '>HHh'
+            fmt_binary_data = struct.pack(fmt, struct.calcsize(fmt), self.tag, self.__REPLACELAYER)
+            binary_gds_stream.write(fmt_binary_data)
         
     def read_binary_gds_stream(self,tag,gds_data):
         record_layer,=struct.unpack('>h',gds_data)
@@ -563,9 +566,6 @@ class GDS_WIDTH():
         self.width=gds_data
     def write_binary_gds_stream(self,binary_gds_stream):
         fmt='>HHi'
-        if type(self.width):
-            self.width = int(self.width)
-            warnings.warn('Float type width input detected!')
         fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,self.width)
         binary_gds_stream.write(fmt_binary_data)
         
@@ -614,12 +614,6 @@ class GDS_SNAME():
         self.tag=tag
         self.sname=None
     def write_binary_gds_stream(self,binary_gds_stream):
-        if type(self.sname) == bytes:
-            decoded_str = self.sname.decode()
-            if '\x00' in decoded_str:
-                self.sname = decoded_str.split('\x00', 1)[0]
-            else:
-                self.sname = decoded_str
         if len(self.sname)%2:
             fmt='>HH'+str(len(self.sname)+1)+'s'
             fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,str.encode(self.sname)+b'\0')
@@ -809,9 +803,8 @@ class GDS_ANGLE():
         self.tag=tag
         self.angle=None
     def write_binary_gds_stream(self,binary_gds_stream):
-        self.angle = 0 if self.angle == None else self.angle
         fmt='>HHQ'
-        fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,excess64_8byte_encode(int(self.angle)))
+        fmt_binary_data=struct.pack(fmt,struct.calcsize(fmt),self.tag,excess64_8byte_encode(self.angle))
         binary_gds_stream.write(fmt_binary_data)
         
     def read_binary_gds_stream(self,tag,gds_data):
