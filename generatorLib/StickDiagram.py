@@ -1,12 +1,12 @@
 import types
 
-from gds_editor_ver3 import gds_stream
-from gds_editor_ver3 import gds_structures
-from gds_editor_ver3 import gds_tags
-from gds_editor_ver3 import gds_record
-from gds_editor_ver3 import gds_elements
+import gds_stream
+import gds_structures
+import gds_tags
+import gds_record
+import gds_elements
 from datetime import datetime, MINYEAR
-from gds_editor_ver3 import user_define_exceptions
+import user_define_exceptions
 import gds_editor_ver3
 #
 # import gds_editor_ver3.gds_stream
@@ -17,7 +17,7 @@ import gds_editor_ver3
 # from datetime import datetime, MINYEAR
 # import gds_editor_ver3.user_define_exceptions
 
-from generatorLib import DesignParameters
+import DesignParameters
 import copy
 import math
 

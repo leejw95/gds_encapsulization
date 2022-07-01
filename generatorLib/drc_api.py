@@ -1,6 +1,6 @@
 import sys, inspect
 import re
-from generatorLib import DRC
+import DRC
 import user_setup
 
 def run_for_process_update():
