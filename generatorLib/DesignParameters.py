@@ -1,5 +1,6 @@
 import re
 import user_define_exceptions
+import hashlib
 import sys
 import os
 import user_setup
@@ -1020,25 +1021,35 @@ def _ReadLayerMapFile(_LayerMapFile, CadenceVersion ):
         return _newLayerMapDictionary
 
     elif CadenceVersion== 'VIRTUOSO':
-        _newLayerMapDictionary={}
-        linenum=len(_LayerMapFile.readlines())
+        _newLayerMapDictionary = {}
+        linenum = len(_LayerMapFile.readlines())
         _LayerMapFile.seek(0)
-
         for i in range(0, linenum):
-            tmp=_LayerMapFile.readline()
-            if re.match('^\s*#.*$',tmp):
-            #if (tmp[0] =='#'):
+            tmp = _LayerMapFile.readline()
+            if re.match('^\s*#.*$', tmp):
+                # if (tmp[0] =='#'):
                 pass
-                #print 'The line is comment. skip the current step:', tmp
-            elif re.match('^\s+$',tmp):
-            #elif (tmp in ['\n',  '\r\n']):
+                # print 'The line is comment. skip the current step:', tmp
+            elif re.match('^\s+$', tmp):
+                # elif (tmp in ['\n',  '\r\n']):
                 pass
-                #print 'The line is blink. skip the current step:', tmp
+                # print 'The line is blink. skip the current step:', tmp
             else:
-                tmp2=tmp.split()
-                _newLayerMapDictionary[(tmp2[0],tmp2[1])]=(int(tmp2[2]), int(tmp2[3]))
+                tmp2 = tmp.split()
+                hash = hashlib.new('sha256')
+                hash.update(tmp2[0].encode())
+                hashed_layer = hash.hexdigest()
+                if hashed_layer[0].isdigit():
+                    hashed_layer = '_' + hashed_layer
+                hash = hashlib.new('sha256')
+                hash.update(tmp2[1].encode())
+                hashed_layer2 = hash.hexdigest()
+                if hashed_layer2[0].isdigit():
+                    hashed_layer2 = '_' + hashed_layer2
+                _newLayerMapDictionary[(hashed_layer, hashed_layer2)] = (int(tmp2[2]), int(tmp2[3]))
+                _newLayerMapDictionary[(tmp2[0], tmp2[1])] = (int(tmp2[2]), int(tmp2[3]))
         return _newLayerMapDictionary
-    else :
+    else:
         raise user_define_exceptions.IncorrectInputError('CadenceVersion has incorrect value')
 
 
