@@ -100,6 +100,13 @@ def hashing(key:str):
 
 
 def main_1():
+    US = ast.parse(open('./user_setup.py').read())
+    US_1 = name_change()
+    US_out = US_1.visit(US)
+    f_name = hashing('user_setup') +'.py'
+    US_w = open('./auto_encrypted_test/'+f_name,'w')
+    US_w.write(astunparse.unparse(US_out))
+
     DP = ast.parse(open('./generatorLib/DesignParameters.py').read())
     DP_1 = name_change()
     DP_out = DP_1.visit(DP)
