@@ -42,7 +42,8 @@ class name_change(ast.NodeTransformer) :
                                      'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
                                        'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                                        "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022',
-                                       'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap']:
+                                       'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
+                                       'Tie_Cell', 'NMOSWithDummy', 'PMOSWithDummy', 'SupplyRails', 'ViaPoly2Met1', 'CoordinateCalc']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
                     hash_str = sha.hexdigest()
@@ -104,6 +105,41 @@ def main_1():
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = ('Tie_Cell') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
+    test = ast.parse(open('./NMOSWithDummy.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('NMOSWithDummy') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
+    test = ast.parse(open('./PMOSWithDummy.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('PMOSWithDummy') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
+    test = ast.parse(open('./SupplyRails.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('SupplyRails') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
+    test = ast.parse(open('./ViaPoly2Met1.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('ViaPoly2Met1') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
+    test = ast.parse(open('./CoordinateCalc.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('CoordinateCalc') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
