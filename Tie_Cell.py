@@ -1,12 +1,12 @@
-from generatorLib import StickDiagram
-from generatorLib import DesignParameters
+import StickDiagram
+import DesignParameters
 import copy
 import math
-from generatorLib import DRC
-from generatorLib.generator_models import PMOSWithDummy
-from generatorLib.generator_models import ViaPoly2Met1
-from generatorLib.generator_models import SupplyRails
-from generatorLib.generator_models import NMOSWithDummy
+import DRC
+import PMOSWithDummy
+import ViaPoly2Met1
+import SupplyRails
+import NMOSWithDummy
 
 class Tie_Cell(StickDiagram._StickDiagram):
     def __init__(self, _DesignParameter=None, _Name='TIEH_2X_STD_v1'):

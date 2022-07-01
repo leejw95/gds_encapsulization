@@ -1,6 +1,6 @@
-from generatorLib import StickDiagram
-from generatorLib import DesignParameters
-from generatorLib import DRC
+import StickDiagram
+import DesignParameters
+import DRC
 
 class _NMOS(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation = dict(_NMOSNumberofGate=None, _NMOSChannelWidth=None, _NMOSChannellength=None,

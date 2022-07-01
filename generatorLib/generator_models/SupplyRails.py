@@ -1,10 +1,9 @@
 import copy
 
-from generatorLib import StickDiagram
-from generatorLib import DesignParameters
-from generatorLib import DRC
-
-from generatorLib import CoordinateCalc as CoordCalc
+import StickDiagram
+import DesignParameters
+import DRC
+import CoordinateCalc as CoordCalc
 
 
 class SupplyRail(StickDiagram._StickDiagram):

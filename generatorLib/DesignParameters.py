@@ -1,5 +1,5 @@
 import re
-from gds_editor_ver3 import user_define_exceptions
+import user_define_exceptions
 import sys
 import os
 import user_setup

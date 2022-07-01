@@ -1,6 +1,6 @@
-from generatorLib import StickDiagram
-from generatorLib import DesignParameters
-from generatorLib import DRC
+import StickDiagram
+import DesignParameters
+import DRC
 
 
 class _ViaMet12Met2(StickDiagram._StickDiagram):

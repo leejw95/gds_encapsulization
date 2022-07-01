@@ -1,8 +1,8 @@
-from gds_editor_ver3 import user_define_exceptions
+import user_define_exceptions
 import struct
-from gds_editor_ver3 import gds_tags
-from gds_editor_ver3 import gds_record
-from gds_editor_ver3 import gds_elements
+import gds_tags
+import gds_record
+import gds_elements
 
 class GDS_STRUCTURE():
     def __init__(self,gds_data=None):

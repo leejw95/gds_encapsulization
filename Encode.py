@@ -100,21 +100,21 @@ def hashing(key:str):
 
 
 def main_1():
-    DP = ast.parse(open('./designs_modified/DesignParameters.py').read())
+    DP = ast.parse(open('./generatorLib/DesignParameters.py').read())
     DP_1 = name_change()
     DP_out = DP_1.visit(DP)
     f_name = hashing('DesignParameters') +'.py'
     DP_w = open('./auto_encrypted_test/'+f_name,'w')
     DP_w.write(astunparse.unparse(DP_out))
 
-    DRC = ast.parse(open('./designs_modified/DRC.py').read())
+    DRC = ast.parse(open('./designs/DRC.py').read())
     DRC_1 = name_change()
     DRC_out = DRC_1.visit(DRC)
     f_name = hashing('DRC') + '.py'
     DRC_w = open('./auto_encrypted_test/'+f_name,'w')
     DRC_w.write(astunparse.unparse(DRC_out))
 
-    Stick = ast.parse(open('./designs_modified/StickDiagram.py').read())
+    Stick = ast.parse(open('./designs/StickDiagram.py').read())
     Stick_1 = name_change()
     Stick_out = Stick_1.visit(Stick)
     f_name = hashing('StickDiagram') + '.py'
