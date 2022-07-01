@@ -40,7 +40,7 @@ def run_for_process_update():
     _LayerMappingTmp = None
     _Technology = user_setup._Technology
     if _Technology == 'SS28nm':
-        _LayerMapFile = open(_HomeDirectory + '/auto_encrypted_test/cmos28lp_tech.layermap')
+        _LayerMapFile = open(_HomeDirectory + '/cmos28lp_tech.layermap')
         _LayerMappingTmp = _ReadLayerMapFile(_LayerMapFile, 'VIRTUOSO')
     elif _Technology == 'TSMC180nm':
         _LayerMapFile = open(_HomeDirectory + '/PyQTInterface/layermap/TSMC180nm/tsmc18rf.layermap')
