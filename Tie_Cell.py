@@ -961,7 +961,6 @@ class Tie_Cell(StickDiagram._StickDiagram):
     # 	self._DesignParameter['_TIELpin']['_XYCoordinates']=[[(self._DesignParameter['m1_nmos_drain_routing_x']['_XYCoordinates'][0][0][0]+self._DesignParameter['m1_nmos_drain_routing_x']['_XYCoordinates'][0][-1][0])/2, self._DesignParameter['m1_nmos_drain_routing_x']['_XYCoordinates'][0][0][1]]]
 
 if __name__ == '__main__':
-    import random
     for i in range(0,1):
         #finger=random.randint(1,8)
         #npratio=round(2+random.random())

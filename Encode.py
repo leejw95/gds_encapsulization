@@ -33,7 +33,7 @@ class name_change(ast.NodeTransformer) :
                 elif old_value[:5] in ['exces']:
                     pass
                 elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
-                                     'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items',
+                                     'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random',
                                      'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit',
                                      'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest',
                                      '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_',
