@@ -100,6 +100,13 @@ def hashing(key:str):
 
 
 def main_1():
+    test = ast.parse(open('./Tie_Cell.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = ('Tie_Cell') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
+
     US = ast.parse(open('./user_setup.py').read())
     US_1 = name_change()
     US_out = US_1.visit(US)
