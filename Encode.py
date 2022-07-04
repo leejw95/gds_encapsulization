@@ -263,5 +263,7 @@ def main_2():
         a[1] = hashing(a[1])
         print(lineup(a))
 
+# def generator
+
 
 main_1()
