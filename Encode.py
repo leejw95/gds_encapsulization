@@ -76,6 +76,9 @@ class name_change(ast.NodeTransformer) :
                     delattr(node, field)
                 else:
                     setattr(node, field, new_node)
+                if isinstance(old_value, ast.Name):
+                    if old_value.id == 'print' :
+                        node = ast.Pass()
         return node
     # def visit_Call(self, node) :
     #     for field, old_value in ast.iter_fields(node):
