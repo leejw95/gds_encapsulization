@@ -1,7 +1,7 @@
 import re #used to read drc_rule file
 import math
-import user_define_exceptions
-import DesignParameters
+from gds_editor_ver3 import user_define_exceptions
+from generatorLib import DesignParameters
 import user_setup
 _Technology= user_setup._Technology
 

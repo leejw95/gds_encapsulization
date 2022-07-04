@@ -1,7 +1,6 @@
-import StickDiagram
-import DesignParameters
-import DRC
-
+from generatorLib import StickDiagram
+from generatorLib import DesignParameters
+from generatorLib import DRC
 
 class _ViaMet12Met2(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation= dict(_ViaMet12Met2NumberOfCOX=None, _ViaMet12Met2NumberOfCOY=None )

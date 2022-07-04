@@ -19,7 +19,5 @@ setup(
             Extension("b169b83893e6fcb377ebc4989d80390bf1668232c6f2749c7ab4af4c0703d19d", ["b169b83893e6fcb377ebc4989d80390bf1668232c6f2749c7ab4af4c0703d19d.c"]), # 7
             Extension("d228727cc591c5a1c73031137d54a2e982c864f4b77ab94ab6834f8ee6788269", ["d228727cc591c5a1c73031137d54a2e982c864f4b77ab94ab6834f8ee6788269.c"]), # 8
             Extension("Generator", ["Generator.c"])
-            
-            # Extension("block_layer", ["block_layer.c"])
             ]
 )

@@ -1,6 +1,6 @@
-import StickDiagram
-import DesignParameters
-import DRC
+from generatorLib import StickDiagram
+from generatorLib import DesignParameters
+from generatorLib import DRC
 
 class _PMOS(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation = dict(_PMOSNumberofGate=None, _PMOSChannelWidth=None, _PMOSChannellength=None,
