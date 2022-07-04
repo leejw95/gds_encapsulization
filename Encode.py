@@ -1,6 +1,7 @@
 import ast
 import astunparse
 import hashlib
+import keyword
 
 class name_change(ast.NodeTransformer) :
     # def visit_Name (self, node) :
@@ -60,6 +61,13 @@ class name_change(ast.NodeTransformer) :
                         elif not isinstance(value, ast.AST):
                             new_values.extend(value)
                             continue
+                    elif type(value) == str:
+                        sha = hashlib.new('sha256')
+                        sha.update(value.encode())
+                        hash_str = sha.hexdigest()
+                        if hash_str[0].isdigit():
+                            hash_str = '_' + hash_str
+                        value = hash_str
                     new_values.append(value)
                 old_value[:] = new_values
             elif isinstance(old_value, ast.AST):
@@ -101,6 +109,13 @@ def hashing(key:str):
 
 
 def main_1():
+    # test = ast.parse(open('./test.py').read())
+    # test_1 = name_change()
+    # test_out = test_1.visit(test)
+    # f_name = ('test') +'.py'
+    # test_w = open('./auto_encrypted_test/'+f_name,'w')
+    # test_w.write(astunparse.unparse(test_out))
+
     test = ast.parse(open('./Tie_Cell.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
