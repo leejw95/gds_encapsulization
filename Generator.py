@@ -6,4 +6,4 @@ print ("Select Generator list {}: ".format(libname))
 
 arg = Arg_name_to_object
 
-exec(open('Tie_Cell' + '.py').read())
+exec(open(arg.num[int(input())] + '.py').read())

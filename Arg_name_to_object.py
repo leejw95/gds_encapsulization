@@ -1,7 +1,7 @@
 import hashlib
 
 libname = ['Tie_Cell', 'NMOSWithDummy', 'PMOSWithDummy', 'SupplyRails']
-hashed = []
+num = []
 
 def hashing(key:str):
     sha = hashlib.new('sha256')
@@ -13,4 +13,4 @@ def hashing(key:str):
 
 for i in libname :
     a = hashing(i)
-    hashed.append(a)
+    num.append(a)
