@@ -44,7 +44,8 @@ class name_change(ast.NodeTransformer) :
                                        'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                                        "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022',
                                        'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
-                                       'Tie_Cell', 'NMOSWithDummy', 'PMOSWithDummy', 'SupplyRails', 'ViaPoly2Met1', 'CoordinateCalc']:
+                                       'Tie_Cell', 'NMOSWithDummy', 'PMOSWithDummy', 'SupplyRails', 'ViaPoly2Met1', 'CoordinateCalc',
+                                       './TIEL_2X_STD_v1.gds', 'wb']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
                     hash_str = sha.hexdigest()

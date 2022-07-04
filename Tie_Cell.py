@@ -1001,8 +1001,7 @@ if __name__ == '__main__':
         Tie_CellObj._CalculateDesignParameter_tielow_v1(**input_params)
 
         Tie_CellObj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=Tie_CellObj._DesignParameter)
-        _fileName = 'TIEL_2X_STD_v1.gds'
-        testStreamFile = open('./{}'.format(_fileName), 'wb')
+        testStreamFile = open('./TIEL_2X_STD_v1.gds', 'wb')
 
         tmp = Tie_CellObj._CreateGDSStream(Tie_CellObj._DesignParameter['_GDSFile']['_GDSFile'])
 
