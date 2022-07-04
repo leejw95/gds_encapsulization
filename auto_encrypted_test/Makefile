@@ -6,10 +6,7 @@ cyt :
 	$(CC) $(OBJECTS)
 
 comp :
-	LDSHARED="icc -fPIC -c" CC="icc -fp-model strict" python setup.py install
-
-comp2 : 
-	LDSHARED="icc -o libgen.so" $(OBJECTS2)
+	LDSHARED="icc -shared" CC="icc -fp-model strict" python setup.py install
 
 exec :
-	LDSHARED="icc -o" Gen Generator.c -L./ -lgen
+	LDSHARED="icc -shared -o" Generator.c
