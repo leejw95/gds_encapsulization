@@ -35,7 +35,7 @@ class name_change(ast.NodeTransformer) :
                     pass
                 elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                                      'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center',
-                                     'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit',
+                                     'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit', 'eval',
                                      'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest',
                                      '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_',
                                      'append','deepcopy','globals','doctest','testmod','warnings','warn','pop','getenv','platform','win32','linux2','match', 'encode',
@@ -44,7 +44,6 @@ class name_change(ast.NodeTransformer) :
                                        'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                                        "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022',
                                        'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
-                                       'Tie_Cell', 'NMOSWithDummy', 'PMOSWithDummy', 'SupplyRails', 'ViaPoly2Met1', 'CoordinateCalc',
                                        './TIEL_2X_STD_v1.gds', 'wb']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
@@ -123,42 +122,42 @@ def main_1():
     test = ast.parse(open('./Tie_Cell.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('Tie_Cell') +'.py'
+    f_name = hashing('Tie_Cell') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./NMOSWithDummy.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('NMOSWithDummy') +'.py'
+    f_name = hashing('NMOSWithDummy') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./PMOSWithDummy.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('PMOSWithDummy') +'.py'
+    f_name = hashing('PMOSWithDummy') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./SupplyRails.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('SupplyRails') +'.py'
+    f_name = hashing('SupplyRails') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./ViaPoly2Met1.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('ViaPoly2Met1') +'.py'
+    f_name = hashing('ViaPoly2Met1') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./CoordinateCalc.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('CoordinateCalc') +'.py'
+    f_name = hashing('CoordinateCalc') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
