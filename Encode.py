@@ -38,7 +38,7 @@ class name_change(ast.NodeTransformer) :
                 elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                                      'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center',
                                      'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit', 'eval', 'isinstance', 'sorted',
-                                     'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip'
+                                     'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip', 'traceback', 'print_exc',
                                      '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_',
                                      'append','deepcopy','globals','doctest','testmod','warnings','warn','pop','getenv','platform','win32','linux2','match', 'encode',
                                      '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
@@ -121,12 +121,12 @@ def main_1():
     # test_w = open('./auto_encrypted_test/'+f_name,'w')
     # test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./Encode_list/Trans.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('Trans') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
+    #test = ast.parse(open('./Encode_list/Trans.py').read())
+    #test_1 = name_change()
+    #test_out = test_1.visit(test)
+    #f_name = hashing('Trans') +'.py'
+    #test_w = open('./auto_encrypted_test/'+f_name,'w')
+    #test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./Encode_list/Tie_Cell.py').read())
     test_1 = name_change()
@@ -177,21 +177,21 @@ def main_1():
     US_w = open('./auto_encrypted_test/'+f_name,'w')
     US_w.write(astunparse.unparse(US_out))
 
-    DP = ast.parse(open('./Encode_list/generatorLib/DesignParameters.py').read())
+    DP = ast.parse(open('./Encode_list/DesignParameters.py').read())
     DP_1 = name_change()
     DP_out = DP_1.visit(DP)
     f_name = hashing('DesignParameters') +'.py'
     DP_w = open('./auto_encrypted_test/'+f_name,'w')
     DP_w.write(astunparse.unparse(DP_out))
 
-    DRC = ast.parse(open('./Encode_list/generatorLib/DRC.py').read())
+    DRC = ast.parse(open('./Encode_list/DRC.py').read())
     DRC_1 = name_change()
     DRC_out = DRC_1.visit(DRC)
     f_name = hashing('DRC') + '.py'
     DRC_w = open('./auto_encrypted_test/'+f_name,'w')
     DRC_w.write(astunparse.unparse(DRC_out))
 
-    Stick = ast.parse(open('./Encode_list/generatorLib/StickDiagram.py').read())
+    Stick = ast.parse(open('./Encode_list/StickDiagram.py').read())
     Stick_1 = name_change()
     Stick_out = Stick_1.visit(Stick)
     f_name = hashing('StickDiagram') + '.py'
@@ -326,5 +326,5 @@ def method_list() :
 #             else:
 #                 self.default = f"\'{self.default}\'"
 
-method_list() ## for obtaining generator functions
+#method_list() ## for obtaining generator functions
 main_1()

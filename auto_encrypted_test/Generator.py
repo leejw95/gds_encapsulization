@@ -1,6 +1,6 @@
 # import Arg_name_to_object
 import gzip, pickle
-from auto_encrypted_test import *
+#from auto_encrypted_test import *
 import Trans
 from os.path import dirname, basename, isfile, join
 import glob
