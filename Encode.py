@@ -3,7 +3,7 @@ import astunparse
 import hashlib
 import keyword
 import inspect
-import glob, sys, os, user_setup, platform, pickle
+import glob, sys, os, user_setup, platform, pickle, gzip
 
 class name_change(ast.NodeTransformer) :
     # def visit_Name (self, node) :
@@ -38,7 +38,7 @@ class name_change(ast.NodeTransformer) :
                 elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                                      'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center',
                                      'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit', 'eval', 'isinstance', 'sorted',
-                                     'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest',
+                                     'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip'
                                      '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_',
                                      'append','deepcopy','globals','doctest','testmod','warnings','warn','pop','getenv','platform','win32','linux2','match', 'encode',
                                      '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
@@ -46,7 +46,7 @@ class name_change(ast.NodeTransformer) :
                                        'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                                        "Connect to Internet", 'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Jun 2022','Jul 2022', 'Sep 2022', 'Oct 2022',
                                        'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
-                                       './TIEL_2X_STD_v1.gds', 'wb']:
+                                       './TIEL_2X_STD_v1.gds', 'wb', 'rb']:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
                     hash_str = sha.hexdigest()
@@ -121,119 +121,119 @@ def main_1():
     # test_w = open('./auto_encrypted_test/'+f_name,'w')
     # test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./Arg_name_to_object.py').read())
+    test = ast.parse(open('./Encode_list/Trans.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = hashing('Arg_name_to_object') +'.py'
+    f_name = hashing('Trans') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./Tie_Cell.py').read())
+    test = ast.parse(open('./Encode_list/Tie_Cell.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('Tie_Cell') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./NMOSWithDummy.py').read())
+    test = ast.parse(open('./Encode_list/NMOSWithDummy.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('NMOSWithDummy') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./PMOSWithDummy.py').read())
+    test = ast.parse(open('./Encode_list/PMOSWithDummy.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('PMOSWithDummy') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./SupplyRails.py').read())
+    test = ast.parse(open('./Encode_list/SupplyRails.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('SupplyRails') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./ViaPoly2Met1.py').read())
+    test = ast.parse(open('./Encode_list/ViaPoly2Met1.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('ViaPoly2Met1') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./CoordinateCalc.py').read())
+    test = ast.parse(open('./Encode_list/CoordinateCalc.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('CoordinateCalc') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    US = ast.parse(open('./user_setup.py').read())
+    US = ast.parse(open('./Encode_list/user_setup.py').read())
     US_1 = name_change()
     US_out = US_1.visit(US)
     f_name = hashing('user_setup') +'.py'
     US_w = open('./auto_encrypted_test/'+f_name,'w')
     US_w.write(astunparse.unparse(US_out))
 
-    DP = ast.parse(open('./generatorLib/DesignParameters.py').read())
+    DP = ast.parse(open('./Encode_list/generatorLib/DesignParameters.py').read())
     DP_1 = name_change()
     DP_out = DP_1.visit(DP)
     f_name = hashing('DesignParameters') +'.py'
     DP_w = open('./auto_encrypted_test/'+f_name,'w')
     DP_w.write(astunparse.unparse(DP_out))
 
-    DRC = ast.parse(open('./generatorLib/DRC.py').read())
+    DRC = ast.parse(open('./Encode_list/generatorLib/DRC.py').read())
     DRC_1 = name_change()
     DRC_out = DRC_1.visit(DRC)
     f_name = hashing('DRC') + '.py'
     DRC_w = open('./auto_encrypted_test/'+f_name,'w')
     DRC_w.write(astunparse.unparse(DRC_out))
 
-    Stick = ast.parse(open('./generatorLib/StickDiagram.py').read())
+    Stick = ast.parse(open('./Encode_list/generatorLib/StickDiagram.py').read())
     Stick_1 = name_change()
     Stick_out = Stick_1.visit(Stick)
     f_name = hashing('StickDiagram') + '.py'
     Stick_w = open('./auto_encrypted_test/'+f_name,'w')
     Stick_w.write(astunparse.unparse(Stick_out))
 
-    GDS_EL = ast.parse(open('./gds_editor_ver3/gds_elements.py').read())
+    GDS_EL = ast.parse(open('./Encode_list/gds_elements.py').read())
     GDS_EL_1 = name_change()
     GDS_EL_out = GDS_EL_1.visit(GDS_EL)
     f_name = hashing('gds_elements') + '.py'
     GDS_EL_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_EL_w.write(astunparse.unparse(GDS_EL_out))
 
-    GDS_R = ast.parse(open('./gds_editor_ver3/gds_record.py').read())
+    GDS_R = ast.parse(open('./Encode_list/gds_record.py').read())
     GDS_R_1 = name_change()
     GDS_R_out = GDS_R_1.visit(GDS_R)
     f_name = hashing('gds_record') + '.py'
     GDS_R_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_R_w.write(astunparse.unparse(GDS_R_out))
 
-    GDS_STREAM = ast.parse(open('./gds_editor_ver3/gds_stream.py').read())
+    GDS_STREAM = ast.parse(open('./Encode_list/gds_stream.py').read())
     GDS_STREAM_1 = name_change()
     GDS_STREAM_out = GDS_STREAM_1.visit(GDS_STREAM)
     f_name = hashing('gds_stream') + '.py'
     GDS_STREAM_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_STREAM_w.write(astunparse.unparse(GDS_STREAM_out))
 
-    GDS_structure = ast.parse(open('./gds_editor_ver3/gds_structures.py').read())
+    GDS_structure = ast.parse(open('./Encode_list/gds_structures.py').read())
     GDS_structure_1 = name_change()
     GDS_structure_out = GDS_structure_1.visit(GDS_structure)
     f_name = hashing('gds_structures') + '.py'
     GDS_structure_w = open('./auto_encrypted_test/'+f_name,'w')
     GDS_structure_w.write(astunparse.unparse(GDS_structure_out))
 
-    gds_tags = ast.parse(open('./gds_editor_ver3/gds_tags.py').read())
+    gds_tags = ast.parse(open('./Encode_list/gds_tags.py').read())
     gds_tags_1 = name_change()
     gds_tags_out = gds_tags_1.visit(gds_tags)
     f_name = hashing('gds_tags') + '.py'
     gds_tags_w = open('./auto_encrypted_test/'+f_name,'w')
     gds_tags_w.write(astunparse.unparse(gds_tags_out))
 
-    user_d = ast.parse(open('./gds_editor_ver3/user_define_exceptions.py').read())
+    user_d = ast.parse(open('./Encode_list/user_define_exceptions.py').read())
     user_d_1 = name_change()
     user_d_out = user_d_1.visit(user_d)
     f_name = hashing('user_define_exceptions') + '.py'
@@ -265,7 +265,7 @@ def main_2():
         a[1] = hashing(a[1])
         print(lineup(a))
 
-def method_list() :
+def method_list() : 
     dir_check=os.getcwd()
     if 'generator_model_path' in user_setup.__dict__ and user_setup.generator_model_path:
         generator_model_path = user_setup.generator_model_path
@@ -294,26 +294,37 @@ def method_list() :
                 class_dict[generator_class_name] = obj
                 class_name_dict[generator_class_name] = name
                 libraries[generator_class_name] = tmp
-                # fcn_list = list(filter(lambda cal_fcn : "Calculate" in cal_fcn, [name for name, _ in inspect.getmembers(obj)]))
                 fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if "Calculate" in fcn_name]
                 class_function_dict[generator_class_name] = dict()
                 for fcn_name, fcn_obj in fcn_list:
                     args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                    args_list = [Parm(arg.name, arg.default) for arg in args]
-                    class_function_dict[generator_class_name][fcn_name] = args_list
+                    # args = str(args).split('=')[0]
+                    class_function_dict[generator_class_name][fcn_name] = args
+    
+    # print (class_function_dict)
+    # print ('//')
+    # print (class_dict)
+    class_lst = dict()
+    for i in class_dict.keys() :
+        class_lst[i] = str(class_dict[i])[6:-2].split('.')[-1]
+    # print (class_lst)
+    # print ((class_lst['TristateInverter']))
 
-class Parm:
-    def __init__(self, name, default):
-        self.name = name
-        self.default = default
-        self.check_value()
+    with gzip.open ("./Gen_list.pickle", "wb") as f :
+        pickle.dump([class_function_dict, class_lst], f)
 
-    def check_value(self):
-        if type(self.default) == str:
-            if (self.default[0] == '\'' and self.default[-1] == '\'') or (self.default[0] == '\"' and self.default[-1] == '\"'):
-                return
-            else:
-                self.default = f"\'{self.default}\'"
+# class Parm:
+#     def __init__(self, name, default):
+#         self.name = name
+#         self.default = default
+#         self.check_value()
 
-method_list()
-# main_1()
+#     def check_value(self):
+#         if type(self.default) == str:
+#             if (self.default[0] == '\'' and self.default[-1] == '\'') or (self.default[0] == '\"' and self.default[-1] == '\"'):
+#                 return
+#             else:
+#                 self.default = f"\'{self.default}\'"
+
+method_list() ## for obtaining generator functions
+main_1()
