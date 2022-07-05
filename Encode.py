@@ -326,5 +326,5 @@ def method_list() :
 #             else:
 #                 self.default = f"\'{self.default}\'"
 
-#method_list() ## for obtaining generator functions
+# method_list() ## for obtaining generator functions
 main_1()

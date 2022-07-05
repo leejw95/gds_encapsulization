@@ -12,6 +12,7 @@ import inspect
 # print (__all__)
 
 # from . import *
+swap = Trans.Transfer()
 
 with gzip.open('./Gen_list.pickle', 'rb') as f :
     picked = pickle.load(f)
@@ -53,7 +54,7 @@ for i in args.keys() :
         if val == 'None' or val == 'none' :
             args[i] = None
         else :
-            args[i] = val
+            args[i] = swap.change(val)
 
 # print (args)
 
@@ -61,7 +62,6 @@ transfer = [sel1, Func_list[sel2], args]
 
 # print (transfer)
 
-swap = Trans.Transfer()
 # print([swap.change(transfer[0])])
 
 # add1 = dict()
@@ -83,5 +83,6 @@ for name, cla in inspect.getmembers(lib) :
         abc(**new_args)
         obj._4690f053371816ceb54e58b693a58de7ef1a84383309889b3d0cb7a5ebb2436a(_98a63f876c8ce2884780fb17a1a6ae56c346beac00402ec8bdf6b914c1fd4920 = obj._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435)
         gds = open('./'+sel1+'.gds', 'wb')
-        tmp = obj._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(gds)
+        tmp = obj.cf39d1afa2d28ca3922bf136b6bb0cb031c5bc297c4c5eaca5f4277e99813980(obj._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_13864ddbaab63577bb07db6dcc11d8a2f724a0784933aedad515ce4a6fd2e256']['_13864ddbaab63577bb07db6dcc11d8a2f724a0784933aedad515ce4a6fd2e256'])
+        tmp._4b846fdde38fad3afc3a740a590ff2a6e775507515836c10129e02f95e93e578(gds)
         gds.close()
