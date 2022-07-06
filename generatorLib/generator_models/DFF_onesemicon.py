@@ -197,13 +197,13 @@ class DFF(StickDiagram._StickDiagram):
 
         self._DesignParameter['TG1'] = self._SrefElementDeclaration(
             _Reflect=[0, 0, 0], _Angle=0,
-            _DesignObj=transmission_gate.Transmission_gate(_Name='TG1In{}'.format(_Name)))[0]
+            _DesignObj=Transmission_gate.Transmission_gate(_Name='TG1In{}'.format(_Name)))[0]
         self._DesignParameter['TG1']['_DesignObj']._CalculateDesignParameter(**Parameters_TG1)
         self._DesignParameter['TG1']['_XYCoordinates'] = [[0, 0]]
 
         self._DesignParameter['TG2'] = self._SrefElementDeclaration(
             _Reflect=[0, 0, 0], _Angle=0,
-            _DesignObj=transmission_gate.Transmission_gate(_Name='TG2In{}'.format(_Name)))[0]
+            _DesignObj=Transmission_gate.Transmission_gate(_Name='TG2In{}'.format(_Name)))[0]
         self._DesignParameter['TG2']['_DesignObj']._CalculateDesignParameter(**Parameters_TG2)
         self._DesignParameter['TG2']['_XYCoordinates'] = [[0, 0]]
 

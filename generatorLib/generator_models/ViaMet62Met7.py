@@ -2,7 +2,7 @@ from generatorLib import StickDiagram
 from generatorLib import DesignParameters
 from generatorLib import DRC
 
-
+from gds_editor_ver3 import user_define_exceptions
 class _ViaMet62Met7(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation= dict(_ViaMet62Met7NumberOfCOX=None, _ViaMet62Met7NumberOfCOY=None,
                                           _MetalType = dict(METAL1 = 'X', METAL2 = 'X', METAL3 = 'X', METAL4 = 'X', METAL5 = 'X', METAL6 = 'X', METAL7 = 'X', METAL8 = 'Z', METAL9 = 'Z'),
