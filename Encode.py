@@ -84,7 +84,6 @@ class name_change(ast.NodeTransformer) :
                     if old_value.id == 'print' :
                         node = ast.Pass()
         if isinstance(node, ast.ImportFrom):
-            print('a')
             tmp_node = ast.Import()
             tmp_node.names = node.names
             return tmp_node
@@ -138,13 +137,16 @@ def main_1():
         generator_model_path = './generatorLib/generator_models'
     for generator in glob.iglob(f'{generator_model_path}/*.py') :
         if platform.system() in ['Linux', 'Darwin'] :
-            generator_class_name = generator.split('/')[-1][:3]
+            generator_class_name = generator.split('/')[-1][:-3]
         else :
             generator_class_name = generator.split('\\')[1][:-3]
         En_list.append(generator_class_name)
     
+    for a in En_list :
+        print (a)
+
     for gen in En_list :
-        A = ast.parse(open('./Encode_list/'+gen+'.py').read())
+        A = ast.parse(open('./generatorLib/generator_models/'+gen+'.py').read())
         A_1 = name_change()
         A_out = A_1.visit(A)
         f_name = hashing(gen) + '.py'
