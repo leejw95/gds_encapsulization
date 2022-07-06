@@ -2,7 +2,7 @@
 import _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f
 import struct
 import math
-from datetime import datetime, MINYEAR
+import datetime, MINYEAR
 import _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f
 import warnings
 
