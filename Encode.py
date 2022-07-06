@@ -84,7 +84,6 @@ class name_change(ast.NodeTransformer) :
                     if old_value.id == 'print' :
                         node = ast.Pass()
         if isinstance(node, ast.ImportFrom):
-            print('a')
             tmp_node = ast.Import()
             tmp_node.names = node.names
             return tmp_node
@@ -142,6 +141,12 @@ def main_1():
         else :
             generator_class_name = generator.split('\\')[1][:-3]
         En_list.append(generator_class_name)
+
+    print('a')
+    for a in En_list :
+        print (a)
+    
+    print ('a')
     
     for gen in En_list :
         A = ast.parse(open('./Encode_list/'+gen+'.py').read())
