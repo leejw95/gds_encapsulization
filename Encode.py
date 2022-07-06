@@ -121,12 +121,12 @@ def main_1():
     # test_w = open('./auto_encrypted_test/'+f_name,'w')
     # test_w.write(astunparse.unparse(test_out))
 
-    #test = ast.parse(open('./Encode_list/Trans.py').read())
-    #test_1 = name_change()
-    #test_out = test_1.visit(test)
-    #f_name = hashing('Trans') +'.py'
-    #test_w = open('./auto_encrypted_test/'+f_name,'w')
-    #test_w.write(astunparse.unparse(test_out))
+    test = ast.parse(open('./Encode_list/Trans.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = hashing('Trans') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
 
     test = ast.parse(open('./Encode_list/Tie_Cell.py').read())
     test_1 = name_change()
