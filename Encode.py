@@ -27,6 +27,8 @@ class name_change(ast.NodeTransformer) :
     #     self.generic_visit(node)
     #     return node
     def generic_visit(self, node):
+        
+
         for field, old_value in ast.iter_fields(node):
             if type(old_value) == str:
                 if old_value[:1] == '>':
@@ -81,7 +83,14 @@ class name_change(ast.NodeTransformer) :
                 if isinstance(old_value, ast.Name):
                     if old_value.id == 'print' :
                         node = ast.Pass()
+        if isinstance(node, ast.ImportFrom):
+            print('a')
+            tmp_node = ast.Import()
+            tmp_node.names = node.names
+            return tmp_node
+        
         return node
+        
     # def visit_Call(self, node) :
     #     for field, old_value in ast.iter_fields(node):
     #         if field != 'func' :
@@ -121,45 +130,31 @@ def main_1():
     # test_w = open('./auto_encrypted_test/'+f_name,'w')
     # test_w.write(astunparse.unparse(test_out))
 
+    En_list = []
+    dir_check=os.getcwd()
+    if 'generator_model_path' in user_setup.__dict__ and user_setup.generator_model_path:
+        generator_model_path = user_setup.generator_model_path
+    else:
+        generator_model_path = './generatorLib/generator_models'
+    for generator in glob.iglob(f'{generator_model_path}/*.py') :
+        if platform.system() in ['Linux', 'Darwin'] :
+            generator_class_name = generator.split('/')[-1][:3]
+        else :
+            generator_class_name = generator.split('\\')[1][:-3]
+        En_list.append(generator_class_name)
+    
+    for gen in En_list :
+        A = ast.parse(open('./Encode_list/'+gen+'.py').read())
+        A_1 = name_change()
+        A_out = A_1.visit(A)
+        f_name = hashing(gen) + '.py'
+        f_w = open('./auto_encrypted_test/'+f_name, 'w')
+        f_w.write(astunparse.unparse(A_out))
+    
     test = ast.parse(open('./Encode_list/Trans.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('Trans') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
-
-    test = ast.parse(open('./Encode_list/Tie_Cell.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('Tie_Cell') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
-
-    test = ast.parse(open('./Encode_list/NMOSWithDummy.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('NMOSWithDummy') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
-
-    test = ast.parse(open('./Encode_list/PMOSWithDummy.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('PMOSWithDummy') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
-
-    test = ast.parse(open('./Encode_list/SupplyRails.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('SupplyRails') +'.py'
-    test_w = open('./auto_encrypted_test/'+f_name,'w')
-    test_w.write(astunparse.unparse(test_out))
-
-    test = ast.parse(open('./Encode_list/ViaPoly2Met1.py').read())
-    test_1 = name_change()
-    test_out = test_1.visit(test)
-    f_name = hashing('ViaPoly2Met1') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
@@ -313,18 +308,6 @@ def method_list() :
     with gzip.open ("./Gen_list.pickle", "wb") as f :
         pickle.dump([class_function_dict, class_lst], f)
 
-# class Parm:
-#     def __init__(self, name, default):
-#         self.name = name
-#         self.default = default
-#         self.check_value()
-
-#     def check_value(self):
-#         if type(self.default) == str:
-#             if (self.default[0] == '\'' and self.default[-1] == '\'') or (self.default[0] == '\"' and self.default[-1] == '\"'):
-#                 return
-#             else:
-#                 self.default = f"\'{self.default}\'"
 
 # method_list() ## for obtaining generator functions
 main_1()
