@@ -142,15 +142,6 @@ def main_1():
             generator_class_name = generator.split('\\')[1][:-3]
         En_list.append(generator_class_name)
 
-    print('a')
-    for a in En_list :
-        print (a)
-    
-    print ('a')
-    
-    for a in En_list :
-        print (a)
-
     for gen in En_list :
         A = ast.parse(open('./generatorLib/generator_models/'+gen+'.py').read())
         A_1 = name_change()
