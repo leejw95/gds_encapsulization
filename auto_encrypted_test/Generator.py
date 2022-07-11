@@ -1,7 +1,7 @@
 # import Arg_name_to_object
 import gzip, pickle
 #from auto_encrypted_test import *
-import Trans
+import _180cb85a13ff2d6630e43553dccac8fb8d45f89e4ab3f70c47c78a551b0120ff
 from os.path import dirname, basename, isfile, join
 import glob
 import inspect
@@ -12,7 +12,7 @@ import inspect
 # print (__all__)
 
 # from . import *
-swap = Trans.Transfer()
+sw = _180cb85a13ff2d6630e43553dccac8fb8d45f89e4ab3f70c47c78a551b0120ff.dde8bef78cbb720683fa1fe76bfb900592099ed4346ed995bcbc514e9aa67256()
 
 with gzip.open('./Gen_list.pickle', 'rb') as f :
     picked = pickle.load(f)
@@ -54,7 +54,7 @@ for i in args.keys() :
         if val == 'None' or val == 'none' :
             args[i] = None
         else :
-            args[i] = swap.change(val)
+            args[i] = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(val)
 
 # print (args)
 
@@ -67,10 +67,10 @@ transfer = [sel1, Func_list[sel2], args]
 # add1 = dict()
 new_args = dict()
 for i in args.keys() :
-    new_args[swap.change(i)] = args[i]
-imp = swap.change(transfer[0])
+    new_args[sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(i)] = args[i]
+imp = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(transfer[0])
 # cla = swap.change(picked[1][transfer[0]])
-func = swap.change(Func_list[sel2])
+func = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(Func_list[sel2])
 # print (picked[1][transfer[0]])
 # print (imp + '.' + cla)
 lib = __import__(imp)
