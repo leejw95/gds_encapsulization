@@ -1,6 +1,6 @@
 from distutils.core import setup, Extension
 import inspect
-import glob, sys, os, user_setup, platform, pickle, gzip
+import glob, sys, os, platform, pickle, gzip
 
 file_list = []
 

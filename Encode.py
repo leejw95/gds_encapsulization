@@ -37,7 +37,7 @@ class name_change(ast.NodeTransformer) :
                     pass
                 elif old_value[:5] in ['exces']:
                     pass
-                elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'classmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
+                elif old_value not in ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'MAXYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'classmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                                      'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center','getmembers','isclass',
                                      'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit', 'eval', 'isinstance', 'sorted', 'inspect', '__import__','filter',
                                      'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip', 'traceback', 'print_exc',
@@ -84,9 +84,13 @@ class name_change(ast.NodeTransformer) :
                     if old_value.id == 'print' :
                         node = ast.Pass()
         if isinstance(node, ast.ImportFrom):
-            tmp_node = ast.Import()
-            tmp_node.names = node.names
-            return tmp_node
+            if node.module in ['datetime'] : ## The import class not in the local directory
+                pass
+            else :
+                # print (node.module)
+                tmp_node = ast.Import()
+                tmp_node.names = node.names
+                return tmp_node
         
         return node
         
@@ -123,11 +127,17 @@ def hashing(key:str):
 
 def main_1():
     # test = ast.parse(open('./test.py').read())
+    # # print (ast.dump(test))
+    # # if isinstance(test, ast.ImportFrom):
+    # #     print (ast.dump(test))
+    
+    
     # test_1 = name_change()
     # test_out = test_1.visit(test)
     # f_name = ('test') +'.py'
     # test_w = open('./auto_encrypted_test/'+f_name,'w')
     # test_w.write(astunparse.unparse(test_out))
+
 
     En_list = []
     dir_check=os.getcwd()
