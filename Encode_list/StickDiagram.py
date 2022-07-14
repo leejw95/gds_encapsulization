@@ -19,9 +19,18 @@ import user_define_exceptions
 import DesignParameters
 import copy
 import math
+import urllib
+
+try :
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception("Connect to Internet")
+
+date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 
 
-
+if date[8:16] not in ['Jul 2022', 'Sep 2022', 'Oct 2022']:
+    raise Exception("License Expired")
 
 
 

@@ -33,28 +33,44 @@ print (Func_list)
 sel2 = int(input())
 
 a = gen[sel1][Func_list[sel2]]
+
 args_wt_value = list()
 for i in a :
     args_wt_value.append(str(i))
-print (args_wt_value)
+# print (args_wt_value)
 
 args = {}
 for i in args_wt_value :
     tmp = i.split('=')
-    args[tmp[0]] = tmp[1]
+    args[tmp[0]] = eval(tmp[1])
 print (args)
 
-for i in args.keys() :
-    print (i)
-    val = input()
-    try :
-        int(val)
-        args[i] = int(val)
-    except :
-        if val == 'None' or val == 'none' :
-            args[i] = None
+def enter (args) :
+    for i in args.keys() :
+        print (i)
+        if type(args[i]) != dict : 
+            val = input()
+            try :
+                int(val)
+                args[i] = int(val)
+            except :
+                if val == 'None' or val == 'none' :
+                    args[i] = None
+                if val == 'True' or val == 'true' :
+                    args[i] = True
+                if val == 'False' or val == 'false' :
+                    args[i] = False
+
+                else :
+                    args[i] = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(val)
+        
         else :
-            args[i] = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(val)
+            enter(args[i])
+    
+    return args
+
+
+enter(args)
 
 # print (args)
 
@@ -66,8 +82,21 @@ transfer = [sel1, Func_list[sel2], args]
 
 # add1 = dict()
 new_args = dict()
-for i in args.keys() :
-    new_args[sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(i)] = args[i]
+
+def into (new_args, args) :
+    for i in args.keys() :
+        if type(args[i]) != dict :
+            new_args[sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(i)] = args[i]
+        
+        else :
+            new_args[sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(i)] = dict()
+            into(new_args[sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(i)], args[i])
+        
+    return (new_args)
+
+into(new_args, args)
+print (new_args)
+
 imp = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(transfer[0])
 # cla = swap.change(picked[1][transfer[0]])
 func = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(Func_list[sel2])

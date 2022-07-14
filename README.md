@@ -38,6 +38,9 @@ test_generator.py 파일을 실행하면 gds 파일이 만들어짐
 3. Layermap file (cmos28lp_tech.layermap)
 4. Gen_list.pickle file (Encode.py로 부터 생성된 파일)
 
+## Expiration Date
+Encode.py를 통해 조절이 가능하다.
+
 ## SHA256 Hashing
 본 Encrypt에 사용된 알고리즘은 SHA256으로, 기본적으로 decode는 불가능한 구조이다.
 따라서 오류가 발생했거나, 디버깅할 때 사용하는 용도로 ./Trans.py를 만들어두었다.

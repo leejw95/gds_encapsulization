@@ -30,8 +30,20 @@ class _ViaStack(StickDiagram._StickDiagram):
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-            else:
-                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            elif layer == 1 :
+                lib_name = 'ViaMet12Met2'
+            elif layer == 2 :
+                lib_name = 'ViaMet22Met3'
+            elif layer == 3 :
+                lib_name = 'ViaMet32Met4'
+            elif layer == 4 :
+                lib_name = 'ViaMet42Met5'
+            elif layer == 5 :
+                lib_name = 'ViaMet52Met6'
+            elif layer == 6 :
+                lib_name = 'ViaMet62Met7'
+            elif layer == 7 :
+                lib_name = 'ViaMet72Met8'
             lib = __import__(lib_name)
             for name, obj in inspect.getmembers(lib):
                 if inspect.isclass(obj):
@@ -58,8 +70,20 @@ class _ViaStack(StickDiagram._StickDiagram):
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-            else:
-                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            elif layer == 1 :
+                lib_name = 'ViaMet12Met2'
+            elif layer == 2 :
+                lib_name = 'ViaMet22Met3'
+            elif layer == 3 :
+                lib_name = 'ViaMet32Met4'
+            elif layer == 4 :
+                lib_name = 'ViaMet42Met5'
+            elif layer == 5 :
+                lib_name = 'ViaMet52Met6'
+            elif layer == 6 :
+                lib_name = 'ViaMet62Met7'
+            elif layer == 7 :
+                lib_name = 'ViaMet72Met8'
             lib = __import__(lib_name)
             for name, obj in inspect.getmembers(lib):
                 if inspect.isclass(obj):
@@ -86,8 +110,20 @@ class _ViaStack(StickDiagram._StickDiagram):
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-            else:
-                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            elif layer == 1 :
+                lib_name = 'ViaMet12Met2'
+            elif layer == 2 :
+                lib_name = 'ViaMet22Met3'
+            elif layer == 3 :
+                lib_name = 'ViaMet32Met4'
+            elif layer == 4 :
+                lib_name = 'ViaMet42Met5'
+            elif layer == 5 :
+                lib_name = 'ViaMet52Met6'
+            elif layer == 6 :
+                lib_name = 'ViaMet62Met7'
+            elif layer == 7 :
+                lib_name = 'ViaMet72Met8'
             lib = __import__(lib_name)
             for name, obj in inspect.getmembers(lib):
                 if inspect.isclass(obj):
@@ -112,10 +148,22 @@ class _ViaStack(StickDiagram._StickDiagram):
     def _CalculateStackSameEnclosure(self, COX=None, COY=None, start_layer=None, end_layer=None):
         layer_list = range(start_layer, end_layer)
         for layer in layer_list:
-            if layer == 0:
+            if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-            else:
-                lib_name = f'ViaMet{layer}2Met{layer + 1}'
+            elif layer == 1 :
+                lib_name = 'ViaMet12Met2'
+            elif layer == 2 :
+                lib_name = 'ViaMet22Met3'
+            elif layer == 3 :
+                lib_name = 'ViaMet32Met4'
+            elif layer == 4 :
+                lib_name = 'ViaMet42Met5'
+            elif layer == 5 :
+                lib_name = 'ViaMet52Met6'
+            elif layer == 6 :
+                lib_name = 'ViaMet62Met7'
+            elif layer == 7 :
+                lib_name = 'ViaMet72Met8'
             lib = __import__(lib_name)
             for name, obj in inspect.getmembers(lib):
                 if inspect.isclass(obj):
