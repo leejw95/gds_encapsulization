@@ -4,6 +4,11 @@ import gds_tags
 import gds_record
 import gds_structures
 import urllib
+import urllib.request
+import urllib.error
+import sys
+
+sys.tracebacklimit = 0
 
 try :
     urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']

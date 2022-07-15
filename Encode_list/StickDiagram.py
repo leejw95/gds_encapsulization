@@ -20,6 +20,11 @@ import DesignParameters
 import copy
 import math
 import urllib
+import urllib.request
+import urllib.error
+import sys
+
+sys.tracebacklimit = 0
 
 try :
     urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
