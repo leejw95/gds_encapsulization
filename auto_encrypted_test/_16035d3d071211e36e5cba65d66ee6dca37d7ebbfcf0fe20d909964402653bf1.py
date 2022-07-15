@@ -4,6 +4,18 @@ import struct
 import _43a2bcb21cf6aacdcc29ba7a4bc1ccc5ecac7875ee77dd67879c52c9d6148f4f
 import ad2f856b5678f98d4316b4f3428fc9e0b32bf1917c40b8202e28e1aadee285d8
 import _6d423e1f15dd9480c4c0e66185d073ba511a802de60979d6a6d9c66f079ee2a7
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2022', 'Sep 2022', 'Oct 2022']):
+    raise Exception('License Expired')
 '_4a0bcb6bf9daf4a96fc8e63f0ebd9cfa7ce96bf464c9e9d20c196152ab780c1c'
 
 class _6260d5abcc1879784e8235784c1c9196cda4b96c91f0fed1b40fbee5cf9486f7():

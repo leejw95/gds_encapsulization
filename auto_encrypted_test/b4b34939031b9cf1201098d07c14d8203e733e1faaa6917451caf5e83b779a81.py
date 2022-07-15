@@ -4,6 +4,18 @@ import _2e86fe448da492e98618fe1f648e2258950495056bc1f001083a37713411cb5f
 import hashlib
 import sys
 import os
+import urllib
+import urllib.request
+import urllib.error
+import sys
+sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
+try:
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+except Exception:
+    raise Exception('Connect to Internet')
+_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+if (_0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681[8:16] not in ['Jul 2022', 'Sep 2022', 'Oct 2022']):
+    raise Exception('License Expired')
 import b39bc4f582cb25442a942f1d0392e419cd38655ee855057293ad8f6d3d27d006
 _5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618 = b39bc4f582cb25442a942f1d0392e419cd38655ee855057293ad8f6d3d27d006._5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618
 _7886416b47c5fb387d0ea2af71e8752b0c8d5ea4ff623ee1eecf090e24df3c97 = os.getcwd()
