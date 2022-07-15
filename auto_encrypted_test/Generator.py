@@ -95,6 +95,7 @@ def into (new_args, args) :
     return (new_args)
 
 into(new_args, args)
+print (args)
 print (new_args)
 
 imp = sw._12ea12eace7d655f471ce55e34f89b1b77a3d9d05a445ca82877dd2235beaa51(transfer[0])
