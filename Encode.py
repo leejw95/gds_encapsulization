@@ -5,6 +5,12 @@ import keyword
 import inspect, math, copy
 import glob, sys, os, user_setup, platform, pickle, gzip
 
+from pyrsistent import v
+
+from attr import astuple
+
+from numpy import isin
+
 class name_change(ast.NodeTransformer) :
     # def visit_Name (self, node) :
     #     if node.id in ['print', 'self'] :
@@ -66,7 +72,38 @@ class name_change(ast.NodeTransformer) :
             if isinstance(old_value, list):
                 new_values = []
                 for value in old_value:
+                    # if isinstance(value, ast.keyword) :
+                    #     if value.arg == '_Name' :
+                    #         sha = hashlib.new('sha256')
+                    #         sha.update(value.arg.encode())
+                    #         hash_str = sha.hexdigest()
+                    #         if hash_str[0].isdigit():
+                    #             hash_str = '_' + hash_str
+                    #         value.arg = hash_str
+                    #         new_values.append(value)
+                    #         # print (astunparse.dump(value))
+                    #         # if isinstance(value, ast.Constant) :
+                    #         #     print (value.value)
+                    #         #     new_values.append(value)
+                    #         #     continue
+                    #         # sha = hashlib.new('sha256')
+                    #         # sha.update(value.arg.encode())
+                    #         # hash_str = sha.hexdigest()
+                    #         # if hash_str[0].isdigit():
+                    #         #     hash_str = '_' + hash_str
+                    #         # value.arg = hash_str
+                    #         # new_values.append(value)
+                    #         continue
+                    #     # if isinstance(value, ast.Name) :
+                    #     #     sha = hashlib.new('sha256')
+                    #     #     sha.update(value.encode())
+                    #     #     hash_str = sha.hexdigest()
+                    #     #     if hash_str[0].isdigit():
+                    #     #         hash_str = '_' + hash_str
+                    #     #     value = hash_str
                     if isinstance(value, ast.AST):
+                        if isinstance(value, ast.Attribute):
+                            continue
                         value = self.visit(value)
                         if value is None:
                             continue
@@ -82,7 +119,10 @@ class name_change(ast.NodeTransformer) :
                         value = hash_str
                     new_values.append(value)
                 old_value[:] = new_values
+            
             elif isinstance(old_value, ast.AST):
+                if isinstance(old_value, ast.Attribute) and old_value.attr == 'format':
+                    continue
                 new_node = self.visit(old_value)
                 if new_node is None:
                     delattr(node, field)
@@ -91,6 +131,7 @@ class name_change(ast.NodeTransformer) :
                 if isinstance(old_value, ast.Name):
                     if old_value.id == 'print' :
                         node = ast.Pass()
+                        
         if isinstance(node, ast.ImportFrom):
             if node.module in ['datetime'] : ## The import class not in the local directory
                 pass
@@ -99,6 +140,10 @@ class name_change(ast.NodeTransformer) :
                 tmp_node = ast.Import()
                 tmp_node.names = node.names
                 return tmp_node
+
+        # if isinstance(node, ast.keyword) :
+        #     if node.arg :
+        #         print(node.arg)
         
         return node
         
@@ -135,9 +180,9 @@ def hashing(key:str):
 
 def main_1():
     # test = ast.parse(open('./test.py').read())
-    # # print (ast.dump(test))
-    # # if isinstance(test, ast.ImportFrom):
-    # #     print (ast.dump(test))
+    # # print (astunparse.dump(test))
+    # # if isinstance(test, ast.Assign):
+    # #     print (1)
     
     
     # test_1 = name_change()
