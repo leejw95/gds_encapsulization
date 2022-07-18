@@ -5,12 +5,6 @@ import keyword
 import inspect, math, copy
 import glob, sys, os, user_setup, platform, pickle, gzip
 
-from pyrsistent import v
-
-from attr import astuple
-
-from numpy import isin
-
 class name_change(ast.NodeTransformer) :
     # def visit_Name (self, node) :
     #     if node.id in ['print', 'self'] :
