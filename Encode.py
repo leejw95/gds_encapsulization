@@ -33,7 +33,7 @@ class name_change(ast.NodeTransformer) :
         exception_list = ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'MAXYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'classmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                         'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center','getmembers','isclass',
                         'continue','global','raise','def','if','return','del','import','try','elif','in','while','else','is', 'split', 'update', 'isdigit', 'eval', 'isinstance', 'sorted', 'inspect', '__import__','filter',
-                        'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip', 'traceback', 'print_exc', 'parameters', 'values'
+                        'with','except','lambda','yield','True','False','None','self','struct', '__init__', 'locals', '__dict__', 'new', 'hexdigest', 'pickle', 'gzip', 'traceback', 'print_exc', 'parameters', 'values',
                         '__del__','__add__','__repr__','__len__','__file__','__all__','sys','os','dict','str','int','float','round','len','getcwd', '_', 'getattr',
                         'append','deepcopy','globals','doctest','testmod','warnings','warn','pop','getenv','platform','win32','linux2','match', 'encode',
                         '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
