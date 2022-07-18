@@ -56,9 +56,9 @@ def enter (args) :
             except :
                 if val == 'None' or val == 'none' :
                     args[i] = None
-                if val == 'True' or val == 'true' :
+                elif val == 'True' or val == 'true' :
                     args[i] = True
-                if val == 'False' or val == 'false' :
+                elif val == 'False' or val == 'false' :
                     args[i] = False
 
                 else :

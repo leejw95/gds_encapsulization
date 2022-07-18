@@ -16,7 +16,7 @@ import urllib.error
 import sys
 sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
 try:
-    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
+    urllib.request.urlopen('http://www.kriss.re.kr', timeout = 20).headers['Date']
 except Exception:
     raise Exception('Connect to Internet')
 _0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
