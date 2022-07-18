@@ -56,6 +56,8 @@ class name_change(ast.NodeTransformer) :
                     pass
                 elif old_value[:5] in ['exces']:
                     pass
+                elif '{' in old_value or '%' in old_value:
+                    pass
                 elif old_value not in exception_list:
                     sha = hashlib.new('sha256')
                     sha.update(old_value.encode())
@@ -115,7 +117,7 @@ class name_change(ast.NodeTransformer) :
                 old_value[:] = new_values
             
             elif isinstance(old_value, ast.AST):
-                if isinstance(old_value, ast.Attribute) and old_value.attr == 'format':
+                if isinstance(old_value, ast.Attribute) and old_value.attr == 'format' and isinstance(old_value.value, ast.Constant):
                     continue
                 new_node = self.visit(old_value)
                 if new_node is None:
@@ -174,7 +176,7 @@ def hashing(key:str):
 
 def main_1():
     # test = ast.parse(open('./test.py').read())
-    # # print (astunparse.dump(test))
+    # print (astunparse.dump(test))
     # # if isinstance(test, ast.Assign):
     # #     print (1)
     
