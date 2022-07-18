@@ -16,7 +16,7 @@ import urllib.error
 import sys
 sys._41241917ecfc4b9aaa3f3b3bd3ba98e392d1836b2af0cfd83dab31f42923c846 = 0
 try:
-    urllib.request.urlopen('http://www.kriss.re.kr', timeout = 20).headers['Date']
+    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
 except Exception:
     raise Exception('Connect to Internet')
 _0e87632cd46bd4907c516317eb6d81fe0f921a23c7643018f21292894b470681 = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
@@ -29,8 +29,8 @@ class c668a73a36c4334132f1a4bf1956febacd22ea8e8a1b4b25ccf19f6b1f522f52():
         pass
 
     def e768c2bceaecaddd6df13c6d075dd78edb48f6a26b75540253cb048602f836fa(self, _5694d08a2e53ffcae0c3103e5ad6f6076abd960eb1f8a56577040bc1028f702b, e05e2801a9f798ed571be1d4534b0cd8622d526d8f6191a359a2bcc21fe4a045):
-        for _82a3537ff0dbce7eec35d69edc3a189ee6f17d82f353a553f9aa96cb0be3ce89 in e05e2801a9f798ed571be1d4534b0cd8622d526d8f6191a359a2bcc21fe4a045._0580f9bd161d881cde6661ecd37cacefa29ce3f449987386fbf2d6a0524c9338:
-            locals()[_82a3537ff0dbce7eec35d69edc3a189ee6f17d82f353a553f9aa96cb0be3ce89] = e05e2801a9f798ed571be1d4534b0cd8622d526d8f6191a359a2bcc21fe4a045._01cfc309bfc026dd4c48b8c92e1fa89ff3ad31e831e1355002d32c7a6cf6d48c[_82a3537ff0dbce7eec35d69edc3a189ee6f17d82f353a553f9aa96cb0be3ce89]
+        for name in e05e2801a9f798ed571be1d4534b0cd8622d526d8f6191a359a2bcc21fe4a045._0580f9bd161d881cde6661ecd37cacefa29ce3f449987386fbf2d6a0524c9338:
+            locals()[name] = e05e2801a9f798ed571be1d4534b0cd8622d526d8f6191a359a2bcc21fe4a045._01cfc309bfc026dd4c48b8c92e1fa89ff3ad31e831e1355002d32c7a6cf6d48c[name]
         exec(_5694d08a2e53ffcae0c3103e5ad6f6076abd960eb1f8a56577040bc1028f702b)
 
     def _0c19ee343fe9e03edf2adf77ee9da428cf3552b6576d7ff595d328c1ea792f44(self, _9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435=None, e0709db7d8885ba475f59d3929e0d6d16e77f9dc79a28b229b144fdf0ff2b8dc=None):
