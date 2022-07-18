@@ -168,4 +168,4 @@ class _6260d5abcc1879784e8235784c1c9196cda4b96c91f0fed1b40fbee5cf9486f7():
                 break
     '_50c73232e0e98fe161c3fa9902da7b222a931cf029c910e0269a8fa663fc2031'
     '_82e5967bf28f5f26c8d7e02863ce9ffaed8adb9bbb24670eaefcef9bb9cf93a7'
-    '_92fcdfdfeb2f3a111acab17fed283db58063c559c0ee7d4c402108dd304f06fc'
+    '\n    GDS stream format:\n        .. productionlist::\n            library: HEADER\n                   : BGNLIB\n                   : [LIBDIRSIZE]\n                   : [SRFNAME]\n                   : [LIBSECUR]\n                   : LIBNAME\n                   : [REFLIBS]\n                   : [FONTS]\n                   : [ATTRTABLE]\n                   : [GENERATIONS]\n                   : [`format`]\n                   : UNITS\n                   : {`structure`}*\n                   : ENDLIB\n            format: FORMAT\n                  : [MASK+ ENDMASKS]\n    '

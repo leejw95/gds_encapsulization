@@ -134,11 +134,11 @@ class _1cc28d655df7135347a43e6cb38885ab6e17653a43a75bde120aa956c8155d9b(_9d836f0
                 _066aa58798f2fb69dc9614520d7a00e822f574c2ff2fb6c0897aba9fb6773674 = None
                 _39f2be1569787fb4950f87ec2ff45ab5e354239e69a63ebb101a2a7d4b9a6d6d = None
             elif (b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81._5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618 == 'ff0c26a57c631c9ffe52aa3e1e66407c71ed30dba63c267e6445b67d7d681bbe'):
-                raise NotImplementedError('_1f71f7296e818a6d882efb368aec0f0f7c46fb2f179335a0d0ea7ea769645297'.format(ad54ec91bf29411fbc51ca23ac068c011ceea331501d008ca957fbd1a9399877))
+                raise NotImplementedError("Invalid '_XVT' argument({}) for SS28nm".format(ad54ec91bf29411fbc51ca23ac068c011ceea331501d008ca957fbd1a9399877))
             elif (b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81._5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618 == 'fa4f80a4fe8acc19290ef59b29f70d19fdc004b346854c48dbae5cae43d79643'):
-                raise NotImplementedError('_5eebbb3c7c04cdfb1d55e9a35cdd96874e32e74342d3ee02013a6229f0c36e66'.format(ad54ec91bf29411fbc51ca23ac068c011ceea331501d008ca957fbd1a9399877))
+                raise NotImplementedError("Invalid '_XVT' argument({}) for TSMC65nm".format(ad54ec91bf29411fbc51ca23ac068c011ceea331501d008ca957fbd1a9399877))
             else:
-                raise NotImplementedError('e7b06a479266cff84c216ee7b99763fc4a1b2a7426bd72bddbd9538da52fb06c'.format(b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81._5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618))
+                raise NotImplementedError('Not Yet Implemented in other technology : {}'.format(b4b34939031b9cf1201098d07c14d8203e733e1faaa6917451caf5e83b779a81._5ba22db28168d0cd1c5fd69da4d604c226680f6acf826d43f471b265e5372618))
             if (_066aa58798f2fb69dc9614520d7a00e822f574c2ff2fb6c0897aba9fb6773674 != None):
                 
                 pass

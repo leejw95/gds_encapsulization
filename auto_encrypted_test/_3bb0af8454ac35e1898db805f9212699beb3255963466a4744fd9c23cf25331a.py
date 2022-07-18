@@ -153,10 +153,10 @@ def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e93
     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
 
 def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):
-    assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
-    assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+    assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+    assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
-        assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+        assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
 if (__name__ == '__main__'):
     f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea = [[3, 5], [1, 5], [(- 1), 5], [4, 5], [0, (- 1)], [0, (- 1)], [(- 3), (- 1)]]
     c099142bc3186ded72786ba27e9ea6d2da240fb9fd3fe79b479ecf8e734b2850 = a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3([3, 5], [1, 5], [(- 1), 5])
