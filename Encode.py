@@ -173,123 +173,123 @@ def hashing(key:str):
 
 
 def main_1():
-    test = ast.parse(open('./test.py').read())
-    # print (astunparse.dump(test))
-    # if isinstance(test, ast.Assign):
-    #     print (1)
+    # test = ast.parse(open('./test.py').read())
+    # # print (astunparse.dump(test))
+    # # if isinstance(test, ast.Assign):
+    # #     print (1)
     
     
+    # test_1 = name_change()
+    # test_out = test_1.visit(test)
+    # f_name = ('test') +'.py'
+    # test_w = open('./auto_encrypted_test/'+f_name,'w')
+    # test_w.write(astunparse.unparse(test_out))
+
+
+    En_list = []
+    dir_check=os.getcwd()
+    if 'generator_model_path' in user_setup.__dict__ and user_setup.generator_model_path:
+        generator_model_path = user_setup.generator_model_path
+    else:
+        generator_model_path = './generatorLib/generator_models'
+    for generator in glob.iglob(f'{generator_model_path}/*.py') :
+        if platform.system() in ['Linux', 'Darwin'] :
+            generator_class_name = generator.split('/')[-1][:-3]
+        else :
+            generator_class_name = generator.split('\\')[1][:-3]
+        En_list.append(generator_class_name)
+
+    for gen in En_list :
+        A = ast.parse(open('./generatorLib/generator_models/'+gen+'.py').read())
+        A_1 = name_change()
+        A_out = A_1.visit(A)
+        f_name = hashing(gen) + '.py'
+        f_w = open('./auto_encrypted_test/'+f_name, 'w')
+        f_w.write(astunparse.unparse(A_out))
+    
+    test = ast.parse(open('./Encode_list/Trans.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
-    f_name = ('test') +'.py'
+    f_name = hashing('Trans') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
+    test = ast.parse(open('./Encode_list/CoordinateCalc.py').read())
+    test_1 = name_change()
+    test_out = test_1.visit(test)
+    f_name = hashing('CoordinateCalc') +'.py'
+    test_w = open('./auto_encrypted_test/'+f_name,'w')
+    test_w.write(astunparse.unparse(test_out))
 
-    # En_list = []
-    # dir_check=os.getcwd()
-    # if 'generator_model_path' in user_setup.__dict__ and user_setup.generator_model_path:
-    #     generator_model_path = user_setup.generator_model_path
-    # else:
-    #     generator_model_path = './generatorLib/generator_models'
-    # for generator in glob.iglob(f'{generator_model_path}/*.py') :
-    #     if platform.system() in ['Linux', 'Darwin'] :
-    #         generator_class_name = generator.split('/')[-1][:-3]
-    #     else :
-    #         generator_class_name = generator.split('\\')[1][:-3]
-    #     En_list.append(generator_class_name)
+    US = ast.parse(open('./Encode_list/user_setup.py').read())
+    US_1 = name_change()
+    US_out = US_1.visit(US)
+    f_name = hashing('user_setup') +'.py'
+    US_w = open('./auto_encrypted_test/'+f_name,'w')
+    US_w.write(astunparse.unparse(US_out))
 
-    # for gen in En_list :
-    #     A = ast.parse(open('./generatorLib/generator_models/'+gen+'.py').read())
-    #     A_1 = name_change()
-    #     A_out = A_1.visit(A)
-    #     f_name = hashing(gen) + '.py'
-    #     f_w = open('./auto_encrypted_test/'+f_name, 'w')
-    #     f_w.write(astunparse.unparse(A_out))
-    
-    # test = ast.parse(open('./Encode_list/Trans.py').read())
-    # test_1 = name_change()
-    # test_out = test_1.visit(test)
-    # f_name = hashing('Trans') +'.py'
-    # test_w = open('./auto_encrypted_test/'+f_name,'w')
-    # test_w.write(astunparse.unparse(test_out))
+    DP = ast.parse(open('./Encode_list/DesignParameters.py').read())
+    DP_1 = name_change()
+    DP_out = DP_1.visit(DP)
+    f_name = hashing('DesignParameters') +'.py'
+    DP_w = open('./auto_encrypted_test/'+f_name,'w')
+    DP_w.write(astunparse.unparse(DP_out))
 
-    # test = ast.parse(open('./Encode_list/CoordinateCalc.py').read())
-    # test_1 = name_change()
-    # test_out = test_1.visit(test)
-    # f_name = hashing('CoordinateCalc') +'.py'
-    # test_w = open('./auto_encrypted_test/'+f_name,'w')
-    # test_w.write(astunparse.unparse(test_out))
+    DRC = ast.parse(open('./Encode_list/DRC.py').read())
+    DRC_1 = name_change()
+    DRC_out = DRC_1.visit(DRC)
+    f_name = hashing('DRC') + '.py'
+    DRC_w = open('./auto_encrypted_test/'+f_name,'w')
+    DRC_w.write(astunparse.unparse(DRC_out))
 
-    # US = ast.parse(open('./Encode_list/user_setup.py').read())
-    # US_1 = name_change()
-    # US_out = US_1.visit(US)
-    # f_name = hashing('user_setup') +'.py'
-    # US_w = open('./auto_encrypted_test/'+f_name,'w')
-    # US_w.write(astunparse.unparse(US_out))
+    Stick = ast.parse(open('./Encode_list/StickDiagram.py').read())
+    Stick_1 = name_change()
+    Stick_out = Stick_1.visit(Stick)
+    f_name = hashing('StickDiagram') + '.py'
+    Stick_w = open('./auto_encrypted_test/'+f_name,'w')
+    Stick_w.write(astunparse.unparse(Stick_out))
 
-    # DP = ast.parse(open('./Encode_list/DesignParameters.py').read())
-    # DP_1 = name_change()
-    # DP_out = DP_1.visit(DP)
-    # f_name = hashing('DesignParameters') +'.py'
-    # DP_w = open('./auto_encrypted_test/'+f_name,'w')
-    # DP_w.write(astunparse.unparse(DP_out))
+    GDS_EL = ast.parse(open('./Encode_list/gds_elements.py').read())
+    GDS_EL_1 = name_change()
+    GDS_EL_out = GDS_EL_1.visit(GDS_EL)
+    f_name = hashing('gds_elements') + '.py'
+    GDS_EL_w = open('./auto_encrypted_test/'+f_name,'w')
+    GDS_EL_w.write(astunparse.unparse(GDS_EL_out))
 
-    # DRC = ast.parse(open('./Encode_list/DRC.py').read())
-    # DRC_1 = name_change()
-    # DRC_out = DRC_1.visit(DRC)
-    # f_name = hashing('DRC') + '.py'
-    # DRC_w = open('./auto_encrypted_test/'+f_name,'w')
-    # DRC_w.write(astunparse.unparse(DRC_out))
+    GDS_R = ast.parse(open('./Encode_list/gds_record.py').read())
+    GDS_R_1 = name_change()
+    GDS_R_out = GDS_R_1.visit(GDS_R)
+    f_name = hashing('gds_record') + '.py'
+    GDS_R_w = open('./auto_encrypted_test/'+f_name,'w')
+    GDS_R_w.write(astunparse.unparse(GDS_R_out))
 
-    # Stick = ast.parse(open('./Encode_list/StickDiagram.py').read())
-    # Stick_1 = name_change()
-    # Stick_out = Stick_1.visit(Stick)
-    # f_name = hashing('StickDiagram') + '.py'
-    # Stick_w = open('./auto_encrypted_test/'+f_name,'w')
-    # Stick_w.write(astunparse.unparse(Stick_out))
+    GDS_STREAM = ast.parse(open('./Encode_list/gds_stream.py').read())
+    GDS_STREAM_1 = name_change()
+    GDS_STREAM_out = GDS_STREAM_1.visit(GDS_STREAM)
+    f_name = hashing('gds_stream') + '.py'
+    GDS_STREAM_w = open('./auto_encrypted_test/'+f_name,'w')
+    GDS_STREAM_w.write(astunparse.unparse(GDS_STREAM_out))
 
-    # GDS_EL = ast.parse(open('./Encode_list/gds_elements.py').read())
-    # GDS_EL_1 = name_change()
-    # GDS_EL_out = GDS_EL_1.visit(GDS_EL)
-    # f_name = hashing('gds_elements') + '.py'
-    # GDS_EL_w = open('./auto_encrypted_test/'+f_name,'w')
-    # GDS_EL_w.write(astunparse.unparse(GDS_EL_out))
+    GDS_structure = ast.parse(open('./Encode_list/gds_structures.py').read())
+    GDS_structure_1 = name_change()
+    GDS_structure_out = GDS_structure_1.visit(GDS_structure)
+    f_name = hashing('gds_structures') + '.py'
+    GDS_structure_w = open('./auto_encrypted_test/'+f_name,'w')
+    GDS_structure_w.write(astunparse.unparse(GDS_structure_out))
 
-    # GDS_R = ast.parse(open('./Encode_list/gds_record.py').read())
-    # GDS_R_1 = name_change()
-    # GDS_R_out = GDS_R_1.visit(GDS_R)
-    # f_name = hashing('gds_record') + '.py'
-    # GDS_R_w = open('./auto_encrypted_test/'+f_name,'w')
-    # GDS_R_w.write(astunparse.unparse(GDS_R_out))
+    gds_tags = ast.parse(open('./Encode_list/gds_tags.py').read())
+    gds_tags_1 = name_change()
+    gds_tags_out = gds_tags_1.visit(gds_tags)
+    f_name = hashing('gds_tags') + '.py'
+    gds_tags_w = open('./auto_encrypted_test/'+f_name,'w')
+    gds_tags_w.write(astunparse.unparse(gds_tags_out))
 
-    # GDS_STREAM = ast.parse(open('./Encode_list/gds_stream.py').read())
-    # GDS_STREAM_1 = name_change()
-    # GDS_STREAM_out = GDS_STREAM_1.visit(GDS_STREAM)
-    # f_name = hashing('gds_stream') + '.py'
-    # GDS_STREAM_w = open('./auto_encrypted_test/'+f_name,'w')
-    # GDS_STREAM_w.write(astunparse.unparse(GDS_STREAM_out))
-
-    # GDS_structure = ast.parse(open('./Encode_list/gds_structures.py').read())
-    # GDS_structure_1 = name_change()
-    # GDS_structure_out = GDS_structure_1.visit(GDS_structure)
-    # f_name = hashing('gds_structures') + '.py'
-    # GDS_structure_w = open('./auto_encrypted_test/'+f_name,'w')
-    # GDS_structure_w.write(astunparse.unparse(GDS_structure_out))
-
-    # gds_tags = ast.parse(open('./Encode_list/gds_tags.py').read())
-    # gds_tags_1 = name_change()
-    # gds_tags_out = gds_tags_1.visit(gds_tags)
-    # f_name = hashing('gds_tags') + '.py'
-    # gds_tags_w = open('./auto_encrypted_test/'+f_name,'w')
-    # gds_tags_w.write(astunparse.unparse(gds_tags_out))
-
-    # user_d = ast.parse(open('./Encode_list/user_define_exceptions.py').read())
-    # user_d_1 = name_change()
-    # user_d_out = user_d_1.visit(user_d)
-    # f_name = hashing('user_define_exceptions') + '.py'
-    # user_d_w = open('./auto_encrypted_test/'+f_name,'w')
-    # user_d_w.write(astunparse.unparse(user_d_out))
+    user_d = ast.parse(open('./Encode_list/user_define_exceptions.py').read())
+    user_d_1 = name_change()
+    user_d_out = user_d_1.visit(user_d)
+    f_name = hashing('user_define_exceptions') + '.py'
+    user_d_w = open('./auto_encrypted_test/'+f_name,'w')
+    user_d_w.write(astunparse.unparse(user_d_out))
 
 def main_2():
     def hashing(key:str):
