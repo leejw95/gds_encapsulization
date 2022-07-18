@@ -70,16 +70,17 @@ class name_change(ast.NodeTransformer) :
                 for value in old_value:
                     if isinstance(value, ast.keyword) :
                         if value.arg == '_TEXT' :
+                            if isinstance(value.value, ast.Constant):
                             # print (value.arg)
                             # print (value.value.value)
-                            sha = hashlib.new('sha256')
-                            sha.update(value.arg.encode())
-                            hash_str = sha.hexdigest()
-                            if hash_str[0].isdigit():
-                                hash_str = '_' + hash_str
-                            value.arg = hash_str
-                            new_values.append(value)
-                            continue
+                                sha = hashlib.new('sha256')
+                                sha.update(value.arg.encode())
+                                hash_str = sha.hexdigest()
+                                if hash_str[0].isdigit():
+                                    hash_str = '_' + hash_str
+                                value.arg = hash_str
+                                new_values.append(value)
+                                continue
                         pass
                     if isinstance(value, ast.AST):
                         # if isinstance(value, ast.Attribute):
@@ -160,7 +161,7 @@ def hashing(key:str):
 
 def main_1():
     # test = ast.parse(open('./test.py').read())
-    # # print (astunparse.dump(test))
+    # print (astunparse.dump(test))
     # # if isinstance(test, ast.Assign):
     # #     print (1)
     

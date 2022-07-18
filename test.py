@@ -1,2 +1,10 @@
-self._DesignParameter['_VSSpin'] = self._TextElementDeclaration(_Layer=DesignParameters._LayerMapping['METAL2PIN'][0], 
-_Datatype=DesignParameters._LayerMapping['METAL2PIN'][1], _Presentation=[0, 1, 2], _Reflect=[0, 0, 0], _XYCoordinates=[[0, 0]], _Mag=0.05, _Angle=0, _TEXT='VSS')
+self._CreateGDSTextElement(_Layer=_DesignParameterInDictionary[_DesignParameter]['_Layer'],
+                                                                                                                               _Datatype=_DesignParameterInDictionary[_DesignParameter]['_Datatype'],
+                                                                                                                               _Presentation = _DesignParameterInDictionary[_DesignParameter]['_Presentation'],
+                                                                                                                               _Reflect=_DesignParameterInDictionary[_DesignParameter]['_Reflect'],
+                                                                                                                               _XYCoordinates=[_XYCoordinate],
+                                                                                                                               _Mag=_DesignParameterInDictionary[_DesignParameter]['_Mag'],
+                                                                                                                               _Angle=_DesignParameterInDictionary[_DesignParameter]['_Angle'],
+                                                                                                                               _TEXT=_DesignParameterInDictionary[_DesignParameter]['_TEXT'],
+                                                                                                                               _ElementName=_DesignParameter
+                                                                                                                               )
