@@ -1327,13 +1327,15 @@ static const char __pyx_k_warn[] = "warn";
 static const char __pyx_k_format[] = "format";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_warnings[] = "warnings";
+static const char __pyx_k_Expected_list_But[] = "Expected list. But {}";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
+static const char __pyx_k_Expected_number_But[] = "Expected number. But {}.";
+static const char __pyx_k_Expected_two_element_But[] = "Expected two element. But {}.";
 static const char __pyx_k_03d6bfa42ad73a8f520d001157bfd44[] = "_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611";
 static const char __pyx_k_10f2da7e83a506427f8e19fa1d23827[] = "_10f2da7e83a506427f8e19fa1d238277dac457bcb3f2778e1143e0d7ad9c1631";
 static const char __pyx_k_117c132e939b9f65266d1c74695d1bb[] = "_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1";
 static const char __pyx_k_15c72be78e0a85a7d0ac771476e5c22[] = "_15c72be78e0a85a7d0ac771476e5c22cd9739dd1b7b56eccc3ce69562f232579";
 static const char __pyx_k_1afff8e723c0f87cda2c5e7bc679122[] = "_1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846";
-static const char __pyx_k_1b58a4dfedb8f231ba0665d8a094db8[] = "_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6";
 static const char __pyx_k_1baa358bed301847ab8e7d56daf35ea[] = "_1baa358bed301847ab8e7d56daf35ea2c2c42b4fdbb085a99547d20d0ef9555e";
 static const char __pyx_k_1ce3824be3821ab6a6a7c784ab3d962[] = "_1ce3824be3821ab6a6a7c784ab3d962946327e307073009893ce8393d380960f";
 static const char __pyx_k_1edca4df27b85fe21c986caf187b71e[] = "_1edca4df27b85fe21c986caf187b71edb2f09540428ef6087e98658066a2d23a";
@@ -1344,7 +1346,6 @@ static const char __pyx_k_38635e47a8481b1730aea2674bebed0[] = "_38635e47a8481b17
 static const char __pyx_k_3bb0af8454ac35e1898db805f921269[] = "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py";
 static const char __pyx_k_3f667e241dae4914110f19c3cc66286[] = "_3f667e241dae4914110f19c3cc66286585a0e069cbd8d1e6297473144c3f0594";
 static const char __pyx_k_470cadb3f9c2f0679714d0ef62b75bc[] = "_470cadb3f9c2f0679714d0ef62b75bc99fc0a162d87df2000de7f9e74c2b6ccb";
-static const char __pyx_k_49caa6e42abbaee5b8c8bf2cbccad86[] = "_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250";
 static const char __pyx_k_4d00d197f72f8951292026c0460f8bf[] = "_4d00d197f72f8951292026c0460f8bf6b9fa599e24ed13fcbb88fa185557055a";
 static const char __pyx_k_54ca290a332f5b05f3f1da2944dde8e[] = "_54ca290a332f5b05f3f1da2944dde8e16aee15d3c38010c6cf7ab5b4035cb288";
 static const char __pyx_k_61dead8a6fd2e8353707ed74c03b546[] = "_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834";
@@ -1353,7 +1354,6 @@ static const char __pyx_k_71f76a407216ae36d713d182fe3619a[] = "_71f76a407216ae36
 static const char __pyx_k_74f3239d95607254a450911529d43e5[] = "_74f3239d95607254a450911529d43e55c8924a3184461c35d01ee74461ef9ea2";
 static const char __pyx_k_78ebada914a359d8d542cd21bb94dae[] = "_78ebada914a359d8d542cd21bb94dae3e38c3f224c7c4af647c9ac743481171a";
 static const char __pyx_k_828f9d1b587c4d78a1857d8a4ff1016[] = "_828f9d1b587c4d78a1857d8a4ff101634f0492248a007eafcaadbcf2dc106331";
-static const char __pyx_k_8b3b5507085bba43611cfd38c165e87[] = "_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208";
 static const char __pyx_k_8fe23c3bc000438c6d26e89004449c0[] = "_8fe23c3bc000438c6d26e89004449c0b4359c79ac3b8dce7639287c4b9e9d948";
 static const char __pyx_k_9fd728c66c9a256b121472dabf32a34[] = "_9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8";
 static const char __pyx_k_a1fce4363854ff888cff4b8e7875d600[] = "a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa";
@@ -1383,7 +1383,6 @@ static PyObject *__pyx_n_s_10f2da7e83a506427f8e19fa1d23827;
 static PyObject *__pyx_n_s_117c132e939b9f65266d1c74695d1bb;
 static PyObject *__pyx_n_s_15c72be78e0a85a7d0ac771476e5c22;
 static PyObject *__pyx_n_s_1afff8e723c0f87cda2c5e7bc679122;
-static PyObject *__pyx_n_u_1b58a4dfedb8f231ba0665d8a094db8;
 static PyObject *__pyx_n_s_1baa358bed301847ab8e7d56daf35ea;
 static PyObject *__pyx_n_s_1ce3824be3821ab6a6a7c784ab3d962;
 static PyObject *__pyx_n_s_1edca4df27b85fe21c986caf187b71e;
@@ -1395,7 +1394,6 @@ static PyObject *__pyx_kp_s_3bb0af8454ac35e1898db805f921269;
 static PyObject *__pyx_n_s_3bb0af8454ac35e1898db805f921269_2;
 static PyObject *__pyx_n_s_3f667e241dae4914110f19c3cc66286;
 static PyObject *__pyx_n_s_470cadb3f9c2f0679714d0ef62b75bc;
-static PyObject *__pyx_n_u_49caa6e42abbaee5b8c8bf2cbccad86;
 static PyObject *__pyx_n_s_4d00d197f72f8951292026c0460f8bf;
 static PyObject *__pyx_n_s_54ca290a332f5b05f3f1da2944dde8e;
 static PyObject *__pyx_n_u_61dead8a6fd2e8353707ed74c03b546;
@@ -1404,9 +1402,11 @@ static PyObject *__pyx_n_s_71f76a407216ae36d713d182fe3619a;
 static PyObject *__pyx_n_s_74f3239d95607254a450911529d43e5;
 static PyObject *__pyx_n_s_78ebada914a359d8d542cd21bb94dae;
 static PyObject *__pyx_n_s_828f9d1b587c4d78a1857d8a4ff1016;
-static PyObject *__pyx_n_u_8b3b5507085bba43611cfd38c165e87;
 static PyObject *__pyx_n_s_8fe23c3bc000438c6d26e89004449c0;
 static PyObject *__pyx_n_s_9fd728c66c9a256b121472dabf32a34;
+static PyObject *__pyx_kp_u_Expected_list_But;
+static PyObject *__pyx_kp_u_Expected_number_But;
+static PyObject *__pyx_kp_u_Expected_two_element_But;
 static PyObject *__pyx_n_s__31;
 static PyObject *__pyx_n_s_a1fce4363854ff888cff4b8e7875d600;
 static PyObject *__pyx_n_s_a21d7df04c33f5076ceee7d9b9c58339;
@@ -5095,8 +5095,8 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):             # <<<<<<<<<<<<<<
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  */
 
 /* Python wrapper */
@@ -5135,15 +5135,15 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":156
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))             # <<<<<<<<<<<<<<
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))             # <<<<<<<<<<<<<<
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
     __pyx_t_1 = PyList_Check(__pyx_v_bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76); 
     if (unlikely(!(__pyx_t_1 != 0))) {
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_n_u_1b58a4dfedb8f231ba0665d8a094db8, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Expected_list_But, __pyx_n_s_format); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 156, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_4 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -5172,16 +5172,16 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":157
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))             # <<<<<<<<<<<<<<
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))             # <<<<<<<<<<<<<<
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  */
   #ifndef CYTHON_WITHOUT_ASSERTIONS
   if (unlikely(!Py_OptimizeFlag)) {
     __pyx_t_5 = PyObject_Length(__pyx_v_bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76); if (unlikely(__pyx_t_5 == ((Py_ssize_t)-1))) __PYX_ERR(0, 157, __pyx_L1_error)
     if (unlikely(!((__pyx_t_5 == 2) != 0))) {
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_n_u_8b3b5507085bba43611cfd38c165e87, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Expected_two_element_But, __pyx_n_s_format); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 157, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __pyx_t_6 = PyObject_Length(__pyx_v_bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 157, __pyx_L1_error)
       __pyx_t_4 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 157, __pyx_L1_error)
@@ -5213,10 +5213,10 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   #endif
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":158
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:             # <<<<<<<<<<<<<<
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  * if (__name__ == '__main__'):
  */
   if (likely(PyList_CheckExact(__pyx_v_bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76)) || PyTuple_CheckExact(__pyx_v_bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76)) {
@@ -5262,9 +5262,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     __pyx_t_3 = 0;
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":159
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)             # <<<<<<<<<<<<<<
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)             # <<<<<<<<<<<<<<
  * if (__name__ == '__main__'):
  *     f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea = [[3, 5], [1, 5], [(- 1), 5], [4, 5], [0, (- 1)], [0, (- 1)], [(- 3), (- 1)]]
  */
@@ -5282,7 +5282,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
       __pyx_t_1 = __pyx_t_9;
       __pyx_L5_bool_binop_done:;
       if (unlikely(!(__pyx_t_1 != 0))) {
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_n_u_49caa6e42abbaee5b8c8bf2cbccad86, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 159, __pyx_L1_error)
+        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Expected_number_But, __pyx_n_s_format); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 159, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __pyx_t_7 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_4))) {
@@ -5310,10 +5310,10 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     #endif
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":158
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:             # <<<<<<<<<<<<<<
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  * if (__name__ == '__main__'):
  */
   }
@@ -5323,8 +5323,8 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):             # <<<<<<<<<<<<<<
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  */
 
   /* function exit code */
@@ -5395,7 +5395,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_k_117c132e939b9f65266d1c74695d1bb, sizeof(__pyx_k_117c132e939b9f65266d1c74695d1bb), 0, 0, 1, 1},
   {&__pyx_n_s_15c72be78e0a85a7d0ac771476e5c22, __pyx_k_15c72be78e0a85a7d0ac771476e5c22, sizeof(__pyx_k_15c72be78e0a85a7d0ac771476e5c22), 0, 0, 1, 1},
   {&__pyx_n_s_1afff8e723c0f87cda2c5e7bc679122, __pyx_k_1afff8e723c0f87cda2c5e7bc679122, sizeof(__pyx_k_1afff8e723c0f87cda2c5e7bc679122), 0, 0, 1, 1},
-  {&__pyx_n_u_1b58a4dfedb8f231ba0665d8a094db8, __pyx_k_1b58a4dfedb8f231ba0665d8a094db8, sizeof(__pyx_k_1b58a4dfedb8f231ba0665d8a094db8), 0, 1, 0, 1},
   {&__pyx_n_s_1baa358bed301847ab8e7d56daf35ea, __pyx_k_1baa358bed301847ab8e7d56daf35ea, sizeof(__pyx_k_1baa358bed301847ab8e7d56daf35ea), 0, 0, 1, 1},
   {&__pyx_n_s_1ce3824be3821ab6a6a7c784ab3d962, __pyx_k_1ce3824be3821ab6a6a7c784ab3d962, sizeof(__pyx_k_1ce3824be3821ab6a6a7c784ab3d962), 0, 0, 1, 1},
   {&__pyx_n_s_1edca4df27b85fe21c986caf187b71e, __pyx_k_1edca4df27b85fe21c986caf187b71e, sizeof(__pyx_k_1edca4df27b85fe21c986caf187b71e), 0, 0, 1, 1},
@@ -5407,7 +5406,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_k_3bb0af8454ac35e1898db805f921269_2, sizeof(__pyx_k_3bb0af8454ac35e1898db805f921269_2), 0, 0, 1, 1},
   {&__pyx_n_s_3f667e241dae4914110f19c3cc66286, __pyx_k_3f667e241dae4914110f19c3cc66286, sizeof(__pyx_k_3f667e241dae4914110f19c3cc66286), 0, 0, 1, 1},
   {&__pyx_n_s_470cadb3f9c2f0679714d0ef62b75bc, __pyx_k_470cadb3f9c2f0679714d0ef62b75bc, sizeof(__pyx_k_470cadb3f9c2f0679714d0ef62b75bc), 0, 0, 1, 1},
-  {&__pyx_n_u_49caa6e42abbaee5b8c8bf2cbccad86, __pyx_k_49caa6e42abbaee5b8c8bf2cbccad86, sizeof(__pyx_k_49caa6e42abbaee5b8c8bf2cbccad86), 0, 1, 0, 1},
   {&__pyx_n_s_4d00d197f72f8951292026c0460f8bf, __pyx_k_4d00d197f72f8951292026c0460f8bf, sizeof(__pyx_k_4d00d197f72f8951292026c0460f8bf), 0, 0, 1, 1},
   {&__pyx_n_s_54ca290a332f5b05f3f1da2944dde8e, __pyx_k_54ca290a332f5b05f3f1da2944dde8e, sizeof(__pyx_k_54ca290a332f5b05f3f1da2944dde8e), 0, 0, 1, 1},
   {&__pyx_n_u_61dead8a6fd2e8353707ed74c03b546, __pyx_k_61dead8a6fd2e8353707ed74c03b546, sizeof(__pyx_k_61dead8a6fd2e8353707ed74c03b546), 0, 1, 0, 1},
@@ -5416,9 +5414,11 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_74f3239d95607254a450911529d43e5, __pyx_k_74f3239d95607254a450911529d43e5, sizeof(__pyx_k_74f3239d95607254a450911529d43e5), 0, 0, 1, 1},
   {&__pyx_n_s_78ebada914a359d8d542cd21bb94dae, __pyx_k_78ebada914a359d8d542cd21bb94dae, sizeof(__pyx_k_78ebada914a359d8d542cd21bb94dae), 0, 0, 1, 1},
   {&__pyx_n_s_828f9d1b587c4d78a1857d8a4ff1016, __pyx_k_828f9d1b587c4d78a1857d8a4ff1016, sizeof(__pyx_k_828f9d1b587c4d78a1857d8a4ff1016), 0, 0, 1, 1},
-  {&__pyx_n_u_8b3b5507085bba43611cfd38c165e87, __pyx_k_8b3b5507085bba43611cfd38c165e87, sizeof(__pyx_k_8b3b5507085bba43611cfd38c165e87), 0, 1, 0, 1},
   {&__pyx_n_s_8fe23c3bc000438c6d26e89004449c0, __pyx_k_8fe23c3bc000438c6d26e89004449c0, sizeof(__pyx_k_8fe23c3bc000438c6d26e89004449c0), 0, 0, 1, 1},
   {&__pyx_n_s_9fd728c66c9a256b121472dabf32a34, __pyx_k_9fd728c66c9a256b121472dabf32a34, sizeof(__pyx_k_9fd728c66c9a256b121472dabf32a34), 0, 0, 1, 1},
+  {&__pyx_kp_u_Expected_list_But, __pyx_k_Expected_list_But, sizeof(__pyx_k_Expected_list_But), 0, 1, 0, 0},
+  {&__pyx_kp_u_Expected_number_But, __pyx_k_Expected_number_But, sizeof(__pyx_k_Expected_number_But), 0, 1, 0, 0},
+  {&__pyx_kp_u_Expected_two_element_But, __pyx_k_Expected_two_element_But, sizeof(__pyx_k_Expected_two_element_But), 0, 1, 0, 0},
   {&__pyx_n_s__31, __pyx_k__31, sizeof(__pyx_k__31), 0, 0, 1, 1},
   {&__pyx_n_s_a1fce4363854ff888cff4b8e7875d600, __pyx_k_a1fce4363854ff888cff4b8e7875d600, sizeof(__pyx_k_a1fce4363854ff888cff4b8e7875d600), 0, 0, 1, 1},
   {&__pyx_n_s_a21d7df04c33f5076ceee7d9b9c58339, __pyx_k_a21d7df04c33f5076ceee7d9b9c58339, sizeof(__pyx_k_a21d7df04c33f5076ceee7d9b9c58339), 0, 0, 1, 1},
@@ -5674,8 +5674,8 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):             # <<<<<<<<<<<<<<
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  */
   __pyx_tuple__36 = PyTuple_Pack(2, __pyx_n_s_bdc10f09365d025cd5b227a3dacbc016, __pyx_n_s_de7d1b721a1e0632b7cf04edf5032c8e); if (unlikely(!__pyx_tuple__36)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__36);
@@ -6194,8 +6194,8 @@ if (!__Pyx_RefNanny) {
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):             # <<<<<<<<<<<<<<
- *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), '_1b58a4dfedb8f231ba0665d8a094db86873fb20dd2d4ccc0a4d208c34eb3aef6'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
- *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), '_8b3b5507085bba43611cfd38c165e87d29b0082cdf86a5060d495adc309d6208'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert isinstance(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76, list), 'Expected list. But {}'.format(type(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
+ *     assert (len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76) == 2), 'Expected two element. But {}.'.format(len(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76))
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_35_1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846, 0, __pyx_n_s_1afff8e723c0f87cda2c5e7bc679122, NULL, __pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_d, ((PyObject *)__pyx_codeobj__37)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 155, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -6204,7 +6204,7 @@ if (!__Pyx_RefNanny) {
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":160
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  * if (__name__ == '__main__'):             # <<<<<<<<<<<<<<
  *     f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea = [[3, 5], [1, 5], [(- 1), 5], [4, 5], [0, (- 1)], [0, (- 1)], [(- 3), (- 1)]]
  *     c099142bc3186ded72786ba27e9ea6d2da240fb9fd3fe79b479ecf8e734b2850 = a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3([3, 5], [1, 5], [(- 1), 5])
@@ -6216,7 +6216,7 @@ if (!__Pyx_RefNanny) {
   if (__pyx_t_2) {
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":161
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  * if (__name__ == '__main__'):
  *     f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea = [[3, 5], [1, 5], [(- 1), 5], [4, 5], [0, (- 1)], [0, (- 1)], [(- 3), (- 1)]]             # <<<<<<<<<<<<<<
  *     c099142bc3186ded72786ba27e9ea6d2da240fb9fd3fe79b479ecf8e734b2850 = a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3([3, 5], [1, 5], [(- 1), 5])
@@ -6398,7 +6398,7 @@ if (!__Pyx_RefNanny) {
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":160
  *     for de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7 in bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76:
- *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), '_49caa6e42abbaee5b8c8bf2cbccad86367b90e47cd0bb8a3d04cb900c66be250'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
+ *         assert isinstance(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7, (int, float)), 'Expected number. But {}.'.format(de7d1b721a1e0632b7cf04edf5032c8ecffa9f9a08492152b926f1a5a7e765d7)
  * if (__name__ == '__main__'):             # <<<<<<<<<<<<<<
  *     f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea = [[3, 5], [1, 5], [(- 1), 5], [4, 5], [0, (- 1)], [0, (- 1)], [(- 3), (- 1)]]
  *     c099142bc3186ded72786ba27e9ea6d2da240fb9fd3fe79b479ecf8e734b2850 = a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3([3, 5], [1, 5], [(- 1), 5])

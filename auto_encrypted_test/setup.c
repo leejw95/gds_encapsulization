@@ -1273,7 +1273,6 @@ static const char __pyx_k_platform[] = "platform";
 static const char __pyx_k_Extension[] = "Extension";
 static const char __pyx_k_file_list[] = "file_list";
 static const char __pyx_k_generator[] = "generator";
-static const char __pyx_k_user_setup[] = "user_setup";
 static const char __pyx_k_ext_modules[] = "ext_modules";
 static const char __pyx_k_distutils_core[] = "distutils.core";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
@@ -1309,7 +1308,6 @@ static PyObject *__pyx_n_s_split;
 static PyObject *__pyx_n_s_sys;
 static PyObject *__pyx_n_s_system;
 static PyObject *__pyx_n_s_test;
-static PyObject *__pyx_n_s_user_setup;
 static PyObject *__pyx_int_neg_2;
 static PyObject *__pyx_slice__2;
 /* Late includes */
@@ -1391,7 +1389,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_sys, __pyx_k_sys, sizeof(__pyx_k_sys), 0, 0, 1, 1},
   {&__pyx_n_s_system, __pyx_k_system, sizeof(__pyx_k_system), 0, 0, 1, 1},
   {&__pyx_n_s_test, __pyx_k_test, sizeof(__pyx_k_test), 0, 0, 1, 1},
-  {&__pyx_n_s_user_setup, __pyx_k_user_setup, sizeof(__pyx_k_user_setup), 0, 0, 1, 1},
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
@@ -1711,7 +1708,7 @@ if (!__Pyx_RefNanny) {
   /* "setup.py":1
  * from distutils.core import setup, Extension             # <<<<<<<<<<<<<<
  * import inspect
- * import glob, sys, os, user_setup, platform, pickle, gzip
+ * import glob, sys, os, platform, pickle, gzip
  */
   __pyx_t_1 = PyList_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1737,7 +1734,7 @@ if (!__Pyx_RefNanny) {
   /* "setup.py":2
  * from distutils.core import setup, Extension
  * import inspect             # <<<<<<<<<<<<<<
- * import glob, sys, os, user_setup, platform, pickle, gzip
+ * import glob, sys, os, platform, pickle, gzip
  * 
  */
   __pyx_t_2 = __Pyx_patch_inspect(__Pyx_Import(__pyx_n_s_inspect, 0, 0)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 2, __pyx_L1_error)
@@ -1748,7 +1745,7 @@ if (!__Pyx_RefNanny) {
   /* "setup.py":3
  * from distutils.core import setup, Extension
  * import inspect
- * import glob, sys, os, user_setup, platform, pickle, gzip             # <<<<<<<<<<<<<<
+ * import glob, sys, os, platform, pickle, gzip             # <<<<<<<<<<<<<<
  * 
  * file_list = []
  */
@@ -1764,10 +1761,6 @@ if (!__Pyx_RefNanny) {
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_os, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_user_setup, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_user_setup, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = __Pyx_Import(__pyx_n_s_platform, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 3, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_platform, __pyx_t_2) < 0) __PYX_ERR(0, 3, __pyx_L1_error)
@@ -1782,7 +1775,7 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
   /* "setup.py":5
- * import glob, sys, os, user_setup, platform, pickle, gzip
+ * import glob, sys, os, platform, pickle, gzip
  * 
  * file_list = []             # <<<<<<<<<<<<<<
  * 
@@ -2194,7 +2187,7 @@ if (!__Pyx_RefNanny) {
   /* "setup.py":1
  * from distutils.core import setup, Extension             # <<<<<<<<<<<<<<
  * import inspect
- * import glob, sys, os, user_setup, platform, pickle, gzip
+ * import glob, sys, os, platform, pickle, gzip
  */
   __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
