@@ -9,9 +9,17 @@ GDSII Editor Engine 배포를 위해 변수 암호화와 cython으로 c로 변�
 
 
 ## Docker 사용시
+https://hub.docker.com/r/intel/oneapi-hpckit
+
 intel/oneapi-hpckit 이미지를 이용하면 손쉽게 Intel HPC, Intel python 사용이 가능함.
 Windows 환경에선 Docker_Desktop 설치.
 
+설치방법 :
+(local terminal 에서 실행)
+```shell
+docker pull intel/oneapi-hpckit
+```
+실행 방법 :
 (Local terminal에서 실행)
 ```shell
 docker container run -it (--rm -v 파일경로:컨테이너내부경로) intel/oneapi-hpckit
