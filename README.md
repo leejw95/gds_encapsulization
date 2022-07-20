@@ -110,3 +110,4 @@ a.change('string')
 평문으로 표출되길 원하는 부분이 암호화되었거나, 암호화되길 원하는 부분이 평문으로 나타나는 경우 Encode.py에서
 main_1() 함수의 test 구문만을 주석 해제 후, astunparse를 통해 원하는 구문의 구조가 ast의 어느 트리에 해당하는지 확인 후 
 Encode.py 상단에서 수정해주어야 한다.
+또한 추가적으로 외부 라이브러리 사용 시, Encode.py에 존재하는 Exception list에 추가하여서 처리해주어야 한다.
