@@ -9,9 +9,17 @@ GDSII Editor Engine 배포를 위해 변수 암호화와 cython으로 c로 변�
 
 
 ## Docker 사용시
+https://hub.docker.com/r/intel/oneapi-hpckit
+
 intel/oneapi-hpckit 이미지를 이용하면 손쉽게 Intel HPC, Intel python 사용이 가능함.
 Windows 환경에선 Docker_Desktop 설치.
 
+설치방법 :
+(local terminal 에서 실행)
+```shell
+docker pull intel/oneapi-hpckit
+```
+실행 방법 :
 (Local terminal에서 실행)
 ```shell
 docker container run -it (--rm -v 파일경로:컨테이너내부경로) intel/oneapi-hpckit
@@ -102,3 +110,4 @@ a.change('string')
 평문으로 표출되길 원하는 부분이 암호화되었거나, 암호화되길 원하는 부분이 평문으로 나타나는 경우 Encode.py에서
 main_1() 함수의 test 구문만을 주석 해제 후, astunparse를 통해 원하는 구문의 구조가 ast의 어느 트리에 해당하는지 확인 후 
 Encode.py 상단에서 수정해주어야 한다.
+또한 추가적으로 외부 라이브러리 사용 시, Encode.py에 존재하는 Exception list에 추가하여서 처리해주어야 한다.
