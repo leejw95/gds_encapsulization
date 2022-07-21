@@ -39,7 +39,7 @@ class name_change(ast.NodeTransformer) :
                         '>', 's', 'excess64_8byte_encode', 'unpack', 'divmod', 'min', 'max', 'abs','list','set', 'sum', 'zip', 'list', 'set', 'nonlocal',
                         'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
                         'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
-                        'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date',
+                        'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Float type width input detected!',
                         'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
                         'wb', 'rb']
         
@@ -324,7 +324,10 @@ def method_list() :
             generator_class_name = generator.split('/')[-1][:-3]
         else:
             generator_class_name = generator.split('\\')[1][:-3]
-        generator_list.append(generator_class_name)
+        if 'Via' in generator_class_name :
+            pass
+        else :
+            generator_list.append(generator_class_name)
         tmp = __import__(generator_class_name)
         for name,obj in inspect.getmembers(tmp):
             if inspect.isclass(obj):
@@ -349,8 +352,8 @@ def method_list() :
     # print ((class_lst['TristateInverter']))
 
     with gzip.open ("./Gen_list.pickle", "wb") as f :
-        pickle.dump([class_function_dict, class_lst], f)
+        pickle.dump([class_function_dict, class_lst, generator_list], f)
 
 
-# method_list() ## for obtaining generator functions
-main_1()
+method_list() ## for obtaining generator functions
+# main_1()

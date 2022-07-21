@@ -22,8 +22,8 @@ gen = picked[0]
 # print ('//')
 # print (picked[1])
 
-Gen_list = list(gen.keys())
-print (Gen_list)
+# Gen_list = list(gen.keys())
+print (picked[2])
 
 sel1 = input()
 
