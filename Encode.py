@@ -28,7 +28,7 @@ class name_change(ast.NodeTransformer) :
     #     return node
     def generic_visit(self, node):
 
-        expired_date = ['Jul 2022', 'Sep 2022', 'Oct 2022']
+        expired_date = ['Jul 2022', 'Aug 2022', 'Sep 2022', 'Oct 2022']
         
         exception_list = ['self', 'print', 'range', 're', 'math', 'datetime', 'MINYEAR', 'MAXYEAR', 'copy', 'open', 'readlines', 'readline', 'format', 'now', 'sha256', 'types', 'tuple', 'staticmethod', 'classmethod', 'NotImplemented', 'NotImplementedError', 'enumerate', 'type', 'bytes',
                         'Exception','and','exec','not','assert','finally','or','break','for','pass','class','from','print', 'seek', 'close', 'items', 'random', 'input', 'center','getmembers','isclass',
