@@ -355,5 +355,5 @@ def method_list() :
         pickle.dump([class_function_dict, class_lst, generator_list], f)
 
 
-method_list() ## for obtaining generator functions
-# main_1() ## for encoding
+# method_list() ## for obtaining generator functions
+main_1() ## for encoding
