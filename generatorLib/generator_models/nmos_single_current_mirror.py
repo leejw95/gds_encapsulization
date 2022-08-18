@@ -8,19 +8,19 @@ from generatorLib.generator_models import ViaStack
 from generatorLib.generator_models import PSubRing
 from generatorLib.generator_models import ViaPoly2Met1
 
-class EasyDebugModule(StickDiagram._StickDiagram):
-	def __init__(self, _DesignParameter=None, _Name='EasyDebugModule'):
+class _nmos_single_current_mirror(StickDiagram._StickDiagram):
+	def __init__(self, _DesignParameter=None, _Name='nmos_single_current_mirror'):
 		if _DesignParameter != None:
 			self._DesignParameter = _DesignParameter
 		else:
 			self._DesignParameter = dict(_Name=self._NameDeclaration(_Name=_Name), _GDSFile=self._GDSObjDeclaration(_GDSFile=None))
 		self._DesignParameter['_Name']['Name'] = _Name
 
-	def _CalculateDesignParameter(self,nmos_gate=2,nmos_width=1000,nmos_length=30,nmos_dummy=True,xvt='SLVT',pccrit=True,guardring_right=2,guardring_left=2,guardring_bot=2,guardring_top=2,guardring_width=None,guardring_height=None):
-	
+	def _CalculateDesignParameter(self,nmos_gate=2,nmos_width=1000,nmos_length=30,nmos_dummy=True,xvt='SLVT',pccrit=True,guardring_right=2,guardring_left=2,guardring_bot=2,guardring_top=2,guardring_width=None,guardring_height=None ):
+
 		drc = DRC.DRC()
 		_Name = self._DesignParameter['_Name']['_Name']
-		
+
 		self._DesignParameter['nmos'] = self._SrefElementDeclaration(_DesignObj=NMOSWithDummy._NMOS(_Name='nmosIn{}'.format(_Name)))[0]
 		self._DesignParameter['nmos']['_DesignObj']._CalculateNMOSDesignParameter(**dict(_NMOSNumberofGate=nmos_gate, _NMOSChannelWidth=nmos_width, _NMOSChannellength=nmos_length, _NMOSDummy=nmos_dummy, _GateSpacing=None, _SDWidth=None, _XVT=xvt, _PCCrit=pccrit))
 		self._DesignParameter['nmos']['_XYCoordinates'] = [[0, 0]]

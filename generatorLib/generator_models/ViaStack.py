@@ -30,717 +30,110 @@ class _ViaStack(StickDiagram._StickDiagram):
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaPoly2Met1DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 1 :
-                lib_name = 'ViaMet12Met2'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet12Met2DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 2 :
-                lib_name = 'ViaMet22Met3'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet22Met3DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 3 :
-                lib_name = 'ViaMet32Met4'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet32Met4DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 4 :
-                lib_name = 'ViaMet42Met5'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet42Met5DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 5 :
-                lib_name = 'ViaMet52Met6'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet52Met6DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 6 :
-                lib_name = 'ViaMet62Met7'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet62Met7DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 7 :
-                lib_name = 'ViaMet72Met8'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet72Met8DesignParameter" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            # lib = __import__(lib_name)
-            # for name, obj in inspect.getmembers(lib):
-            #     if inspect.isclass(obj):
-            #         class_obj = obj
-            #         fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-            #                     "Calculate" in fcn_name]
-            #         fcn_list2 = list(
-            #             filter(lambda fcn: 'Enclosure' not in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
-            #         fcn_obj = fcn_list2[0][1]
-            #         fcn_name = fcn_list2[0][0]
-            #         args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-            #         args_name = [arg.name for arg in args]
-            #         break
-            # self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-            # calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-            # cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
-            # coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
-            # parameters = {cox : COX, coy: COY}
-            # calculate_fcn(**parameters)
-            # self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
+            else:
+                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            lib = __import__(lib_name)
+            for name, obj in inspect.getmembers(lib):
+                if inspect.isclass(obj):
+                    class_obj = obj
+                    fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
+                                "Calculate" in fcn_name]
+                    fcn_list2 = list(
+                        filter(lambda fcn: 'Enclosure' not in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
+                    fcn_obj = fcn_list2[0][1]
+                    fcn_name = fcn_list2[0][0]
+                    args = list(inspect.signature(fcn_obj).parameters.values())[1:]
+                    args_name = [arg.name for arg in args]
+                    break
+            self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
+            calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
+            cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
+            coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
+            parameters = {cox : COX, coy: COY}
+            calculate_fcn(**parameters)
+            self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
 
     def _CalculateStackMinimumEnclosureX(self, COX=None, COY=None, start_layer=None, end_layer=None ):
         layer_list = range(start_layer, end_layer)
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaPoly2Met1DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 1 :
-                lib_name = 'ViaMet12Met2'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet12Met2DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 2 :
-                lib_name = 'ViaMet22Met3'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet22Met3DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 3 :
-                lib_name = 'ViaMet32Met4'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet32Met4DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 4 :
-                lib_name = 'ViaMet42Met5'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet42Met5DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 5 :
-                lib_name = 'ViaMet52Met6'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet52Met6DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 6 :
-                lib_name = 'ViaMet62Met7'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet62Met7DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 7 :
-                lib_name = 'ViaMet72Met8'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet72Met8DesignParameterMinimumEnclosureX" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            # lib = __import__(lib_name)
-            # for name, obj in inspect.getmembers(lib):
-            #     if inspect.isclass(obj):
-            #         class_obj = obj
-            #         fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-            #                     "Calculate" in fcn_name]
-            #         fcn_list2 = list(
-            #             filter(lambda fcn: 'EnclosureX' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
-            #         fcn_obj = fcn_list2[0][1]
-            #         fcn_name = fcn_list2[0][0]
-            #         args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-            #         args_name = [arg.name for arg in args]
-            #         break
-            # self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-            # calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-            # cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
-            # coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
-            # parameters = {cox : COX, coy: COY}
-            # calculate_fcn(**parameters)
-            # self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
+            else:
+                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            lib = __import__(lib_name)
+            for name, obj in inspect.getmembers(lib):
+                if inspect.isclass(obj):
+                    class_obj = obj
+                    fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
+                                "Calculate" in fcn_name]
+                    fcn_list2 = list(
+                        filter(lambda fcn: 'EnclosureX' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
+                    fcn_obj = fcn_list2[0][1]
+                    fcn_name = fcn_list2[0][0]
+                    args = list(inspect.signature(fcn_obj).parameters.values())[1:]
+                    args_name = [arg.name for arg in args]
+                    break
+            self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
+            calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
+            cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
+            coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
+            parameters = {cox : COX, coy: COY}
+            calculate_fcn(**parameters)
+            self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
 
     def _CalculateStackMinimumEnclosureY(self, COX=None, COY=None, start_layer=None, end_layer=None ):
         layer_list = range(start_layer, end_layer)
         for layer in layer_list:
             if layer == 0 :
                 lib_name = 'ViaPoly2Met1'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaPoly2Met1DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaPoly2Met1NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 1 :
-                lib_name = 'ViaMet12Met2'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet12Met2DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 2 :
-                lib_name = 'ViaMet22Met3'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet22Met3DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 3 :
-                lib_name = 'ViaMet32Met4'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet32Met4DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 4 :
-                lib_name = 'ViaMet42Met5'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet42Met5DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 5 :
-                lib_name = 'ViaMet52Met6'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet52Met6DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 6 :
-                lib_name = 'ViaMet62Met7'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet62Met7DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 7 :
-                lib_name = 'ViaMet72Met8'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateViaMet72Met8DesignParameterMinimumEnclosureY" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            # lib = __import__(lib_name)
-            # for name, obj in inspect.getmembers(lib):
-            #     if inspect.isclass(obj):
-            #         class_obj = obj
-            #         fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-            #                     "Calculate" in fcn_name]
-            #         fcn_list2 = list(
-            #             filter(lambda fcn: 'EnclosureY' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
-            #         fcn_obj = fcn_list2[0][1]
-            #         fcn_name = fcn_list2[0][0]
-            #         args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-            #         args_name = [arg.name for arg in args]
-            #         break
-            # self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-            # calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-            # cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
-            # coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
-            # parameters = {cox : COX, coy: COY}
-            # calculate_fcn(**parameters)
-            # self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
+            else:
+                lib_name = f'ViaMet{layer}2Met{layer+1}'
+            lib = __import__(lib_name)
+            for name, obj in inspect.getmembers(lib):
+                if inspect.isclass(obj):
+                    class_obj = obj
+                    fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
+                                "Calculate" in fcn_name]
+                    fcn_list2 = list(
+                        filter(lambda fcn: 'EnclosureY' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
+                    fcn_obj = fcn_list2[0][1]
+                    fcn_name = fcn_list2[0][0]
+                    args = list(inspect.signature(fcn_obj).parameters.values())[1:]
+                    args_name = [arg.name for arg in args]
+                    break
+            self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
+            calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
+            cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
+            coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
+            parameters = {cox : COX, coy: COY}
+            calculate_fcn(**parameters)
+            self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
 
     def _CalculateStackSameEnclosure(self, COX=None, COY=None, start_layer=None, end_layer=None):
         layer_list = range(start_layer, end_layer)
         for layer in layer_list:
-            if layer == 0 :
+            if layer == 0:
                 lib_name = 'ViaPoly2Met1'
-                pass
-            elif layer == 1 :
-                lib_name = 'ViaMet12Met2'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet12Met2NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 2 :
-                lib_name = 'ViaMet22Met3'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet22Met3NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 3 :
-                lib_name = 'ViaMet32Met4'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet32Met4NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 4 :
-                lib_name = 'ViaMet42Met5'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet42Met5NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 5 :
-                lib_name = 'ViaMet52Met6'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet52Met6NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 6 :
-                lib_name = 'ViaMet62Met7'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet62Met7NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            elif layer == 7 :
-                lib_name = 'ViaMet72Met8'
-                lib = __import__(lib_name)
-                for name, obj in inspect.getmembers(lib):
-                    if inspect.isclass(obj):
-                        class_obj = obj
-                        fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-                                    "_CalculateDesignParameterSameEnclosure" in fcn_name]
-                        fcn_obj = fcn_list[0][1]
-                        fcn_name = fcn_list[0][0]
-                        args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-                        args_name = [arg.name for arg in args]
-                        break
-                self._DesignParameter[lib_name] = self._SrefElementDeclaration(_DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-                calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-                cox = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOX' in arg, args_name))[0]
-                coy = list(filter(lambda arg: '_ViaMet72Met8NumberOfCOY' in arg, args_name))[0]
-                parameters = {cox : COX, coy: COY}
-                calculate_fcn(**parameters)
-                self._DesignParameter[lib_name]['_XYCoordinates'] = [[0,0]]
-            # lib = __import__(lib_name)
-            # for name, obj in inspect.getmembers(lib):
-            #     if inspect.isclass(obj):
-            #         class_obj = obj
-            #         fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
-            #                     "Calculate" in fcn_name]
-            #         fcn_list2 = list(
-            #             filter(lambda fcn: 'SameEnclosure' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
-            #         fcn_obj = fcn_list2[0][1]
-            #         fcn_name = fcn_list2[0][0]
-            #         args = list(inspect.signature(fcn_obj).parameters.values())[1:]
-            #         args_name = [arg.name for arg in args]
-            #         break
-            # self._DesignParameter[lib_name] = self._SrefElementDeclaration(
-            #     _DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
-            # calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
-            # cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
-            # coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
-            # parameters = {cox: COX, coy: COY}
-            # calculate_fcn(**parameters)
-            # self._DesignParameter[lib_name]['_XYCoordinates'] = [[0, 0]]
+            else:
+                lib_name = f'ViaMet{layer}2Met{layer + 1}'
+            lib = __import__(lib_name)
+            for name, obj in inspect.getmembers(lib):
+                if inspect.isclass(obj):
+                    class_obj = obj
+                    fcn_list = [[fcn_name, fcn_obj] for fcn_name, fcn_obj in inspect.getmembers(obj) if
+                                "Calculate" in fcn_name]
+                    fcn_list2 = list(
+                        filter(lambda fcn: 'SameEnclosure' in fcn[0] and 'DesignParameter' in fcn[0], fcn_list))
+                    fcn_obj = fcn_list2[0][1]
+                    fcn_name = fcn_list2[0][0]
+                    args = list(inspect.signature(fcn_obj).parameters.values())[1:]
+                    args_name = [arg.name for arg in args]
+                    break
+            self._DesignParameter[lib_name] = self._SrefElementDeclaration(
+                _DesignObj=class_obj(_Name=f"{lib_name}in{self._DesignParameter['_Name']['_Name']}"))[0]
+            calculate_fcn = getattr(self._DesignParameter[lib_name]['_DesignObj'], fcn_name)
+            cox = list(filter(lambda arg: 'COX' in arg, args_name))[0]
+            coy = list(filter(lambda arg: 'COY' in arg, args_name))[0]
+            parameters = {cox: COX, coy: COY}
+            calculate_fcn(**parameters)
+            self._DesignParameter[lib_name]['_XYCoordinates'] = [[0, 0]]

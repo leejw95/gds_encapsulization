@@ -225,4 +225,71 @@ class _ViaMet72Met8(StickDiagram._StickDiagram):
         print ('#########################################################################################################')
 
 if __name__=='__main__':
-    pass
+    ViaMet72Met8Obj1=_ViaMet72Met8(_DesignParameter=None, _Name='ViaMet72Met8test1')
+    ViaMet72Met8Obj1._CalculateViaMet72Met8DesignParameter(_ViaMet72Met8NumberOfCOX=3, _ViaMet72Met8NumberOfCOY=4 )
+    ViaMet72Met8Obj2=_ViaMet72Met8(_DesignParameter=None, _Name='ViaMet72Met8test2')
+    ViaMet72Met8Obj2._CalculateViaMet72Met8DesignParameterMinimumEnclosureY(_ViaMet72Met8NumberOfCOX=3, _ViaMet72Met8NumberOfCOY=4 )
+    ViaMet72Met8Obj3=_ViaMet72Met8(_DesignParameter=None, _Name='ViaMet72Met8test3')
+    ViaMet72Met8Obj3._CalculateViaMet72Met8DesignParameterMinimumEnclosureX(_ViaMet72Met8NumberOfCOX=3, _ViaMet72Met8NumberOfCOY=4 )
+    #ViaMet72Met8Obj=_ViaMet72Met8(_ViaMet72Met8DesignParameter=DesignParameters.ViaMet72Met8DesignParameter, _ViaMet72Met8Name='ViaMet72Met82test')
+    #ViaMet72Met8Obj=_ViaMet72Met8(_Technology=DesignParameters._Technology, _XYCoordinatePbody=[0,0], _NumberOfPbodyCO=2, _WidthXPbodyOD=890, _WidthYPbodyOD=420, _WidthXPbodyNP=1250, _WidthYPbodyNP=780, _WidthPbodyCO=220, _LengthPbodyBtwCO=470, _WidthXPbodyMet7=810, _WidthYPbodyMet1=340, _PbodyName='ViaMet72Met8')
+    ViaMet72Met8Obj1._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=ViaMet72Met8Obj1._DesignParameter)
+    ViaMet72Met8Obj2._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=ViaMet72Met8Obj2._DesignParameter)
+    ViaMet72Met8Obj3._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=ViaMet72Met8Obj3._DesignParameter)
+
+    testStreamFile=open('./testStreamFile1.gds','wb')
+
+    tmp1=ViaMet72Met8Obj1._CreateGDSStream(ViaMet72Met8Obj1._DesignParameter['_GDSFile']['_GDSFile'])
+
+    tmp1.write_binary_gds_stream(testStreamFile)
+    testStreamFile=open('./testStreamFile2.gds','wb')
+
+    tmp2=ViaMet72Met8Obj2._CreateGDSStream(ViaMet72Met8Obj2._DesignParameter['_GDSFile']['_GDSFile'])
+
+    tmp2.write_binary_gds_stream(testStreamFile)
+
+    testStreamFile=open('./testStreamFile3.gds','wb')
+
+    tmp3=ViaMet72Met8Obj3._CreateGDSStream(ViaMet72Met8Obj3._DesignParameter['_GDSFile']['_GDSFile'])
+
+    tmp3.write_binary_gds_stream(testStreamFile)
+
+    testStreamFile.close()
+    print ('###############open ftp connection & update gds file to cadence server###################')
+    # ftp_cadence_server=ftplib.FTP('141.223.86.109')
+    # ftp_cadence_server.login(base64.b64decode('YWxlY25ldzE='),base64.b64decode('NzNoazNhYWs='))
+    # if DesignParameters._Technology =='065nm':
+    #     ftp_cadence_server.cwd('/home/alecnew1/OPUS/design_automation')
+    # elif DesignParameters._Technology =='180nm':
+    #     ftp_cadence_server.cwd('/home/alecnew1/OPUS/DesignAutomationTSMC018')
+    # elif DesignParameters._Technology =='045nm':
+    #     ftp_cadence_server.cwd('/home/alecnew1/OPUS/DesignAutomationTSMC45')
+    # print (ftp_cadence_server.pwd())
+    # testStreamFile=open('./testStreamFile1.gds','rb')
+    # ftp_cadence_server.storbinary('STOR testStreamFile1.gds', testStreamFile)
+    # testStreamFile.close()
+    # testStreamFile=open('./testStreamFile2.gds','rb')
+    # ftp_cadence_server.storbinary('STOR testStreamFile2.gds', testStreamFile)
+    # testStreamFile.close()
+    # testStreamFile=open('./testStreamFile3.gds','rb')
+    # ftp_cadence_server.storbinary('STOR testStreamFile3.gds', testStreamFile)
+    # testStreamFile.close()
+    # print ('close ftp connection')
+    # ftp_cadence_server.quit()
+    # testStreamFile.close()
+
+    ftp = ftplib.FTP('141.223.22.156')
+    ftp.login(base64.b64decode('anVudW5n'), base64.b64decode('Y2hsd25zZG5kMSE='))
+    ftp.cwd('/mnt/sdc/junung/OPUS/Samsung28n')
+    myfile = open('./testStreamFile1.gds','rb')
+    ftp.storbinary('STOR testStreamFile1.gds', myfile)
+    myfile.close()
+    myfile = open('./testStreamFile2.gds','rb')
+    ftp.storbinary('STOR testStreamFile2.gds', myfile)
+    myfile.close()
+    myfile = open('./testStreamFile3.gds','rb')
+    ftp.storbinary('STOR testStreamFile3.gds', myfile)
+    myfile.close()
+    ftp.close()
+
+    print ('##########################################################################################')

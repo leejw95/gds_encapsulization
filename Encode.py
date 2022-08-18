@@ -201,35 +201,35 @@ def main_1():
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    test = ast.parse(open('./Encode_list/CoordinateCalc.py').read())
+    test = ast.parse(open('./generatorLib/CoordinateCalc.py').read())
     test_1 = name_change()
     test_out = test_1.visit(test)
     f_name = hashing('CoordinateCalc') +'.py'
     test_w = open('./auto_encrypted_test/'+f_name,'w')
     test_w.write(astunparse.unparse(test_out))
 
-    US = ast.parse(open('./Encode_list/user_setup.py').read())
+    US = ast.parse(open('./generatorLib/user_setup.py').read())
     US_1 = name_change()
     US_out = US_1.visit(US)
     f_name = hashing('user_setup') +'.py'
     US_w = open('./auto_encrypted_test/'+f_name,'w')
     US_w.write(astunparse.unparse(US_out))
 
-    DP = ast.parse(open('./Encode_list/DesignParameters.py').read())
+    DP = ast.parse(open('./generatorLib/DesignParameters.py').read())
     DP_1 = name_change()
     DP_out = DP_1.visit(DP)
     f_name = hashing('DesignParameters') +'.py'
     DP_w = open('./auto_encrypted_test/'+f_name,'w')
     DP_w.write(astunparse.unparse(DP_out))
 
-    DRC = ast.parse(open('./Encode_list/DRC.py').read())
+    DRC = ast.parse(open('./generatorLib/DRC.py').read())
     DRC_1 = name_change()
     DRC_out = DRC_1.visit(DRC)
     f_name = hashing('DRC') + '.py'
     DRC_w = open('./auto_encrypted_test/'+f_name,'w')
     DRC_w.write(astunparse.unparse(DRC_out))
 
-    Stick = ast.parse(open('./Encode_list/StickDiagram.py').read())
+    Stick = ast.parse(open('./generatorLib/StickDiagram.py').read())
     Stick_1 = name_change()
     Stick_out = Stick_1.visit(Stick)
     f_name = hashing('StickDiagram') + '.py'

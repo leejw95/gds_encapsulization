@@ -1,5 +1,5 @@
 
-from generatorLib.generator_models import ViaPoly2Met1
+import ViaPoly2Met1
 
 
 class _ViaPoly2Met1_resize(ViaPoly2Met1._ViaPoly2Met1):
