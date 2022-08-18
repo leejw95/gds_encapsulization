@@ -3,23 +3,6 @@ import user_define_exceptions
 import hashlib
 import sys
 import os
-import urllib
-import urllib.request
-import urllib.error
-import sys
-
-sys.tracebacklimit = 0
-
-try :
-    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-except Exception:
-    raise Exception("Connect to Internet")
-
-date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-
-if date[8:16] not in ['Jul 2022', 'Aug 2022', 'Sep 2022', 'Oct 2022']:
-    raise Exception("License Expired")
-    
 import user_setup
 _Technology= user_setup._Technology
 _HomeDirectory = os.getcwd()

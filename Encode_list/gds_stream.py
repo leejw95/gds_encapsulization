@@ -3,23 +3,6 @@ import struct
 import gds_tags
 import gds_record
 import gds_structures
-import urllib
-import urllib.request
-import urllib.error
-import sys
-
-sys.tracebacklimit = 0
-
-try :
-    urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-except Exception:
-    raise Exception("Connect to Internet")
-
-date = urllib.request.urlopen('http://www.kriss.re.kr').headers['Date']
-
-
-if date[8:16] not in ['Jul 2022', 'Aug 2022', 'Sep 2022', 'Oct 2022']:
-    raise Exception("License Expired")
 
 """_HEADER=None
 _BGNLIB=None
