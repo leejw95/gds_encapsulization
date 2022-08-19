@@ -9,13 +9,13 @@ from datetime import datetime, MINYEAR
 from gds_editor_ver3 import user_define_exceptions
 # import gds_editor_ver3
 #
-# import gds_editor_ver3.gds_stream
-# import gds_editor_ver3.gds_structures
-# import gds_editor_ver3.gds_tags
-# import gds_editor_ver3.gds_record
-# import gds_editor_ver3.gds_elements
+# import gds_stream
+# import gds_structures
+# import gds_tags
+# import gds_record
+# import gds_elements
 # from datetime import datetime, MINYEAR
-# import gds_editor_ver3.user_define_exceptions
+# import user_define_exceptions
 
 from generatorLib import DesignParameters
 import copy
@@ -356,121 +356,121 @@ class _StickDiagram:
 
     def _CreateGDSStream(self, _GDSStructures=[]):
 
-        _newGDSStream=gds_editor_ver3.gds_stream.GDS_STREAM()
+        _newGDSStream=gds_stream.GDS_STREAM()
 
-        _newGDSStream._BGNLIB=gds_editor_ver3.gds_record.GDS_BGNLIB()
-        _newGDSStream._BGNLIB.tag=gds_editor_ver3.gds_tags.DICT['BGNLIB']
+        _newGDSStream._BGNLIB=gds_record.GDS_BGNLIB()
+        _newGDSStream._BGNLIB.tag=gds_tags.DICT['BGNLIB']
         _newGDSStream._BGNLIB.time_access=datetime.now()
         _newGDSStream._BGNLIB.time_modi=datetime.now()
 
-        _newGDSStream._LIBNAME=gds_editor_ver3.gds_record.GDS_LIBNAME()
-        _newGDSStream._LIBNAME.tag=gds_editor_ver3.gds_tags.DICT['LIBNAME']
+        _newGDSStream._LIBNAME=gds_record.GDS_LIBNAME()
+        _newGDSStream._LIBNAME.tag=gds_tags.DICT['LIBNAME']
         _newGDSStream._LIBNAME.libname='testLib'
-        _newGDSStream._UNITS=gds_editor_ver3.gds_record.GDS_UNITS()
-        _newGDSStream._UNITS.tag=gds_editor_ver3.gds_tags.DICT['UNITS']
+        _newGDSStream._UNITS=gds_record.GDS_UNITS()
+        _newGDSStream._UNITS.tag=gds_tags.DICT['UNITS']
         _newGDSStream._UNITS.unit_meter=1e-009
         _newGDSStream._UNITS.unit_user=0.001
 
         _newGDSStream._STRUCTURES=_GDSStructures
 
-        _newGDSStream._HEADER=gds_editor_ver3.gds_record.GDS_HEADER()
-        _newGDSStream._HEADER.tag=gds_editor_ver3.gds_tags.DICT['HEADER']
+        _newGDSStream._HEADER=gds_record.GDS_HEADER()
+        _newGDSStream._HEADER.tag=gds_tags.DICT['HEADER']
         _newGDSStream._HEADER.gds_version=5
-        _newGDSStream._ENDLIB=gds_editor_ver3.gds_record.GDS_ENDLIB()
-        _newGDSStream._ENDLIB.tag=gds_editor_ver3.gds_tags.DICT['ENDLIB']
+        _newGDSStream._ENDLIB=gds_record.GDS_ENDLIB()
+        _newGDSStream._ENDLIB.tag=gds_tags.DICT['ENDLIB']
 
         return _newGDSStream
 
     def _CreateGDSStructure(self, _GDSStructureName=None):
-        _newGDSStructure = gds_editor_ver3.gds_structures.GDS_STRUCTURE()
+        _newGDSStructure = gds_structures.GDS_STRUCTURE()
 
-        _newGDSStructure._BGNSTR = gds_editor_ver3.gds_record.GDS_BGNSTR()
-        _newGDSStructure._BGNSTR.tag = gds_editor_ver3.gds_tags.DICT['BGNSTR']
+        _newGDSStructure._BGNSTR = gds_record.GDS_BGNSTR()
+        _newGDSStructure._BGNSTR.tag = gds_tags.DICT['BGNSTR']
         _newGDSStructure._BGNSTR.time_creation = datetime.now()
         _newGDSStructure._BGNSTR.time_modi = datetime.now()
 
-        _newGDSStructure._STRNAME = gds_editor_ver3.gds_record.GDS_STRNAME()
-        _newGDSStructure._STRNAME.tag = gds_editor_ver3.gds_tags.DICT['STRNAME']
+        _newGDSStructure._STRNAME = gds_record.GDS_STRNAME()
+        _newGDSStructure._STRNAME.tag = gds_tags.DICT['STRNAME']
         if _GDSStructureName==None:
             raise user_define_exceptions.IncorrectInputError('_GDSStructureName should have correct datatype')
         _newGDSStructure._STRNAME.strname = _GDSStructureName
 
-        _newGDSStructure._ENDSTR = gds_editor_ver3.gds_record.GDS_ENDLIB()
-        _newGDSStructure._ENDSTR.tag = gds_editor_ver3.gds_tags.DICT['ENDSTR']
+        _newGDSStructure._ENDSTR = gds_record.GDS_ENDLIB()
+        _newGDSStructure._ENDSTR.tag = gds_tags.DICT['ENDSTR']
 
         return _newGDSStructure
 
     def _CreateGDSBoundaryElement(self,_Layer=None,_Datatype=None, _XYCoordinates=None, _ElementName=None):
-        _newGDSBoundaryElement=gds_editor_ver3.gds_elements.GDS_ELEMENT()
-        _newGDSBoundaryElement._ELEMENTS=gds_editor_ver3.gds_elements.GDS_BOUNDARY()
-        _newGDSBoundaryElement._ELEMENTS._BOUNDARY=gds_editor_ver3.gds_record.GDS_BOUNDARY()
-        _newGDSBoundaryElement._ELEMENTS._BOUNDARY.tag=gds_editor_ver3.gds_tags.DICT['BOUNDARY']
+        _newGDSBoundaryElement=gds_elements.GDS_ELEMENT()
+        _newGDSBoundaryElement._ELEMENTS=gds_elements.GDS_BOUNDARY()
+        _newGDSBoundaryElement._ELEMENTS._BOUNDARY=gds_record.GDS_BOUNDARY()
+        _newGDSBoundaryElement._ELEMENTS._BOUNDARY.tag=gds_tags.DICT['BOUNDARY']
 
-        _newGDSBoundaryElement._ELEMENTS._LAYER=gds_editor_ver3.gds_record.GDS_LAYER()
+        _newGDSBoundaryElement._ELEMENTS._LAYER=gds_record.GDS_LAYER()
         if _Layer==None:
             raise user_define_exceptions.IncorrectInputError('_Layer should have correct data type')
         _newGDSBoundaryElement._ELEMENTS._LAYER.layer=_Layer
-        _newGDSBoundaryElement._ELEMENTS._LAYER.tag=gds_editor_ver3.gds_tags.DICT['LAYER']
+        _newGDSBoundaryElement._ELEMENTS._LAYER.tag=gds_tags.DICT['LAYER']
 
-        _newGDSBoundaryElement._ELEMENTS._DATATYPE = gds_editor_ver3.gds_record.GDS_DATATYPE()
+        _newGDSBoundaryElement._ELEMENTS._DATATYPE = gds_record.GDS_DATATYPE()
         if _Datatype==None:
             raise user_define_exceptions.IncorrectInputError('_Datatype should have correct data type')
         _newGDSBoundaryElement._ELEMENTS._DATATYPE.datatype= _Datatype
-        _newGDSBoundaryElement._ELEMENTS._DATATYPE.tag = gds_editor_ver3.gds_tags.DICT['DATATYPE']
+        _newGDSBoundaryElement._ELEMENTS._DATATYPE.tag = gds_tags.DICT['DATATYPE']
 
-        _newGDSBoundaryElement._ELEMENTS._XY=gds_editor_ver3.gds_record.GDS_XY()
+        _newGDSBoundaryElement._ELEMENTS._XY=gds_record.GDS_XY()
         if _XYCoordinates==None:
             raise user_define_exceptions.IncorrectInputError('_XYCoordinates should have correct data type')
         _newGDSBoundaryElement._ELEMENTS._XY.xy=_XYCoordinates
-        _newGDSBoundaryElement._ELEMENTS._XY.tag=gds_editor_ver3.gds_tags.DICT['XY']
+        _newGDSBoundaryElement._ELEMENTS._XY.tag=gds_tags.DICT['XY']
 
 
-        _newGDSBoundaryElement._ENDEL=gds_editor_ver3.gds_record.GDS_ENDEL()
-        _newGDSBoundaryElement._ENDEL.tag=gds_editor_ver3.gds_tags.DICT['ENDEL']
+        _newGDSBoundaryElement._ENDEL=gds_record.GDS_ENDEL()
+        _newGDSBoundaryElement._ENDEL.tag=gds_tags.DICT['ENDEL']
 
         _newGDSBoundaryElement._GDS_ELEMENT_NAME=_ElementName
         return _newGDSBoundaryElement
 
     def _CreateGDSPathElement(self,_Layer=None,_Datatype=None, _Width=None,_XYCoordinates=None, _ElementName=None):
-        _newGDSPathElement=gds_editor_ver3.gds_elements.GDS_ELEMENT()
-        _newGDSPathElement._ELEMENTS=gds_editor_ver3.gds_elements.GDS_PATH()
-        _newGDSPathElement._ELEMENTS._PATH=gds_editor_ver3.gds_record.GDS_PATH()
-        _newGDSPathElement._ELEMENTS._PATH.tag=gds_editor_ver3.gds_tags.DICT['PATH']
+        _newGDSPathElement=gds_elements.GDS_ELEMENT()
+        _newGDSPathElement._ELEMENTS=gds_elements.GDS_PATH()
+        _newGDSPathElement._ELEMENTS._PATH=gds_record.GDS_PATH()
+        _newGDSPathElement._ELEMENTS._PATH.tag=gds_tags.DICT['PATH']
 
-        _newGDSPathElement._ELEMENTS._LAYER=gds_editor_ver3.gds_record.GDS_LAYER()
+        _newGDSPathElement._ELEMENTS._LAYER=gds_record.GDS_LAYER()
         if _Layer == None:
             print('_ElementName: ', _ElementName)
             raise user_define_exceptions.IncorrectInputError('_Layer should have correct data type')
         _newGDSPathElement._ELEMENTS._LAYER.layer=_Layer
-        _newGDSPathElement._ELEMENTS._LAYER.tag=gds_editor_ver3.gds_tags.DICT['LAYER']
+        _newGDSPathElement._ELEMENTS._LAYER.tag=gds_tags.DICT['LAYER']
 
-        _newGDSPathElement._ELEMENTS._DATATYPE=gds_editor_ver3.gds_record.GDS_DATATYPE()
+        _newGDSPathElement._ELEMENTS._DATATYPE=gds_record.GDS_DATATYPE()
         if _Datatype == None:
             print('_ElementName: ', _ElementName)
             raise user_define_exceptions.IncorrectInputError('_Datatype should have correct data type')
         _newGDSPathElement._ELEMENTS._DATATYPE.datatype=_Datatype
-        _newGDSPathElement._ELEMENTS._DATATYPE.tag=gds_editor_ver3.gds_tags.DICT['DATATYPE']
+        _newGDSPathElement._ELEMENTS._DATATYPE.tag=gds_tags.DICT['DATATYPE']
 
-        _newGDSPathElement._ELEMENTS._WIDTH=gds_editor_ver3.gds_record.GDS_WIDTH()
+        _newGDSPathElement._ELEMENTS._WIDTH=gds_record.GDS_WIDTH()
         if _Width == None:
             print('_ElementName: ', _ElementName)
             raise user_define_exceptions.IncorrectInputError('_Width should have correct data type')
         _newGDSPathElement._ELEMENTS._WIDTH.width=_Width
-        _newGDSPathElement._ELEMENTS._WIDTH.tag=gds_editor_ver3.gds_tags.DICT['WIDTH']
+        _newGDSPathElement._ELEMENTS._WIDTH.tag=gds_tags.DICT['WIDTH']
 
-        _newGDSPathElement._ELEMENTS._XY=gds_editor_ver3.gds_record.GDS_XY()
+        _newGDSPathElement._ELEMENTS._XY=gds_record.GDS_XY()
         if _XYCoordinates == None:
             print('_ElementName: ', _ElementName)
             raise user_define_exceptions.IncorrectInputError('_XYCoordinates should have correct data type')
         _newGDSPathElement._ELEMENTS._XY.xy=_XYCoordinates
-        _newGDSPathElement._ELEMENTS._XY.tag=gds_editor_ver3.gds_tags.DICT['XY']
+        _newGDSPathElement._ELEMENTS._XY.tag=gds_tags.DICT['XY']
 
-        _newGDSPathElement._ELEMENTS._PATHTYPE=gds_editor_ver3.gds_record.GDS_PATHTYPE()
+        _newGDSPathElement._ELEMENTS._PATHTYPE=gds_record.GDS_PATHTYPE()
         _newGDSPathElement._ELEMENTS._PATHTYPE.pathtype=0
-        _newGDSPathElement._ELEMENTS._PATHTYPE.tag=gds_editor_ver3.gds_tags.DICT['PATHTYPE']
+        _newGDSPathElement._ELEMENTS._PATHTYPE.tag=gds_tags.DICT['PATHTYPE']
 
-        _newGDSPathElement._ENDEL = gds_editor_ver3.gds_record.GDS_ENDEL()
-        _newGDSPathElement._ENDEL.tag = gds_editor_ver3.gds_tags.DICT['ENDEL']
+        _newGDSPathElement._ENDEL = gds_record.GDS_ENDEL()
+        _newGDSPathElement._ENDEL.tag = gds_tags.DICT['ENDEL']
 
         _newGDSPathElement._GDS_ELEMENT_NAME = _ElementName
 
@@ -482,30 +482,30 @@ class _StickDiagram:
             raise user_define_exceptions.IncorrectInputError('_SREFName should have correct data type')
         if _XYCoordinates == None:
             raise user_define_exceptions.IncorrectInputError('_XYCoordinates should have correct data type')
-        _newGDSSrefElement=gds_editor_ver3.gds_elements.GDS_ELEMENT()
-        _newGDSSrefElement._ELEMENTS=gds_editor_ver3.gds_elements.GDS_SREF()
-        _newGDSSrefElement._ELEMENTS._SREF=gds_editor_ver3.gds_record.GDS_SREF()
-        _newGDSSrefElement._ELEMENTS._SREF.tag=gds_editor_ver3.gds_tags.DICT['SREF']
-        _newGDSSrefElement._ELEMENTS._SNAME=gds_editor_ver3.gds_record.GDS_SNAME()
+        _newGDSSrefElement=gds_elements.GDS_ELEMENT()
+        _newGDSSrefElement._ELEMENTS=gds_elements.GDS_SREF()
+        _newGDSSrefElement._ELEMENTS._SREF=gds_record.GDS_SREF()
+        _newGDSSrefElement._ELEMENTS._SREF.tag=gds_tags.DICT['SREF']
+        _newGDSSrefElement._ELEMENTS._SNAME=gds_record.GDS_SNAME()
         _newGDSSrefElement._ELEMENTS._SNAME.sname=_SREFName
-        _newGDSSrefElement._ELEMENTS._SNAME.tag=gds_editor_ver3.gds_tags.DICT['SNAME']
+        _newGDSSrefElement._ELEMENTS._SNAME.tag=gds_tags.DICT['SNAME']
         if _Reflect or _Angle != None:
-            _newGDSSrefElement._ELEMENTS._STRANS = gds_editor_ver3.gds_elements.GDS_STRANS()
-            _newGDSSrefElement._ELEMENTS._STRANS._STRANS = gds_editor_ver3.gds_record.GDS_STRANS()
-            _newGDSSrefElement._ELEMENTS._STRANS._STRANS.tag = gds_editor_ver3.gds_tags.DICT['STRANS']
+            _newGDSSrefElement._ELEMENTS._STRANS = gds_elements.GDS_STRANS()
+            _newGDSSrefElement._ELEMENTS._STRANS._STRANS = gds_record.GDS_STRANS()
+            _newGDSSrefElement._ELEMENTS._STRANS._STRANS.tag = gds_tags.DICT['STRANS']
             _newGDSSrefElement._ELEMENTS._STRANS._STRANS.reflection = _Reflect[0]
             _newGDSSrefElement._ELEMENTS._STRANS._STRANS.abs_mag = _Reflect[1]
             _newGDSSrefElement._ELEMENTS._STRANS._STRANS.abs_angle = _Reflect[2]
-            _newGDSSrefElement._ELEMENTS._STRANS._ANGLE = gds_editor_ver3.gds_record.GDS_ANGLE()
-            _newGDSSrefElement._ELEMENTS._STRANS._ANGLE.tag = gds_editor_ver3.gds_tags.DICT['ANGLE']
+            _newGDSSrefElement._ELEMENTS._STRANS._ANGLE = gds_record.GDS_ANGLE()
+            _newGDSSrefElement._ELEMENTS._STRANS._ANGLE.tag = gds_tags.DICT['ANGLE']
             _newGDSSrefElement._ELEMENTS._STRANS._ANGLE.angle = _Angle
 
-        _newGDSSrefElement._ELEMENTS._XY=gds_editor_ver3.gds_record.GDS_XY()
+        _newGDSSrefElement._ELEMENTS._XY=gds_record.GDS_XY()
         _newGDSSrefElement._ELEMENTS._XY.xy=_XYCoordinates
-        _newGDSSrefElement._ELEMENTS._XY.tag=gds_editor_ver3.gds_tags.DICT['XY']
+        _newGDSSrefElement._ELEMENTS._XY.tag=gds_tags.DICT['XY']
 
-        _newGDSSrefElement._ENDEL=gds_editor_ver3.gds_record.GDS_ENDEL()
-        _newGDSSrefElement._ENDEL.tag=gds_editor_ver3.gds_tags.DICT['ENDEL']
+        _newGDSSrefElement._ENDEL=gds_record.GDS_ENDEL()
+        _newGDSSrefElement._ENDEL.tag=gds_tags.DICT['ENDEL']
 
         _newGDSSrefElement._GDS_ELEMENT_NAME = _ElementName
 
@@ -517,55 +517,55 @@ class _StickDiagram:
             raise user_define_exceptions.IncorrectInputError('_TEXT should have string data to be written as text')
         if _XYCoordinates == None:
             raise user_define_exceptions.IncorrectInputError('_XYCoordinates should have correct data type')
-        _newGDSTextElement=gds_editor_ver3.gds_elements.GDS_ELEMENT()
-        _newGDSTextElement._ELEMENTS=gds_editor_ver3.gds_elements.GDS_TEXT()
-        _newGDSTextElement._ELEMENTS._TEXT= gds_editor_ver3.gds_record.GDS_TEXT()
-        _newGDSTextElement._ELEMENTS._TEXT.tag=gds_editor_ver3.gds_tags.DICT['TEXT']
+        _newGDSTextElement=gds_elements.GDS_ELEMENT()
+        _newGDSTextElement._ELEMENTS=gds_elements.GDS_TEXT()
+        _newGDSTextElement._ELEMENTS._TEXT= gds_record.GDS_TEXT()
+        _newGDSTextElement._ELEMENTS._TEXT.tag=gds_tags.DICT['TEXT']
 
-        _newGDSTextElement._ELEMENTS._LAYER=gds_editor_ver3.gds_record.GDS_LAYER()
+        _newGDSTextElement._ELEMENTS._LAYER=gds_record.GDS_LAYER()
         if _Layer == None:
             raise user_define_exceptions.IncorrectInputError('_Layer should have correct data type')
         _newGDSTextElement._ELEMENTS._LAYER.layer=_Layer
-        _newGDSTextElement._ELEMENTS._LAYER.tag=gds_editor_ver3.gds_tags.DICT['LAYER']
+        _newGDSTextElement._ELEMENTS._LAYER.tag=gds_tags.DICT['LAYER']
 
 
-        _newGDSTextElement._ELEMENTS._TEXTBODY=gds_editor_ver3.gds_elements.GDS_TEXTBODY()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._TEXTTYPE = gds_editor_ver3.gds_record.GDS_TEXTTYPE()
+        _newGDSTextElement._ELEMENTS._TEXTBODY=gds_elements.GDS_TEXTBODY()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._TEXTTYPE = gds_record.GDS_TEXTTYPE()
         if _Datatype == None:
             raise user_define_exceptions.IncorrectInputError('_Datatype(_Texttype) should have correct data type')
         _newGDSTextElement._ELEMENTS._TEXTBODY._TEXTTYPE.texttype = _Datatype
-        _newGDSTextElement._ELEMENTS._TEXTBODY._TEXTTYPE.tag = gds_editor_ver3.gds_tags.DICT['TEXTTYPE']
-        _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION = gds_editor_ver3.gds_record.GDS_PRESENTATION()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION.tag =  gds_editor_ver3.gds_tags.DICT['PRESENTATION']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._TEXTTYPE.tag = gds_tags.DICT['TEXTTYPE']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION = gds_record.GDS_PRESENTATION()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION.tag =  gds_tags.DICT['PRESENTATION']
         if _Presentation == None:
             raise user_define_exceptions.IncorrectInputError('_Presentation should have correct data type')
         _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION.font = _Presentation[0]
         _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION.vertical_presentation = _Presentation[1]
         _newGDSTextElement._ELEMENTS._TEXTBODY._PRESENTATION.horizontal_presentation = _Presentation[2]
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS = gds_editor_ver3.gds_elements.GDS_STRANS()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS = gds_editor_ver3.gds_record.GDS_STRANS()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS.tag = gds_editor_ver3.gds_tags.DICT['STRANS']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS = gds_elements.GDS_STRANS()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS = gds_record.GDS_STRANS()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS.tag = gds_tags.DICT['STRANS']
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS.reflection = _Reflect[0]
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS.abs_mag = _Reflect[1]
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._STRANS.abs_angle = _Reflect[2]
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._MAG = gds_editor_ver3.gds_record.GDS_MAG()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._MAG.tag = gds_editor_ver3.gds_tags.DICT['MAG']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._MAG = gds_record.GDS_MAG()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._MAG.tag = gds_tags.DICT['MAG']
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._MAG.mag = _Mag
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._ANGLE = gds_editor_ver3.gds_record.GDS_ANGLE()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._ANGLE.tag = gds_editor_ver3.gds_tags.DICT['ANGLE']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._ANGLE = gds_record.GDS_ANGLE()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._ANGLE.tag = gds_tags.DICT['ANGLE']
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRANS._ANGLE.angle = _Angle
-        _newGDSTextElement._ELEMENTS._TEXTBODY._XY=gds_editor_ver3.gds_record.GDS_XY()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._XY=gds_record.GDS_XY()
         if _XYCoordinates == None:
             raise user_define_exceptions.IncorrectInputError('_XYCoordinates should have correct data type')
         _newGDSTextElement._ELEMENTS._TEXTBODY._XY.xy=_XYCoordinates
-        _newGDSTextElement._ELEMENTS._TEXTBODY._XY.tag=gds_editor_ver3.gds_tags.DICT['XY']
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRING=gds_editor_ver3.gds_record.GDS_STRING()
-        _newGDSTextElement._ELEMENTS._TEXTBODY._STRING.tag=gds_editor_ver3.gds_tags.DICT['STRING']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._XY.tag=gds_tags.DICT['XY']
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRING=gds_record.GDS_STRING()
+        _newGDSTextElement._ELEMENTS._TEXTBODY._STRING.tag=gds_tags.DICT['STRING']
         if _TEXT == None:
             raise user_define_exceptions.IncorrectInputError('_TEXT should have correct data type')
         _newGDSTextElement._ELEMENTS._TEXTBODY._STRING.string_data = _TEXT
-        _newGDSTextElement._ENDEL=gds_editor_ver3.gds_record.GDS_ENDEL()
-        _newGDSTextElement._ENDEL.tag=gds_editor_ver3.gds_tags.DICT['ENDEL']
+        _newGDSTextElement._ENDEL=gds_record.GDS_ENDEL()
+        _newGDSTextElement._ENDEL.tag=gds_tags.DICT['ENDEL']
 
         _newGDSTextElement._GDS_ELEMENT_NAME = _ElementName
         return _newGDSTextElement
