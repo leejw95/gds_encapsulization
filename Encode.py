@@ -41,7 +41,8 @@ class name_change(ast.NodeTransformer) :
                         'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                         'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Float type width input detected!',
                         'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
-                        'wb', 'rb']
+                        'wb', 'rb', 'FormatError', 'EndofFileError','IncorrectRecordSize','IncorrectDataSize', 'base class for all gds exceptions', 'raised on unexpected end of file',
+                        'raised if record size is not correct', 'raised if data size is not correct', 'data has incorrect value', 'element name is incorrect']
         
         exception_list.extend(dir(inspect))
         exception_list.extend(dir(math))
