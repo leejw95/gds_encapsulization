@@ -1,7 +1,7 @@
 from generatorLib import StickDiagram
 from generatorLib import DesignParameters
 from generatorLib import DRC
-
+from gds_editor_ver3 import user_define_exceptions
 
 class _ViaMet62Met7(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation= dict(_ViaMet62Met7NumberOfCOX=None, _ViaMet62Met7NumberOfCOY=None,
