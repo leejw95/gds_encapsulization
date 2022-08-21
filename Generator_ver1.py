@@ -31,6 +31,7 @@ class Generator:
 
             else:
                 new_args[i] = dict()
+                new_args[i] = args[i]
                 self.__encrypt_arg_dict(new_args[i])
 
         return (new_args)
