@@ -187,8 +187,8 @@ class _SALatch(StickDiagram._StickDiagram):
         self._DesignParameter['vdd'] = self._TextElementDeclaration(_Layer=DesignParameters._LayerMapping['METAL1PIN'][0], _Datatype=DesignParameters._LayerMapping['METAL1PIN'][1], _Presentation=[0, 1, 2], _Reflect=[0, 0, 0], _XYCoordinates=[[(+ ((self._DesignParameter['pset_sa']['_XYCoordinates'][0][0] + self._DesignParameter['pset_sa']['_DesignObj']._DesignParameter['nguardring']['_XYCoordinates'][0][0]) + self._DesignParameter['pset_sa']['_DesignObj']._DesignParameter['nguardring']['_DesignObj']._DesignParameter['top']['_XYCoordinates'][0][0])), (+ ((self._DesignParameter['pset_sa']['_XYCoordinates'][0][1] + self._DesignParameter['pset_sa']['_DesignObj']._DesignParameter['nguardring']['_XYCoordinates'][0][1]) + self._DesignParameter['pset_sa']['_DesignObj']._DesignParameter['nguardring']['_DesignObj']._DesignParameter['top']['_XYCoordinates'][0][1]))]], _Mag=0.2, _Angle=0, _TEXT='vdd')
         self._DesignParameter['vss'] = self._TextElementDeclaration(_Layer=DesignParameters._LayerMapping['METAL1PIN'][0], _Datatype=DesignParameters._LayerMapping['METAL1PIN'][1], _Presentation=[0, 1, 2], _Reflect=[0, 0, 0], _XYCoordinates=[[(+ ((self._DesignParameter['nset_sa']['_XYCoordinates'][0][0] + self._DesignParameter['nset_sa']['_DesignObj']._DesignParameter['psubring']['_XYCoordinates'][0][0]) + self._DesignParameter['nset_sa']['_DesignObj']._DesignParameter['psubring']['_DesignObj']._DesignParameter['bot']['_XYCoordinates'][0][0])), (+ ((self._DesignParameter['nset_sa']['_XYCoordinates'][0][1] + self._DesignParameter['nset_sa']['_DesignObj']._DesignParameter['psubring']['_XYCoordinates'][0][1]) + self._DesignParameter['nset_sa']['_DesignObj']._DesignParameter['psubring']['_DesignObj']._DesignParameter['bot']['_XYCoordinates'][0][1]))]], _Mag=0.2, _Angle=0, _TEXT='vss')
 
-        print (pset_params)
-        print (nset_params)
+        print ('a :',pset_params)
+        print ('b :',nset_params)
         if pset_params['pmos1_gate'] % 2 == 0 :
             warnings.warn("The number of pmos1 gate finger should be odd number for symmetry.")
 
