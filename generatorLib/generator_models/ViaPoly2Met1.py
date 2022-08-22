@@ -257,18 +257,3 @@ class _ViaPoly2Met1(StickDiagram._StickDiagram):
 
 
 
-
-if __name__=='__main__':
-    ViaPoly2Met1Obj=_ViaPoly2Met1(_DesignParameter=None, _Name='ViaPoly2Met1')
-    ViaPoly2Met1Obj._CalculateViaPoly2Met1DesignParameter(_ViaPoly2Met1NumberOfCOX=2, _ViaPoly2Met1NumberOfCOY=2)
-    ViaPoly2Met1Obj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=ViaPoly2Met1Obj._DesignParameter)
-    testStreamFile=open('./testStreamFile12.gds','wb')
-
-    tmp=ViaPoly2Met1Obj._CreateGDSStream(ViaPoly2Met1Obj._DesignParameter['_GDSFile']['_GDSFile'])
-
-    tmp.write_binary_gds_stream(testStreamFile)
-
-    testStreamFile.close()
-    
-
-    print ('##########################################################################################')

@@ -401,6 +401,3 @@ class _ViaMet62Met7(StickDiagram._StickDiagram):
         print ('#########################################################################################################')
         print(('                                    {}  ViaMet62Met7 Calculation End                                    '.format(self._DesignParameter['_Name']['_Name'])))
         print ('#########################################################################################################')
-
-if __name__=='__main__':
-    pass
