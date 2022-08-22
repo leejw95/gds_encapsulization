@@ -83,7 +83,7 @@ class name_change(ast.NodeTransformer) :
                                 new_values.append(value)
                                 continue
                         pass
-                    if isinstance(value, ast.Constant) :
+                    if isinstance(value, ast.Constant) and type(value) == str:
                         continue
                     if isinstance(value, ast.AST):
                         # if isinstance(value, ast.Attribute):
@@ -105,8 +105,8 @@ class name_change(ast.NodeTransformer) :
                 old_value[:] = new_values
             
             elif isinstance(old_value, ast.AST):
-                if isinstance(old_value, ast.Constant) :
-                        continue
+                if isinstance(old_value, ast.Constant) and type(old_value) == str:
+                    continue
                 if isinstance(old_value, ast.Attribute) and old_value.attr == 'format' and isinstance(old_value.value, ast.Constant):
                     continue
                 new_node = self.visit(old_value)
