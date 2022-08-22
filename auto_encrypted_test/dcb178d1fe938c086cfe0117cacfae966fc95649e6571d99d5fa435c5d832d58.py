@@ -220,5 +220,3 @@ class _0473fe2f38538e4b80b8eb30c0288c1c58f2b6241700aae0543f882b0ed10e92(_9d836f0
         pass
         
         pass
-if (__name__ == '__main__'):
-    pass
