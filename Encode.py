@@ -40,6 +40,9 @@ class name_change(ast.NodeTransformer) :
                         'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
                         'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                         'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Float type width input detected!',
+                        '_DesignParametertype','_Layer','_Datatype', '_XYCoordinates','_Width','_Ignore', '_ElementName', '_DesignObj', '_Reflect',
+                        '_Angle', '_ReferenceGDS', '_Name', '_GDSFile','_XYCoordinateInfo', '_BitNumber','_DesignSizesInList',
+                        '_HorizontalSupplyRailArea','_VerticalSupplyRailArea','_ViaArrays','_Rails','_SupplyNodeName',
                         'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
                         'wb', 'rb', 'FormatError', 'EndofFileError','IncorrectRecordSize','IncorrectDataSize', 'base class for all gds exceptions', 'raised on unexpected end of file',
                         'raised if record size is not correct', 'raised if data size is not correct', 'data has incorrect value', 'element name is incorrect']
