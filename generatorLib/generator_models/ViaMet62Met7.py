@@ -1,6 +1,7 @@
 from generatorLib import StickDiagram
 from generatorLib import DesignParameters
 from generatorLib import DRC
+import user_define_exceptions
 
 
 class _ViaMet62Met7(StickDiagram._StickDiagram):
