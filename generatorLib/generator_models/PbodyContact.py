@@ -121,3 +121,24 @@ class _PbodyContact(StickDiagram._StickDiagram):
         print ('#########################################################################################################')
         
 
+
+
+if __name__=='__main__':
+
+
+    PbodyContactObj=_PbodyContact(_DesignParameter=None, _Name='PbodyContact')
+    PbodyContactObj._CalculatePbodyContactDesignParameter(_NumberOfPbodyCOX=3, _NumberOfPbodyCOY=2, _Met1XWidth=1000, _Met1YWidth=500)
+    #PbodyContactObj=_PbodyContact(_PbodyContactDesignParameter=DesignParameters.PbodyDesignParameter, _PbodyContactName='PbodyContact2')
+    #PbodyContactObj=_PbodyContact(_Technology=DesignParameters._Technology, _XYCoordinatePbody=[0,0], _NumberOfPbodyCO=2, _WidthXPbodyOD=890, _WidthYPbodyOD=420, _WidthXPbodyNP=1250, _WidthYPbodyNP=780, _WidthPbodyCO=220, _LengthPbodyBtwCO=470, _WidthXPbodyMet1=810, _WidthYPbodyMet1=340, _PbodyName='PbodyContact')
+    PbodyContactObj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=PbodyContactObj._DesignParameter)
+    _fileName = 'PbodyContact.gds'
+    testStreamFile=open('./testStreamFile.gds','wb')
+
+    tmp=PbodyContactObj._CreateGDSStream(PbodyContactObj._DesignParameter['_GDSFile']['_GDSFile'])
+
+    tmp.write_binary_gds_stream(testStreamFile)
+
+    testStreamFile.close()
+    
+
+    print ('##########################################################################################')

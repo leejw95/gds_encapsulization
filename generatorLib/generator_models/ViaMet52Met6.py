@@ -1,7 +1,6 @@
 from generatorLib import StickDiagram
 from generatorLib import DesignParameters
 from generatorLib import DRC
-from Encode_list import user_define_exceptions
 class _ViaMet52Met6(StickDiagram._StickDiagram):
     _ParametersForDesignCalculation= dict(_ViaMet52Met6NumberOfCOX=None, _ViaMet52Met6NumberOfCOY=None,
                                           _MetalType = dict(METAL1 = 'X', METAL2 = 'X', METAL3 = 'X', METAL4 = 'X', METAL5 = 'X', METAL6 = 'X', METAL7 = 'X', METAL8 = 'Z', METAL9 = 'Z'),

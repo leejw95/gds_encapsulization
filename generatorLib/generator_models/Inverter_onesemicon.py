@@ -1,6 +1,6 @@
 import math
 import copy
-
+import time
 #
 from generatorLib import StickDiagram
 from generatorLib import DesignParameters
@@ -43,11 +43,11 @@ class _Inverter(StickDiagram._StickDiagram):
                                      _XVT='SLVT',
                                      _GateSpacing=100,
                                      _SDWidth=66,
+                                     _SupplyRailType=1
                                      ):
 
         _NumViaPMOSMet12Met2CoY = None
         _NumViaNMOSMet12Met2CoY = None
-        _SupplyRailType = 1
 
         '''
         
@@ -325,8 +325,7 @@ class _Inverter(StickDiagram._StickDiagram):
             _VDD2VSSHeight = _VDD2VSSMinHeight
         else:
             if _VDD2VSSHeight < _VDD2VSSMinHeight:
-                print("ERROR! VDD2VSSMinHeight =", _VDD2VSSMinHeight)  # Need to Print More information(input parameter...)
-                raise NotImplementedError
+                raise NotImplementedError(f"ERROR! VDD2VSSMinHeight={_VDD2VSSMinHeight}, but input _VDD2VSSHeight is {_VDD2VSSHeight}")
 
         # 5) Setting Coordinates of 'SupplyLines and MOSFETs'
         self._DesignParameter['PbodyContact']['_XYCoordinates'] = [[0, 0]]
@@ -891,31 +890,173 @@ class _Inverter(StickDiagram._StickDiagram):
         # CellXWidth
         self.CellXWidth = (_Finger + 1) * (_GateSpacing + _ChannelLength)
 
-        ''' 수정이 필요함. '''
-        # # Input Met1 Information
-        # self._DesignParameter['InputMet1'] = self._BoundaryElementDeclaration(
-        #     _Layer=DesignParameters._LayerMapping['METAL1'][0], _Datatype=DesignParameters._LayerMapping['METAL1'][1])
-        # if flag_horizontal_inputvia_PCCOM1:
-        #     self._DesignParameter['InputMet1']['_XWidth'] = self.getXWidth('_VIANMOSPoly2Met1', '_Met1Layer')
-        #     self._DesignParameter['InputMet1']['_YWidth'] = self.getYWidth('_VIANMOSPoly2Met1', '_Met1Layer')
-        #     self._DesignParameter['InputMet1']['_XYCoordinates'] = self.getXY('_VIANMOSPoly2Met1', '_Met1Layer')
-        #
-        # elif '_VIAPoly2Met1_F1' in self._DesignParameter:
-        #     self._DesignParameter['InputMet1']['_XWidth'] = self.getXWidth('_VIAPoly2Met1_F1', '_Met1Layer')
-        #     self._DesignParameter['InputMet1']['_YWidth'] = self.getYWidth('_VIAPoly2Met1_F1', '_Met1Layer')
-        #     self._DesignParameter['InputMet1']['_XYCoordinates'] = self.getXY('_VIAPoly2Met1_F1', '_Met1Layer')
-        #
-        # else:           # Not Yet Implemented
-        #     self._DesignParameter['InputMet1']['_XWidth'] = self.getWidth('_InputRouting')
-        #     self._DesignParameter['InputMet1']['_YWidth'] = \
-        #         abs(self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][1] - self._DesignParameter['_InputRouting']['_XYCoordinates'][0][1][1])
-        #     self._DesignParameter['InputMet1']['_XYCoordinates'] = [
-        #         [self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][0],
-        #          (self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][1] + self._DesignParameter['_InputRouting']['_XYCoordinates'][0][1][1]) / 2]
-        #     ]
+        ''' . '''
+        # Input Met1 Information
+        self._DesignParameter['InputMet1'] = self._BoundaryElementDeclaration(
+            _Layer=DesignParameters._LayerMapping['METAL1'][0], _Datatype=DesignParameters._LayerMapping['METAL1'][1])
+        if flag_horizontal_inputvia_PCCOM1:  # finger not in (1, 2) && merging input contact
+            self._DesignParameter['InputMet1']['_XWidth'] = self.getXWidth('_VIAMOSPoly2Met1LeftMost', '_Met1Layer')        # before, _VIANMOSPoly2Met1
+            self._DesignParameter['InputMet1']['_YWidth'] = self.getYWidth('_VIAMOSPoly2Met1LeftMost', '_Met1Layer')
+            self._DesignParameter['InputMet1']['_XYCoordinates'] = self.getXY('_VIAMOSPoly2Met1LeftMost', '_Met1Layer')
+
+        elif '_VIAPoly2Met1_F1' in self._DesignParameter:    # finger in (1, 2)
+            self._DesignParameter['InputMet1']['_XWidth'] = self.getXWidth('_VIAPoly2Met1_F1', '_Met1Layer')
+            self._DesignParameter['InputMet1']['_YWidth'] = self.getYWidth('_VIAPoly2Met1_F1', '_Met1Layer')
+            self._DesignParameter['InputMet1']['_XYCoordinates'] = self.getXY('_VIAPoly2Met1_F1', '_Met1Layer')
+
+        else:           # Not Yet Implemented    finger not in (1,2) && not merging input contact ?
+            self._DesignParameter['InputMet1']['_XWidth'] = self.getWidth('_InputRouting')
+            self._DesignParameter['InputMet1']['_YWidth'] = \
+                abs(self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][1] - self._DesignParameter['_InputRouting']['_XYCoordinates'][0][1][1])
+            self._DesignParameter['InputMet1']['_XYCoordinates'] = [
+                [self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][0],
+                 (self._DesignParameter['_InputRouting']['_XYCoordinates'][0][0][1] + self._DesignParameter['_InputRouting']['_XYCoordinates'][0][1][1]) / 2]
+            ]
 
 
         print(''.center(105, '#'))
         print('     {} Calculation End     '.format(_Name).center(105, '#'))
         print(''.center(105, '#'))
 
+    def _CalcMinHeight(self,
+                       _Finger=1,
+                       _ChannelWidth=200,
+                       _ChannelLength=30,
+                       _NPRatio=2,
+
+                       _Dummy=True,
+                       _XVT='SLVT',
+                       _GateSpacing=100,
+                       _SDWidth=66,
+                       _SupplyRailType=1
+                       ):
+
+        self._CalculateDesignParameter_v3(
+            _Finger=_Finger,
+            _ChannelWidth=_ChannelWidth,
+            _ChannelLength=_ChannelLength,
+            _NPRatio=_NPRatio,
+
+            _VDD2VSSHeight=None,
+            _VDD2PMOSHeight=None,
+            _VSS2NMOSHeight=None,
+            _YCoordOfInput=None,
+
+            _Dummy=_Dummy,
+            _XVT=_XVT,
+            _GateSpacing=_GateSpacing,
+            _SDWidth=_SDWidth,
+            _SupplyRailType=_SupplyRailType
+        )
+        return self.getXY('NbodyContact')[0][1]
+
+
+if __name__ == '__main__':
+    from Private import Myinfo
+    import DRCchecker_test2 as DRCchecker
+    from generatorLib.IksuPack import PlaygroundBot
+
+    My = Myinfo.USER(DesignParameters._Technology)
+    Bot = PlaygroundBot.PGBot(token=My.BotToken, chat_id=My.ChatID)
+
+    libname = 'TEST_InverterOne'
+    cellname = 'InverterOne'
+    _fileName = cellname + '.gds'
+
+    ''' Input Parameters for Layout Object '''
+    InputParams = dict(
+        _Finger=6,
+        _ChannelWidth=680,
+        _ChannelLength=30,
+        _NPRatio=1,
+
+        _VDD2VSSHeight=None,    # 1800
+        _VDD2PMOSHeight=None,
+        _VSS2NMOSHeight=None,
+
+        _Dummy=True,
+        _XVT='SLVT',
+        _GateSpacing=100,     # 100 -> 고정?
+        _SDWidth=None,        # 66
+
+    )
+
+    _YCoordOfInput = None,
+
+
+
+    Mode_DRCCheck = True  # True | False
+    Num_DRCCheck = 10
+    start_time = time.time()
+
+    for ii in range(0, Num_DRCCheck if Mode_DRCCheck else 1):
+        if Mode_DRCCheck:
+            ''' Random Parameters for Layout Object '''
+            InputParams['_Finger'] = DRCchecker.RandomParam(start=1, stop=20, step=1)
+            InputParams['_ChannelWidth'] = DRCchecker.RandomParam(start=200, stop=1000, step=20)
+            # InputParams['_NPRatio'] = DRCchecker.RandomParam(start=1, stop=4, step=0.1)
+            # InputParams['_VDD2VSSHeight'] = DRCchecker.RandomParam(start=2, stop=5, step=1)
+        else:
+            pass
+        print("=============================   Last Layout Object's Input Parameters are   ==========================")
+        tmpStr = '\n'.join(f'{k} : {v}' for k, v in InputParams.items())
+        print(tmpStr)
+        print("======================================================================================================")
+
+        ''' Generate Layout Object '''
+        LayoutObj = _Inverter(_Name=cellname)
+        LayoutObj._CalculateDesignParameter_v3(**InputParams)
+        LayoutObj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=LayoutObj._DesignParameter)
+        testStreamFile = open('./{}'.format(_fileName), 'wb')
+        tmp = LayoutObj._CreateGDSStream(LayoutObj._DesignParameter['_GDSFile']['_GDSFile'])
+        tmp.write_binary_gds_stream(testStreamFile)
+        testStreamFile.close()
+
+        print('#################################      Sending to FTP Server...      #################################')
+        Checker = DRCchecker.DRCchecker(
+            username=My.ID,
+            password=My.PW,
+            WorkDir=My.Dir_Work,
+            DRCrunDir=My.Dir_DRCrun,
+            GDSDir=My.Dir_GDS,
+            libname=libname,
+            cellname=cellname,
+        )
+        Checker.Upload2FTP()
+
+        Checker.StreamIn(tech=DesignParameters._Technology)
+
+        if Mode_DRCCheck:
+            print('###############      DRC checking... {0}/{1}      ##################'.format(ii + 1, Num_DRCCheck))
+            # Bot.send2Bot(f'Start DRCChecker...\nTotal Number Of Run : {Num_DRCCheck}')
+            try:
+                Checker.DRCchecker()
+            except Exception as e:
+                print('Error Occurred: ', e)
+                print("=============================   Last Layout Object's Input Parameters are   =============================")
+                tmpStr = '\n'.join(f'{k} : {v}' for k, v in InputParams.items())
+                print(tmpStr)
+                print("=========================================================================================================")
+                m, s = divmod(time.time() - start_time, 60)
+                h, m = divmod(m, 60)
+                Bot.send2Bot(f'Error Occurred During Checking DRC({ii + 1}/{Num_DRCCheck})...\n'
+                             f'ErrMsg : {e}\n'
+                             f'============================='
+                             f'**InputParameters:\n'
+                             f'{tmpStr}\n'
+                             f'============================='
+                             f'Elapsed Time: {int(h)}:{int(m):0>2}:{int(s):0>2}s')
+            else:
+                if (ii + 1) == Num_DRCCheck:
+                    pass
+                    elapsed_time = time.time() - start_time
+                    m, s = divmod(elapsed_time, 60)
+                    h, m = divmod(m, 60)
+                    Bot.send2Bot(f'Checking DRC Finished.\nTotal Number of Run: {Num_DRCCheck}\n'
+                                 f'Elapsed Time: {int(h)}:{int(m):0>2}:{int(s):0>2}s')
+                else:
+                    pass
+        else:
+            Checker.StreamIn(tech=DesignParameters._Technology)
+
+    print('########################################      Finished       ###########################################')

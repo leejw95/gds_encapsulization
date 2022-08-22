@@ -194,8 +194,9 @@ class NOR2(StickDiagram._StickDiagram):
 
 
         # initialize
+        tmpName = self._DesignParameter['_Name']['_Name']
         del self._DesignParameter
-        self.__init__()
+        self.__init__(_Name=tmpName)
 
         # re-calculate
         self._CalculateDesignParameter_p(
@@ -931,3 +932,104 @@ class NOR2(StickDiagram._StickDiagram):
         )
 
 
+if __name__ == '__main__':
+    from Private import Myinfo
+    import DRCchecker_test2 as DRCchecker
+    from generatorLib.IksuPack import PlaygroundBot
+
+    My = Myinfo.USER(DesignParameters._Technology)
+    Bot = PlaygroundBot.PGBot(token=My.BotToken, chat_id=My.ChatID)
+
+    libname = 'TEST_NOR2'
+    cellname = 'NOR2'
+    _fileName = cellname + '.gds'
+
+    ''' Input Parameters for Layout Object '''
+    InputParams = dict(
+        NumFinger_PM=2,
+        NumFinger_NM=2,
+        NMOSWidth=200,
+        PMOSWidth=200,
+
+        CellHeight=1800,
+        YCoordOfNM=None,
+        YCoordOfPM=1400,
+        YCoordOfInputOutput=None,
+
+        ChannelLength=30,
+        GateSpacing=100,
+        XVT='SLVT',
+        SupplyRailType=2,
+    )
+
+
+    Mode_DRCCheck = False  # True | False
+    Num_DRCCheck = 1
+
+    for ii in range(0, Num_DRCCheck if Mode_DRCCheck else 1):
+        if Mode_DRCCheck:
+            ''' Random Parameters for Layout Object '''
+            InputParams['NumFinger_NM'] = DRCchecker.RandomParam(start=1, stop=20, step=1)
+            InputParams['NumFinger_PM'] = DRCchecker.RandomParam(start=1, stop=20, step=1)
+            InputParams['NMOSWidth'] = DRCchecker.RandomParam(start=200, stop=1000, step=20)
+            InputParams['PMOSWidth'] = DRCchecker.RandomParam(start=200, stop=1000, step=20)
+        else:
+            pass
+        print("=============================   Last Layout Object's Input Parameters are   ==========================")
+        tmpStr = '\n'.join(f'{k} : {v}' for k, v in InputParams.items())
+        print(tmpStr)
+        print("======================================================================================================")
+
+        ''' Generate Layout Object '''
+        LayoutObj = NOR2(_Name=cellname)
+        LayoutObj._CalculateDesignParameter(**InputParams)
+        LayoutObj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=LayoutObj._DesignParameter)
+        testStreamFile = open('./{}'.format(_fileName), 'wb')
+        tmp = LayoutObj._CreateGDSStream(LayoutObj._DesignParameter['_GDSFile']['_GDSFile'])
+        tmp.write_binary_gds_stream(testStreamFile)
+        testStreamFile.close()
+
+        print('#################################      Sending to FTP Server...      #################################')
+        Checker = DRCchecker.DRCchecker(
+            username=My.ID,
+            password=My.PW,
+            WorkDir=My.Dir_Work,
+            DRCrunDir=My.Dir_DRCrun,
+            GDSDir=My.Dir_GDS,
+            libname=libname,
+            cellname=cellname,
+        )
+        Checker.Upload2FTP()
+
+        Checker.StreamIn(tech=DesignParameters._Technology)
+
+        if Mode_DRCCheck:
+            print('###############      DRC checking... {0}/{1}      ##################'.format(ii + 1, Num_DRCCheck))
+            # Bot.send2Bot(f'Start DRCChecker...\nTotal Number Of Run : {Num_DRCCheck}')
+            try:
+                Checker.DRCchecker()
+            except Exception as e:
+                print('Error Occurred: ', e)
+                print(
+                    "=============================   Last Layout Object's Input Parameters are   =============================")
+                tmpStr = '\n'.join(f'{k} : {v}' for k, v in InputParams.items())
+                print(tmpStr)
+                print(
+                    "=========================================================================================================")
+
+                Bot.send2Bot(f'Error Occurred During Checking DRC({ii + 1}/{Num_DRCCheck})...\n'
+                             f'ErrMsg : {e}\n'
+                             f'============================='
+                             f'{tmpStr}\n'
+                             f'=============================')
+            else:
+                if (ii + 1) == Num_DRCCheck:
+                    pass
+                    Bot.send2Bot(f'Checking DRC Finished.\nTotal Number Of Run : {Num_DRCCheck}')
+                    # elapsed time, start time, end time, main python file name
+                else:
+                    pass
+        else:
+            Checker.StreamIn(tech=DesignParameters._Technology)
+
+    print('########################################      Finished       ###########################################')

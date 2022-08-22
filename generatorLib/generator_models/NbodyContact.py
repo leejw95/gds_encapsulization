@@ -118,3 +118,20 @@ class _NbodyContact(StickDiagram._StickDiagram):
 
 
 
+if __name__=='__main__':
+    NbodyContactObj=_NbodyContact(_DesignParameter=None, _Name='NbodyContact')
+    NbodyContactObj._CalculateNbodyContactDesignParameter( _NumberOfNbodyCOX=3, _NumberOfNbodyCOY=1)
+    # #NbodyContactObj=_NbodyContact(_NbodyContactDesignParameter=DesignParameters.NbodyDesignParameter, _NbodyContactName='NbodyContact2')
+    # #NbodyContactObj=_NbodyContact(_Technology=_technology, _XYCoordinateNbody=[0,0], _NumberOfNbodyCO=2, _WidthXNbodyOD=890, _WidthYNbodyOD=420, _WidthXNbodyNP=1250, _WidthYNbodyNP=780, _WidthNbodyCO=220, _LengthNbodyBtwCO=470, _WidthXNbodyMet1=810, _WidthYNbodyMet1=340, _NbodyName='NbodyContact')
+    NbodyContactObj._UpdateDesignParameter2GDSStructure(_DesignParameterInDictionary=NbodyContactObj._DesignParameter)
+    testStreamFile=open('./testStreamFile.gds','wb')
+
+    tmp=NbodyContactObj._CreateGDSStream(NbodyContactObj._DesignParameter['_GDSFile']['_GDSFile'])
+
+    tmp.write_binary_gds_stream(testStreamFile)
+
+    testStreamFile.close()
+   
+
+    print ('##########################################################################################')
+
