@@ -1331,7 +1331,7 @@ static const char __pyx_k_Expected_list_But[] = "Expected list. But {}";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_Expected_number_But[] = "Expected number. But {}.";
 static const char __pyx_k_Expected_two_element_But[] = "Expected two element. But {}.";
-static const char __pyx_k_03d6bfa42ad73a8f520d001157bfd44[] = "_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611";
+static const char __pyx_k_Calculate_the_distance_between[] = " Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    ";
 static const char __pyx_k_10f2da7e83a506427f8e19fa1d23827[] = "_10f2da7e83a506427f8e19fa1d238277dac457bcb3f2778e1143e0d7ad9c1631";
 static const char __pyx_k_117c132e939b9f65266d1c74695d1bb[] = "_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1";
 static const char __pyx_k_15c72be78e0a85a7d0ac771476e5c22[] = "_15c72be78e0a85a7d0ac771476e5c22cd9739dd1b7b56eccc3ce69562f232579";
@@ -1339,7 +1339,6 @@ static const char __pyx_k_1afff8e723c0f87cda2c5e7bc679122[] = "_1afff8e723c0f87c
 static const char __pyx_k_1baa358bed301847ab8e7d56daf35ea[] = "_1baa358bed301847ab8e7d56daf35ea2c2c42b4fdbb085a99547d20d0ef9555e";
 static const char __pyx_k_1ce3824be3821ab6a6a7c784ab3d962[] = "_1ce3824be3821ab6a6a7c784ab3d962946327e307073009893ce8393d380960f";
 static const char __pyx_k_1edca4df27b85fe21c986caf187b71e[] = "_1edca4df27b85fe21c986caf187b71edb2f09540428ef6087e98658066a2d23a";
-static const char __pyx_k_1fdca3e7e52ba957a12a39a3987fcee[] = "_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6";
 static const char __pyx_k_2d711642b726b04401627ca9fbac32f[] = "_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881";
 static const char __pyx_k_32233d5c5478b360e88b5d97cb7eb20[] = "_32233d5c5478b360e88b5d97cb7eb20bbd59ce6b642392efcd6932a6b957f12c";
 static const char __pyx_k_38635e47a8481b1730aea2674bebed0[] = "_38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841";
@@ -1348,7 +1347,6 @@ static const char __pyx_k_3f667e241dae4914110f19c3cc66286[] = "_3f667e241dae4914
 static const char __pyx_k_470cadb3f9c2f0679714d0ef62b75bc[] = "_470cadb3f9c2f0679714d0ef62b75bc99fc0a162d87df2000de7f9e74c2b6ccb";
 static const char __pyx_k_4d00d197f72f8951292026c0460f8bf[] = "_4d00d197f72f8951292026c0460f8bf6b9fa599e24ed13fcbb88fa185557055a";
 static const char __pyx_k_54ca290a332f5b05f3f1da2944dde8e[] = "_54ca290a332f5b05f3f1da2944dde8e16aee15d3c38010c6cf7ab5b4035cb288";
-static const char __pyx_k_61dead8a6fd2e8353707ed74c03b546[] = "_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834";
 static const char __pyx_k_6b36a84f2f42d4c734092e8ac960262[] = "_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76";
 static const char __pyx_k_71f76a407216ae36d713d182fe3619a[] = "_71f76a407216ae36d713d182fe3619a0f1d1beab9012535bcd56f1a6c4028d01";
 static const char __pyx_k_74f3239d95607254a450911529d43e5[] = "_74f3239d95607254a450911529d43e55c8924a3184461c35d01ee74461ef9ea2";
@@ -1356,6 +1354,13 @@ static const char __pyx_k_78ebada914a359d8d542cd21bb94dae[] = "_78ebada914a359d8
 static const char __pyx_k_828f9d1b587c4d78a1857d8a4ff1016[] = "_828f9d1b587c4d78a1857d8a4ff101634f0492248a007eafcaadbcf2dc106331";
 static const char __pyx_k_8fe23c3bc000438c6d26e89004449c0[] = "_8fe23c3bc000438c6d26e89004449c0b4359c79ac3b8dce7639287c4b9e9d948";
 static const char __pyx_k_9fd728c66c9a256b121472dabf32a34[] = "_9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8";
+static const char __pyx_k_Add_all_XYCoordinates_Args_Coor[] = " Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    ";
+static const char __pyx_k_Return_sorted_set_list_of_the_e[] = " Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    ";
+static const char __pyx_k_Calculate_the_distance_between_2[] = " Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    ";
+static const char __pyx_k_Only_one_XCoordinate_is_inputted[] = "Only one XCoordinate is inputted.";
+static const char __pyx_k_Only_one_YCoordinate_is_inputted[] = "Only one YCoordinate is inputted.";
+static const char __pyx_k_The_Distance_between_MaxX_and_Mi[] = "The Distance between MaxX and MinX is calculated as 'zero'.";
+static const char __pyx_k_The_Distance_between_MaxY_and_Mi[] = "The Distance between MaxY and MinY is calculated as 'zero'.";
 static const char __pyx_k_a1fce4363854ff888cff4b8e7875d600[] = "a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa";
 static const char __pyx_k_a21d7df04c33f5076ceee7d9b9c58339[] = "a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3";
 static const char __pyx_k_a410407ce3539ad1da4108cb97d5888f[] = "a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190";
@@ -1374,11 +1379,13 @@ static const char __pyx_k_de7d1b721a1e0632b7cf04edf5032c8e[] = "de7d1b721a1e0632
 static const char __pyx_k_e40da2f6babd4daf9cb43d9bd1c4ce00[] = "e40da2f6babd4daf9cb43d9bd1c4ce0096e7708b1f0ae070cd74b019bfb5a5a1";
 static const char __pyx_k_ed8166eb8de67c5378027d69ac34de5d[] = "ed8166eb8de67c5378027d69ac34de5d69f7050feae87e639f9585a45ec7c867";
 static const char __pyx_k_eef98063305e80d9caeb2c9a207aa1c8[] = "eef98063305e80d9caeb2c9a207aa1c85e434afd5b6e6c64626eeb9a57f796b5";
-static const char __pyx_k_f17ae0d22d94d8c1c2cadbb3c7ef9ce3[] = "f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653";
 static const char __pyx_k_f5050be3b804d7be0276d12d80e508d0[] = "f5050be3b804d7be0276d12d80e508d0e7352820ca6989f9c226e1bb13e0f6ea";
 static const char __pyx_k_fdbce6135d2fb008169a2ec57d5347af[] = "fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4";
 static const char __pyx_k_3bb0af8454ac35e1898db805f921269_2[] = "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a";
-static PyObject *__pyx_n_u_03d6bfa42ad73a8f520d001157bfd44;
+static const char __pyx_k_6b36a84f2f42d4c734092e8ac960262_2[] = "_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76 (line 126)";
+static const char __pyx_k_a21d7df04c33f5076ceee7d9b9c58339_2[] = "a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3 (line 9)";
+static const char __pyx_k_a410407ce3539ad1da4108cb97d5888f_2[] = "a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190 (line 145)";
+static const char __pyx_k_a628149472b9488413fd215d54c8454e_2[] = "a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1 (line 135)";
 static PyObject *__pyx_n_s_10f2da7e83a506427f8e19fa1d23827;
 static PyObject *__pyx_n_s_117c132e939b9f65266d1c74695d1bb;
 static PyObject *__pyx_n_s_15c72be78e0a85a7d0ac771476e5c22;
@@ -1386,7 +1393,6 @@ static PyObject *__pyx_n_s_1afff8e723c0f87cda2c5e7bc679122;
 static PyObject *__pyx_n_s_1baa358bed301847ab8e7d56daf35ea;
 static PyObject *__pyx_n_s_1ce3824be3821ab6a6a7c784ab3d962;
 static PyObject *__pyx_n_s_1edca4df27b85fe21c986caf187b71e;
-static PyObject *__pyx_n_u_1fdca3e7e52ba957a12a39a3987fcee;
 static PyObject *__pyx_n_s_2d711642b726b04401627ca9fbac32f;
 static PyObject *__pyx_n_s_32233d5c5478b360e88b5d97cb7eb20;
 static PyObject *__pyx_n_s_38635e47a8481b1730aea2674bebed0;
@@ -1396,22 +1402,33 @@ static PyObject *__pyx_n_s_3f667e241dae4914110f19c3cc66286;
 static PyObject *__pyx_n_s_470cadb3f9c2f0679714d0ef62b75bc;
 static PyObject *__pyx_n_s_4d00d197f72f8951292026c0460f8bf;
 static PyObject *__pyx_n_s_54ca290a332f5b05f3f1da2944dde8e;
-static PyObject *__pyx_n_u_61dead8a6fd2e8353707ed74c03b546;
 static PyObject *__pyx_n_s_6b36a84f2f42d4c734092e8ac960262;
+static PyObject *__pyx_kp_u_6b36a84f2f42d4c734092e8ac960262_2;
 static PyObject *__pyx_n_s_71f76a407216ae36d713d182fe3619a;
 static PyObject *__pyx_n_s_74f3239d95607254a450911529d43e5;
 static PyObject *__pyx_n_s_78ebada914a359d8d542cd21bb94dae;
 static PyObject *__pyx_n_s_828f9d1b587c4d78a1857d8a4ff1016;
 static PyObject *__pyx_n_s_8fe23c3bc000438c6d26e89004449c0;
 static PyObject *__pyx_n_s_9fd728c66c9a256b121472dabf32a34;
+static PyObject *__pyx_kp_u_Add_all_XYCoordinates_Args_Coor;
+static PyObject *__pyx_kp_u_Calculate_the_distance_between;
+static PyObject *__pyx_kp_u_Calculate_the_distance_between_2;
 static PyObject *__pyx_kp_u_Expected_list_But;
 static PyObject *__pyx_kp_u_Expected_number_But;
 static PyObject *__pyx_kp_u_Expected_two_element_But;
+static PyObject *__pyx_kp_u_Only_one_XCoordinate_is_inputted;
+static PyObject *__pyx_kp_u_Only_one_YCoordinate_is_inputted;
+static PyObject *__pyx_kp_u_Return_sorted_set_list_of_the_e;
+static PyObject *__pyx_kp_u_The_Distance_between_MaxX_and_Mi;
+static PyObject *__pyx_kp_u_The_Distance_between_MaxY_and_Mi;
 static PyObject *__pyx_n_s__31;
 static PyObject *__pyx_n_s_a1fce4363854ff888cff4b8e7875d600;
 static PyObject *__pyx_n_s_a21d7df04c33f5076ceee7d9b9c58339;
+static PyObject *__pyx_kp_u_a21d7df04c33f5076ceee7d9b9c58339_2;
 static PyObject *__pyx_n_s_a410407ce3539ad1da4108cb97d5888f;
+static PyObject *__pyx_kp_u_a410407ce3539ad1da4108cb97d5888f_2;
 static PyObject *__pyx_n_s_a628149472b9488413fd215d54c8454e;
+static PyObject *__pyx_kp_u_a628149472b9488413fd215d54c8454e_2;
 static PyObject *__pyx_n_s_ad370ed99b189921e7fe26057c40aab9;
 static PyObject *__pyx_n_s_b65cafe86c1c446f2ff8e5cdcacf1a21;
 static PyObject *__pyx_n_s_b7bdf7a2d6e73e58d69a667ad9b63f70;
@@ -1427,7 +1444,6 @@ static PyObject *__pyx_n_s_de7d1b721a1e0632b7cf04edf5032c8e;
 static PyObject *__pyx_n_s_e40da2f6babd4daf9cb43d9bd1c4ce00;
 static PyObject *__pyx_n_s_ed8166eb8de67c5378027d69ac34de5d;
 static PyObject *__pyx_n_s_eef98063305e80d9caeb2c9a207aa1c8;
-static PyObject *__pyx_n_u_f17ae0d22d94d8c1c2cadbb3c7ef9ce3;
 static PyObject *__pyx_n_s_f5050be3b804d7be0276d12d80e508d0;
 static PyObject *__pyx_n_s_fdbce6135d2fb008169a2ec57d5347af;
 static PyObject *__pyx_n_s_format;
@@ -1673,13 +1689,13 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return [_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa]
  * 
  * def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_3a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_2a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3[] = "_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89";
+static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_2a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3[] = " Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    ";
 static PyMethodDef __pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_3a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3 = {"a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_3a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3, METH_VARARGS|METH_KEYWORDS, __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_2a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3};
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_3a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1 = 0;
@@ -1715,7 +1731,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":11
  * def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)             # <<<<<<<<<<<<<<
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -1730,7 +1746,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   __pyx_t_2 = 0;
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":12
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:             # <<<<<<<<<<<<<<
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -1805,7 +1821,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     __pyx_t_1 = 0;
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":12
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:             # <<<<<<<<<<<<<<
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -1838,7 +1854,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return [_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa]
  * 
  * def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  */
 
@@ -4322,13 +4338,13 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return _38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841
  * 
  * def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_29_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1); /*proto*/
-static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_28_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76[] = "d6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158";
+static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_28_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76[] = " Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    ";
 static PyMethodDef __pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_29_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76 = {"_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76", (PyCFunction)__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_29_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76, METH_O, __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_28_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76};
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_29_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1) {
   PyObject *__pyx_r = 0;
@@ -4361,7 +4377,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":128
  * def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])             # <<<<<<<<<<<<<<
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -4376,7 +4392,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   __pyx_t_2 = 0;
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":129
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:             # <<<<<<<<<<<<<<
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -4475,7 +4491,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":129
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  *     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:             # <<<<<<<<<<<<<<
  *         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -4524,7 +4540,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return _38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841
  * 
  * def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  */
 
@@ -4549,13 +4565,13 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return (sorted(set(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c)), sorted(set(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4)))
  * 
  * def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_31a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1); /*proto*/
-static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_30a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1[] = "ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f";
+static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_30a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1[] = " Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    ";
 static PyMethodDef __pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_31a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1 = {"a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1", (PyCFunction)__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_31a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1, METH_O, __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_30a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1};
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_31a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1) {
   PyObject *__pyx_r = 0;
@@ -4588,7 +4604,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":137
  * def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)             # <<<<<<<<<<<<<<
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
@@ -4662,11 +4678,11 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   __pyx_t_3 = 0;
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":138
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])             # <<<<<<<<<<<<<<
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  */
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 138, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4683,7 +4699,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):             # <<<<<<<<<<<<<<
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
  */
   __pyx_t_6 = PyObject_Length(__pyx_v_b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 139, __pyx_L1_error)
@@ -4693,9 +4709,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":140
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')             # <<<<<<<<<<<<<<
+ *         warnings.warn('Only one XCoordinate is inputted.')             # <<<<<<<<<<<<<<
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')
+ *         warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")
  */
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -4712,7 +4728,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
         __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
-    __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_n_u_1fdca3e7e52ba957a12a39a3987fcee) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_n_u_1fdca3e7e52ba957a12a39a3987fcee);
+    __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_kp_u_Only_one_XCoordinate_is_inputted) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_u_Only_one_XCoordinate_is_inputted);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 140, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -4723,7 +4739,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):             # <<<<<<<<<<<<<<
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
  */
     goto __pyx_L5;
@@ -4731,9 +4747,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":141
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):             # <<<<<<<<<<<<<<
- *         warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')
+ *         warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  */
   __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_v_b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 141, __pyx_L1_error)
@@ -4743,9 +4759,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   if (__pyx_t_7) {
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":142
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')             # <<<<<<<<<<<<<<
+ *         warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")             # <<<<<<<<<<<<<<
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  */
@@ -4764,7 +4780,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
         __Pyx_DECREF_SET(__pyx_t_3, function);
       }
     }
-    __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_n_u_61dead8a6fd2e8353707ed74c03b546) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_n_u_61dead8a6fd2e8353707ed74c03b546);
+    __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_kp_u_The_Distance_between_MaxX_and_Mi) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_u_The_Distance_between_MaxX_and_Mi);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 142, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -4773,9 +4789,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":141
  *     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
- *         warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+ *         warnings.warn('Only one XCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):             # <<<<<<<<<<<<<<
- *         warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')
+ *         warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  */
   }
@@ -4783,7 +4799,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":143
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')
+ *         warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b             # <<<<<<<<<<<<<<
  * 
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
@@ -4797,7 +4813,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return (sorted(set(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c)), sorted(set(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4)))
  * 
  * def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
 
@@ -4822,13 +4838,13 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_33a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1); /*proto*/
-static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_32a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190[] = "_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044";
+static char __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_32a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190[] = " Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    ";
 static PyMethodDef __pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_33a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190 = {"a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190", (PyCFunction)__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_33a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190, METH_O, __pyx_doc_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_32a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190};
 static PyObject *__pyx_pw_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_33a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(PyObject *__pyx_self, PyObject *__pyx_v__117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1) {
   PyObject *__pyx_r = 0;
@@ -4861,7 +4877,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":147
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)             # <<<<<<<<<<<<<<
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
@@ -4935,11 +4951,11 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   __pyx_t_3 = 0;
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":148
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])             # <<<<<<<<<<<<<<
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  */
   __pyx_t_1 = __Pyx_GetItemInt(__pyx_v_fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4, -1L, long, 1, __Pyx_PyInt_From_long, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 148, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -4956,7 +4972,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):             # <<<<<<<<<<<<<<
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
  */
   __pyx_t_6 = PyObject_Length(__pyx_v_fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 149, __pyx_L1_error)
@@ -4966,9 +4982,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":150
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')             # <<<<<<<<<<<<<<
+ *         warnings.warn('Only one YCoordinate is inputted.')             # <<<<<<<<<<<<<<
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')
+ *         warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")
  */
     __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_warnings); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -4985,7 +5001,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
         __Pyx_DECREF_SET(__pyx_t_1, function);
       }
     }
-    __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_n_u_f17ae0d22d94d8c1c2cadbb3c7ef9ce3) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_n_u_f17ae0d22d94d8c1c2cadbb3c7ef9ce3);
+    __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_kp_u_Only_one_YCoordinate_is_inputted) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_u_Only_one_YCoordinate_is_inputted);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 150, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -4996,7 +5012,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  *     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):             # <<<<<<<<<<<<<<
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
  */
     goto __pyx_L5;
@@ -5004,9 +5020,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":151
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):             # <<<<<<<<<<<<<<
- *         warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')
+ *         warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  */
   __pyx_t_2 = __Pyx_PyInt_EqObjC(__pyx_v_b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b, __pyx_int_0, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 151, __pyx_L1_error)
@@ -5016,9 +5032,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
   if (__pyx_t_7) {
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":152
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')             # <<<<<<<<<<<<<<
+ *         warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")             # <<<<<<<<<<<<<<
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  */
@@ -5037,7 +5053,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
         __Pyx_DECREF_SET(__pyx_t_3, function);
       }
     }
-    __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_n_u_03d6bfa42ad73a8f520d001157bfd44) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_n_u_03d6bfa42ad73a8f520d001157bfd44);
+    __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_kp_u_The_Distance_between_MaxY_and_Mi) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_u_The_Distance_between_MaxY_and_Mi);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 152, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
@@ -5046,9 +5062,9 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
     /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":151
  *     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
- *         warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+ *         warnings.warn('Only one YCoordinate is inputted.')
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):             # <<<<<<<<<<<<<<
- *         warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')
+ *         warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  */
   }
@@ -5056,7 +5072,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
 
   /* "_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a.py":153
  *     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
- *         warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')
+ *         warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b             # <<<<<<<<<<<<<<
  * 
  * def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):
@@ -5070,7 +5086,7 @@ static PyObject *__pyx_pf_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744f
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
 
@@ -5390,7 +5406,6 @@ static struct PyModuleDef __pyx_moduledef = {
 #endif
 
 static __Pyx_StringTabEntry __pyx_string_tab[] = {
-  {&__pyx_n_u_03d6bfa42ad73a8f520d001157bfd44, __pyx_k_03d6bfa42ad73a8f520d001157bfd44, sizeof(__pyx_k_03d6bfa42ad73a8f520d001157bfd44), 0, 1, 0, 1},
   {&__pyx_n_s_10f2da7e83a506427f8e19fa1d23827, __pyx_k_10f2da7e83a506427f8e19fa1d23827, sizeof(__pyx_k_10f2da7e83a506427f8e19fa1d23827), 0, 0, 1, 1},
   {&__pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_k_117c132e939b9f65266d1c74695d1bb, sizeof(__pyx_k_117c132e939b9f65266d1c74695d1bb), 0, 0, 1, 1},
   {&__pyx_n_s_15c72be78e0a85a7d0ac771476e5c22, __pyx_k_15c72be78e0a85a7d0ac771476e5c22, sizeof(__pyx_k_15c72be78e0a85a7d0ac771476e5c22), 0, 0, 1, 1},
@@ -5398,7 +5413,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_1baa358bed301847ab8e7d56daf35ea, __pyx_k_1baa358bed301847ab8e7d56daf35ea, sizeof(__pyx_k_1baa358bed301847ab8e7d56daf35ea), 0, 0, 1, 1},
   {&__pyx_n_s_1ce3824be3821ab6a6a7c784ab3d962, __pyx_k_1ce3824be3821ab6a6a7c784ab3d962, sizeof(__pyx_k_1ce3824be3821ab6a6a7c784ab3d962), 0, 0, 1, 1},
   {&__pyx_n_s_1edca4df27b85fe21c986caf187b71e, __pyx_k_1edca4df27b85fe21c986caf187b71e, sizeof(__pyx_k_1edca4df27b85fe21c986caf187b71e), 0, 0, 1, 1},
-  {&__pyx_n_u_1fdca3e7e52ba957a12a39a3987fcee, __pyx_k_1fdca3e7e52ba957a12a39a3987fcee, sizeof(__pyx_k_1fdca3e7e52ba957a12a39a3987fcee), 0, 1, 0, 1},
   {&__pyx_n_s_2d711642b726b04401627ca9fbac32f, __pyx_k_2d711642b726b04401627ca9fbac32f, sizeof(__pyx_k_2d711642b726b04401627ca9fbac32f), 0, 0, 1, 1},
   {&__pyx_n_s_32233d5c5478b360e88b5d97cb7eb20, __pyx_k_32233d5c5478b360e88b5d97cb7eb20, sizeof(__pyx_k_32233d5c5478b360e88b5d97cb7eb20), 0, 0, 1, 1},
   {&__pyx_n_s_38635e47a8481b1730aea2674bebed0, __pyx_k_38635e47a8481b1730aea2674bebed0, sizeof(__pyx_k_38635e47a8481b1730aea2674bebed0), 0, 0, 1, 1},
@@ -5408,22 +5422,33 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_470cadb3f9c2f0679714d0ef62b75bc, __pyx_k_470cadb3f9c2f0679714d0ef62b75bc, sizeof(__pyx_k_470cadb3f9c2f0679714d0ef62b75bc), 0, 0, 1, 1},
   {&__pyx_n_s_4d00d197f72f8951292026c0460f8bf, __pyx_k_4d00d197f72f8951292026c0460f8bf, sizeof(__pyx_k_4d00d197f72f8951292026c0460f8bf), 0, 0, 1, 1},
   {&__pyx_n_s_54ca290a332f5b05f3f1da2944dde8e, __pyx_k_54ca290a332f5b05f3f1da2944dde8e, sizeof(__pyx_k_54ca290a332f5b05f3f1da2944dde8e), 0, 0, 1, 1},
-  {&__pyx_n_u_61dead8a6fd2e8353707ed74c03b546, __pyx_k_61dead8a6fd2e8353707ed74c03b546, sizeof(__pyx_k_61dead8a6fd2e8353707ed74c03b546), 0, 1, 0, 1},
   {&__pyx_n_s_6b36a84f2f42d4c734092e8ac960262, __pyx_k_6b36a84f2f42d4c734092e8ac960262, sizeof(__pyx_k_6b36a84f2f42d4c734092e8ac960262), 0, 0, 1, 1},
+  {&__pyx_kp_u_6b36a84f2f42d4c734092e8ac960262_2, __pyx_k_6b36a84f2f42d4c734092e8ac960262_2, sizeof(__pyx_k_6b36a84f2f42d4c734092e8ac960262_2), 0, 1, 0, 0},
   {&__pyx_n_s_71f76a407216ae36d713d182fe3619a, __pyx_k_71f76a407216ae36d713d182fe3619a, sizeof(__pyx_k_71f76a407216ae36d713d182fe3619a), 0, 0, 1, 1},
   {&__pyx_n_s_74f3239d95607254a450911529d43e5, __pyx_k_74f3239d95607254a450911529d43e5, sizeof(__pyx_k_74f3239d95607254a450911529d43e5), 0, 0, 1, 1},
   {&__pyx_n_s_78ebada914a359d8d542cd21bb94dae, __pyx_k_78ebada914a359d8d542cd21bb94dae, sizeof(__pyx_k_78ebada914a359d8d542cd21bb94dae), 0, 0, 1, 1},
   {&__pyx_n_s_828f9d1b587c4d78a1857d8a4ff1016, __pyx_k_828f9d1b587c4d78a1857d8a4ff1016, sizeof(__pyx_k_828f9d1b587c4d78a1857d8a4ff1016), 0, 0, 1, 1},
   {&__pyx_n_s_8fe23c3bc000438c6d26e89004449c0, __pyx_k_8fe23c3bc000438c6d26e89004449c0, sizeof(__pyx_k_8fe23c3bc000438c6d26e89004449c0), 0, 0, 1, 1},
   {&__pyx_n_s_9fd728c66c9a256b121472dabf32a34, __pyx_k_9fd728c66c9a256b121472dabf32a34, sizeof(__pyx_k_9fd728c66c9a256b121472dabf32a34), 0, 0, 1, 1},
+  {&__pyx_kp_u_Add_all_XYCoordinates_Args_Coor, __pyx_k_Add_all_XYCoordinates_Args_Coor, sizeof(__pyx_k_Add_all_XYCoordinates_Args_Coor), 0, 1, 0, 0},
+  {&__pyx_kp_u_Calculate_the_distance_between, __pyx_k_Calculate_the_distance_between, sizeof(__pyx_k_Calculate_the_distance_between), 0, 1, 0, 0},
+  {&__pyx_kp_u_Calculate_the_distance_between_2, __pyx_k_Calculate_the_distance_between_2, sizeof(__pyx_k_Calculate_the_distance_between_2), 0, 1, 0, 0},
   {&__pyx_kp_u_Expected_list_But, __pyx_k_Expected_list_But, sizeof(__pyx_k_Expected_list_But), 0, 1, 0, 0},
   {&__pyx_kp_u_Expected_number_But, __pyx_k_Expected_number_But, sizeof(__pyx_k_Expected_number_But), 0, 1, 0, 0},
   {&__pyx_kp_u_Expected_two_element_But, __pyx_k_Expected_two_element_But, sizeof(__pyx_k_Expected_two_element_But), 0, 1, 0, 0},
+  {&__pyx_kp_u_Only_one_XCoordinate_is_inputted, __pyx_k_Only_one_XCoordinate_is_inputted, sizeof(__pyx_k_Only_one_XCoordinate_is_inputted), 0, 1, 0, 0},
+  {&__pyx_kp_u_Only_one_YCoordinate_is_inputted, __pyx_k_Only_one_YCoordinate_is_inputted, sizeof(__pyx_k_Only_one_YCoordinate_is_inputted), 0, 1, 0, 0},
+  {&__pyx_kp_u_Return_sorted_set_list_of_the_e, __pyx_k_Return_sorted_set_list_of_the_e, sizeof(__pyx_k_Return_sorted_set_list_of_the_e), 0, 1, 0, 0},
+  {&__pyx_kp_u_The_Distance_between_MaxX_and_Mi, __pyx_k_The_Distance_between_MaxX_and_Mi, sizeof(__pyx_k_The_Distance_between_MaxX_and_Mi), 0, 1, 0, 0},
+  {&__pyx_kp_u_The_Distance_between_MaxY_and_Mi, __pyx_k_The_Distance_between_MaxY_and_Mi, sizeof(__pyx_k_The_Distance_between_MaxY_and_Mi), 0, 1, 0, 0},
   {&__pyx_n_s__31, __pyx_k__31, sizeof(__pyx_k__31), 0, 0, 1, 1},
   {&__pyx_n_s_a1fce4363854ff888cff4b8e7875d600, __pyx_k_a1fce4363854ff888cff4b8e7875d600, sizeof(__pyx_k_a1fce4363854ff888cff4b8e7875d600), 0, 0, 1, 1},
   {&__pyx_n_s_a21d7df04c33f5076ceee7d9b9c58339, __pyx_k_a21d7df04c33f5076ceee7d9b9c58339, sizeof(__pyx_k_a21d7df04c33f5076ceee7d9b9c58339), 0, 0, 1, 1},
+  {&__pyx_kp_u_a21d7df04c33f5076ceee7d9b9c58339_2, __pyx_k_a21d7df04c33f5076ceee7d9b9c58339_2, sizeof(__pyx_k_a21d7df04c33f5076ceee7d9b9c58339_2), 0, 1, 0, 0},
   {&__pyx_n_s_a410407ce3539ad1da4108cb97d5888f, __pyx_k_a410407ce3539ad1da4108cb97d5888f, sizeof(__pyx_k_a410407ce3539ad1da4108cb97d5888f), 0, 0, 1, 1},
+  {&__pyx_kp_u_a410407ce3539ad1da4108cb97d5888f_2, __pyx_k_a410407ce3539ad1da4108cb97d5888f_2, sizeof(__pyx_k_a410407ce3539ad1da4108cb97d5888f_2), 0, 1, 0, 0},
   {&__pyx_n_s_a628149472b9488413fd215d54c8454e, __pyx_k_a628149472b9488413fd215d54c8454e, sizeof(__pyx_k_a628149472b9488413fd215d54c8454e), 0, 0, 1, 1},
+  {&__pyx_kp_u_a628149472b9488413fd215d54c8454e_2, __pyx_k_a628149472b9488413fd215d54c8454e_2, sizeof(__pyx_k_a628149472b9488413fd215d54c8454e_2), 0, 1, 0, 0},
   {&__pyx_n_s_ad370ed99b189921e7fe26057c40aab9, __pyx_k_ad370ed99b189921e7fe26057c40aab9, sizeof(__pyx_k_ad370ed99b189921e7fe26057c40aab9), 0, 0, 1, 1},
   {&__pyx_n_s_b65cafe86c1c446f2ff8e5cdcacf1a21, __pyx_k_b65cafe86c1c446f2ff8e5cdcacf1a21, sizeof(__pyx_k_b65cafe86c1c446f2ff8e5cdcacf1a21), 0, 0, 1, 1},
   {&__pyx_n_s_b7bdf7a2d6e73e58d69a667ad9b63f70, __pyx_k_b7bdf7a2d6e73e58d69a667ad9b63f70, sizeof(__pyx_k_b7bdf7a2d6e73e58d69a667ad9b63f70), 0, 0, 1, 1},
@@ -5439,7 +5464,6 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_e40da2f6babd4daf9cb43d9bd1c4ce00, __pyx_k_e40da2f6babd4daf9cb43d9bd1c4ce00, sizeof(__pyx_k_e40da2f6babd4daf9cb43d9bd1c4ce00), 0, 0, 1, 1},
   {&__pyx_n_s_ed8166eb8de67c5378027d69ac34de5d, __pyx_k_ed8166eb8de67c5378027d69ac34de5d, sizeof(__pyx_k_ed8166eb8de67c5378027d69ac34de5d), 0, 0, 1, 1},
   {&__pyx_n_s_eef98063305e80d9caeb2c9a207aa1c8, __pyx_k_eef98063305e80d9caeb2c9a207aa1c8, sizeof(__pyx_k_eef98063305e80d9caeb2c9a207aa1c8), 0, 0, 1, 1},
-  {&__pyx_n_u_f17ae0d22d94d8c1c2cadbb3c7ef9ce3, __pyx_k_f17ae0d22d94d8c1c2cadbb3c7ef9ce3, sizeof(__pyx_k_f17ae0d22d94d8c1c2cadbb3c7ef9ce3), 0, 1, 0, 1},
   {&__pyx_n_s_f5050be3b804d7be0276d12d80e508d0, __pyx_k_f5050be3b804d7be0276d12d80e508d0, sizeof(__pyx_k_f5050be3b804d7be0276d12d80e508d0), 0, 0, 1, 1},
   {&__pyx_n_s_fdbce6135d2fb008169a2ec57d5347af, __pyx_k_fdbce6135d2fb008169a2ec57d5347af, sizeof(__pyx_k_fdbce6135d2fb008169a2ec57d5347af), 0, 0, 1, 1},
   {&__pyx_n_s_format, __pyx_k_format, sizeof(__pyx_k_format), 0, 0, 1, 1},
@@ -5482,7 +5506,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return [_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa]
  * 
  * def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  */
   __pyx_tuple__3 = PyTuple_Pack(4, __pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_n_s_2d711642b726b04401627ca9fbac32f, __pyx_n_s_a1fce4363854ff888cff4b8e7875d600, __pyx_n_s_c07a3de039fbc0914689549f041eae29); if (unlikely(!__pyx_tuple__3)) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -5638,7 +5662,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return _38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841
  * 
  * def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  */
   __pyx_tuple__29 = PyTuple_Pack(4, __pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_n_s_b65cafe86c1c446f2ff8e5cdcacf1a21, __pyx_n_s_fdbce6135d2fb008169a2ec57d5347af, __pyx_n_s_c07a3de039fbc0914689549f041eae29); if (unlikely(!__pyx_tuple__29)) __PYX_ERR(0, 126, __pyx_L1_error)
@@ -5650,7 +5674,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return (sorted(set(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c)), sorted(set(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4)))
  * 
  * def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
   __pyx_tuple__32 = PyTuple_Pack(4, __pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_n_s_b65cafe86c1c446f2ff8e5cdcacf1a21, __pyx_n_s__31, __pyx_n_s_b7bdf7a2d6e73e58d69a667ad9b63f70); if (unlikely(!__pyx_tuple__32)) __PYX_ERR(0, 135, __pyx_L1_error)
@@ -5662,7 +5686,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
   __pyx_tuple__34 = PyTuple_Pack(4, __pyx_n_s_117c132e939b9f65266d1c74695d1bb, __pyx_n_s__31, __pyx_n_s_fdbce6135d2fb008169a2ec57d5347af, __pyx_n_s_b7bdf7a2d6e73e58d69a667ad9b63f70); if (unlikely(!__pyx_tuple__34)) __PYX_ERR(0, 145, __pyx_L1_error)
@@ -6002,7 +6026,7 @@ if (!__Pyx_RefNanny) {
  *     return [_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa]
  * 
  * def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+ *     ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
  *     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_3a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3, 0, __pyx_n_s_a21d7df04c33f5076ceee7d9b9c58339, NULL, __pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_d, ((PyObject *)__pyx_codeobj__4)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
@@ -6158,7 +6182,7 @@ if (!__Pyx_RefNanny) {
  *     return _38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841
  * 
  * def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+ *     ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_29_6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76, 0, __pyx_n_s_6b36a84f2f42d4c734092e8ac960262, NULL, __pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_d, ((PyObject *)__pyx_codeobj__30)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 126, __pyx_L1_error)
@@ -6170,7 +6194,7 @@ if (!__Pyx_RefNanny) {
  *     return (sorted(set(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c)), sorted(set(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4)))
  * 
  * def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+ *     ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_31a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1, 0, __pyx_n_s_a628149472b9488413fd215d54c8454e, NULL, __pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_d, ((PyObject *)__pyx_codeobj__33)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 135, __pyx_L1_error)
@@ -6182,7 +6206,7 @@ if (!__Pyx_RefNanny) {
  *     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
  * 
  * def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):             # <<<<<<<<<<<<<<
- *     '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+ *     ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
  *     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
  */
   __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_65_3bb0af8454ac35e1898db805f9212699beb3255963466a4744fd9c23cf25331a_33a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190, 0, __pyx_n_s_a410407ce3539ad1da4108cb97d5888f, NULL, __pyx_n_s_3bb0af8454ac35e1898db805f921269_2, __pyx_d, ((PyObject *)__pyx_codeobj__35)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 145, __pyx_L1_error)
@@ -6411,8 +6435,12 @@ if (!__Pyx_RefNanny) {
  * 
  * def _9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8(_15c72be78e0a85a7d0ac771476e5c22cd9739dd1b7b56eccc3ce69562f232579, eef98063305e80d9caeb2c9a207aa1c85e434afd5b6e6c64626eeb9a57f796b5):
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
+  if (PyDict_SetItem(__pyx_t_5, __pyx_kp_u_a21d7df04c33f5076ceee7d9b9c58339_2, __pyx_kp_u_Add_all_XYCoordinates_Args_Coor) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_kp_u_6b36a84f2f42d4c734092e8ac960262_2, __pyx_kp_u_Return_sorted_set_list_of_the_e) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_kp_u_a628149472b9488413fd215d54c8454e_2, __pyx_kp_u_Calculate_the_distance_between) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_kp_u_a410407ce3539ad1da4108cb97d5888f_2, __pyx_kp_u_Calculate_the_distance_between_2) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_5) < 0) __PYX_ERR(0, 2, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 

@@ -7,7 +7,7 @@ def _9fd728c66c9a256b121472dabf32a34317aed01d8427d70ec830289cf23a7cc8(_15c72be78
     return [_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa]
 
 def a21d7df04c33f5076ceee7d9b9c58339aa8c29bb9a53808233ba5b480fffd0e3(*_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
-    '_79361bd5158d79fe3cba2e7d14a9ffb889acee77c378c7c09988f97025eaef89'
+    ' Add all XYCoordinates\n\n    Args:\n        Coordinates (list[int | float]): XYCoordinates. ex) [[-3,0], [-1,1], [1,2], [3,3]]\n    Returns:\n        list[int | float]: One XYCoordinate by obtained by adding all XYCoordinates\n    Example:\n        >>> Sum([-3,0], [-1,1], [1,2], [3,3])\n        [0, 6]\n    '
     (_2d711642b726b04401627ca9fbac32f5c8530fb1903cc4db02258717921a4881, a1fce4363854ff888cff4b8e7875d600c2682390412a8cf79b37d0b11148b0fa) = (0, 0)
     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:
         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -124,7 +124,7 @@ def _32233d5c5478b360e88b5d97cb7eb20bbd59ce6b642392efcd6932a6b957f12c(_117c132e9
     return _38635e47a8481b1730aea2674bebed0e50f3125ffec5898fa1ca4743b52e4841
 
 def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
-    'd6d192fd76d3141392f0f001285bd3206fc336be3e1770c2ad9fe3e0e673f158'
+    ' Return sorted set list of the each X and Y of XYCoordinates.\n\n    The first tuple contains X coordinates in ascending order and no duplicates.\n    The second tuple contains Y Coordinates in ascending order and no duplicates.\n\n    It can be used to find the minimum or maximum values of the X or Y Coordinates without knowing how they are ordered.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,0], [-1,0], [1,0], [3,0]]\n    Returns:\n        tuple[list[int | float], list[int | float]]: [X coordinates sorted in ascending order], [Y coordinates sorted in ascending order]\n    Example:\n        >>> getSortedList_ascending([[-3,0], [0,1], [3,-5], [3,1]])\n        [-3, 0, 3], [-5, 0, 1]\n    '
     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = ([], [])
     for c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e in _117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1:
         _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(c07a3de039fbc0914689549f041eae295d621de7f7f647fd863f6d2f8db2080e)
@@ -133,23 +133,23 @@ def _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e9
     return (sorted(set(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c)), sorted(set(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4)))
 
 def a628149472b9488413fd215d54c8454e3af4ced35ad80f90d4b193ed6535eea1(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
-    'ab544c4f52cce2a024d8218292588403f828a4d11cc5c7ba7349f90c4f24974f'
+    ' Calculate the distance between maxX and minX.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max XCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxX([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
     (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c, _) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[(- 1)] - b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c[0])
     if (len(b65cafe86c1c446f2ff8e5cdcacf1a211d0c0be1c575b414e4e3d4d6513db53c) == 1):
-        warnings.warn('_1fdca3e7e52ba957a12a39a3987fceed6f7fa7958a5b2ebbf21510dadfadddc6')
+        warnings.warn('Only one XCoordinate is inputted.')
     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
-        warnings.warn('_61dead8a6fd2e8353707ed74c03b546e9ac24671333f5d49b7753d3993a8f834')
+        warnings.warn("The Distance between MaxX and MinX is calculated as 'zero'.")
     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
 
 def a410407ce3539ad1da4108cb97d5888f2dec4b5069b180e640660aa339390190(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1):
-    '_47b7f4ac21cb8686b025ec35454d926fdbdef2646ef292e41f97103a0f66d044'
+    ' Calculate the distance between maxY and minY.\n\n    Args:\n        Coordinates (list[list[int | float]]): XYCoordinates. ex) [[-3,-3], [-1,-3], [1,3], [3,3]]\n    Returns:\n        [int | float]: Distance between Min-Max YCoordinates.\n    Example:\n        >>> getDistanceBtwMinMaxY([[-3,-3], [-1,-3], [1,3], [3,3]])\n        6\n    '
     (_, fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) = _6b36a84f2f42d4c734092e8ac9602622d5a1e7108d310b778dece64320437f76(_117c132e939b9f65266d1c74695d1bb0d37fc7cfc208743a8eba33f725c370b1)
     b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b = (fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[(- 1)] - fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4[0])
     if (len(fdbce6135d2fb008169a2ec57d5347af9fd379e4744579567662273587f4caf4) == 1):
-        warnings.warn('f17ae0d22d94d8c1c2cadbb3c7ef9ce365665ecd67f77c3bbf04c8b530312653')
+        warnings.warn('Only one YCoordinate is inputted.')
     elif (b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b == 0):
-        warnings.warn('_03d6bfa42ad73a8f520d001157bfd447c650330e43ab3e21cd9b298916ba7611')
+        warnings.warn("The Distance between MaxY and MinY is calculated as 'zero'.")
     return b7bdf7a2d6e73e58d69a667ad9b63f706dd96bbbc4a8187914fc34646a1e003b
 
 def _1afff8e723c0f87cda2c5e7bc679122b7a2fe6f82e7555b7caf4ef6610a27846(bdc10f09365d025cd5b227a3dacbc016ef36a3c7bc5ffb67691d1bea8cbc4b76):

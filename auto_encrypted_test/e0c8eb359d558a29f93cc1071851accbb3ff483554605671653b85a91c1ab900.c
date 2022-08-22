@@ -1234,28 +1234,28 @@ static const char __pyx_k_main[] = "__main__";
 static const char __pyx_k_name[] = "__name__";
 static const char __pyx_k_self[] = "self";
 static const char __pyx_k_test[] = "__test__";
+static const char __pyx_k_XWidth[] = "_XWidth";
+static const char __pyx_k_YWidth[] = "_YWidth";
 static const char __pyx_k_import[] = "__import__";
 static const char __pyx_k_module[] = "__module__";
+static const char __pyx_k_POLayer[] = "_POLayer";
 static const char __pyx_k_prepare[] = "__prepare__";
 static const char __pyx_k_qualname[] = "__qualname__";
+static const char __pyx_k_Met1Layer[] = "_Met1Layer";
 static const char __pyx_k_metaclass[] = "__metaclass__";
 static const char __pyx_k_cline_in_traceback[] = "cline_in_traceback";
 static const char __pyx_k_0dcd9498e2da15d0359fff5035b2cae[] = "_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329";
 static const char __pyx_k_124f4503aa687285abc6375286bbdb3[] = "_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857";
 static const char __pyx_k_25f0de983ed0aff0a831b2228d74aa4[] = "_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874";
-static const char __pyx_k_265f855983d1b5061d8b7ab1139c48b[] = "_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1";
 static const char __pyx_k_2c0685016681b12fe9957cdaae8590b[] = "_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9";
 static const char __pyx_k_3ac1cc89e039aceb4f4dee76edb6400[] = "_3ac1cc89e039aceb4f4dee76edb6400ad698a3cb62bc700d1d24c4e64d5d6b4d";
 static const char __pyx_k_4a4b435eb0955a676565fba153d9eb2[] = "_4a4b435eb0955a676565fba153d9eb22da99680438451cf76db8dd02ef5c717e";
-static const char __pyx_k_63d072897e53c01dbc2afd4bb14e075[] = "_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647";
 static const char __pyx_k_6b15be522f5aa7036a88bd0cb163920[] = "_6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427";
 static const char __pyx_k_708f794e5725efec0c3975705b00e8d[] = "_708f794e5725efec0c3975705b00e8dced22e014a3137585adaa1a2f17656929";
 static const char __pyx_k_74b3f7fb6f5443c101c0d06393e0ffe[] = "_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c";
-static const char __pyx_k_75bb54313f0653227d782139a6d32f8[] = "_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c";
 static const char __pyx_k_855f958dcf4c478c8508bd1d9711545[] = "_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a";
 static const char __pyx_k_9ef134b74cc6307bd3aef4c632f1a51[] = "_9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435";
 static const char __pyx_k_a6f3a5534aabed4e994e38db38544b1f[] = "a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057";
-static const char __pyx_k_b9bc3a98a024872315b2ee55bd0514e0[] = "b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb";
 static const char __pyx_k_e0c8eb359d558a29f93cc1071851accb[] = "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900";
 static const char __pyx_k_f8145e152eea692fb139753889bc5a21[] = "f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31";
 static const char __pyx_k_a6f3a5534aabed4e994e38db38544b1f_2[] = "a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057.f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31";
@@ -1263,20 +1263,20 @@ static const char __pyx_k_e0c8eb359d558a29f93cc1071851accb_2[] = "e0c8eb359d558a
 static PyObject *__pyx_n_s_0dcd9498e2da15d0359fff5035b2cae;
 static PyObject *__pyx_n_s_124f4503aa687285abc6375286bbdb3;
 static PyObject *__pyx_n_s_25f0de983ed0aff0a831b2228d74aa4;
-static PyObject *__pyx_n_u_265f855983d1b5061d8b7ab1139c48b;
 static PyObject *__pyx_n_s_2c0685016681b12fe9957cdaae8590b;
 static PyObject *__pyx_n_s_3ac1cc89e039aceb4f4dee76edb6400;
 static PyObject *__pyx_n_s_4a4b435eb0955a676565fba153d9eb2;
-static PyObject *__pyx_n_u_63d072897e53c01dbc2afd4bb14e075;
 static PyObject *__pyx_n_s_6b15be522f5aa7036a88bd0cb163920;
 static PyObject *__pyx_n_s_708f794e5725efec0c3975705b00e8d;
 static PyObject *__pyx_n_s_74b3f7fb6f5443c101c0d06393e0ffe;
-static PyObject *__pyx_n_u_75bb54313f0653227d782139a6d32f8;
 static PyObject *__pyx_n_s_855f958dcf4c478c8508bd1d9711545;
 static PyObject *__pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51;
+static PyObject *__pyx_n_u_Met1Layer;
+static PyObject *__pyx_n_u_POLayer;
+static PyObject *__pyx_n_u_XWidth;
+static PyObject *__pyx_n_u_YWidth;
 static PyObject *__pyx_n_s_a6f3a5534aabed4e994e38db38544b1f;
 static PyObject *__pyx_n_s_a6f3a5534aabed4e994e38db38544b1f_2;
-static PyObject *__pyx_n_u_b9bc3a98a024872315b2ee55bd0514e0;
 static PyObject *__pyx_n_s_cline_in_traceback;
 static PyObject *__pyx_n_s_doc;
 static PyObject *__pyx_n_s_e0c8eb359d558a29f93cc1071851accb;
@@ -1307,13 +1307,13 @@ static PyObject *__pyx_codeobj__2;
  *     _708f794e5725efec0c3975705b00e8dced22e014a3137585adaa1a2f17656929 = dict(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=40, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200)
  * 
  *     def f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(self, _74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=50, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200):             # <<<<<<<<<<<<<<
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  */
 
 /* Python wrapper */
 static PyObject *__pyx_pw_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_1f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds); /*proto*/
-static char __pyx_doc_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31[] = "c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e";
+static char __pyx_doc_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31[] = " Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        ";
 static PyMethodDef __pyx_mdef_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_1f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31 = {"f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31", (PyCFunction)(void*)(PyCFunctionWithKeywords)__pyx_pw_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_1f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31, METH_VARARGS|METH_KEYWORDS, __pyx_doc_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31};
 static PyObject *__pyx_pw_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_1f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(PyObject *__pyx_self, PyObject *__pyx_args, PyObject *__pyx_kwds) {
   PyObject *__pyx_v_self = 0;
@@ -1460,10 +1460,10 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
 
   /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":9
  *     def f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(self, _74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=50, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200):
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)             # <<<<<<<<<<<<<<
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  */
   __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_6b15be522f5aa7036a88bd0cb163920); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 9, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
@@ -1478,10 +1478,10 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":10
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
  */
   __pyx_t_3 = PyObject_RichCompare(__pyx_v__2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 10, __pyx_L1_error)
@@ -1492,32 +1492,32 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":11
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9             # <<<<<<<<<<<<<<
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9             # <<<<<<<<<<<<<<
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_u_75bb54313f0653227d782139a6d32f8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_u_Met1Layer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_n_u_63d072897e53c01dbc2afd4bb14e075, __pyx_v__2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9) < 0)) __PYX_ERR(0, 11, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_n_u_XWidth, __pyx_v__2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9) < 0)) __PYX_ERR(0, 11, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":10
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
  */
   }
 
   /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":12
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
  */
   __pyx_t_2 = PyObject_RichCompare(__pyx_v__855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 12, __pyx_L1_error)
@@ -1526,34 +1526,34 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
   if (__pyx_t_4) {
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":13
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a             # <<<<<<<<<<<<<<
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a             # <<<<<<<<<<<<<<
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 13, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_u_75bb54313f0653227d782139a6d32f8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_u_Met1Layer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 13, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_n_u_b9bc3a98a024872315b2ee55bd0514e0, __pyx_v__855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a) < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_n_u_YWidth, __pyx_v__855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a) < 0)) __PYX_ERR(0, 13, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":12
  *         if (_2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_XWidth'] = _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
  */
   }
 
   /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":14
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):
  */
   __pyx_t_3 = PyObject_RichCompare(__pyx_v__25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_3); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 14, __pyx_L1_error)
@@ -1562,34 +1562,34 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
   if (__pyx_t_4) {
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":15
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874             # <<<<<<<<<<<<<<
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874             # <<<<<<<<<<<<<<
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_YWidth'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
  */
     __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 15, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_u_265f855983d1b5061d8b7ab1139c48b); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_3, __pyx_n_u_POLayer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 15, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_n_u_63d072897e53c01dbc2afd4bb14e075, __pyx_v__25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874) < 0)) __PYX_ERR(0, 15, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_t_2, __pyx_n_u_XWidth, __pyx_v__25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874) < 0)) __PYX_ERR(0, 15, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":14
  *         if (_855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_75bb54313f0653227d782139a6d32f8f336c4d02ab0960a8339d6ef6c3def92c']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_Met1Layer']['_YWidth'] = _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):
  */
   }
 
   /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":16
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_YWidth'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
  */
   __pyx_t_2 = PyObject_RichCompare(__pyx_v__124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857, Py_None, Py_NE); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 16, __pyx_L1_error)
   __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 16, __pyx_L1_error)
@@ -1597,23 +1597,23 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
   if (__pyx_t_4) {
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":17
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857             # <<<<<<<<<<<<<<
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_YWidth'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857             # <<<<<<<<<<<<<<
  */
     __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_u_265f855983d1b5061d8b7ab1139c48b); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_Dict_GetItem(__pyx_t_2, __pyx_n_u_POLayer); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_n_u_b9bc3a98a024872315b2ee55bd0514e0, __pyx_v__124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857) < 0)) __PYX_ERR(0, 17, __pyx_L1_error)
+    if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_n_u_YWidth, __pyx_v__124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857) < 0)) __PYX_ERR(0, 17, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
     /* "e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900.py":16
  *         if (_25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874 != None):
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['_63d072897e53c01dbc2afd4bb14e07585fcd2d7f3fd3589a4eeb97f7124cd647'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_XWidth'] = _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874
  *         if (_124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857 != None):             # <<<<<<<<<<<<<<
- *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_265f855983d1b5061d8b7ab1139c48ba0fca2b72ec5cd4fb18d21d788db651c1']['b9bc3a98a024872315b2ee55bd0514e0e11cf35c1812171f26cef7200e8fdbbb'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
+ *             self._9ef134b74cc6307bd3aef4c632f1a51085c4c203bd66c7b6b3403aa7d9261435['_POLayer']['_YWidth'] = _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857
  */
   }
 
@@ -1621,7 +1621,7 @@ static PyObject *__pyx_pf_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b
  *     _708f794e5725efec0c3975705b00e8dced22e014a3137585adaa1a2f17656929 = dict(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=40, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200)
  * 
  *     def f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(self, _74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=50, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200):             # <<<<<<<<<<<<<<
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  */
 
@@ -1689,20 +1689,20 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_0dcd9498e2da15d0359fff5035b2cae, __pyx_k_0dcd9498e2da15d0359fff5035b2cae, sizeof(__pyx_k_0dcd9498e2da15d0359fff5035b2cae), 0, 0, 1, 1},
   {&__pyx_n_s_124f4503aa687285abc6375286bbdb3, __pyx_k_124f4503aa687285abc6375286bbdb3, sizeof(__pyx_k_124f4503aa687285abc6375286bbdb3), 0, 0, 1, 1},
   {&__pyx_n_s_25f0de983ed0aff0a831b2228d74aa4, __pyx_k_25f0de983ed0aff0a831b2228d74aa4, sizeof(__pyx_k_25f0de983ed0aff0a831b2228d74aa4), 0, 0, 1, 1},
-  {&__pyx_n_u_265f855983d1b5061d8b7ab1139c48b, __pyx_k_265f855983d1b5061d8b7ab1139c48b, sizeof(__pyx_k_265f855983d1b5061d8b7ab1139c48b), 0, 1, 0, 1},
   {&__pyx_n_s_2c0685016681b12fe9957cdaae8590b, __pyx_k_2c0685016681b12fe9957cdaae8590b, sizeof(__pyx_k_2c0685016681b12fe9957cdaae8590b), 0, 0, 1, 1},
   {&__pyx_n_s_3ac1cc89e039aceb4f4dee76edb6400, __pyx_k_3ac1cc89e039aceb4f4dee76edb6400, sizeof(__pyx_k_3ac1cc89e039aceb4f4dee76edb6400), 0, 0, 1, 1},
   {&__pyx_n_s_4a4b435eb0955a676565fba153d9eb2, __pyx_k_4a4b435eb0955a676565fba153d9eb2, sizeof(__pyx_k_4a4b435eb0955a676565fba153d9eb2), 0, 0, 1, 1},
-  {&__pyx_n_u_63d072897e53c01dbc2afd4bb14e075, __pyx_k_63d072897e53c01dbc2afd4bb14e075, sizeof(__pyx_k_63d072897e53c01dbc2afd4bb14e075), 0, 1, 0, 1},
   {&__pyx_n_s_6b15be522f5aa7036a88bd0cb163920, __pyx_k_6b15be522f5aa7036a88bd0cb163920, sizeof(__pyx_k_6b15be522f5aa7036a88bd0cb163920), 0, 0, 1, 1},
   {&__pyx_n_s_708f794e5725efec0c3975705b00e8d, __pyx_k_708f794e5725efec0c3975705b00e8d, sizeof(__pyx_k_708f794e5725efec0c3975705b00e8d), 0, 0, 1, 1},
   {&__pyx_n_s_74b3f7fb6f5443c101c0d06393e0ffe, __pyx_k_74b3f7fb6f5443c101c0d06393e0ffe, sizeof(__pyx_k_74b3f7fb6f5443c101c0d06393e0ffe), 0, 0, 1, 1},
-  {&__pyx_n_u_75bb54313f0653227d782139a6d32f8, __pyx_k_75bb54313f0653227d782139a6d32f8, sizeof(__pyx_k_75bb54313f0653227d782139a6d32f8), 0, 1, 0, 1},
   {&__pyx_n_s_855f958dcf4c478c8508bd1d9711545, __pyx_k_855f958dcf4c478c8508bd1d9711545, sizeof(__pyx_k_855f958dcf4c478c8508bd1d9711545), 0, 0, 1, 1},
   {&__pyx_n_s_9ef134b74cc6307bd3aef4c632f1a51, __pyx_k_9ef134b74cc6307bd3aef4c632f1a51, sizeof(__pyx_k_9ef134b74cc6307bd3aef4c632f1a51), 0, 0, 1, 1},
+  {&__pyx_n_u_Met1Layer, __pyx_k_Met1Layer, sizeof(__pyx_k_Met1Layer), 0, 1, 0, 1},
+  {&__pyx_n_u_POLayer, __pyx_k_POLayer, sizeof(__pyx_k_POLayer), 0, 1, 0, 1},
+  {&__pyx_n_u_XWidth, __pyx_k_XWidth, sizeof(__pyx_k_XWidth), 0, 1, 0, 1},
+  {&__pyx_n_u_YWidth, __pyx_k_YWidth, sizeof(__pyx_k_YWidth), 0, 1, 0, 1},
   {&__pyx_n_s_a6f3a5534aabed4e994e38db38544b1f, __pyx_k_a6f3a5534aabed4e994e38db38544b1f, sizeof(__pyx_k_a6f3a5534aabed4e994e38db38544b1f), 0, 0, 1, 1},
   {&__pyx_n_s_a6f3a5534aabed4e994e38db38544b1f_2, __pyx_k_a6f3a5534aabed4e994e38db38544b1f_2, sizeof(__pyx_k_a6f3a5534aabed4e994e38db38544b1f_2), 0, 0, 1, 1},
-  {&__pyx_n_u_b9bc3a98a024872315b2ee55bd0514e0, __pyx_k_b9bc3a98a024872315b2ee55bd0514e0, sizeof(__pyx_k_b9bc3a98a024872315b2ee55bd0514e0), 0, 1, 0, 1},
   {&__pyx_n_s_cline_in_traceback, __pyx_k_cline_in_traceback, sizeof(__pyx_k_cline_in_traceback), 0, 0, 1, 1},
   {&__pyx_n_s_doc, __pyx_k_doc, sizeof(__pyx_k_doc), 0, 0, 1, 1},
   {&__pyx_n_s_e0c8eb359d558a29f93cc1071851accb, __pyx_k_e0c8eb359d558a29f93cc1071851accb, sizeof(__pyx_k_e0c8eb359d558a29f93cc1071851accb), 0, 0, 1, 1},
@@ -1731,7 +1731,7 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  *     _708f794e5725efec0c3975705b00e8dced22e014a3137585adaa1a2f17656929 = dict(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=40, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200)
  * 
  *     def f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(self, _74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=50, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200):             # <<<<<<<<<<<<<<
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  */
   __pyx_tuple_ = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_74b3f7fb6f5443c101c0d06393e0ffe, __pyx_n_s_0dcd9498e2da15d0359fff5035b2cae, __pyx_n_s_2c0685016681b12fe9957cdaae8590b, __pyx_n_s_855f958dcf4c478c8508bd1d9711545, __pyx_n_s_25f0de983ed0aff0a831b2228d74aa4, __pyx_n_s_124f4503aa687285abc6375286bbdb3); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 7, __pyx_L1_error)
@@ -2083,7 +2083,7 @@ if (!__Pyx_RefNanny) {
  *     _708f794e5725efec0c3975705b00e8dced22e014a3137585adaa1a2f17656929 = dict(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=40, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200)
  * 
  *     def f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31(self, _74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=1, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=2, _2c0685016681b12fe9957cdaae8590ba562cd67dfb8873b8d2b6fb0c68e8e5a9=66, _855f958dcf4c478c8508bd1d9711545a4b9b99a270fcc975b80eeb1cd99f9b8a=200, _25f0de983ed0aff0a831b2228d74aa4a0945aa57cefc887eab7eb9729b8ad874=50, _124f4503aa687285abc6375286bbdb363c9e01af1d0e259c8971335b0f32c857=200):             # <<<<<<<<<<<<<<
- *         'c71f86d47106097844ae9129a88ea0eb4652f184d0ea8c90a95de66e2429b61e'
+ *         ' Poly-Metal1 Contact with resize\n\n            Calculate ViaPoly2Met1 and resize PolyLayer and/or Metal1Layer.\n            NumberOfCOX,Y must be input.\n            Other XYWidth can be optionally input (Number or None).\n        Note:\n            This method does not follow the DRC.\n\n        '
  *         self._6b15be522f5aa7036a88bd0cb1639200ff535f4dfa3fe5187f434e647a295427(_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c=_74b3f7fb6f5443c101c0d06393e0ffece33b25002507e77629da81f19e0c479c, _0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329=_0dcd9498e2da15d0359fff5035b2caee38d6f03d53cac48aeffb98ca70809329)
  */
   __pyx_t_4 = __Pyx_CyFunction_New(&__pyx_mdef_64e0c8eb359d558a29f93cc1071851accbb3ff483554605671653b85a91c1ab900_64a6f3a5534aabed4e994e38db38544b1f2e97dacc23cd0993b89ae107d3caf057_1f8145e152eea692fb139753889bc5a2124d7494f112f7db99762180c065b2c31, 0, __pyx_n_s_a6f3a5534aabed4e994e38db38544b1f_2, NULL, __pyx_n_s_e0c8eb359d558a29f93cc1071851accb, __pyx_d, ((PyObject *)__pyx_codeobj__2)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 7, __pyx_L1_error)
