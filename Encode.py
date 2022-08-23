@@ -1,4 +1,5 @@
 import ast
+from tkinter.messagebox import NO
 import astunparse
 import hashlib
 import keyword
@@ -40,9 +41,9 @@ class name_change(ast.NodeTransformer) :
                         'pack', 'calcsize', 'write', 'year', 'month', 'day', 'hour', 'minute', 'second', '__name__','__main__', 'items', 'hashlib','/tsmcN65.layermap',
                         'Demo version supports maximum 20 elements per structure.', 'Demo version does not support lower layer','Demo version supports maximum 20 structure.',
                         'urllib', 'request','urlopen','headers','http://www.kriss.re.kr','Date','Float type width input detected!',
-                        '_DesignParametertype','_Layer','_Datatype', '_XYCoordinates','_Width','_Ignore', '_ElementName', '_DesignObj', '_Reflect',
-                        '_Angle', '_ReferenceGDS', '_Name', '_GDSFile','_XYCoordinateInfo', '_BitNumber','_DesignSizesInList',
-                        '_HorizontalSupplyRailArea','_VerticalSupplyRailArea','_ViaArrays','_Rails','_SupplyNodeName',
+                        # '_DesignParametertype','_Layer','_Datatype', '_XYCoordinates','_Width','_Ignore', '_ElementName', '_DesignObj', '_Reflect',
+                        # '_Angle', '_ReferenceGDS', '_Name', '_GDSFile','_XYCoordinateInfo', '_BitNumber','_DesignSizesInList',
+                        # '_HorizontalSupplyRailArea','_VerticalSupplyRailArea','_ViaArrays','_Rails','_SupplyNodeName',
                         'Connect to Internet', 'License Expired', 'urllib.request', 'urllib.error', '/cmos28lp_tech.layermap',
                         'wb', 'rb', 'FormatError', 'EndofFileError','IncorrectRecordSize','IncorrectDataSize', 'base class for all gds exceptions', 'raised on unexpected end of file',
                         'raised if record size is not correct', 'raised if data size is not correct', 'data has incorrect value', 'element name is incorrect']
@@ -71,21 +72,29 @@ class name_change(ast.NodeTransformer) :
                     node.__dict__[field] = hash_str
             if isinstance(old_value, list):
                 new_values = []
+                
                 for value in old_value:
+                    tmp = None
                     if isinstance(value, ast.keyword) :
-                        if value.arg == '_TEXT' :
-                            if isinstance(value.value, ast.Constant):
-                            # print (value.arg)
-                            # print (value.value.value)
-                                sha = hashlib.new('sha256')
-                                sha.update(value.arg.encode())
-                                hash_str = sha.hexdigest()
-                                if hash_str[0].isdigit():
-                                    hash_str = '_' + hash_str
-                                value.arg = hash_str
-                                new_values.append(value)
-                                continue
+                        tmp = value.arg 
+                        # print (astunparse.dump(value))
+                        # if value.arg == '_TEXT' :
+                        #     if isinstance(value.value, ast.Constant):
+                        #     # print (value.arg)
+                        #     # print (value.value.value)
+                        #         sha = hashlib.new('sha256')
+                        #         sha.update(value.arg.encode())
+                        #         hash_str = sha.hexdigest()
+                        #         if hash_str[0].isdigit():
+                        #             hash_str = '_' + hash_str
+                        #         value.arg = hash_str
+                        #         new_values.append(value)
+                        #         continue
                         pass
+                        # if isinstance(value.arg, ast.keyword) :
+                        #     # new_values.append(value.arg)
+                        #     print (value.arg)
+                        #     continue
                     if isinstance(value, ast.Constant) and type(value.value) == str:
                         # print (value)
                         # if type(eval(value)) == str :
@@ -107,6 +116,11 @@ class name_change(ast.NodeTransformer) :
                         if hash_str[0].isdigit():
                             hash_str = '_' + hash_str
                         value = hash_str
+                    
+                    if tmp != None :
+                        value.arg = tmp
+
+                    
                     new_values.append(value)
                 old_value[:] = new_values
             
@@ -115,6 +129,9 @@ class name_change(ast.NodeTransformer) :
                     # print(old_value.value)
                     # if type(eval(old_value)) == str :
                     continue
+                # if isinstance(old_value, ast.keyword) :
+                #     print (old_value.arg)
+                #     continue
                 if isinstance(old_value, ast.Attribute) and old_value.attr == 'format' and isinstance(old_value.value, ast.Constant):
                     continue
                 new_node = self.visit(old_value)
