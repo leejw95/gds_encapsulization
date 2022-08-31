@@ -18,10 +18,10 @@ class MUX_PI_4to2(StickDiagram._StickDiagram):
             self._DesignParameter = dict(_Name=self._NameDeclaration(_Name=_Name), _GDSFile=self._GDSObjDeclaration(_GDSFile=None))
         self._DesignParameter['_Name']['Name'] = _Name
 
-    def _CalculateDesignParamter_v2(self,
+    def _CalculateDesignParameter_v2(self,
                                     TristateInv1_Finger=1,
-                                    TristateInv1_PMOSWidth=400,
-                                    TristateInv1_NMOSWidth=200,
+                                    TristateInv1_PMOSWidth=500,
+                                    TristateInv1_NMOSWidth=250,
                                     TristateInv1_VDD2PMOS=None,  # Optional (Not work when finger >= 3)
                                     TristateInv1_VSS2NMOS=None,  # Optional (Not work when finger >= 3)
                                     TristateInv1_YCoordOfInputA=None,  # Optional
@@ -38,16 +38,16 @@ class MUX_PI_4to2(StickDiagram._StickDiagram):
                                     TristateInv2_YCoordOfInputENb=None,  # Optional
 
                                     Inv_Finger=1,
-                                    Inv_NMOSWidth=200,
                                     Inv_PMOSWidth=400,
+                                    Inv_NMOSWidth=200,
                                     Inv_VDD2PMOS=None,  # Optional
                                     Inv_VSS2NMOS=None,  # Optional
                                     Inv_YCoordOfInOut=None,  # Optional
 
+                                    CellHeight=1800,
                                     ChannelLength=30,
                                     GateSpacing=100,
                                     XVT='SLVT',
-                                    CellHeight=1800,
                                     SupplyRailType=1,
                                     ):
         """
@@ -206,8 +206,16 @@ class MUX_PI_4to2(StickDiagram._StickDiagram):
         else:
             # YCoordOftempRoute1 = 1066
             # YCoordOftempRoute2 = 2534
-            YCoordOftempRoute1 = max(self.getXYTop('MuxHalf1', 'Via1_temp23', '_Met2Layer')[0][1], self.getXYTop('MuxHalf1', 'Via1_TSINV2_A', '_Met2Layer')[0][1]) + drc._MetalxMinSpaceAtCorner + self.getWidth('Met2Path2') / 2
-            YCoordOftempRoute2 = min(self.getXYBot('MuxHalf2', 'Via1_temp23', '_Met2Layer')[0][1], self.getXYBot('MuxHalf2', 'Via1_TSINV2_A', '_Met2Layer')[0][1]) - drc._MetalxMinSpaceAtCorner - self.getWidth('Met2Path4') / 2
+            YCoordOftempRoute1 = max(self.getXYTop('MuxHalf1', 'Via1_temp23', '_Met2Layer')[0][1],
+                                     self.getXYTop('MuxHalf1', 'Via1_TSINV2_A', '_Met2Layer')[0][1],
+                                     self.getXYBot('MuxHalf1', 'Via1_TSINV2_A', '_Met2Layer')[0][1] + self.getYWidth('MuxHalf1', 'Via1_temp23', '_Met2Layer')) \
+                                 + drc._MetalxMinSpaceAtCorner + self.getWidth('Met2Path2') / 2
+            if self.getXYBot('MuxHalf1', 'TristateInv2', 'via1ForPM1', '_Met2Layer')[0][1] - (YCoordOftempRoute1 + self.getWidth('Met2Path2') / 2) < drc._MetalxMinSpaceAtCorner:
+                raise NotImplementedError
+            YCoordOftempRoute2 = min(self.getXYBot('MuxHalf2', 'Via1_temp23', '_Met2Layer')[0][1],
+                                     self.getXYBot('MuxHalf2', 'Via1_TSINV2_A', '_Met2Layer')[0][1],
+                                     self.getXYTop('MuxHalf2', 'Via1_TSINV2_A', '_Met2Layer')[0][1] - self.getYWidth('MuxHalf1', 'Via1_temp23', '_Met2Layer')) \
+                                 - drc._MetalxMinSpaceAtCorner - self.getWidth('Met2Path4') / 2
             self._DesignParameter['Met2Path1']['_XYCoordinates'] = [
                 [[self.getXY('MuxHalf1', 'Via1_TSINV2_A')[0][0], self.getXYBot('MuxHalf1', 'Via1_TSINV2_A', '_Met2Layer')[0][1] + self.getWidth('Met2Path1') / 2],
                  [self.getXY('MuxHalf1', 'TristateInv2', 'NM2', '_Met1Layer')[-1][0] - 2 * UnitPitch, self.getXYBot('MuxHalf1', 'Via1_TSINV2_A', '_Met2Layer')[0][1] + self.getWidth('Met2Path1') / 2]]
@@ -295,8 +303,23 @@ class MUX_PI_4to2(StickDiagram._StickDiagram):
             _XWidth=self.getXWidth('Met1Boundary7'),
             _YWidth=self.getYWidth('Met1Boundary7')
         )
+
+        yCoord = self.getXYTop('Via1ForPath1', '_Met1Layer')[0][1] - self.getYWidth('Met1Boundary7') / 2        # prev.
+
+        # calc.  boundary = centerCoord
+        topBoundary_via1Met1 = self.getXYTop('Via1ForPath1', '_Met1Layer')[0][1] - self.getYWidth('Met1Boundary7') / 2
+        botBoundary_via1Met1 = self.getXYBot('Via1ForPath1', '_Met1Layer')[0][1] + self.getYWidth('Met1Boundary7') / 2
+        topBoundary_invPmos = self.getXYBot('MuxHalf1', 'Inv1', '_PMOS', '_Met1Layer')[0][1] - drc._Metal1MinSpaceAtCorner - self.getYWidth('Met1Boundary7') / 2
+        botBoundary_invNmos = self.getXYTop('MuxHalf1', 'Inv1', '_NMOS', '_Met1Layer')[0][1] + drc._Metal1MinSpaceAtCorner + self.getYWidth('Met1Boundary7') / 2
+        topBoundary = min(topBoundary_via1Met1, topBoundary_invPmos)
+        botBoundary = max(botBoundary_via1Met1, botBoundary_invNmos)
+        if topBoundary < botBoundary:
+            raise NotImplementedError
+        else:
+            yCoord = (topBoundary + botBoundary) / 2
+
         self._DesignParameter['Met1Boundary7']['_XYCoordinates'] = [
-            [(rightBoundary + leftBoundary) / 2, self.getXYTop('Via1ForPath1', '_Met1Layer')[0][1] - self.getYWidth('Met1Boundary7') / 2]
+            [(rightBoundary + leftBoundary) / 2, yCoord]
         ]
         self._DesignParameter['Met1Boundary8']['_XYCoordinates'] = [
             [(rightBoundary + leftBoundary) / 2, _CellHeight * 2 - self.getXY('Met1Boundary7')[0][1]]
@@ -627,4 +650,5 @@ class MUX_PI_4to2(StickDiagram._StickDiagram):
     #         [self.getXYBot('MuxHalf1', 'Via2_temp05', '_Met3Layer')[1],
     #          self.getXYTop('MuxHalf2', 'Via2_temp05', '_Met3Layer')[1]]
     #     ]
+
 

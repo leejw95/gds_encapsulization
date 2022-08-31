@@ -2,6 +2,7 @@ from generatorLib import StickDiagram
 from generatorLib import DesignParameters
 import copy
 import math
+import time
 from generatorLib import DRC
 from generatorLib import CoordinateCalc as CoordCalc
 from generatorLib.generator_models import NMOSWithDummy
@@ -24,90 +25,13 @@ class NAND2(StickDiagram._StickDiagram):
         self.Num_HorizontalInputViaMode = 5
 
 
-    def _CalcMinDistance(self):
-
-        drc = DRC.DRC()
-
-        ''' (1) VSS2NMOS_min {NumFinger_NM, SupplyRailType}'''
-        DistanceBtwVSS2NMOS1 = 0.5 * (self.getYWidth('VSSRail', '_PPLayer') + self.getYWidth('NMOS', '_POLayer'))
-        DistanceBtwVSS2NMOS2 = 0.5 * (self.getYWidth('VSSRail', '_ODLayer') + self.getYWidth('NMOS', '_ODLayer')) + drc._OdMinSpace  # OD Layer(for Pbody) - OD Layer (for NMOS)     OD=RX
-        if '_PODummyLayer' in self._DesignParameter['NMOS']['_DesignObj']._DesignParameter:
-            DistanceBtwVSS2NMOS3 = 0.5 * (self.getYWidth('VSSRail', '_ODLayer') + self.getYWidth('NMOS', '_PODummyLayer')) + drc._PolygateMinSpace2OD  # OD Layer(for Pbody) - PO Dummy Layer (for NMOS)     OD=RX
-        else:
-            DistanceBtwVSS2NMOS3 = 0
-
-        # NumFinger_NM
-        # SupplyRailType
-        if self.NumFinger_NM == 1 and self.SupplyRailType == 1:
-            DistanceBtwVSS2NMOS4 = 0.5 * (self.getYWidth('VSSRail', '_Met1Layer') + self.getXY('NMOS', '_Met1Layer')[0][1]) + drc._Metal1MinSpaceAtCorner
-        elif self.NumFinger_NM > 1 and self.SupplyRailType == 1:
-            DistanceBtwVSS2NMOS4 = 0.5 * self.getYWidth('VSSRail', '_Met1Layer') + (self.getXY('NMOS')[0][1] - self.getXYBot('Met1RouteX_NMDown')[0][1]) + drc._Metal1MinSpaceAtCorner
-        elif self.NumFinger_NM == 1 and self.SupplyRailType == 2:
-            DistanceBtwVSS2NMOS4 = 0.5 * drc._Metal1MinSpaceAtCorner
-        else:       # if self.NumFinger_NM != 1 and self.SupplyRailType == 2:
-            DistanceBtwVSS2NMOS4 = (self.getXY('NMOS')[0][1] - self.getXYBot('Met1RouteX_NMDown')[0][1]) + 0.5 * drc._Metal1MinSpaceAtCorner
-
-        DistanceBtwVSS2NMOS5 = 0.5 * (self.getYWidth('VSSRail', '_PPLayer') + self.getYWidth('NMOS', '_ODLayer')) + drc._OdMinSpace2Pp
-        VSS2NMOS_min = max(DistanceBtwVSS2NMOS1, DistanceBtwVSS2NMOS2, DistanceBtwVSS2NMOS3, DistanceBtwVSS2NMOS4, DistanceBtwVSS2NMOS5)
-
-        ''' (2) VDD2PMOS_min {SupplyRailType}'''
-        if '_NPLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
-            DistanceBtwVDD2PMOS1 = 0.5 * (self.getYWidth('VDDRail', '_NPLayer') + self.getYWidth('PMOS', '_POLayer'))       # need to check
-        else:
-            DistanceBtwVDD2PMOS1 = 0
-        DistanceBtwVDD2PMOS2 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_ODLayer')) + drc._OdMinSpace  # OD Layer(for Nbody) - OD Layer (for PMOS)     OD=RX
-        if '_PODummyLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
-            DistanceBtwVDD2PMOS3 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_PODummyLayer')) + drc._PolygateMinSpace2OD  # OD Layer(for Nbody) - PO Dummy Layer (for PMOS)     OD=RX
-        else:
-            DistanceBtwVDD2PMOS3 = 0
-        if self.SupplyRailType == 1:
-            DistanceBtwVDD2PMOS4 = 0.5 * (self.getYWidth('VDDRail', '_Met1Layer') + self.getYWidth('PMOS', '_Met1Layer')) + drc._Metal1MinSpaceAtCorner
-        else:   # self.SupplyRailType == 2:
-            DistanceBtwVDD2PMOS4 = 0.5 * self.getYWidth('PMOS', '_Met1Layer') + 0.5 * drc._Metal1MinSpaceAtCorner
-        DistanceBtwVDD2PMOS5 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_PPLayer')) + drc._OdMinSpace2Pp
-
-        VDD2PMOS_min = max(DistanceBtwVDD2PMOS1, DistanceBtwVDD2PMOS2, DistanceBtwVDD2PMOS3, DistanceBtwVDD2PMOS4, DistanceBtwVDD2PMOS5)
-
-
-        ''' (3) NMOS2IO_min {finger_max , finger_nmos} '''
-        gapBtwMet1 = drc._Metal1MinSpaceAtCorner
-        if self.NumFinger_NM == 1:
-            DistanceBtwNMOS2IO1 = 0.5 * (self.getYWidth('NMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
-        elif max(self.NumFinger_PM, self.NumFinger_NM) < self.Num_HorizontalInputViaMode:
-            DistanceBtwNMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXYTop('Met1RouteX_OutputPM2NM_NMside')[0][1] - self.getXY('NMOS')[0][1]) + gapBtwMet1
-        else:  # finger_max >= self.Num_HorizontalInputViaMode:  same with second case?
-            DistanceBtwNMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXYTop('Met1RouteX_OutputPM2NM_NMside')[0][1] - self.getXY('NMOS')[0][1]) + gapBtwMet1
-        NMOS2IO_min = DistanceBtwNMOS2IO1
-
-        ''' (4) PMOS2IO_min {finger_pmos, finger_nmos} '''
-        gapBtwMet1 = drc._Metal1MinSpaceAtCorner
-        if self.NumFinger_PM == 1:
-            if self.NumFinger_NM == 1:
-                DistanceBtwPMOS2IO1 = 0.5 * (self.getYWidth('PMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
-            elif self.NumFinger_NM < self.Num_HorizontalInputViaMode:
-                DistanceBtwPMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXY('PMOS')[0][1] - self.getXYBot('Met1RouteX_PMOutput')[0][1]) + gapBtwMet1
-            else:  # self.NumFinger_NM > 1
-                DistanceBtwPMOS2IO1 = 0.5 * (self.getYWidth('PMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
-        else:  # self.NumFinger_PM > 1:
-            DistanceBtwPMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXY('PMOS')[0][1] - self.getXYBot('Met1RouteX_PMOutput')[0][1]) + gapBtwMet1
-        PMOS2IO_min = DistanceBtwPMOS2IO1
-
-
-        print('** minimum Y-distance Calculation ------')
-        print(f'VSS2NMOS_min = {VSS2NMOS_min}')
-        print(f'VDD2PMOS_min = {VDD2PMOS_min}')
-        print(f'NMOS2IO_min = {NMOS2IO_min}')
-        print(f'PMOS2IO_min = {PMOS2IO_min}')
-
-        return dict(VSS2NMOS_min=VSS2NMOS_min, VDD2PMOS_min=VDD2PMOS_min, NMOS2IO_min=NMOS2IO_min, PMOS2IO_min=PMOS2IO_min)
-
     def _CalculateDesignParameter(self,
-                                  NumFinger_PM=2,
-                                  NumFinger_NM=1,
+                                  NumFinger_PM=3,
+                                  NumFinger_NM=3,
                                   PMOSWidth=400,
                                   NMOSWidth=400,
 
-                                  CellHeight=None,
+                                  CellHeight=1800,
                                   YCoordOfNM=None,
                                   YCoordOfPM=None,
                                   YCoordOfInputOutput=None,
@@ -116,10 +40,13 @@ class NAND2(StickDiagram._StickDiagram):
                                   GateSpacing=100, XVT='SLVT',
                                   SupplyRailType=2,
                                   ):
+        """
+        top def
 
+        """
         tmpLength = NMOSWidth + PMOSWidth
 
-        self._CalculateDesignParameter_v2(
+        self._CalculateDesignParameter_i(
             NumFinger_NM=NumFinger_NM,
             NumFinger_PM=NumFinger_PM,
             NMOSWidth=NMOSWidth,
@@ -187,7 +114,7 @@ class NAND2(StickDiagram._StickDiagram):
         self.__init__(_Name=tmpName)
 
         # re-calculate
-        self._CalculateDesignParameter_v2(
+        self._CalculateDesignParameter_i(
             NumFinger_NM=NumFinger_NM,
             NumFinger_PM=NumFinger_PM,
             NMOSWidth=NMOSWidth,
@@ -204,7 +131,94 @@ class NAND2(StickDiagram._StickDiagram):
         )
 
 
-    def _CalculateDesignParameter_v2(self,
+    def _CalcMinDistance(self):
+
+        drc = DRC.DRC()
+
+        ''' (1) VSS2NMOS_min {NumFinger_NM, SupplyRailType}'''
+        DistanceBtwVSS2NMOS1 = 0.5 * (self.getYWidth('VSSRail', '_PPLayer') + self.getYWidth('NMOS', '_POLayer'))
+        DistanceBtwVSS2NMOS2 = 0.5 * (self.getYWidth('VSSRail', '_ODLayer') + self.getYWidth('NMOS', '_ODLayer')) + drc._OdMinSpace  # OD Layer(for Pbody) - OD Layer (for NMOS)     OD=RX
+        if '_PODummyLayer' in self._DesignParameter['NMOS']['_DesignObj']._DesignParameter:
+            DistanceBtwVSS2NMOS3 = 0.5 * (self.getYWidth('VSSRail', '_ODLayer') + self.getYWidth('NMOS', '_PODummyLayer')) + drc._PolygateMinSpace2OD  # OD Layer(for Pbody) - PO Dummy Layer (for NMOS)     OD=RX
+        else:
+            DistanceBtwVSS2NMOS3 = 0
+
+        # NumFinger_NM
+        # SupplyRailType
+        if self.NumFinger_NM == 1 and self.SupplyRailType == 1:
+            DistanceBtwVSS2NMOS4 = 0.5 * (self.getYWidth('VSSRail', '_Met1Layer') + self.getXY('NMOS', '_Met1Layer')[0][1]) + drc._Metal1MinSpaceAtCorner
+        elif self.NumFinger_NM > 1 and self.SupplyRailType == 1:
+            DistanceBtwVSS2NMOS4 = 0.5 * self.getYWidth('VSSRail', '_Met1Layer') + (self.getXY('NMOS')[0][1] - self.getXYBot('Met1RouteX_NMDown')[0][1]) + drc._Metal1MinSpaceAtCorner
+        elif self.NumFinger_NM == 1 and self.SupplyRailType == 2:
+            DistanceBtwVSS2NMOS4 = 0.5 * drc._Metal1MinSpaceAtCorner
+        else:       # if self.NumFinger_NM != 1 and self.SupplyRailType == 2:
+            DistanceBtwVSS2NMOS4 = (self.getXY('NMOS')[0][1] - self.getXYBot('Met1RouteX_NMDown')[0][1]) + 0.5 * drc._Metal1MinSpaceAtCorner
+
+        DistanceBtwVSS2NMOS5 = 0.5 * (self.getYWidth('VSSRail', '_PPLayer') + self.getYWidth('NMOS', '_ODLayer')) + drc._OdMinSpace2Pp
+        VSS2NMOS_min = max(DistanceBtwVSS2NMOS1, DistanceBtwVSS2NMOS2, DistanceBtwVSS2NMOS3, DistanceBtwVSS2NMOS4, DistanceBtwVSS2NMOS5)
+
+        ''' (2) VDD2PMOS_min {SupplyRailType}'''
+        if '_NPLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
+            DistanceBtwVDD2PMOS1 = 0.5 * (self.getYWidth('VDDRail', '_NPLayer') + self.getYWidth('PMOS', '_POLayer'))       # need to check
+        else:
+            DistanceBtwVDD2PMOS1 = 0
+        DistanceBtwVDD2PMOS2 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_ODLayer')) + drc._OdMinSpace  # OD Layer(for Nbody) - OD Layer (for PMOS)     OD=RX
+        if '_PODummyLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
+            DistanceBtwVDD2PMOS3 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_PODummyLayer')) + drc._PolygateMinSpace2OD  # OD Layer(for Nbody) - PO Dummy Layer (for PMOS)     OD=RX
+        else:
+            DistanceBtwVDD2PMOS3 = 0
+        if self.SupplyRailType == 1:
+            DistanceBtwVDD2PMOS4 = 0.5 * (self.getYWidth('VDDRail', '_Met1Layer') + self.getYWidth('PMOS', '_Met1Layer')) + drc._Metal1MinSpaceAtCorner
+        else:   # self.SupplyRailType == 2:
+            DistanceBtwVDD2PMOS4 = 0.5 * self.getYWidth('PMOS', '_Met1Layer') + 0.5 * drc._Metal1MinSpaceAtCorner
+        DistanceBtwVDD2PMOS5 = 0.5 * (self.getYWidth('VDDRail', '_ODLayer') + self.getYWidth('PMOS', '_PPLayer')) + drc._OdMinSpace2Pp
+
+        VDD2PMOS_min = max(DistanceBtwVDD2PMOS1, DistanceBtwVDD2PMOS2, DistanceBtwVDD2PMOS3, DistanceBtwVDD2PMOS4, DistanceBtwVDD2PMOS5)
+
+
+        ''' (3) NMOS2IO_min {finger_max , finger_nmos} '''
+        gapBtwMet1 = drc._Metal1MinSpaceAtCorner
+        if self.NumFinger_NM == 1:
+            DistanceBtwNMOS2IO1 = 0.5 * (self.getYWidth('NMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
+        elif max(self.NumFinger_PM, self.NumFinger_NM) < self.Num_HorizontalInputViaMode:
+            DistanceBtwNMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXYTop('Met1RouteX_OutputPM2NM_NMside')[0][1] - self.getXY('NMOS')[0][1]) + gapBtwMet1
+        else:  # finger_max >= self.Num_HorizontalInputViaMode:  same with second case?
+            DistanceBtwNMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXYTop('Met1RouteX_OutputPM2NM_NMside')[0][1] - self.getXY('NMOS')[0][1]) + gapBtwMet1
+
+        if '_PODummyLayer' in self._DesignParameter['NMOS']['_DesignObj']._DesignParameter:
+            DistanceBtwNMOS2IO2 = 0.5 * (self.getYWidth('ViaPoly_InputAB', '_POLayer') + self.getYWidth('NMOS', '_PODummyLayer')) + drc._PolygateMinSpace
+        else:
+            DistanceBtwNMOS2IO2 = 0
+        NMOS2IO_min = max(DistanceBtwNMOS2IO1, DistanceBtwNMOS2IO2)
+
+        ''' (4) PMOS2IO_min {finger_pmos, finger_nmos} '''
+        gapBtwMet1 = drc._Metal1MinSpaceAtCorner
+        if self.NumFinger_PM == 1:
+            if self.NumFinger_NM == 1:
+                DistanceBtwPMOS2IO1 = 0.5 * (self.getYWidth('PMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
+            elif self.NumFinger_NM < self.Num_HorizontalInputViaMode:
+                DistanceBtwPMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXY('PMOS')[0][1] - self.getXYBot('Met1RouteX_PMOutput')[0][1]) + gapBtwMet1
+            else:  # self.NumFinger_NM > 1
+                DistanceBtwPMOS2IO1 = 0.5 * (self.getYWidth('PMOS', '_Met1Layer') + self.getYWidth('ViaPoly_InputAB', '_Met1Layer')) + gapBtwMet1
+        else:  # self.NumFinger_PM > 1:
+            DistanceBtwPMOS2IO1 = 0.5 * self.getYWidth('ViaPoly_InputAB', '_Met1Layer') + (self.getXY('PMOS')[0][1] - self.getXYBot('Met1RouteX_PMOutput')[0][1]) + gapBtwMet1
+        if '_PODummyLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
+            DistanceBtwPMOS2IO2 = 0.5 * (self.getYWidth('ViaPoly_InputAB', '_POLayer') + self.getYWidth('PMOS', '_PODummyLayer')) + drc._PolygateMinSpace
+        else:
+            DistanceBtwPMOS2IO2 = 0
+        PMOS2IO_min = max(DistanceBtwPMOS2IO1, DistanceBtwPMOS2IO2)
+
+
+        print('** minimum Y-distance Calculation ------')
+        print(f'VSS2NMOS_min = {VSS2NMOS_min}')
+        print(f'VDD2PMOS_min = {VDD2PMOS_min}')
+        print(f'NMOS2IO_min = {NMOS2IO_min}')
+        print(f'PMOS2IO_min = {PMOS2IO_min}')
+
+        return dict(VSS2NMOS_min=VSS2NMOS_min, VDD2PMOS_min=VDD2PMOS_min, NMOS2IO_min=NMOS2IO_min, PMOS2IO_min=PMOS2IO_min)
+
+
+    def _CalculateDesignParameter_i(self,
                                      NumFinger_NM=1,
                                      NumFinger_PM=2,
                                      NMOSWidth=200,
@@ -268,13 +282,27 @@ class NAND2(StickDiagram._StickDiagram):
                    _PMOSDummy=True, _GateSpacing=GateSpacing, _SDWidth=66, _XVT=XVT))
         self._DesignParameter['PMOS']['_XYCoordinates'] = [[0, YCoordOfPM]]
 
+        # po dummy
+        if '_PODummyLayer' in self._DesignParameter['PMOS']['_DesignObj']._DesignParameter:
+            Area_PmosDummy = self.getXWidth('PMOS', '_PODummyLayer') * self.getYWidth('PMOS', '_PODummyLayer')
+            if Area_PmosDummy < drc._PODummyMinArea:
+                YWidth_PmosDummy_Recalc = self.CeilMinSnapSpacing(drc._PODummyMinArea / self.getXWidth('PMOS', '_PODummyLayer'), drc._MinSnapSpacing * 2)
+                self._DesignParameter['PMOS']['_DesignObj']._DesignParameter['_PODummyLayer']['_YWidth'] = YWidth_PmosDummy_Recalc
+        if '_PODummyLayer' in self._DesignParameter['NMOS']['_DesignObj']._DesignParameter:
+            Area_NmosDummy = self.getXWidth('NMOS', '_PODummyLayer') * self.getYWidth('NMOS', '_PODummyLayer')
+            if Area_NmosDummy < drc._PODummyMinArea:
+                YWidth_NmosDummy_Recalc = self.CeilMinSnapSpacing(drc._PODummyMinArea / self.getXWidth('NMOS', '_PODummyLayer'), drc._MinSnapSpacing * 2)
+                self._DesignParameter['NMOS']['_DesignObj']._DesignParameter['_PODummyLayer']['_YWidth'] = YWidth_NmosDummy_Recalc
+
+
         ''' ------------------------------------------ Nwell & XVT Layer ------------------------------------------- '''
-        YCoord_NwellTopBoundary = self.getXY('VDDRail', '_ODLayer')[0][1] + self.getYWidth('VDDRail', '_ODLayer') / 2 + drc._NwMinEnclosurePactive
-        YCoord_NwellBotBoundary = self.getXY('PMOS', '_ODLayer')[0][1] - (
-                    self.getYWidth('PMOS', '_ODLayer') / 2 + drc._NwMinEnclosurePactive)
+        YCoord_NwellTopBoundary = self.getXYTop('VDDRail', '_ODLayer')[0][1] + drc._NwMinEnclosurePactive
+        YCoord_NwellBotBoundary = self.getXYBot('PMOS', '_ODLayer')[0][1] - drc._NwMinEnclosurePactive
+        XWidth1_NWELL = self.getXWidth('PMOS', '_ODLayer') + 2 * drc._NwMinEnclosurePactive2
+        XWidth2_NWELL = self.getXWidth('VDDRail', '_ODLayer') + 2 * drc._NwMinEnclosurePactive
         self._DesignParameter['NwellLayer'] = self._BoundaryElementDeclaration(
             _Layer=DesignParameters._LayerMapping['NWELL'][0], _Datatype=DesignParameters._LayerMapping['NWELL'][1],
-            _XWidth=self.getXWidth('PMOS', '_ODLayer') + 2 * drc._NwMinEnclosurePactive2,
+            _XWidth=max(XWidth1_NWELL, XWidth2_NWELL),
             _YWidth=YCoord_NwellTopBoundary - YCoord_NwellBotBoundary,
             _XYCoordinates=[[0, (YCoord_NwellTopBoundary + YCoord_NwellBotBoundary) / 2]]
         )
@@ -508,13 +536,11 @@ class NAND2(StickDiagram._StickDiagram):
                 [XCoord_InputB, YCoordOfInputOutput]
             ]
 
-
-
             self._DesignParameter['PolyRouteY_PMB'] = self._BoundaryElementDeclaration(
                 _Layer=DesignParameters._LayerMapping['POLY'][0],
                 _Datatype=DesignParameters._LayerMapping['POLY'][1],
                 _XWidth=ChannelLength,
-                _YWidth=(self.getXY('PMOS', '_POLayer')[0][1] - self.getYWidth('PMOS', '_POLayer') / 2) - (self.getXY('ViaPoly_InputAB', '_POLayer')[0][1] + self.getYWidth('ViaPoly_InputAB', '_POLayer') / 2)
+                _YWidth=self.getXYBot('PMOS', '_POLayer')[0][1] - self.getXYTop('ViaPoly_InputAB', '_POLayer')[0][1]
             )
             tmpXYs = []
             for i, XYs in enumerate(self.getXY('PMOS', '_POLayer')):
@@ -691,11 +717,12 @@ class NAND2(StickDiagram._StickDiagram):
                 (topBoundary_Met1YOutputNMside + botBoundary_Met1YOutputNMside) / 2
             ]]
 
-
+            # boundary: Contact edge
             rightBoundary_InputPolyGate1_byPM = self.getXY('PMOS', '_POLayer')[-1][0] + self.getXWidth('PMOS', '_POLayer') / 2 - drc._CoMinEnclosureByPOAtLeastTwoSide
             rightBoundary_InputPolyGate2_byNM = self.getXY('NMOS', '_POLayer')[-1][0] + self.getXWidth('NMOS', '_POLayer') / 2 - drc._CoMinEnclosureByPOAtLeastTwoSide
             rightBoundary_InputPolyGate = max(rightBoundary_InputPolyGate1_byPM, rightBoundary_InputPolyGate2_byNM)
-            leftBoundary_InputPolyGate = self.getXY('Met1RouteY_OutputPM2NM')[0][0] + self.getXWidth('Met1RouteY_OutputPM2NM') / 2 + drc._Metal1MinSpaceAtCorner
+            leftBoundary_InputMet1 = self.getXY('Met1RouteY_OutputPM2NM')[0][0] + self.getXWidth('Met1RouteY_OutputPM2NM') / 2 + drc._Metal1MinSpaceAtCorner
+            leftBoundary_InputPolyGate = leftBoundary_InputMet1 + drc._Metal1MinEnclosureCO2
             xNumViaInputGate = int((rightBoundary_InputPolyGate - leftBoundary_InputPolyGate - drc._CoMinWidth) // (drc._CoMinWidth + drc._CoMinSpace)) + 1
             print('xNumViaInputGate:', xNumViaInputGate)
             self._DesignParameter['ViaPoly_InputAB'] = self._SrefElementDeclaration(
@@ -747,7 +774,7 @@ class NAND2(StickDiagram._StickDiagram):
                 _Layer=DesignParameters._LayerMapping['POLY'][0],
                 _Datatype=DesignParameters._LayerMapping['POLY'][1],
                 _XWidth=RightBoundary_PMPolyB - LeftBoundary_PMPolyB,
-                _YWidth=50
+                _YWidth=self.getYWidth('ViaPoly_InputAB', '_POLayer')
             )
             self._DesignParameter['PolyRouteX_PM_InputB']['_XYCoordinates'] = [[
                 (RightBoundary_PMPolyB + LeftBoundary_PMPolyB) / 2,
@@ -862,6 +889,13 @@ class NAND2(StickDiagram._StickDiagram):
                 **dict(_NMOSChannelWidth=NMOSWidth, _NMOSChannellength=ChannelLength,
                        _NMOSDummy=True, _GateSpacing=GateSpacing, _SDWidth=66, _XVT=XVT))
             self._DesignParameter['NMOS']['_XYCoordinates'] = [[0, YCoordOfNM]]
+
+            # dummy
+            if '_PODummyLayer' in self._DesignParameter['NMOS']['_DesignObj']._DesignParameter:
+                Area_NmosDummy = self.getXWidth('NMOS', '_PODummyLayer') * self.getYWidth('NMOS', '_PODummyLayer')
+                if Area_NmosDummy < drc._PODummyMinArea:
+                    YWidth_NmosDummy_Recalc = self.CeilMinSnapSpacing(drc._PODummyMinArea / self.getXWidth('NMOS', '_PODummyLayer'), drc._MinSnapSpacing * 2)
+                    self._DesignParameter['NMOS']['_DesignObj']._DesignParameter['_PODummyLayer']['_YWidth'] = YWidth_NmosDummy_Recalc
 
             self._DesignParameter['Met1RouteX_OutputPM2NM_NMside']['_XYCoordinates'] = [[
                 self.getXY('Met1RouteX_OutputPM2NM_NMside')[0][0],
