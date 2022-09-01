@@ -3,7 +3,7 @@ import requests
 
 url = 'http://localhost:8000'
 
-client_name = 'test' ## Onesemi1, Onesemi2, Onesemi3
+client_name = 'test' ## onesemi1, onesemi2, onesemi3
 lib_name = 'Runfile_template' ## Same name with Runfile.py
 method_idx = 0 ## Choose one method below
 
